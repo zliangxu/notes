@@ -32,6 +32,9 @@ ros头文件路径： /opt/ros/kinetic/include
 http://wiki.ros.org/APIs
 
 /********************************ros-navigation************************************************/
+
+navigation bag: http://wiki.ros.org/hector_exploration_planner?distro=kinetic
+
 /********************************ros-map******************************************/
 ros坐标系标准 ： http://www.ros.org/reps/rep-0105.html
 earth -->> map -->> odom -->> base_link?????
@@ -61,23 +64,28 @@ error
                                                   ---》》回环检测---》》
 
 cartographer框架
-获得的每一帧laser scan数据，利用scan match在最佳估计位置处插入子图（submap）中，且scan matching只跟当前submap有关。在生成一个submap后，会进行一次局部的回环（loop close），利用分支定位和预先计算的网格，所有submap完成后，会进行全局的回环。
+获得的每一帧laser scan数据，利用scan match在最佳估计位置处插入子图（submap）中，且scan matching只跟当前submap有关。在生成一个submap后，会进行一次局部的回环（loop close），
+利用分支定位和预先计算的网格，所有submap完成后，会进行全局的回环。
 
 scan-to-submap,   loop closure detection,  graph optimization
-local approach : scan-to-submap, 把每次扫描匹配到子地图(submap)M上， 使用非线性优化方法对齐子地图内每次的扫描，这个过程被称为scan matching。子地图建立过程中的累积误差用global approach消去。grid-based SLAM approach.
+local approach : scan-to-submap, 把每次扫描匹配到子地图(submap)M上， 使用非线性优化方法对齐子地图内每次的扫描，这个过程被称为scan matching。
+子地图建立过程中的累积误差用global approach消去。grid-based SLAM approach.
 scans --> submaps --> ceres scan matching
 probability grids,  Phit   Pmiss, ceres scan matcher
 
 global approach：closing loops
 optimization problem, branch-and-bound scan matching
 
-ros是为机器人软件发展的一个软件框架集合，提供操作系统类似的功能，hardware abstraction、low-level device control、message-passing between process、package management。是为简化上层应用开发的一个平台，ros只支持特定的操作系统，所以安装ros前需要根据当前的操作系统版本选择ros版本。
+ros是为机器人软件发展的一个软件框架集合，提供操作系统类似的功能，hardware abstraction、low-level device control、message-passing between process、package management。
+是为简化上层应用开发的一个平台，ros只支持特定的操作系统，所以安装ros前需要根据当前的操作系统版本选择ros版本。
 hitcm博客安装 : http://www.cnblogs.com/hitcm/p/5939507.html
 泡泡机器人讲cartographer : http://mp.weixin.qq.com/s/LdbFp-Zvkr02-_25ILb16g
 http://blog.csdn.net/jsgaobiao/article/details/53116042
 http://blog.csdn.net/zyh821351004/article/details/52421005
 http://blog.csdn.net/u010566411/article/category/6467677
-Google开源的代码包含两个部分：cartographer[2]和cartographer_ros。cartographer主要负责处理来自雷达、IMU和里程计的数据并基于这些数据进行地图的构建，是cartographer理论的底层实现。cartographer_ros则基于ros的通信机制获取传感器的数据并将它们转换成cartographer中定义的格式传递给cartographer处理，与此同时也将cartographer的处理结果发布用于显示或保存，是基于cartographer的上层应用。
+Google开源的代码包含两个部分：cartographer[2]和cartographer_ros。cartographer主要负责处理来自雷达、IMU和里程计的数据并基于这些数据进行地图的构建，是cartographer理论的底层实现。
+cartographer_ros则基于ros的通信机制获取传感器的数据并将它们转换成cartographer中定义的格式传递给cartographer处理，与此同时也将cartographer的处理结果发布用于显示或保存，
+是基于cartographer的上层应用。
 
 测试cartographer
 
