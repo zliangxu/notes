@@ -1,7 +1,13 @@
-/******************ros*****************************/
+roslaunch cartographer_ros demo_backpack_2d.launch bag_filename:=${HOME}/slam/cartographer_paper_deutsches_museum.bag
+
+
 ros如何编译指定的包？？
 ros中文wiki： http://wiki.ros.org/cn
 ros入门讲解： http://www.jianshu.com/p/b604b00b7053
+
+/******************ros*****************************/
+ros安装路径显示: echo ${ROS_PACKAGE_PATH}
+
 rosnode list //显示节点列表
 rostopic list //显示话题列表
 
@@ -27,6 +33,11 @@ source devel/setup.bash  //添加路径，或者写入.bashrc，是永久添加�
 launch文件中 remap标签
 重映射就是甲节点得到相关的信息，通过重映射使乙节点得到甲节点一样的信息，从而使得乙节点模仿甲节点做出相应的响应。​
 <remap>标签适用于在其范围内随后的所有声明(<launch>, <node> or<group>)。
+/********************************ros-workspace-setup************************************************/
+创建工作空间文件夹，创建ws/src
+创建包catkin_create_package 
+添加依赖文件时，不只要修改CmakeLists.txt，需要同步到package.xml
+
 /************************rosApi******************************************/
 ros头文件路径： /opt/ros/kinetic/include
 http://wiki.ros.org/APIs
@@ -34,10 +45,22 @@ http://wiki.ros.org/APIs
 /********************************ros-navigation************************************************/
 
 navigation bag: http://wiki.ros.org/hector_exploration_planner?distro=kinetic
+ros navigation: http://wiki.ros.org/navigation
+ros setup tf(transform): http://wiki.ros.org/navigation/Tutorials/RobotSetup/TF
+navigation stack
+  需要设置目标点，navigation stack应该只是做导航，路径规划，目标地址需要其他节点提供。
+
+costmap fonfiguration
+  local_costmap：局部地图，用于本地的避障与规划
+  global_costmap：全局地图，意味着用于整个环境的长期规划
+  如此存在三个设置，common configuration, global configuration, local configuration
 
 /********************************ros-map******************************************/
 ros坐标系标准 ： http://www.ros.org/reps/rep-0105.html
 earth -->> map -->> odom -->> base_link?????
+
+map数据结构： http://wiki.ros.org/rviz/DisplayTypes/Map
+
 
 nav_msgs/Path.msg路径数据
 .child_frame_id   tf结构成员，搜索结果少，可以用作定位代码

@@ -5,3 +5,11 @@ ubuntu16.04LTS，系统相对更流畅，但是ibus框架下中文输入法一�
 
 http://blog.csdn.net/liekkas_javey/article/details/52821913
 http://www.expreview.com/21367.html
+
+
+安装ubuntu16.04英文版，用到的语言是英语，同样安装搜狗输入法，按照错误提示安装了fcixt后，重启出现了搜狗输入法。
+
+
+/********************app***************************************************************************************/
+foxit-reader linux 64bit download : https://www.foxitsoftware.com/products/pdf-reader/
+chrome : 可以直接sudo apt-get install, 也可以直接从 chrome 网站下载
