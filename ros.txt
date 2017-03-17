@@ -1,7 +1,13 @@
-/******************ros*****************************/
+roslaunch cartographer_ros demo_backpack_2d.launch bag_filename:=${HOME}/slam/cartographer_paper_deutsches_museum.bag
+
+
 ros如何编译指定的包？？
 ros中文wiki： http://wiki.ros.org/cn
 ros入门讲解： http://www.jianshu.com/p/b604b00b7053
+
+/******************ros*****************************/
+ros安装路径显示: echo ${ROS_PACKAGE_PATH}
+
 rosnode list //显示节点列表
 rostopic list //显示话题列表
 
@@ -27,15 +33,37 @@ source devel/setup.bash  //添加路径，或者写入.bashrc，是永久添加�
 launch文件中 remap标签
 重映射就是甲节点得到相关的信息，通过重映射使乙节点得到甲节点一样的信息，从而使得乙节点模仿甲节点做出相应的响应。​
 <remap>标签适用于在其范围内随后的所有声明(<launch>, <node> or<group>)。
+/********************************ros-workspace-setup************************************************/
+创建工作空间文件夹，创建ws/src
+创建包catkin_create_package 
+添加依赖文件时，不只要修改CmakeLists.txt，需要同步到package.xml
+
 /************************rosApi******************************************/
 ros头文件路径： /opt/ros/kinetic/include
 http://wiki.ros.org/APIs
 
 /********************************ros-navigation************************************************/
 
+<<<<<<< HEAD
+=======
+navigation bag: http://wiki.ros.org/hector_exploration_planner?distro=kinetic
+ros navigation: http://wiki.ros.org/navigation
+ros setup tf(transform): http://wiki.ros.org/navigation/Tutorials/RobotSetup/TF
+navigation stack
+  需要设置目标点，navigation stack应该只是做导航，路径规划，目标地址需要其他节点提供。
+
+costmap fonfiguration
+  local_costmap：局部地图，用于本地的避障与规划
+  global_costmap：全局地图，意味着用于整个环境的长期规划
+  如此存在三个设置，common configuration, global configuration, local configuration
+
+>>>>>>> 117643a6ec01b9e9aee8ff0267a8a4592ddc8201
 /********************************ros-map******************************************/
 ros坐标系标准 ： http://www.ros.org/reps/rep-0105.html
 earth -->> map -->> odom -->> base_link?????
+
+map数据结构： http://wiki.ros.org/rviz/DisplayTypes/Map
+
 
 nav_msgs/Path.msg路径数据
 .child_frame_id   tf结构成员，搜索结果少，可以用作定位代码
@@ -62,23 +90,28 @@ error
                                                   ---》》回环检测---》》
 
 cartographer框架
-获得的每一帧laser scan数据，利用scan match在最佳估计位置处插入子图（submap）中，且scan matching只跟当前submap有关。在生成一个submap后，会进行一次局部的回环（loop close），利用分支定位和预先计算的网格，所有submap完成后，会进行全局的回环。
+获得的每一帧laser scan数据，利用scan match在最佳估计位置处插入子图（submap）中，且scan matching只跟当前submap有关。在生成一个submap后，会进行一次局部的回环（loop close），
+利用分支定位和预先计算的网格，所有submap完成后，会进行全局的回环。
 
 scan-to-submap,   loop closure detection,  graph optimization
-local approach : scan-to-submap, 把每次扫描匹配到子地图(submap)M上， 使用非线性优化方法对齐子地图内每次的扫描，这个过程被称为scan matching。子地图建立过程中的累积误差用global approach消去。grid-based SLAM approach.
+local approach : scan-to-submap, 把每次扫描匹配到子地图(submap)M上， 使用非线性优化方法对齐子地图内每次的扫描，这个过程被称为scan matching。
+子地图建立过程中的累积误差用global approach消去。grid-based SLAM approach.
 scans --> submaps --> ceres scan matching
 probability grids,  Phit   Pmiss, ceres scan matcher
 
 global approach：closing loops
 optimization problem, branch-and-bound scan matching
 
-ros是为机器人软件发展的一个软件框架集合，提供操作系统类似的功能，hardware abstraction、low-level device control、message-passing between process、package management。是为简化上层应用开发的一个平台，ros只支持特定的操作系统，所以安装ros前需要根据当前的操作系统版本选择ros版本。
+ros是为机器人软件发展的一个软件框架集合，提供操作系统类似的功能，hardware abstraction、low-level device control、message-passing between process、package management。
+是为简化上层应用开发的一个平台，ros只支持特定的操作系统，所以安装ros前需要根据当前的操作系统版本选择ros版本。
 hitcm博客安装 : http://www.cnblogs.com/hitcm/p/5939507.html
 泡泡机器人讲cartographer : http://mp.weixin.qq.com/s/LdbFp-Zvkr02-_25ILb16g
 http://blog.csdn.net/jsgaobiao/article/details/53116042
 http://blog.csdn.net/zyh821351004/article/details/52421005
 http://blog.csdn.net/u010566411/article/category/6467677
-Google开源的代码包含两个部分：cartographer[2]和cartographer_ros。cartographer主要负责处理来自雷达、IMU和里程计的数据并基于这些数据进行地图的构建，是cartographer理论的底层实现。cartographer_ros则基于ros的通信机制获取传感器的数据并将它们转换成cartographer中定义的格式传递给cartographer处理，与此同时也将cartographer的处理结果发布用于显示或保存，是基于cartographer的上层应用。
+Google开源的代码包含两个部分：cartographer[2]和cartographer_ros。cartographer主要负责处理来自雷达、IMU和里程计的数据并基于这些数据进行地图的构建，是cartographer理论的底层实现。
+cartographer_ros则基于ros的通信机制获取传感器的数据并将它们转换成cartographer中定义的格式传递给cartographer处理，与此同时也将cartographer的处理结果发布用于显示或保存，
+是基于cartographer的上层应用。
 
 测试cartographer
 
