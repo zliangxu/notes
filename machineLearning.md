@@ -1,8 +1,8 @@
-caffe
-tensorflow
-torch
-theano
-CNTK
+caffe  
+tensorflow  
+torch  
+theano  
+CNTK  
 
-program style
-http://zh-google-styleguide.readthedocs.io/en/latest/contents/
+program style  
+![google]http://zh-google-styleguide.readthedocs.io/en/latest/contents/

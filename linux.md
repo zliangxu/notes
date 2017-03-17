@@ -1,5 +1,4 @@
-#github test
-##github test
+
 
 linux-turtorial for befinners: http://www.ee.surrey.ac.uk/Teaching/Unix/index.html
 
@@ -7,12 +6,12 @@ linux man-pages:  https://www.kernel.org/doc/man-pages/
 ubuntu wiki:      http://wiki.ubuntu.org.cn/%E9%A6%96%E9%A1%B5
 the linux programing interface :  http://www.man7.org/tlpi/index.html
 linux usb: http://www.linux-usb.org/
-LINUX程序设计 第三版（neil...）
-
+## LINUX程序设计 第三版（neil...）
+```
 linux使用技巧
 ctrl+d 关闭终端
-ctrl+c结束进程
-ctrl+z后台运行
+ctrl+c 结束进程
+ctrl+z 后台运行
 
 ctrl+alt+t打开终端
 ctrl+shift+t在终端窗口打开一个tab
@@ -25,11 +24,10 @@ alt+tab切换不同应用的窗口
 
 长按super键(windows下的win键)，显示快捷键
 
-ctrl+c和ctrl+z都是中断命令,但是他们的作用却不一样.ctrl+c是强制中断程序的执行,而ctrl+z的是将任务中断,但是此任务并没有结束,他仍然在进程中他只是维持挂起的状态,用户可以使用fg/bg操作继续前台或后台的任务,fg命令重新启动前台被中断的任务,bg命令把被中断的任务放在后台执行.例如:
-当你vi一个文件是,如果需要用shell执行别的操作,但是你又不打算关闭vi,因为你得存盘推出,你可以简单的按下ctrl+z,shell会将vi进程挂起~,当你结束了那个shell操作之后,你可以用fg命令继续vi你的文件
+ctrl+c和ctrl+z都是中断命令,但是他们的作用却不一样.ctrl+c是强制中断程序的执行,而ctrl+z的是将任务中断,但是此任务并没有结束,他仍然在进程中他只是维持挂起的状态,用户可以使用fg/bg操作继续前台或后台的任务,fg命令重新启动前台被中断的任务,bg命令把被中断的任务放在后台执行.例如:当你vi一个文件是,如果需要用shell执行别的操作,但是你又不打算关闭vi,因为你得存盘推出,你可以简单的按下ctrl+z,shell会将vi进程挂起~,当你结束了那个shell操作之后,你可以用fg命令继续vi你的文件
 
 删除内核命令 ubuntu tweak，或者sudo apt-get remove linux-image
-
+```
 linux下c与cplusplus混合编程头文件需要以如下方式把
 extern "C"
 {
@@ -42,7 +40,7 @@ usb设备在/dev文件下
 
 linux系统启动，双系统默认启动项选择，配置文件是/boot/grub/grub.cfg，更改里面的set default = “number” 数值就可以改变启动项。
 
-第三章 文件操作
+### 第三章 文件操作
 操作系统的核心部分，即内核，是一组设备驱动程序。
 设备驱动程序的底层函数（系统调用库函数）包括:(文档man 2 read，第二小节)
      open
@@ -76,10 +74,10 @@ getenv(); putenv();//读取设置环境变量
 搜索文件命令： sudo update
                          locate FILENAME
 
-第五章 终端termios
-第六章 curses库函数，屏幕操作
-第七章 数据管理
-内存管理
+### 第五章 终端termios
+### 第六章 curses库函数，屏幕操作
+### 第七章 数据管理
+### 内存管理
 void *malloc(size_t size);
 calloc()//用来分配结构数组的内存
 realloc()//用来改变已经分配内存块的长度
@@ -128,7 +126,7 @@ int pipe(int file_descriptor[2]);//descriptor[0]读文件描述符，descriptor[
 对文件流操作用fread(),fwrite();
 命名管道：FIFO（用于不相关进程数据传输）
 mkfifo filename//命令创建filename fifo
-第十二章 POSIX线程
+### 第十二章 POSIX线程
 线程与其创建者共享全局变量、文件描述符、信号句柄、当前目录状态。
 同步的方法（用于控制线程的切换）
      信号量：如同看守一段代码的看门人，计数信号量，常用来保护一段代码，使其每次只能被一个执行线程运行；
@@ -180,7 +178,7 @@ SOCK_DGRAM：数据报（datagram）
 在文件/etc/services，端口号
 netstat命令     输出网络连接状况。
 
-LINUX套接字的概念
+### LINUX套接字的概念
 首先，套接字的主要作用就是连接网络中进程间的通信，可以是一个主机上的两个进程，也可以是局域网中的两台主机上的进程，当然也可以是网络上连接因特网的设备；它们的连接方式有流、数据包等形式，这些都可以通过设置套接字的属性来区别不同的使用场合。
 套接字包含三个属性：
      域（domain）：指定了套接字通信中使用的网络介质。常见的包括：

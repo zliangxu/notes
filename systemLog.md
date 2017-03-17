@@ -1,0 +1,15 @@
+## system
+ubuntu14.04LTS用了蛮长时间，在系统设置上更改显卡驱动，开机只能进入登录桌面，无法进入菜单，认为是amd显卡问题，卸载后，直接不能进入系统，没能修复好，覆盖重装了一遍系统，摄像头wifi不能打开，只能完全格式化盘，安装ubuntu16.04LTS，  
+ubuntu16.04LTS，系统相对更流畅，但是ibus框架下中文输入法一直不能找到，只能卸载，卸载时将unity也卸载掉了，现状是能登入系统，但是没有菜单，命令行模式下，安装了unity恢复了，同时ibus框架成功换成了fcixt，然后用上了强大的搜狗输入法。。。。，其中im-config(input method configure framework)是fcixt的安装第三方输入法的途径，而不是在系统设置-》输入法里。  
+
+系统安装ssd + hhd, win10装在ssd上，在hhd上用easybcd装ubuntu14.04LTS时一直提示detect file system，不能再继续？？  
+
+http://blog.csdn.net/liekkas_javey/article/details/52821913  
+http://www.expreview.com/21367.html
+
+
+安装ubuntu16.04英文版，用到的语言是英语，同样安装搜狗输入法，按照错误提示安装了fcixt后，重启出现了搜狗输入法。
+
+## app
+- foxit-reader linux 64bit download : https://www.foxitsoftware.com/products/pdf-reader/
+- chrome : 可以直接sudo apt-get install, 也可以直接从 chrome 网站下载

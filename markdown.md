@@ -1,53 +1,60 @@
+markdown 语法  
+#### 1.标题： '# + space'表示标题  
+
 # h1
 ## h2
 ### h3
 #### h4
 ##### h4
 ###### h5
+
+#### 2.换行： 在行末输入两个空格，再回车实现换行 
 ```
- 
-## 4. 代码
- 
-示例:
- 
-    function get(key) {
-        return m[key];
-    }
-    
-代码高亮示例:
- 
-``` javascript
-/**
-* nth element in the fibonacci series.
-* @param n >= 0
-* @return the nth element, >= 0.
+  
+```  
+#### 3.分割线： 在一行中用三个以上的星号(*)、减号(-)，下划线(_),
+
+***
+#### 4.文本块：在连续几行的文本开头加入一个tab或四个空格    
+    test1
+    test2
+    test3
+#### 5.代码块：使用一对各三个的反引号
+```
+```
+#### 6.文字高亮：使用一对反引号
+
+`高亮，Github无效果`
+
+#### 7. 无序列表:(*)或(-)后跟一个空格
+```
+* test1  
+- test2  
+* test3  
+```
+#### 8. 有序列表：数字后加一个点再加一个空格
+```
+1. test1
+2. test2
+3. test3
+```
+#### 9. 代码高亮：在三个反引号后面加上编程语言的名字，最后以三个反引号结尾
+```c++
+/*
+*@param argc = 1
+*@return none
 */
-function fib(n) {
-  var a = 1, b = 1;
-  var tmp;
-  while (--n >= 0) {
-    tmp = a;
-    a += b;
-    b = tmp;
-  }
-  return a;
-}
- 
-document.write(fib(10));
+void main(int argc, char **argv)
 ```
- 
-```python
-class Employee:
-   empCount = 0
- 
-   def __init__(self, name, salary):
-        self.name = name
-        self.salary = salary
-        Employee.empCount += 1
-```
- 
-# 5. Markdown 扩展
- 
+#### 10. 粗体：文字两端使用两个(*)或者两个(_)
+__粗体__
+
+#### 11. 斜体：文字两端使用一个(*)或一个(_) 
+
+_斜体_
+
+#### 12. Markdown 扩展
+``` 
 Markdown 扩展支持:
  
 * 表格
@@ -58,4 +65,4 @@ Markdown 扩展支持:
 * 目录
 * 时序图与流程图
 * MathJax 公式
-# Welcome to Leanote! 欢迎来到Leanote!
+```
