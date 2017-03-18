@@ -1,6 +1,6 @@
 markdown 语法  ,可以用instant markdown 将页面在线显示在浏览器内，或者访问 http://localhost:8090/
-待学习： http://www.yangzhiping.com/tech/writing-space.html
-
+理想的学习环境： http://www.yangzhiping.com/tech/writing-space.html
+github markdown: 
 #### 1.标题： '# + space'表示标题  
 # h1
 ## h2
@@ -54,6 +54,8 @@ __粗体__
 _斜体_
 #### 12. 链接：[防文字](放链接地址)，不显示地址，但是可以链接到网页
 [百度](https://www.baidu.com/) 
+#### 13. 图片: ![description of images](network)
+![test]()
 #### 12. Markdown 扩展
 ``` 
 Markdown 扩展支持:

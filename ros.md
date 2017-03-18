@@ -45,22 +45,39 @@ http://wiki.ros.org/APIs
 
 ## ros-navigation
 
-[navigation bag](http://wiki.ros.org/hector_exploration_planner?distro=kinetic)   
-[ros navigation](http://wiki.ros.org/navigation  ) 
-[ros setup tf(transform)]:(http://wiki.ros.org/navigation/Tutorials/RobotSetup/TF) 
-navigation stack
+[navigation bag:   hector_exploration_planner](http://wiki.ros.org/hector_exploration_planner?distro=kinetic)   
+[ros navigation](http://wiki.ros.org/navigation  )   
+- base_local_planer  
+<pre>
+    Trajectory RollOut  
+    Dynamic Window Approach(DWA) 
+</pre>
+- amcl
+<pre>
+    是一个用于2d机器人移动概率定位的方法，实现了基于粒子滤波的蒙特卡洛定位法。
+</pre>
+- dwa_local_planner
+<pre>
+    DWA 局部地图路径规划
+</pre>      
+- nav_core
+<pre>
+
+</pre>
+
+[ros setup tf(transform)](http://wiki.ros.org/navigation/Tutorials/RobotSetup/TF)   
+navigation stack  
   需要设置目标点，navigation stack应该只是做导航，路径规划，目标地址需要其他节点提供。
 
-costmap fonfiguration
-  local_costmap：局部地图，用于本地的避障与规划
-  global_costmap：全局地图，意味着用于整个环境的长期规划
-  如此存在三个设置，common configuration, global configuration, local configuration
+costmap fonfiguration  
+  local_costmap：局部地图，用于本地的避障与规划  
+  global_costmap：全局地图，意味着用于整个环境的长期规划  
+  如此存在三个设置，common configuration, global configuration, local configuration  
 
 ## ros map
-ros坐标系标准 ： http://www.ros.org/reps/rep-0105.html
-earth -->> map -->> odom -->> base_link?????
-
-map数据结构： http://wiki.ros.org/rviz/DisplayTypes/Map
+[ros坐标系标准](http://www.ros.org/reps/rep-0105.html)  
+earth -->> map -->> odom -->> base_link?????  
+[map数据结构](http://wiki.ros.org/rviz/DisplayTypes/Map) 
 
 
 nav_msgs/Path.msg路径数据
@@ -113,7 +130,7 @@ cartographer_ros则基于ros的通信机制获取传感器的数据并将它们�
 
 ## 测试cartographer
 
-- 在ubuntu上安装ros，需要选择一可安装版本。
+- 在ubuntu上安装[ros]()，需要选择一可安装版本。
 - [安装cartographer](https://google-cartographer.readthedocs.io/en/latest/)
 - [安装 cartographer ros](https://google-cartographer-ros.readthedocs.io/en/latest/) 
 
@@ -164,8 +181,9 @@ message PointCloud {
   repeated float y = 4 [packed = true];
   repeated float z = 5 [packed = true];
 }
-
-protobuf
+```
+## protobuf
+```
 谷歌的一个跨平台、跨语言的
 生成代码
 protoc -I=$SRC_DIR --cpp_out=$DST_DIR $SRC_DIR/addressbook.proto
