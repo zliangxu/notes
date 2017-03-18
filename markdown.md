@@ -1,13 +1,13 @@
-markdown 语法  
-#### 1.标题： '# + space'表示标题  
+markdown 语法  ,可以用instant markdown 将页面在线显示在浏览器内，或者访问 http://localhost:8090/
+待学习： http://www.yangzhiping.com/tech/writing-space.html
 
+#### 1.标题： '# + space'表示标题  
 # h1
 ## h2
 ### h3
 #### h4
 ##### h4
 ###### h5
-
 #### 2.换行： 在行末输入两个空格，再回车实现换行 
 ```
   
@@ -52,7 +52,8 @@ __粗体__
 #### 11. 斜体：文字两端使用一个(*)或一个(_) 
 
 _斜体_
-
+#### 12. 链接：[防文字](放链接地址)，不显示地址，但是可以链接到网页
+[百度](https://www.baidu.com/) 
 #### 12. Markdown 扩展
 ``` 
 Markdown 扩展支持:

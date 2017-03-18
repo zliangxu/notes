@@ -2,8 +2,8 @@ roslaunch cartographer_ros demo_backpack_2d.launch bag_filename:=${HOME}/slam/ca
 
 
 ros如何编译指定的包？？
-ros中文wiki： http://wiki.ros.org/cn
-ros入门讲解： http://www.jianshu.com/p/b604b00b7053
+[ros中文wiki](http://wiki.ros.org/cn) ，
+[ros入门讲解](http://www.jianshu.com/p/b604b00b7053) 
 
 ## ros
 ros安装路径显示: echo ${ROS_PACKAGE_PATH}
@@ -45,9 +45,9 @@ http://wiki.ros.org/APIs
 
 ## ros-navigation
 
-navigation bag: http://wiki.ros.org/hector_exploration_planner?distro=kinetic  
-ros navigation: http://wiki.ros.org/navigation  
-ros setup tf(transform): http://wiki.ros.org/navigation/Tutorials/RobotSetup/TF  
+[navigation bag](http://wiki.ros.org/hector_exploration_planner?distro=kinetic)   
+[ros navigation](http://wiki.ros.org/navigation  ) 
+[ros setup tf(transform)]:(http://wiki.ros.org/navigation/Tutorials/RobotSetup/TF) 
 navigation stack
   需要设置目标点，navigation stack应该只是做导航，路径规划，目标地址需要其他节点提供。
 
@@ -114,8 +114,8 @@ cartographer_ros则基于ros的通信机制获取传感器的数据并将它们�
 ## 测试cartographer
 
 - 在ubuntu上安装ros，需要选择一可安装版本。
-- 安装cartographer https://google-cartographer.readthedocs.io/en/latest/
-- 安装 cartographer ros https://google-cartographer-ros.readthedocs.io/en/latest/
+- [安装cartographer](https://google-cartographer.readthedocs.io/en/latest/)
+- [安装 cartographer ros](https://google-cartographer-ros.readthedocs.io/en/latest/) 
 
 测试启动launch
 roslaunch cartographer_ros demo_backpack_2d.launch bag_filename:=${HOME}/cartographer_paper_deutsches_museum.bag
@@ -131,8 +131,9 @@ google_binary是一个.cmake文件里定义的函数，其实是addexecute()
 robot_state_publisher节点
 
 ## 雷达数据采集结构
-http://docs.ros.org/api/sensor_msgs/html/msg/MultiEchoLaserScan.html
+laserScan http://docs.ros.org/api/sensor_msgs/html/msg/MultiEchoLaserScan.html  
 采样角度间隔、时间间隔都视为均匀的，没有每一个数据都记录一个对应的角度和采样时间。
+```
 // Modeled after ROS's MultiEchoLaserScan message.
 // http://docs.ros.org/api/sensor_msgs/html/msg/MultiEchoLaserScan.html
 message LaserScan {
@@ -177,3 +178,4 @@ local error accumulation, partical filter and graph-based SLAM
 不适用粒子滤波，而做姿态优化
 
 pose包括 x,y,theta
+```

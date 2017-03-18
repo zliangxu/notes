@@ -10,6 +10,8 @@ http://www.expreview.com/21367.html
 
 安装ubuntu16.04英文版，用到的语言是英语，同样安装搜狗输入法，按照错误提示安装了fcixt后，重启出现了搜狗输入法。
 
+## mbr
+
 ## app
-- foxit-reader linux 64bit download : https://www.foxitsoftware.com/products/pdf-reader/
-- chrome : 可以直接sudo apt-get install, 也可以直接从 chrome 网站下载
+- foxit-reader linux 64bit [download](https://www.foxitsoftware.com/products/pdf-reader/)
+- chrome : 可以直接sudo apt-get install, 也可以直接从 chrome 网站[下载](https://www.chrome64bit.com/)
