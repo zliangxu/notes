@@ -7,47 +7,45 @@ ros如何编译指定的包？？
 # aim: complete coverage path planning
 FAQ   http://answers.ros.org/question/212614/complete-coverage-path-planning-ros/
 ## ros
+```
 ros安装路径显示: echo ${ROS_PACKAGE_PATH}  
 ros包的安装命令 sudo apt-get install ros-indigo-[package_name]  
-rosnode list //显示节点列表
-rostopic list //显示话题列表
-
-bag-gui显示 rosbag  rqt_bag rqt_bag
-rosbag play NAME.bag
-rosbag info NAME.bag  //打开.bag格式数据
-
-rosrun [package_name] [node_name] //运行一个包里的节点，即运行ros程序
-rqt_graph //ros包，显示节点关系图
-rqt_bag //打开.bag文件的程序
-
-roslaunch [package_name] [filename.launch] //从launch文件中启动一个节点
-rostopic echo [topic] //查看消息
-rostopic pub [topic] [ms_types] [args]     //发布消息
-rostopic record /[topic] //记录话题，成为.bag文件
-
-rosservice call /clear //刷新
-apt-cache search ros-ROSNAME
-ros消息回调处理函数: ros::spin(),,ros::spinOnce(),
-catkin_make //在工作空间根目录下编译
-source devel/setup.bash  //添加路径，或者写入.bashrc，是永久添加路径，即打开终端后自动运行了source命令
-
-launch文件中 remap标签
+rosnode list //显示节点列表  
+rostopic list //显示话题列表  
+rosbag  rqt_bag rqt_bag //bag-gui显示   
+rosbag play NAME.bag  
+rosbag info NAME.bag  //打开.bag格式数据  
+rosrun [package_name] [node_name] //运行一个包里的节点，即运行ros程序  
+rqt_graph //ros包，显示节点关系图  
+rqt_bag //打开.bag文件的程序  
+roslaunch [package_name] [filename.launch] //从launch文件中启动一个节点  
+rostopic echo [topic] //查看消息  
+rostopic pub [topic] [ms_types] [args]     //发布消息  
+rostopic record /[topic] //记录话题，成为.bag文件    
+rosservice call /clear //刷新  
+apt-cache search ros-ROSNAME  
+ros消息回调处理函数: ros::spin(),,ros::spinOnce(),  
+catkin_make //在工作空间根目录下编译  
+source devel/setup.bash  //添加路径，或者写入.bashrc，是永久添加路径，即打开终端后自动运行了source命令  
+launch文件中 remap标签  
 重映射就是甲节点得到相关的信息，通过重映射使乙节点得到甲节点一样的信息，从而使得乙节点模仿甲节点做出相应的响应。​
 <remap>标签适用于在其范围内随后的所有声明(<launch>, <node> or<group>)。
-
+```
 ## ros workspace setup
-创建工作空间文件夹，创建ws/src
-创建包catkin_create_package 
-添加依赖文件时，不只要修改CmakeLists.txt，需要同步到package.xml
+创建工作空间文件夹，创建ws/src  
+创建包catkin_create_package   
+添加依赖文件时，不只要修改CmakeLists.txt，需要同步到package.xml  
 ## rosApi
 
-ros头文件路径： /opt/ros/kinetic/include  
-http://wiki.ros.org/APIs  
+ros头文件在PC上的路径： /opt/ros/kinetic/include  
+[rosApi网址](http://wiki.ros.org/APIs)  
+[common_msgs](http://wiki.ros.org/common_msgs) 包含, nav_msgs, geometry_msgs， sensor_msgs……
 - [geometry\_msgs](http://docs.ros.org/api/geometry_msgs/html/index-msg.html)
 ```
 PoseStamped，是一个姿态结构体，包含信息头，位置，姿态信息
 Twist，线速度，角速度，都是三元素结构。
 ```
+
 
 ## ros-navigation
   
@@ -121,20 +119,25 @@ nav_msgs/Path.msg路径数据
 
 cpp读写 tf 数据： http://wiki.ros.org/tf/Tutorials/
 
-## cartographer
+# cartographer
 cartographer 与雷达hokuyo  http://www.cnblogs.com/wenhust/p/6047258.html  
 cartographer 解析数据代码： https://github.com/googlecartographer/cartographer_ros/tree/master/cartographer_ros/cartographer_ros  
-rostopic list /TOPIC_NAME      //输出打印 topics  
 
-## Launch the 2D backpack demo.
-roslaunch cartographer_ros demo_backpack_2d.launch bag_filename:=${HOME}/Downloads/cartographer_paper_deutsches_museum.bag  
 
-error
- rosrun turtlesim turtlesim_node [ERROR] [1345405836.027275917]: [registerPublisher] Failed to contact master at [localhost:11311]. Retrying...  
-要在另一个终端运行roscore
+error  
+ rosrun turtlesim turtlesim_node [ERROR] [1345405836.027275917]: [registerPublisher] Failed to contact master at [localhost:11311]. Retrying...    
+要在另一个终端运行roscore  
 
 视觉slam框架： 传感器数据-——》》 前端里程计--》》后端非线性优化--》》建图  
                                                   ---》》回环检测---》》  
+## cartographer代码
+cartographer发布的topic,在cartographer_ros文件夹内node.h中定义  
+1. ::ros::Publisher submap_list_publisher_;
+  存储点云数据的变换矩阵？？？
+2. ::ros::ServiceServer submap_query_server_;
+  submap的数据传输是以service的形式获取的，所以topic list并没有，需要查询才会得到，而且是点云数据的形式。
+3. ::ros::Publisher scan_matched_point_cloud_publisher_;
+4. ::ros::Publisher occupancy_grid_publisher_; 发布的 std::unique_ptr<nav_msgs::OccupancyGrid>信息
 
 ## cartographer框架
 获得的每一帧laser scan数据，利用scan match在最佳估计位置处插入子图（submap）中，且scan matching只跟当前submap有关。在生成一个submap后，会进行一次局部的回环（loop close），
@@ -161,16 +164,11 @@ cartographer_ros则基于ros的通信机制获取传感器的数据并将它们�
 是基于cartographer的上层应用。  
 
 
-## 测试cartographer
+## 安装测试cartographer
 
 - 在ubuntu上安装[ros]()，需要选择一可安装版本。
 - [安装cartographer](https://google-cartographer.readthedocs.io/en/latest/)
 - [安装 cartographer ros](https://google-cartographer-ros.readthedocs.io/en/latest/) 
-
-测试启动launch
-roslaunch cartographer_ros demo_backpack_2d.launch bag_filename:=${HOME}/cartographer_paper_deutsches_museum.bag
-roslaunch cartographer_ros demo_backpack_2d.launch bag_filename:=${HOME}/mybag.bag
-roslaunch cartographer_ros demo_revo_lds.launch bag_filename:=${HOME}/mybag.bag
 
 mappint 文件夹
      map_builder.h
@@ -229,4 +227,24 @@ local error accumulation, partical filter and graph-based SLAM
 不适用粒子滤波，而做姿态优化
 
 pose包括 x,y,theta
+```
+
+# FAQ
+- navigation包中，使用move_base.launch问题
+```
+问题： Trajectory Rollout planner initialized with param meter_scoring not set. Set it to true to make your settins robust against changes of costmap resolution
+解决方法： 在base_local_planner_params.yaml内加上meter_scoring: true
+
+问题： Timed out waiting for transform from base_link to tf to become available before running costmap, tf error:
+解决方法：从 base_link 到 tf 的转换？？tf是一个包含 odom 和 base_link 的结构体，参考 navigation 的手册进行了修改，添加 tf::TransformBroadcaster odom_broadcaster;转换节点可行。
+
+问题： The origin for the sensor at (-49.29, -29.03) is out of map bounds. So, the costmap cannot raytrace for it.
+解决方法： 传感器原点超出地图边界？？？
+
+```
+- 未定义函数
+```
+在package.xml， CMakeLists.txt,中添加依赖文件
+可以在CMakeLists.txt中add_executable前加上一行 
+find_package(catkin REQUIRED COMPONENTS tf)
 ```
