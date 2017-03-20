@@ -6,6 +6,8 @@ linux man-pages:  https://www.kernel.org/doc/man-pages/
 ubuntu wiki:      http://wiki.ubuntu.org.cn/%E9%A6%96%E9%A1%B5
 the linux programing interface :  http://www.man7.org/tlpi/index.html
 linux usb: http://www.linux-usb.org/
+ubuntu更新内核，切换内核启动 http://www.bkjia.com/xtzh/952429.html
+
 ## LINUX程序设计 第三版（neil...）
 ```
 linux使用技巧
