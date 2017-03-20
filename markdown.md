@@ -1,6 +1,8 @@
-markdown 语法  ,可以用instant markdown 将页面在线显示在浏览器内，或者访问   http://localhost:8090/  
-理想的学习环境： http://www.yangzhiping.com/tech/writing-space.html  
-[github markdown](https://guides.github.com/features/mastering-markdown/)
+instant markdown 插件将页面显示在浏览器内，或者访问   http://localhost:8090/      
+[理想的学习环境]( http://www.yangzhiping.com/tech/writing-space.html)  
+[github markdown](https://guides.github.com/features/mastering-markdown/)   
+[markdown在线学习网站](https://stackedit.io/editor)
+
 #### 1.标题： '# + space'表示标题  
 # h1
 ## h2
@@ -75,6 +77,10 @@ first header | second header
 -------------|------------
 content form cell 1 | content from cell 2
 content in the first column | content in the second column
+#### 15. 对齐,不起作用？？？
+  :  test1  
+  :  test2  
+  :  test3
 
 ## Markdown 扩展
 ``` 
