@@ -47,16 +47,36 @@ markdown 语法  ,可以用instant markdown 将页面在线显示在浏览器内
 void main(int argc, char **argv)
 ```
 #### 10. 粗体：文字两端使用两个(*)或者两个(_)
-__粗体__
+__粗体__, **粗体**
 
 #### 11. 斜体：文字两端使用一个(*)或一个(_) 
+_斜体_ *斜体*
 
-_斜体_
 #### 12. 链接：[显示文字] + (链接地址)，不显示地址，但是可以链接到网页
+```
+[百度](https://www.baidu.com/) 
+```
 [百度](https://www.baidu.com/) 
 #### 13. 图片: ! + [description of images] + (network_id Or path)
+```
 ![test](image/aa.png)
-#### 12. Markdown 扩展
+```
+效果  
+![test](image/aa.png)
+#### 14. 列表：第一行用 '-' 分开，列用 '|' 分开
+```
+first header | second header
+-------------|------------
+content form cell 1 | content from cell 2
+content in the first column | content in the second column
+```
+效果
+first header | second header
+-------------|------------
+content form cell 1 | content from cell 2
+content in the first column | content in the second column
+
+## Markdown 扩展
 ``` 
 Markdown 扩展支持:
  
@@ -69,3 +89,25 @@ Markdown 扩展支持:
 * 时序图与流程图
 * MathJax 公式
 ```
+
+#### 1.  扩展HTML 字体、颜色、字号设置
+markdown本身不支持更改颜色、字体、字号，但是它的扩展HTML支持
+```
+ - <font face="黑体">黑体字</font>
+ - <font face="微软雅黑" size=3 color=#0099ff> face="微软雅黑" size= 3 color=#0099ff </font>
+```
+效果
+ - <font face="黑体">黑体字</font>
+ - <font face="微软雅黑" size=3 color=#0099ff> face="微软雅黑" size= 3 color=#0099ff </font>
+
+#### 2. 公式
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+ 
+$$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$  
+\\(x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}\\)
+
+$1+1=2$
+
+\begin{equation}
+F(x)=\int_0^t\sin(t)\mathrm{d}\,t+\left[\lim_{x\rightarrow0}g(x)\times\sum_{m=0}^\infty\frac{(-1)^m}{\Gamma(m+{\color{red}α}+1)}\right]
+\end{equation}

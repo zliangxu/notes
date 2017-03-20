@@ -2,12 +2,14 @@
 Learning github  https://help.github.com/
 Git 命令解释： https://git-scm.com/docs
 [廖雪峰git教程](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
+
 - HEAD: git用HEAD表示当前版本，实际上HEAD指向master,master指向当前版本
     HEAD^表示上一个版本。
 - master: 主分支，本地仓库的分支名
 - origin: 我们的文件在github服务器上的默认名为origin，在本地分支的默认名为master。
-
-
+```
+在git clone 远程仓库时，Git 会自动为你将此远程仓库命名为origin（origin只相当于一个别名，运行git remote –v或者查看.git/config可以看到origin的含义），并下载其中所有的数据，建立一个指向它的master 分支的指针，我们用(远程仓库名)/(分支名) 这样的形式表示远程分支，所以origin/master指向的是一个remote branch（从那个branch我们clone数据到本地），但你无法在本地更改其数据
+```
 git初始[配置过程](https://help.github.com/articles/set-up-git/) 
 1. 设置git
 - git config --global user.email " "
@@ -53,6 +55,8 @@ Man git-order Or git help + order得到order相关的帮助文档
     - git checkout --file NAME:撤销修改
     - git checkout -b newName:创建并进入新的分支
 - Git branch:输出分支信息
+    - -a show all the branches git knows about
+    - -r show remote branches git knows about
     - Git branch clean_up: 新建branch名为clean_up
     - Git branch:列出当前的分支，与master同一级。
     - Git branch -d clean_up: 删除clean_up分支
