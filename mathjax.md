@@ -1,5 +1,5 @@
 <script type="text/javascript" async
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 
 [语法讲解博客]( http://mlworks.cn/posts/introduction-to-mathjax-and-latex-expression/)  
