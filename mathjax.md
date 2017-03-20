@@ -1,6 +1,4 @@
-<script type="text/javascript" async
-  src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
 [语法讲解博客]( http://mlworks.cn/posts/introduction-to-mathjax-and-latex-expression/)  
 [官方文档](http://docs.mathjax.org/en/latest/start.html)
