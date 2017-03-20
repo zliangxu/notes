@@ -1,7 +1,13 @@
 instant markdown 插件将页面显示在浏览器内，或者访问   http://localhost:8090/      
 [理想的学习环境]( http://www.yangzhiping.com/tech/writing-space.html)  
+
 [github markdown](https://guides.github.com/features/mastering-markdown/)   
 [markdown在线学习网站](https://stackedit.io/editor)
+
+#### 0. 理解[markdown](https://kramdown.gettalong.org/syntax.html)
+kramdown 是一个用Ruby实现的Markdown的解析器。github使用的就是这个解释器
+
+Markdown是一种轻量型标记语言， 其目的在于为以网页为载体的文章的排版提供一种较HTML来说更简便、更安全、可读性更强的书写方式。它并不是HTML的替代品，使用Markdown的 语法编写的文章最终都要通过其翻译器转换成HTML代码。
 
 #### 1.标题： '# + space'表示标题  
 # h1
