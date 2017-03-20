@@ -1,15 +1,16 @@
 找什么教程，不如读懂一个readme.txt   https://guides.github.com/
 Learning github  https://help.github.com/
 Git 命令解释： https://git-scm.com/docs
+[廖雪峰git教程](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
 Branch: 分支，branch of master
 Master:
 Commit:
 Pull:
 
-git配置过程 ： https://help.github.com/articles/set-up-git/
+git初始[配置过程](https://help.github.com/articles/set-up-git/) 
 1. 设置git
-- git config --global user.email ""
-- git config --global user.name ""
+- git config --global user.email " "
+- git config --global user.name " "
 2. 设置ssh keys
 
 
@@ -55,7 +56,7 @@ Git add '*.txt': 在当前路径下搜索，包含子目录。
 man git
 git --help
 
-"to create a new reposity"
+## "to create a new reposity"
 echo "# books" >> README.md
 git init
 git add README.md
@@ -64,6 +65,6 @@ git remote add origin git@github.com:lxg2015/books.git
 git push -u origin master 是合并到当前文件
 git clone 是下载新的文件
 
-"to push an existing reposity from the command line"
+## "to push an existing reposity from the command line"
 git remote add origin git@github.com:lxg2015/books.git
 git push -u origin master
