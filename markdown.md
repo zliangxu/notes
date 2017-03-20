@@ -1,6 +1,6 @@
 instant markdown 插件将页面显示在浏览器内，或者访问   http://localhost:8090/      
 [理想的学习环境]( http://www.yangzhiping.com/tech/writing-space.html)  
-
+[vscode markdown](https://code.visualstudio.com/docs/languages/markdown)
 [github markdown](https://guides.github.com/features/mastering-markdown/)   
 [markdown在线学习网站](https://stackedit.io/editor)
 
@@ -112,7 +112,9 @@ markdown本身不支持更改颜色、字体、字号，但是它的扩展HTML�
  - <font face="黑体">黑体字</font>
  - <font face="微软雅黑" size=3 color=#0099ff> face="微软雅黑" size= 3 color=#0099ff </font>
 
-#### 2. 公式
+#### 2. 公式显示
+在浏览器上直接显示 markdown 文件时，公式显示不成功的，只有在markdown文件头添加如下 javescript 代码段，并翻译成 html 后才成功显示。
+翻译markdown使用了jekyll自动翻译的。并且vscode没有找到对mathjax的支持配置。
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
  
 $$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$  

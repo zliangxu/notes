@@ -1,5 +1,10 @@
-
-# neural networks and deep learning  Michael Nielsen  
+---
+layout: post
+title:  "NNADL"
+date:   2017-03-20 20:54:53 +0800
+categories: jekyll update
+---
+neural networks and deep learning  Michael Nielsen  
 book [draft online](http://neuralnetworksanddeeplearning.com/index.html)  
 source [code](https://github.com/mnielsen/neural-networks-and-deep-learning)
 ```
