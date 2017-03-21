@@ -1,7 +1,15 @@
+## test
+```shell
+#运行cartographer
 roslaunch cartographer_ros demo_backpack_2d.launch bag_filename:=${HOME}/slam/cartographer_paper_deutsches_museum.bag
 
+#运行路径规划节点
+roslaunch my_robot_name2dnav move_base.launch 
+```
 
-ros如何编译指定的包？？
+应该是坐标系没有设置好，一直提示出了costmap
+
+## ros如何编译指定的包？？
 [ros中文wiki](http://wiki.ros.org/cn) ，
 [ros入门讲解](http://www.jianshu.com/p/b604b00b7053) 
 # aim: complete coverage path planning
