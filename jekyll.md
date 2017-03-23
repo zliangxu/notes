@@ -28,3 +28,6 @@ If you run into trouble, you can find helpful resources at https://jekyllrb.com/
 - jekyll serve
 访问 'localhost:4000' 即为网站页面
 
+### 4. 给网站主页添加链接
+在自己写的markdown文件头部添加Jekyll要求的头信息，jekyll就会把mardown自动翻译成html。
+

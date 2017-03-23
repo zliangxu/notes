@@ -113,8 +113,8 @@ markdown本身不支持更改颜色、字体、字号，但是它的扩展HTML�
  - <font face="微软雅黑" size=3 color=#0099ff> face="微软雅黑" size= 3 color=#0099ff </font>
 
 #### 2. 公式显示
-在浏览器上直接显示 markdown 文件时，公式显示不成功的，只有在markdown文件头添加如下 javescript 代码段，并翻译成 html 后才成功显示。
-翻译markdown使用了jekyll自动翻译的。并且vscode没有找到对mathjax的支持配置。
+在浏览器上直接显示 markdown 文件时，公式显示是不成功的，只有在markdown文件头添加如下 javescript 代码段，并翻译成 html 后才成功显示。
+翻译markdown使用了jekyll自动翻译的，只要在markdown文件添加上jekyll的头信息，就能自动翻译。并且vscode没有找到对mathjax的支持配置。
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
  
 $$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$  
