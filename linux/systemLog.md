@@ -100,3 +100,4 @@ PING 192.168.1.1 (192.168.1.1): 56 data bytes
 ## app
 - foxit-reader linux 64bit [download](https://www.foxitsoftware.com/products/pdf-reader/)
 - chrome : 可以直接sudo apt-get install, 也可以直接从 chrome 网站[下载](https://www.chrome64bit.com/)
+- ubuntu开wifi热点。 http://ubuntuhandbook.org/index.php/2014/06/share-internet-with-android-ubuntu-1404/

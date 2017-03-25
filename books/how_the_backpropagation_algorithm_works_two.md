@@ -1,5 +1,7 @@
 [how the backpropagation algorithm works](http://neuralnetworksanddeeplearning.com/chap2.html)
 -------
+梯度下降算法是一种优化算法，它需要求解梯度，反向传播算法是一种求解梯度的算法。
+
 **backpropagation : an algorithm for computing gradients，一个快速的计算代价函数梯度的算法**
 
 ### 1. warm up: a fast matrix-based approach to computing the output from a neural network
