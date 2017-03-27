@@ -18,4 +18,6 @@
 
 ### 3. the hadamard product  s圈点t
 ### 4. the four fundamental equations behind backpropagation
-backpropagation就是关于改变一个神经网络的权值系数和偏置是如何改变代价函数的方法，也就是代价函数关于参数的偏微分。
+backpropagation就是关于改变一个神经网络的权值系数和偏置是如何改变代价函数的方法，也就是代价函数关于参数的偏微分。    
+
+![bp4summary](../image/bp4summary.png)
