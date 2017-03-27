@@ -37,3 +37,5 @@ sigmoid output layer + cross-entropy cost functiond的梯度都避免了neuron s
 **problems** 
 ### 5. overfitting and regularization
 
+### on stories in neural networks
+
