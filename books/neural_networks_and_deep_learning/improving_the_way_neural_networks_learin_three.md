@@ -36,6 +36,24 @@ softmax output layer + log-likelihood cost funciton的梯度与
 sigmoid output layer + cross-entropy cost functiond的梯度都避免了neuron saturation的问题。   
 **problems** 
 ### 5. overfitting and regularization
+overfitting or overtraining  
+检测overfitting，当测试数据集的识别正确率不再改善的时候，就到了overfitting点了，也就可以终止训练。  
+- training_data  
+- validation_data，使用这个数据集来检测overfitting，这个策略称为*early stopping*；验证数据集也是为了找到合适的hyper-parameters; **To put it another way, you can think of the validation data as a type of training data that helps us learn good hyper-parameters(hold out method)** 。提高训练数据集的大小也可以减小over-fitting。 
+- test_data  
 
+**regularization**  
+是一种减小over-fitting的方法，例如，*weight decay* or *L2 regularization*，方法就是在代价函数公式后加上一个 regularization term，如下：，lambda称为regularization parameter  
+![math85](../image/math85.png)  
+直觉上，规则化是要让网络系数越小越好。为什么加上规则化项可以减少over-fitting    
+![math93](../image/math92.png)  
+**why does regularization help reduce overfitting**  
+神经网络的系数较小，意味着如果神经网络的少数几个输入存在噪声的话，输出并不会被影响太多。  
+规则化项并没有包括偏置系数b，因为一个比较大的偏置，可以让我们更容易改变网络的行为。  
+**other techniques for regualrization**  
+- L1 regularization  
+![math95](../image/math95.png)  
+- dropout  ?
+- artificiallly expanding the training data，如对数字进行旋转，就得到了新的数据 
 ### on stories in neural networks
 
