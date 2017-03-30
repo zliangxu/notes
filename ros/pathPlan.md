@@ -48,6 +48,7 @@ while not frontier.empty():
 #### [算法实现指导](http://www.redblobgames.com/pathfinding/a-star/implementation.html)
 #### exact heuristics， 精确的启发式
 #### [implementation of A*](http://www.redblobgames.com/pathfinding/a-star/implementation.html)
+
 ```c++
 struct SquareGrid {
   typedef tuple<int,int> Location;

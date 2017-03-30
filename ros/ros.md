@@ -1,11 +1,99 @@
 ## test
+## cartographer包运行
 ```shell
 #运行cartographer
 roslaunch cartographer_ros demo_backpack_2d.launch bag_filename:=${HOME}/slam/cartographer_paper_deutsches_museum.bag
-
-#运行路径规划节点
+#或者
+roslaunch cartographer_ros mycartographer.launch bag_filename:=${HOME}/slam/cartographer_paper_deutsches_museum.bag
+#ros运行路径规划节点
 roslaunch my_robot_name2dnav move_base.launch 
 ```
+
+## 自己的雷达在线测试
+```shell
+#改变权限
+sudo chmod 777 /dev/ttyUSB0
+#跑雷达串口程序
+    roslaunch beginner_tutorials myserial.launch 
+#运行cartographer
+roslaunch cartographer_ros demo_revo_ldsmy.launch
+#运行显示轨迹的节点
+rosrun beginner_tutorials nav
+#轨迹规划
+rosrun mappublish mapPublish 
+
+#demo_revo_ldsmy.launch文件内容
+<launch>
+  <node name="cartographer_node" pkg="cartographer_ros"
+      type="cartographer_node" args="
+          -configuration_directory $(find cartographer_ros)/configuration_files
+          -configuration_basename revo_lds.lua"
+      output="screen">
+    <remap from="echoes" to="horizontal_laser_2d" /> 
+  </node>
+
+  <node name="rviz" pkg="rviz" type="rviz" required="true"
+      args="-d $(find cartographer_ros)/configuration_files/demo_2d.rviz" />
+</launch>
+
+#revo_lds.lua文件内容
+include "map_builder.lua"
+
+options = {
+  map_builder = MAP_BUILDER,
+  map_frame = "map",
+  tracking_frame = "base_link",
+  published_frame = "base_link", 
+  odom_frame = "odom",
+  provide_odom_frame = true,
+  use_odometry = false,
+  use_laser_scan = true,
+  use_multi_echo_laser_scan = false,
+  num_point_clouds = 0,
+  lookup_transform_timeout_sec = 0.2,
+  submap_publish_period_sec = 0.3,
+  pose_publish_period_sec = 5e-3,
+}
+
+MAP_BUILDER.use_trajectory_builder_2d = true
+
+TRAJECTORY_BUILDER_2D.laser_min_range = 0.3
+TRAJECTORY_BUILDER_2D.laser_max_range = 15.
+TRAJECTORY_BUILDER_2D.laser_missing_echo_ray_length = 1.
+TRAJECTORY_BUILDER_2D.use_imu_data = false
+TRAJECTORY_BUILDER_2D.use_online_correlative_scan_matching = true
+
+SPARSE_POSE_GRAPH.optimization_problem.huber_scale = 1e2
+
+return options
+```
+
+## 接口程序已更改，下面的不一定能成功
+## 运行cartographer，使用数据包
+```shell
+roslaunch cartographer_ros demo_revo_ldsbag.launch bag_filename:=${HOME}/data/cartographerOutput/mytest.bag
+#使用数据包时的 demo_revo_lds.launch 的配置
+<launch>
+  <param name="/use_sim_time" value="true" />
+
+  <node name="cartographer_node" pkg="cartographer_ros"
+      type="cartographer_node" args="
+          -configuration_directory $(find cartographer_ros)/configuration_files
+          -configuration_basename revo_lds.lua"
+      output="screen">
+    <remap from="echoes" to="horizontal_laser_2d" />
+  </node>
+
+  <node name="rviz" pkg="rviz" type="rviz" required="true"
+      args="-d $(find cartographer_ros)/configuration_files/demo_2d.rviz" />
+  <node name="playbag" pkg="rosbag" type="play"
+      args="--clock $(arg bag_filename)" />
+
+</launch>
+```
+
+
+
 
 ## ros如何编译指定的包？？
 [ros中文wiki](http://wiki.ros.org/cn) ，

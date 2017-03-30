@@ -12,11 +12,17 @@ rosrun [package_name] [node_name] //运行一个包里的节点，即运行ros�
 rqt_graph //ros包，显示节点关系图  
 rqt_bag //打开.bag文件的程序  
 roslaunch [package_name] [filename.launch] //从launch文件中启动一个节点  
+
+
 rostopic echo [topic] //查看消息  
 rostopic pub [topic] [ms_types] [args]     //发布消息  
-rostopic record /[topic] //记录话题，成为.bag文件    
 rosservice call /clear //刷新  
 apt-cache search ros-ROSNAME  
+
+rosbag record /[topic] //记录话题，成为.bag文件    
+
+
+
 ros消息回调处理函数: ros::spin(),,ros::spinOnce(),  
 catkin_make //在工作空间根目录下编译  
 source devel/setup.bash  //添加路径，或者写入.bashrc，是永久添加路径，即打开终端后自动运行了source命令  
