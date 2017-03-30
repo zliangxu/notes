@@ -54,6 +54,21 @@ overfitting or overtraining
 - L1 regularization  
 ![math95](../image/math95.png)  
 - dropout  ?
-- artificiallly expanding the training data，如对数字进行旋转，就得到了新的数据 
-### on stories in neural networks
+- artificiallly expanding the training data，如对数字进行旋转，就得到了新的数据  
+### 6. weight initialization  
+前面用到的权重、偏置初始化是用的均值为0，标准差为1的独立高斯分布随机数。  
+改变权重、偏置的初始化，可以让神经网络的最初结果较好，也就加速了训练过程。当前，对最后的正确率影响不打，但在第四章会讲到，对最后结果的改善。  
+权重初始化的目的也就是为了避免saturation，选择标准偏差为1/根号下n in  
+### 7. handwriting recognition revisited: the code
+改变正则化项，进行试验
+### 8. how to choose a neural network's hyper-parameters  
+**broad strategy**
+-----
+### 9. other techniques
+-----
+### 10. variations on stochastic gradient descent
+- hessian technique
+- momentum-based gradient descent
+### 11. other models of artificial neuron
+### 12. on stories in neural networks
 
