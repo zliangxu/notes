@@ -1,6 +1,6 @@
 找什么教程，不如读懂一个readme.txt   https://guides.github.com/
 Learning github  https://help.github.com/
-Git 命令解释： https://git-scm.com/docs
+[Git 命令解释](https://git-scm.com/docs)   
 [廖雪峰git教程](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
 
 - HEAD: git用HEAD表示当前版本，实际上HEAD指向master,master指向当前版本
@@ -8,7 +8,7 @@ Git 命令解释： https://git-scm.com/docs
 - master: 主分支，本地仓库的分支名
 - origin: 我们的文件在github服务器上的默认名为origin，在本地分支的默认名为master。
 ```
-在git clone 远程仓库时，Git 会自动为你将此远程仓库命名为origin（origin只相当于一个别名，运行git remote –v或者查看.git/config可以看到origin的含义），并下载其中所有的数据，建立一个指向它的master 分支的指针，我们用(远程仓库名)/(分支名) 这样的形式表示远程分支，所以origin/master指向的是一个remote branch（从那个branch我们clone数据到本地），但你无法在本地更改其数据
+在git clone 远程仓库时，Git 会自动为你将此远程仓库命名为origin（origin只相当于一个别名，运行git remote –v或者查看.git/config可以看到origin的含义），并下载其中所有的数据，建立一个指向它的master 分支的指针，我们用(远程仓库名)/(分支名) 这样的形式表示远程分支，所以origin/master指向的是一个remote branch（从那个branch我们clone数据到本地），*但你无法在本地更改其数据*
 ```
 git初始[配置过程](https://help.github.com/articles/set-up-git/) 
 1. 设置git
@@ -20,7 +20,7 @@ git初始[配置过程](https://help.github.com/articles/set-up-git/)
 Man git-order Or git help + order得到order相关的帮助文档
 ## Git 命令
 - Git init: 初始化生成一个.init，命令行提示符处提示当前git版本名称
-- Git clone + ADDRESS：将远程仓库克隆到本地
+- Git clone + ADDRESS：将远程仓库克隆到本地，会自动创建一个和远程仓库同名的文件夹
 - Git status: 获取当前文件的状态，是否需要更新，比如新添了一个文件
 ```
     Staged:
@@ -43,7 +43,7 @@ Man git-order Or git help + order得到order相关的帮助文档
     - -v 查看远程仓库
 - Git push [-u] [remote branch name] [local branch name]: 把本地文件提交到origin
     - -u：使软件记住本次命令，以后只需输入git push即可。
-- git pull origin master:  把origin文件下载到本地。
+- git pull origin master:  把origin文件下载到本地，相当于运行git fetch，后又运行 git merge。
 - git stash
 - git diff:可以查看文件的修改内容，获取pull下的文件有何不同
 --staged
@@ -54,14 +54,15 @@ Man git-order Or git help + order得到order相关的帮助文档
     - Git checkout branName: 切换进新的分支
     - git checkout --file NAME:撤销修改
     - git checkout -b newName:创建并进入新的分支
-- Git branch:输出分支信息
+- Git branch:
+    - 无参数：输出本地分支信息
     - -a show all the branches git knows about
     - -r show remote branches git knows about
     - Git branch clean_up: 新建branch名为clean_up
     - Git branch:列出当前的分支，与master同一级。
     - Git branch -d clean_up: 删除clean_up分支
     - git branch --graph:显示分支合并图
-- Git merge clean_up: 当前在master分支，执行命令把在clean_up分支下的改变应用到master分支。
+- Git merge clean_up: 合并分支，当前在master分支，执行命令把在clean_up分支下的改变应用到master分支。
 
 man git
 git --help

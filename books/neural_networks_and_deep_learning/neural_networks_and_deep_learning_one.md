@@ -4,13 +4,7 @@ title:  "NNADL"
 date:   2017-03-20 20:54:53 +0800
 categories: jekyll update
 ---
-neural networks and deep learning  Michael Nielsen  
-book [draft online](http://neuralnetworksanddeeplearning.com/index.html)  
-source [code](https://github.com/mnielsen/neural-networks-and-deep-learning)
-```
-In 2006, neural network surpass the traditional approaches by deep neural network what we call it today neural network;    
-master a solid understanding of the core principles, such as, program language has syntax, libraries and data structures;
-```
+
 ### using neural nets to recognize handwritten digits
 key ideas, **build your neural networks intuition**
  1. two important artificial neuron  
