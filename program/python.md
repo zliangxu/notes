@@ -10,12 +10,23 @@ python
 #表示.py文件本身使用标准UTF-8编码  
 # -*- coding: utf-8 -*-
 ```
+### 换行符
+'\'
 #
 - 运行.py文件
   python name.py
-
+#### 循环
+- 第一种 for循环
+for xx in xxx:
+  xxx
+print(xxx)
+- 第二种 while循环
+while n < 10
+  n = n + 1
+print(n)
 
 ### 函数
+def 
 ### 模块
 一个.py文件就称之为一个模块(module)。  
 为了避免模块名的冲突，可以按目录的形式来组织模块，称为包(package)，在包里调用模块可以直接用package.module表示，每个包(目录)里必须存在一个__init__.py文件，可以是空。  
@@ -26,9 +37,13 @@ import NAME     #不需要.py后缀名
 
 ### 数据结构
 type(data) //返回数据类型
-**list** : 一种有序列表
+**list** : 一种有序列表，元素访问符号[]。
 **tuple**: 元组，一种有序列表，一旦初始化就不能更改(指向元素的指针地址不变，但指向元素的值还可以变)
 
+### 面向对象编程
+- 类和实例
+  class
+  在类中定义的函数，第一个参数是self， 它指类本身，
 
 ### QAQ:
 - IOError: [Errno 2] No such file or directory: '../data/mnist.pkl.gz'

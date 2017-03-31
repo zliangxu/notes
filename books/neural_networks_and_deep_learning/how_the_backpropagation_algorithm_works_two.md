@@ -25,9 +25,6 @@ backpropagation就是关于改变一个神经网络的权值系数和偏置是�
 - 代价函数  
 ![math6](../image/math6.png)  
 
-- BP的四个基本等式  
-![bp4](../image/bp4.png)  
-
 backpropagation就是关于改变一个神经网络的权值系数和偏置是如何改变代价函数的方法，也就是代价函数关于参数的偏微分。      
 - 假设在第l层、第j神经元的输入上有一个误差deltazjl， 通过之后神经网络的传递，最后造成的误差为(**这是微积分推导？？？为什么，这就是？？展开**)  
 ![matherror](../image/matherror.png)
