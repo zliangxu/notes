@@ -19,15 +19,15 @@ backpropagation就是关于改变一个神经网络的权值系数和偏置是�
 
 ### 3. the hadamard product  s圈点t
 ### 4. the four fundamental equations behind backpropagation
-<<<<<<< HEAD:books/how_the_backpropagation_algorithm_works_two.md
+
 backpropagation就是关于改变一个神经网络的权值系数和偏置是如何改变代价函数的方法，也就是代价函数关于参数的偏微分，梯度。  
 
 - 代价函数  
 ![math6](../image/math6.png)  
 
 - BP的四个基本等式  
-![bp4](../image/bp4.png)
-=======
+![bp4](../image/bp4.png)  
+
 backpropagation就是关于改变一个神经网络的权值系数和偏置是如何改变代价函数的方法，也就是代价函数关于参数的偏微分。      
 - 假设在第l层、第j神经元的输入上有一个误差deltazjl， 通过之后神经网络的传递，最后造成的误差为(**这是微积分推导？？？为什么，这就是？？展开**)  
 ![matherror](../image/matherror.png)
@@ -46,4 +46,4 @@ backpropagation就是关于改变一个神经网络的权值系数和偏置是�
 ### 7. the code for backpropagation
 ### 8. in what sense is backpropagation a fast algorithm
 ### 9. backpropagation:the big picture
->>>>>>> 18671ff1a309a873c7f1afc26b19443d35bd4da5:books/neural_networks_and_deep_learning/how_the_backpropagation_algorithm_works_two.md
+

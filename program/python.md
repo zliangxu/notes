@@ -1,5 +1,6 @@
 python
 ------
+[python Doc](https://docs.python.org/3/)
 [廖雪峰python](http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000)
 ### 注释
 ```python
@@ -9,6 +10,11 @@ python
 #表示.py文件本身使用标准UTF-8编码  
 # -*- coding: utf-8 -*-
 ```
+#
+- 运行.py文件
+  python name.py
+
+
 ### 函数
 ### 模块
 一个.py文件就称之为一个模块(module)。  
@@ -17,3 +23,13 @@ python
 ```python
 import NAME     #不需要.py后缀名
 ```
+
+### 数据结构
+type(data) //返回数据类型
+**list** : 一种有序列表
+**tuple**: 元组，一种有序列表，一旦初始化就不能更改(指向元素的指针地址不变，但指向元素的值还可以变)
+
+
+### QAQ:
+- IOError: [Errno 2] No such file or directory: '../data/mnist.pkl.gz'
+  vscode下单步无法代开文件？？

@@ -13,7 +13,7 @@ key ideas, **build your neural networks intuition**
 2. standard learning algorithm  
     stochastic gradient descent   
 
-#### perceptrons  
+#### 1. perceptrons  
 b = -threshold 
 所以b越大越容易输出1，b越小越容易输出0。
 感知机的一种用途是加权重来做决定，另一种用途是实现逻辑与、或、与非(nand)。它们的输出都是二值的(0或1)
@@ -25,7 +25,7 @@ sigmoid函数是一个单调递增函数，所以函数的输出与perceptrons�
 ![math5](../image/math5.png)  
 根据微积分，Δoutput is a linear function of the changes Δwj and Δb in the weights and bias. 
     
-### the architecture of neural networks
+### 2. the architecture of neural networks
 - input layer, the neurons within this layer are called input neuron, 
 - hidden layer,(just not an input or an output)
 - output layer, output neurons  

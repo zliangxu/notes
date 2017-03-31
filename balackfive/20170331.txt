@@ -1,0 +1,4 @@
+这周是在看书，Neural Networks and Deep Learning http://neuralnetworksanddeeplearning.com/index.html，
+看了两章，第二章，how the backpropagation algorithm works，讲梯度下降算法的核心，反向传播算法对梯度的解算，梯度迭代表达式的推导。
+第三章，improving the way neural networks learn，这一章引入了另一种代价函数cross-entropy，它可以解决sigmoid神经元模型输出饱和时训练速度缓慢的问题；还提到了为神经网络添加softmax输出层，来解决训练速度缓慢的问题；然后针对训练过程中的过度拟合问题，讲解了规则化、dropout、增大训练数据集的解决方法；然后对于神经网络的权重参数的初始化提供了另一种更好的随机模型。
+感觉第三章的内容比较丰富，目前在试着做几组实验，来加深理解。
