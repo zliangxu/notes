@@ -1,13 +1,19 @@
 python
 ------
-[python Doc](https://docs.python.org/3/)
+[python3-cookbook](http://python3-cookbook.readthedocs.io/zh_CN/latest/index.html)  
+[python Doc](https://docs.python.org/3/)  
 [廖雪峰python](http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000)
+### 一些库的reference
+[图像处理库 pil](https://en.wikibooks.org/wiki/Python_Imaging_Library)  
+[opencv-python](http://docs.opencv.org/master/d6/d00/tutorial_py_root.html)  
+[numpy](https://docs.scipy.org/doc/numpy/reference/)  
+[json](https://docs.python.org/3.6/library/json.html)  
 ### 注释
 ```python
 #在文件头加下面的注释，可以让文件直接运行
 #!/usr/bin/env python3
 
-#表示.py文件本身使用标准UTF-8编码  
+#表示.py文件本身使用标准UTF-8编码，这样才支持在源代码文件中出现中文  
 # -*- coding: utf-8 -*-
 ```
 ### 换行符
@@ -44,6 +50,7 @@ type(data) //返回数据类型
 - 类和实例
   class
   在类中定义的函数，第一个参数是self， 它指类本身，
+
 
 ### QAQ:
 - IOError: [Errno 2] No such file or directory: '../data/mnist.pkl.gz'
