@@ -7,7 +7,13 @@ python
 [图像处理库 pil](https://en.wikibooks.org/wiki/Python_Imaging_Library)  
 [opencv-python](http://docs.opencv.org/master/d6/d00/tutorial_py_root.html)  
 [numpy](https://docs.scipy.org/doc/numpy/reference/)  
-[json](https://docs.python.org/3.6/library/json.html)  
+[json](https://docs.python.org/3.6/library/json.html) 
+### 软件包的管理pip
+- 安装pip  
+  sudo apt-get install pip 
+- pip安装包
+  pip install [PACKAGENAME]
+
 ### 注释
 ```python
 #在文件头加下面的注释，可以让文件直接运行
@@ -17,7 +23,7 @@ python
 # -*- coding: utf-8 -*-
 ```
 ### 换行符
-'\'
+\
 #
 - 运行.py文件
   python name.py
