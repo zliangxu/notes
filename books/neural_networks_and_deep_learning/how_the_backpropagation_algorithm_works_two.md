@@ -37,8 +37,9 @@ BP1表示输出层L层的误差
 ### 5. proof of the four fundamental equations(optional，指选择性的证明，而不是可以选择性的看)
 - BP2的证明，**为什么是和的形式**  
 这一层的某一个神经元的误差传递给下一层所有的神经元，因为代价函数是下一层所有神经元输出的函数，所以采用和的形式。  
-![math41](../image/math41.png)
-
+![math41](../image/math41.png)  
+(上面的公式就是链式法则，至于41式，如果把左侧分母与右侧分子抵消掉，则变量k消失，那么求和符号也会消失，所以和原式是等价的)  
+![math45](../image/math45.png)
 
 ### 6. the backpropagation algorithm
 ### 7. the code for backpropagation

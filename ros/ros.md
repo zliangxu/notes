@@ -14,7 +14,7 @@ roslaunch my_robot_name2dnav move_base.launch
 #改变权限
 sudo chmod 777 /dev/ttyUSB0
 #跑雷达串口程序
-    roslaunch beginner_tutorials myserial.launch 
+roslaunch beginner_tutorials myserial.launch 
 #运行cartographer
 roslaunch cartographer_ros demo_revo_ldsmy.launch
 #运行显示轨迹的节点
