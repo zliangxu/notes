@@ -1,7 +1,6 @@
 [Deep learning](http://neuralnetworksanddeeplearning.com/chap6.html)
 ----------------
 ### 1. introducing convolutional networks
-<<<<<<< HEAD
 前面用到的网络模型是全连接网络(network layers are fully connected to one another)，这种结构没有用到像素的位置信息，即便有用到，也需要网络自己训练出相应的信息。convolutional neural networks利用到了这种空间结构信息。
 - local receptive fields.  
 输入神经元是整幅图像28*28，隐藏层神经元连接的是整幅图像的一个个小区域(local receptive fields,5*5)，这也构成了一幅图像(24*24)。
@@ -48,4 +47,3 @@ theano: a cpu and gpu math expression compiler in python
 ### on the future of neural networks
 intention-driven interfaces  
 data science   
->>>>>>> 70cd4a74f61c4005e0d2e4e75560faebfcb43394
