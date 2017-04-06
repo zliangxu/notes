@@ -31,6 +31,7 @@ backpropagation就是关于改变一个神经网络的权值系数和偏置是�
 - 根据上式，由于deltaZjl基本是一个比较小的值，所以误差的大小基本取决于上式的左部分，这样可以有如下定义，第l层、第j神经元的误差的定义  
 ![math29](../image/math29.png)
 - BP4公式  
+BP1表示输出层L层的误差  
 ![bp4summary](../image/bp4summary.png)
 
 ### 5. proof of the four fundamental equations(optional，指选择性的证明，而不是可以选择性的看)
