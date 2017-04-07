@@ -24,9 +24,13 @@ python
 ```
 ### 换行符
 \
-#
+# 基础
 - 运行.py文件
   python name.py
+- 把包(也可以是包里的一个类)导入并换个名字    
+  import PACKAGE as NAME 
+- 把包里的一个函数导入
+  from PACKAGE import NAME
 #### 循环
 - 第一种 for循环
 for xx in xxx:

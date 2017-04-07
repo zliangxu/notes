@@ -1,5 +1,6 @@
 ## test
 ## cartographer包运行
+![rosmoudle](rosmoudle.jpg)  
 ```shell
 #运行cartographer
 roslaunch cartographer_ros demo_backpack_2d.launch bag_filename:=${HOME}/slam/cartographer_paper_deutsches_museum.bag
