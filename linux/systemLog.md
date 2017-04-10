@@ -97,6 +97,8 @@ PING 192.168.1.1 (192.168.1.1): 56 data bytes
 64 bytes from 192.168.1.1: seq=0 ttl=64 time=42.804 ms
 64 bytes from 192.168.1.1: seq=1 ttl=64 time=5.020 ms
 ```
+
+
 ## app
 - foxit-reader linux 64bit [download](https://www.foxitsoftware.com/products/pdf-reader/)
 - chrome : 可以直接sudo apt-get install, 也可以直接从 chrome 网站[下载](https://www.chrome64bit.com/)
