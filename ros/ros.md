@@ -9,6 +9,14 @@ roslaunch cartographer_ros mycartographer.launch bag_filename:=${HOME}/slam/cart
 #ros运行路径规划节点
 roslaunch my_robot_name2dnav move_base.launch 
 ```
+## nav2d
+```shell
+#发布tf
+rosrun beginner_tutorials tfpublish
+#运行nav2d
+roslaunch nav2d_tutorials tutorial5.launch
+rosservice call /StartExploration 
+```
 
 ## 自己的雷达在线测试
 ```shell
@@ -153,8 +161,7 @@ Twist，线速度，角速度，都是三元素结构。
 </pre>
 - map_saver
 <pre>
-保存地图，订阅的话题是nav_msgs::Occupancy_Grid
-命令rosrun map_server map_saver -f NAME
+
 </pre>
 
 - [nav_core](http://wiki.ros.org/nav_core?distro=electric)  

@@ -14,6 +14,10 @@ rqt_bag //打开.bag文件的程序
 roslaunch [package_name] [filename.launch] //从launch文件中启动一个节点  
 
 
+保存地图，订阅的话题是nav_msgs::Occupancy_Grid
+rosrun map_server map_saver -f NAME
+
+
 rostopic echo [topic] //查看消息  
 rostopic pub [topic] [ms_types] [args]     //发布消息  
 rosservice call /clear //刷新  
@@ -24,6 +28,8 @@ rosbag record /[topic] //记录话题，成为.bag文件
 
 
 ros消息回调处理函数: ros::spin(),,ros::spinOnce(),  
+spinOnce只是如果有信息到来，则运行到spinOnce时会调用中断，并不会停止程序的运行？？？
+
 catkin_make //在工作空间根目录下编译  
 source devel/setup.bash  //添加路径，或者写入.bashrc，是永久添加路径，即打开终端后自动运行了source命令  
 

@@ -15,6 +15,7 @@ a star可以被用在各种各样形式的地图，包括网格、图
 
 ### Greedy Best-First-Search
 按照离目标最近的方向进行探索，但找到的路径可能不是最优。
+主要特点是以起始点为中心向外层层扩展，直到扩展到终点为止。
 
 ### Breadth First Search
 广度优先搜索，即把地图上所有的地点标记为同样的代价。
@@ -27,7 +28,7 @@ A star 会对它经过的每个节点都计算f(n)，如果是在最优路径上
 
 ```python
 frontier = PriorityQueue()
-frontier.put(start, 0)
+frontier.put(start, 0)`
 came_from = {}
 cost_so_far = {}
 came_from[start] = None
