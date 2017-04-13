@@ -1,5 +1,8 @@
 probabilistic road map, (PRM): 概率地图
 
+
+## [D star](http://blog.csdn.net/kongbu0622/article/details/1871520)
+
 ## [planning algorithms](http://planning.cs.uiuc.edu/web.html)
 
 ## [A star](http://theory.stanford.edu/~amitp/GameProgramming/)

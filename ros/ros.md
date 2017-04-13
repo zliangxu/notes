@@ -1,4 +1,3 @@
-## test
 ## cartographer包运行
 ![rosmoudle](rosmoudle.jpg)  
 ```shell
@@ -9,6 +8,7 @@ roslaunch cartographer_ros mycartographer.launch bag_filename:=${HOME}/slam/cart
 #ros运行路径规划节点
 roslaunch my_robot_name2dnav move_base.launch 
 ```
+
 ## nav2d
 ```shell
 #发布tf
@@ -16,6 +16,10 @@ rosrun beginner_tutorials tfpublish
 #运行nav2d
 roslaunch nav2d_tutorials tutorial5.launch
 rosservice call /StartExploration 
+
+#运行mynav2d
+roslaunch mynav tutorial3.launch
+
 ```
 
 ## 自己的雷达在线测试
