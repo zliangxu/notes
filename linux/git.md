@@ -3,6 +3,10 @@ Learning github  https://help.github.com/
 [Git 命令解释](https://git-scm.com/docs)   
 [廖雪峰git教程](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
 
+[github pages一个不错的版本](http://csrgxtu.github.io/categories/Linux/)
+
+
+
 - HEAD: git用HEAD表示当前版本，实际上HEAD指向master,master指向当前版本
     HEAD^表示上一个版本。
 - master: 主分支，本地仓库的分支名
