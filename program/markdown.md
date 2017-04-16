@@ -67,10 +67,10 @@ _斜体_ *斜体*
 [百度](https://www.baidu.com/) 
 #### 13. 图片: ! + [description of images] + (network_id Or path)
 ```
-![test](image/aa.png)
+![test](../image/aa.png)
 ```
 效果  
-![test](image/aa.png)
+![test](../image/aa.png)
 #### 14. 列表：第一行用 '-' 分开，列用 '|' 分开
 ```
 first header | second header
@@ -83,11 +83,36 @@ first header | second header
 -------------|------------
 content form cell 1 | content from cell 2
 content in the first column | content in the second column
+
 #### 15. 对齐,不起作用？？？
   :  test1  
   :  test2  
   :  test3
 
+#### 16. 大于号
+```
+> help
+```
+
+> help
+
+
+#### 16. 公式显示，vscode下添加了markdown+math插件后，按快捷键ctrl+shift+. 可以翻译公式了
+[公示查询](http://goessner.github.io/mdmath/test/)
+在浏览器上直接显示 markdown 文件时，公式显示是不成功的，只有在markdown文件头添加如下 javescript 代码段，并翻译成 html 后才成功显示。
+翻译markdown使用了jekyll自动翻译的，只要在markdown文件添加上jekyll的头信息，就能自动翻译。并且vscode没有找到对mathjax的支持配置。$1+1=2$
+
+下面的脚本是可执行的，每次改动都会重新运行脚本，翻译公式
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
+ 
+$$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$    
+\\(x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}\\)
+
+
+
+\begin{equation}
+F(x)=\int_0^t\sin(t)\mathrm{d}\,t+\left[\lim_{x\rightarrow0}g(x)\times\sum_{m=0}^\infty\frac{(-1)^m}{\Gamma(m+{\color{red}α}+1)}\right]
+\end{equation}
 ## Markdown 扩展
 ``` 
 Markdown 扩展支持:
@@ -112,16 +137,3 @@ markdown本身不支持更改颜色、字体、字号，但是它的扩展HTML�
  - <font face="黑体">黑体字</font>
  - <font face="微软雅黑" size=3 color=#0099ff> face="微软雅黑" size= 3 color=#0099ff </font>
 
-#### 2. 公式显示
-在浏览器上直接显示 markdown 文件时，公式显示是不成功的，只有在markdown文件头添加如下 javescript 代码段，并翻译成 html 后才成功显示。
-翻译markdown使用了jekyll自动翻译的，只要在markdown文件添加上jekyll的头信息，就能自动翻译。并且vscode没有找到对mathjax的支持配置。
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
- 
-$$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$  
-\\(x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}\\)
-
-$1+1=2$
-
-\begin{equation}
-F(x)=\int_0^t\sin(t)\mathrm{d}\,t+\left[\lim_{x\rightarrow0}g(x)\times\sum_{m=0}^\infty\frac{(-1)^m}{\Gamma(m+{\color{red}α}+1)}\right]
-\end{equation}
