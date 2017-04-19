@@ -13,7 +13,16 @@ python
   sudo apt-get install pip 
 - pip安装包
   pip install [PACKAGENAME]
-
+### tricks
+- python2.7版本在tty里的自动补全功能要自己设置，新版本好像已经默认配置了，不过这样就不能用tab进行缩进了
+    python的环境变量像PYTHONSTARTUP，是自己在～/.profile文件或其中包含的命令下设置的，
+- 退出python解释器
+    快捷键ctrl+d : end-of-file character
+    输入 quit() 或者 exit()？
+- 在交互式编程中
+    上一次的输出会保存到 '_' 变量中，它是只读的
+- 交互环境下调用shell脚本
+    os.system('./command') #执行当前路径下的命令
 ### 注释
 ```python
 #在文件头加下面的注释，可以让文件直接运行
@@ -65,3 +74,5 @@ type(data) //返回数据类型
 ### QAQ:
 - IOError: [Errno 2] No such file or directory: '../data/mnist.pkl.gz'
   vscode下单步无法代开文件？？
+
+
