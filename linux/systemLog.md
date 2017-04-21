@@ -46,6 +46,26 @@ convert gpt //需要先clean再convert，否则会转换失败。
 ```
 hosts更改方法，linux下的文件在/etc/hosts
 ```
+## 清空dns
+```
+Linux下DNS缓存实现通常有两种方式：
+一种是用DNS缓存程序NSCD(name service cache daemon)负责管理DNS缓存。
+一种实现DNS缓存则是用Bind来架设Caching Name Server来实现。
+
+如果是清除NSCD上的Cache，可重新启动NSCD服务来达成清除DNS Cache的效果。用这个命令:
+# service nscd restart
+或是
+#/etc/init.d/nscd restart(这个起作用了)
+
+如果是清除BIND服务器上的CACHE，用这个命令:
+# rndc flush
+
+如果你的DNS服务器是用dnsmasq实现的，用下面这个命令:
+$ sudo /etc/init.d/dnsmasq restart
+
+注：DNSmasq是一个轻巧的，容易使用的DNS服务工具，它可以应用在内部网和Internet连接的时候的IP地址NAT转换，也可以用做小型网络的DNS服务。
+```
+
 
 ## ubuntu wifi
 ```
