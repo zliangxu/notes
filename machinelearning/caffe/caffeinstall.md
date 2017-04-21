@@ -1,7 +1,6 @@
 
 ## layer catalogue
 
-
 ### 安装
 1. 安装开发依赖包
 ```shell
@@ -42,7 +41,14 @@ make pycaffe
     在打开的文件内添加：
     export PYTHONPATH=/path/to/caffe/python:$PYTHONPATH
     $ source /etc/profile # 使之生效
-
+caffe官网编译安装
+```shell
+cp Makefile.config.example Makefile.config
+#Adjust Makefile.config (for example, if using Anaconda Python, or if cuDNN is desired)
+make all
+make test
+make runtest
+```
 
 ### Question
 1. .build_release/src/caffe/proto/caffe.pb.cc:46977:11: error: expected ‘)’ before ‘else’
