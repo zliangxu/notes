@@ -8,7 +8,7 @@ http://blog.csdn.net/liekkas_javey/article/details/52821913
 http://www.expreview.com/21367.html
 
 
-安装ubuntu16.04英文版，用到的语言是英语，同样安装搜狗输入法，按照错误提示安装了fcixt后，重启出现了搜狗输入法。
+
 ## dell-inspiron-7559 装ubuntu win10双系统
 - 使用UEFI模式安装win10
 以直接将win10解压到u盘，然后开机时，进入uefi模式，这样可以识别出u盘内的win10,并可以安装。安装时，只能选择一个盘，esp分区(保存efi启动信息)，msr分区(微软保留分区)都可以自动生成，如果安装操作系统前提供了efi分区，windows的efi也会放在已有的分区上，只是efi分区必须是FAT或FAT32格式。
@@ -123,3 +123,5 @@ PING 192.168.1.1 (192.168.1.1): 56 data bytes
 - foxit-reader linux 64bit [download](https://www.foxitsoftware.com/products/pdf-reader/)
 - chrome : 可以直接sudo apt-get install, 也可以直接从 chrome 网站[下载](https://www.chrome64bit.com/)
 - ubuntu开wifi热点。 http://ubuntuhandbook.org/index.php/2014/06/share-internet-with-android-ubuntu-1404/
+- 默认的显示图片命令  display
+- 安装ubuntu16.04英文版，用到的语言是英语，同样安装搜狗输入法，按照错误提示安装了fcixt后，重启出现了搜狗输入法。

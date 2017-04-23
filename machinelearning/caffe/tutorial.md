@@ -64,7 +64,13 @@
         ReLU1/Rectified-Linear and Leaky-ReLU Layer 
         是rectified linear units的缩写
 6. interfaces
-- cmdcaffe 
-    在build/tools/
-- pycaffe
+    - cmdcaffe 
+        在build/tools/
+    - pycaffe
+        * caffe.Net is the central interface for loading, configuring, and running models. 
+        * caffe.Classifier and caffe.Detector provide convenience interfaces for common tasks.
+        * caffe.SGDSolver exposes the solving interface.
+        * caffe.io handles input / output with preprocessing and protocol buffers.
+        * caffe.draw visualizes network architectures.
+        * Caffe blobs are exposed as numpy ndarrays for ease-of-use and efficiency.
 7. Data:Ins and Outs

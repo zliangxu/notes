@@ -48,6 +48,7 @@ img/img2.jpg  2  100 200 50 50   50 30 25 25
 使用记录：
 ```
 opencv_createsamples -info info.dat -vec facesvec -num 2704 -w 20 -h 20  
+
 -info 即上面的info.dat(有了这个-img参数就不需要了) 
 -vec 生成的vec文件名  
 -num 图像数据数目    
@@ -88,7 +89,7 @@ Usage: opencv_traincascade
 ```
 使用记录：
 ```
-opencv_traincascade  -data cascadeface -vec facesvec -bg nonfaces.txt -numPos 2000 -numNeg 1000 -w 20 -h 20
+opencv_traincascade  -data cascadeface -vec facesvec -bg nonfaces.txt -numPos 2000 -numNeg 1000 -w 20 -h 20 -numStages 13
 
 -data 生成的cascade文件放置的文件夹名，要提前mkdir
 -vec 正样本文件名，即opencv_createsample生成的文件
@@ -129,5 +130,20 @@ Usage: opencv_haartraining
 
 使用记录
 opencv_haartraining -data cascadeface -vec facesvec -bg nonfaces.txt  -w 20 -h 20 
+训练过程中，如果分类器达到了minhitrate，就会计算falsealarm，如果falsealarm大于maxfalsealarm，系统就会拒绝这个分类器，继续训练下一个
+haartraing训练出的是txt文件，需要使用convert_cascade来转成xml文件
 
+-maxfalsealarm(FA): maximum false alarm, that stage may have，分类器在负样本中识别为正样本的比例
+-minhitrate(HR): minimal hit rate, that should stage have at least，分类器在正样本中至少正确识别的比例
+-nstages: number of stages in cascade， stage是强分类器，最后的cascade是stage的级联
+-sys: 如果正样本是x轴或者y轴对称的，则设置，否则-nonsym
+-eqw： 如果有不同数目的正样本、负样本数目，最好不要设置，put no eqw
+-weighttrimming: 是对计算效率与性能的权衡，设置了计算时间更少
+-bt: Gental AB, Real AB
+-nsplits: 树的最少节点数
+-maxtreesplits: 树的最大节点数，要大于nsplits
+-minpos: 一个节点的训练过程中，需要的正样本数目，通常minpos不应该小于npos/nsplits
+
+Required leaf false alarm rate achieved. Branch training terminated – it’s impossible to build classifier with good false alarm on this negative images. Check your negative images are really negative =),  maxfalsealarm should be in [0.4-0.5] 
+这个是在训练时，FA=0后得到的错误提示，是说验证stage时，false alarm太小，也就是负样本都没有被识别为正样本，那么负样本的质量就太差了
 ### 3. opencv_visualisation
