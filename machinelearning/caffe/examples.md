@@ -2,13 +2,15 @@
 ## lrcn: long-term recurrent convolutional network
 
 # notebook examples
-1. image classification and filter visuallization
-    convolutional network
+1. image classification and filter visuallization  
+    convolutional network  
     input image -> convolution -> non-linearity(rectified linear unite) -> pooling -> feature maps
-2. learning LeNet
-    create_mnist.sh 生成lmdb数据集
-    DAG: directed acyclic graph(有向无环图)
-    loss
+2. learning LeNet  
+    create_mnist.sh 生成lmdb数据集  
+    DAG: directed acyclic graph(有向无环图)  
+    loss  
+    定义的网络内有lmdb数据的路径，调用 solver.net.forward() 后，才会调出数据集，加载网络只是生成网络结构。
+      
 3. brewing models
 4. fine-tuning
 5. editing model parameters
