@@ -5,26 +5,18 @@
 1. image classification and filter visuallization  
     convolutional network  
     input image -> convolution -> non-linearity(rectified linear unite) -> pooling -> feature maps
-<<<<<<< HEAD
 
     net.blobs['data'].data[...]\(这里的三个点指data里的所有数据都赋值) = transformed_image
 
     net.blobs.iteritems() 迭代每层网络的输出(batch_size, channel_dim, height, width).
     net.forwad()的输出是一个Dict，使用key-value的方式存储
 
-
-2. learning LeNet
-    create_mnist.sh 生成lmdb数据集
-    DAG: directed acyclic graph(有向无环图)
-    loss
-=======
 2. learning LeNet  
     create_mnist.sh 生成lmdb数据集  
     DAG: directed acyclic graph(有向无环图)  
     loss  
     - solver.net.forward()  
     定义的网络内有lmdb数据的路径，调用 solver.net.forward() 后，才会调出数据集，加载网络只是生成网络结构。
-<<<<<<< HEAD
     - solver.net.blobs['data'].data[:8, 0].transpose(1, 0, 2).reshape(28, 8*28)，其中，blobs['data'].data是(64,1,28,,28)维数据，而[:8, 0]并没有把序号写完全，那么他们只是表示最外层的两个维度，在这里即是(64,1)这两个维度，所以结果为(8,28,28)的维度  
     - solver.step(1)  
         进行一次SGD运算，会调用新的数据，但是没有输出提示信息
@@ -38,10 +30,7 @@ solver.net.blobs['label'].data
 solver.net.blobs['score'].data[0]
 
 ```
-=======
       
->>>>>>> eb1fcce51eba0a0b25870ad035b0591aee25af0c
->>>>>>> 6f23394e446f53518af3411b779a2f19b34d4b2e
 3. brewing models
 4. fine-tuning
 5. editing model parameters

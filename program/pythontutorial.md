@@ -45,3 +45,7 @@
         __init__.py
 
 7. inputs and outputs
+    - fancier output formatting
+    - reading and writing files
+
+8. errors and exceptions
