@@ -1,3 +1,9 @@
+## 移植到树莓派需要修改的地方
+tfPublish.cpp
+trackPublish.cpp
+gridmap.h内的char getData(unsigned int index)要换成 signed char getData()，因为-1被结算出为255，表现为膨胀地图把未知区域也膨胀掉了
+gridmap.h内的char getData(unsigned int x, unsigned int y)要换成signed char getData(unsigned int x, unsigned int y)，表现为无法找到未知点
+
 ## cartographer包运行
 ![rosmoudle](rosmoudle.jpg)  
 ```shell

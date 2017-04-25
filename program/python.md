@@ -8,6 +8,35 @@ python
 [opencv-python](http://docs.opencv.org/master/d6/d00/tutorial_py_root.html)  
 [numpy](https://docs.scipy.org/doc/numpy/reference/)  
 [json](https://docs.python.org/3.6/library/json.html) 
+
+
+廖雪峰python3.0 ： http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000
+python基础教程： http://www.runoob.com/python/python-tutorial.html
+安装第三方模块参见廖雪峰：pip install NAME，也可以直接sudo apt-get install NAME
+Python基础
+     数据类型和变量
+          python是动态语言，指变量本身类型不固定，与之相对的是静态语言，指定义变量时必须指定变量类型。
+          理解变量在内存中的存储形式。
+          语句结尾冒号指，下一个缩进是一个语句块
+     字符串和编码
+          中文：GB2312编码
+          统一编码：unicode
+          可变长编码：utf-8
+          计算机内存中，统一使用unicode编码，当需要保存到硬盘或传输时转换为utf-8
+               #!/usr/bin/env python
+               # -- coding: utf-8 -*-       //指定文本编码方式
+          格式化输出中 %d、%s……是占位符
+     使用list（列表）和tuple（元组）
+     条件判断
+     循环 ctrl + c退出程序
+     使用dict（字典）和set（）
+          dict的内部存放顺序与放入的顺序是不同的，用到哈希算法
+函数
+     调用函数：函数名其实就是指向一个函数对象的引用，完全可以把函数名赋给一个变量，相当于给这个函数起别名。
+     定义函数：pass，空语句占位符；函数返回值是一个tuple；
+     函数的参数：默认参数要指向不变对象。
+
+     
 ### 软件包的管理pip
 - 安装pip  
   sudo apt-get install pip 
