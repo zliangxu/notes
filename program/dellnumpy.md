@@ -10,3 +10,13 @@
         filed access  
         basic slicing：通过slicing得到的矩阵，是original矩阵的views   
         advanced indexing  
+    - 省略号(ellipsis, "...")  
+```python
+  >>> a = arange(16).reshape(2,2,2,2)  
+  # 现在，有了一个4维矩阵2x2x2x2，如果选择4维矩阵中所有的首元素，你可以使用ellipsis符号。  
+  >>> a[..., 0].flatten()  
+  array([ 0,  2,  4,  6,  8, 10, 12, 14])  
+  # 这相当于  
+  >>> a[:,:,:,0].flatten()  
+  array([ 0,  2,  4,  6,  8, 10, 12, 14])  
+```
