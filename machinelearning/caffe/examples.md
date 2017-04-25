@@ -5,6 +5,13 @@
 1. image classification and filter visuallization
     convolutional network
     input image -> convolution -> non-linearity(rectified linear unite) -> pooling -> feature maps
+
+    net.blobs['data'].data[...]\(这里的三个点指data里的所有数据都赋值) = transformed_image
+
+    net.blobs.iteritems() 迭代每层网络的输出(batch_size, channel_dim, height, width).
+    net.forwad()的输出是一个Dict，使用key-value的方式存储
+
+
 2. learning LeNet
     create_mnist.sh 生成lmdb数据集
     DAG: directed acyclic graph(有向无环图)

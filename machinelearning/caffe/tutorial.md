@@ -63,8 +63,37 @@
     - Activation /Neuron Layers
         ReLU1/Rectified-Linear and Leaky-ReLU Layer 
         是rectified linear units的缩写
+
 6. interfaces
-- cmdcaffe 
-    在build/tools/
-- pycaffe
+    - cmdcaffe 
+        在build/tools/
+    - pycaffe
+
 7. Data:Ins and Outs
+    tops 是输出，bottoms是输入，data层网络只有tops,
+```python
+    layer {
+            name: "mnist"
+            # Data layer loads leveldb or lmdb storage DBs for high-throughput.
+            type: "Data"
+            # the 1st top is the data itself: the name is only convention
+            top: "data"
+            # the 2nd top is the ground truth: the name is only convention
+            top: "label"
+            # the Data layer configuration
+            data_param {
+              # path to the DB
+              source: "examples/mnist/mnist_train_lmdb"
+              # type of DB: LEVELDB or LMDB (LMDB supports concurrent reads)
+              backend: LMDB
+              # batch processing improves efficiency.
+              batch_size: 64
+            }
+            # common data transformations
+            transform_param {
+              # feature scaling coefficient: this maps the [0, 255] MNIST data to [0, 1]
+              scale: 0.00390625
+              mean_file_size、mirros、crop_size、……
+            }
+        }   
+```
