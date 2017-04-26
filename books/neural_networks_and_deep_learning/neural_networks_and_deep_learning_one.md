@@ -1,10 +1,3 @@
----
-layout: post
-title:  "NNADL"
-date:   2017-03-20 20:54:53 +0800
-categories: jekyll update
----
-
 ### using neural nets to recognize handwritten digits
 key ideas, **build your neural networks intuition**
  1. two important artificial neuron  
