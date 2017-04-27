@@ -1,5 +1,5 @@
 [deep learning books](http://www.deeplearningbook.org/)
-[ an exposition of neural networks in circuits and code](http://karpathy.github.io/neuralnets/)
+[an exposition of neural networks in circuits and code](http://karpathy.github.io/neuralnets/)
 [deep learning](http://deeplearning.net/)
 [UFLDL Tutorial](http://deeplearning.stanford.edu/wiki/index.php/UFLDL_Tutorial)
 [别人的链接汇总](http://www.cnblogs.com/findumars/p/5009003.html)

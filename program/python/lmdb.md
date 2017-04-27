@@ -16,3 +16,7 @@
     cursor = txn.cursor()
 
 - Exceptions
+
+[lmdb documentation](http://lmdb.readthedocs.io/en/release/)
+
+lmdb: lightning memory-mapped database manager

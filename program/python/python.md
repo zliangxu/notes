@@ -8,6 +8,8 @@ python
 [opencv-python](http://docs.opencv.org/master/d6/d00/tutorial_py_root.html)  
 [numpy](https://docs.scipy.org/doc/numpy/reference/)  
 [json](https://docs.python.org/3.6/library/json.html) 
+[pandas](http://pandas.pydata.org/pandas-docs/stable/)
+[h5py](http://docs.h5py.org/en/latest/)
 
 
 廖雪峰python3.0 ： http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000
@@ -41,7 +43,7 @@ Python基础
 - 安装pip  
   sudo apt-get install pip 
 - pip安装包
-  pip install [PACKAGENAME]
+  sudo pip install [PACKAGENAME]
 ### tricks
 - python2.7版本在tty里的自动补全功能要自己设置，新版本好像已经默认配置了，不过这样就不能用tab进行缩进了
     python的环境变量像PYTHONSTARTUP，是自己在～/.profile文件或其中包含的命令下设置的，
@@ -99,7 +101,8 @@ type(data) //返回数据类型
   class
   在类中定义的函数，第一个参数是self， 它指类本身，
 
-
+### tricks
+- 魔法命令 %matplotlib inline 可以把matplotlib嵌入到booknote之中
 ### QAQ:
 - IOError: [Errno 2] No such file or directory: '../data/mnist.pkl.gz'
   vscode下单步无法代开文件？？
