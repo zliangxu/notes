@@ -68,7 +68,6 @@
     - cmdcaffe 
         在build/tools/
     - pycaffe
-<<<<<<< HEAD
 
 7. Data:Ins and Outs
     tops 是输出，bottoms是输入，data层网络只有tops,
@@ -98,7 +97,6 @@
             }
         }   
 ```
-=======
         * caffe.Net is the central interface for loading, configuring, and running models. 
         * caffe.Classifier and caffe.Detector provide convenience interfaces for common tasks.
         * caffe.SGDSolver exposes the solving interface.
@@ -106,4 +104,3 @@
         * caffe.draw visualizes network architectures.
         * Caffe blobs are exposed as numpy ndarrays for ease-of-use and efficiency.
 7. Data:Ins and Outs
->>>>>>> eb1fcce51eba0a0b25870ad035b0591aee25af0c
