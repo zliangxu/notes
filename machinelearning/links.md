@@ -2,5 +2,6 @@
 [an exposition of neural networks in circuits and code](http://karpathy.github.io/neuralnets/)
 [deep learning](http://deeplearning.net/)
 [UFLDL Tutorial](http://deeplearning.stanford.edu/wiki/index.php/UFLDL_Tutorial)
+[UFLDL chinese](http://ufldl.stanford.edu/wiki/index.php/Softmax%E5%9B%9E%E5%BD%92)
 [别人的链接汇总](http://www.cnblogs.com/findumars/p/5009003.html)
 [人脸、年龄、手势数据库](http://blog.csdn.net/langb2014/article/details/52098114)
