@@ -1,1 +1,1 @@
-bias下有个function key可以把media key关掉
+bios下有个function key可以把media key关掉
