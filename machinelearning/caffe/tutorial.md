@@ -1,4 +1,4 @@
-# tutorial
+# [tutorial](http://caffe.berkeleyvision.org/tutorial/)
 
 1. Blobs, Layers, and Nets: anatomy of a Caffe model
     - Blob storage and communication: an N-dimensional array stored in C-contiguous fashion, is the standard array and unified memory               interface for the framework.
@@ -63,6 +63,9 @@
     - Activation /Neuron Layers
         ReLU1/Rectified-Linear and Leaky-ReLU Layer 
         是rectified linear units的缩写
+    - loss layers
+        multinomial logistic loss：多项式逻辑损失函数
+        softmax with loss：等价于一个softmax层 + multinomial logistic loss层，把两个层合在一起，可以减少计算量，让梯度更稳定
 
 6. interfaces
     - cmdcaffe 
@@ -103,4 +106,7 @@
         * caffe.io handles input / output with preprocessing and protocol buffers.
         * caffe.draw visualizes network architectures.
         * Caffe blobs are exposed as numpy ndarrays for ease-of-use and efficiency.
+<<<<<<< HEAD
+=======
 7. Data:Ins and Outs
+>>>>>>> 7594cedfc360f594dcd849b2160a6eac261ba6f5

@@ -33,6 +33,7 @@
 
 - Exceptions
 
+<<<<<<< HEAD:machinelearning/lmdb.md
 ## usage
 
 - write
@@ -95,3 +96,8 @@ flat_x = np.fromstring(datum.data, dtype=np.uint8)  #把datum.data数据由字�
 x = flat_x.reshape(datum.channels, datum.height, datum.width)
 ```
  
+=======
+[lmdb documentation](http://lmdb.readthedocs.io/en/release/)
+
+lmdb: lightning memory-mapped database manager
+>>>>>>> 10bd36a85cae26978749584d5e7d5f546cb239f3:program/python/lmdb.md

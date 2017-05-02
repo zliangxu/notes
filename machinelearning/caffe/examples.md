@@ -20,6 +20,11 @@
     - solver.net.blobs['data'].data[:8, 0].transpose(1, 0, 2).reshape(28, 8*28)，其中，blobs['data'].data是(64,1,28,,28)维数据，而[:8, 0]并没有把序号写完全，那么他们只是表示最外层的两个维度，在这里即是(64,1)这两个维度，所以结果为(8,28,28)的维度  
     - solver.step(1)  
         进行一次SGD运算，会调用新的数据，但是没有输出提示信息
+    - s.type:不同类型的solver，包括SGD、Adam、Nesterov……
+    
+    caffe_pb2.SolverParameter()用于定义网络参数
+    caffe.get_solver()
+    
 ```python
 #显示数据集里的数字，data[0,0]中的第一个0表示，batch-size里的第0个数字
 imshow(solver.net.blobs['data'].data[0,0],cmap='gray')
@@ -32,6 +37,9 @@ solver.net.blobs['score'].data[0]
 ```
       
 3. brewing models
+    (为什么只在例子上说明，而不写到文档里，垃圾)
+    HDF5DataLayer source should be a file containing a list of HDF5 filenames.
+    用到的python库是h5py
 4. fine-tuning
 5. editing model parameters
 6. R-CNN detection
