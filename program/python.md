@@ -9,6 +9,9 @@ python
 [numpy](https://docs.scipy.org/doc/numpy/reference/)  
 [json](https://docs.python.org/3.6/library/json.html) 
 
+中文支持
+# coding=utf-8 
+
 
 廖雪峰python3.0 ： http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000
 python基础教程： http://www.runoob.com/python/python-tutorial.html
