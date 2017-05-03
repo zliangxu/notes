@@ -49,3 +49,7 @@
     - reading and writing files
 
 8. errors and exceptions
+9. classes
+10. brief tour of the standard library
+11. brief tour of the standard library2
+12. virtual environment and packages
