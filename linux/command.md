@@ -19,6 +19,15 @@ find 默认搜索当前目录及其子目录，并不过滤任何结果。
 ### 5. type
 
 ### 6. 软件卸载及安装
+- dpkg
+```shell
+#卸载 purge，不保留配置文件
+dpkg -P <package>
+#卸载，保留配置文件
+dpkg -r <package> 
+```
+
+- 内核操作
 ```shell
 #内核操作
 #ubuntu更新内核，切换内核启动 http://www.bkjia.com/xtzh/952429.html
@@ -31,10 +40,5 @@ dpkg --list | grep linux-image
 sudo apt-get remove linux-image
 #删除后要使用命令下条命令更新grub
 sudo update-grub
-
-#卸载 purge，不保留配置文件
-dpkg -P <package>
-#卸载，保留配置文件
-dpkg -r <package> 
-
 ```
+### 7.已安装软件查询
