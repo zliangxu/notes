@@ -129,3 +129,4 @@ PING 192.168.1.1 (192.168.1.1): 56 data bytes
 - 安装ubuntu16.04英文版，用到的语言是英语，同样安装搜狗输入法，按照错误提示安装了fcixt后，重启出现了搜狗输入法。
 - 安装git： sudo apt-get install git
 - 搜狗输入法  http://pinyin.sogou.com/linux/?r=pinyin
+- 蓝牙下载的文件夹在 Download
