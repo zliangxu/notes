@@ -119,6 +119,7 @@ PING 192.168.1.1 (192.168.1.1): 56 data bytes
 ```
 
 
+<<<<<<< HEAD
 ## app
 - foxit-reader linux 64bit [download](https://www.foxitsoftware.com/products/pdf-reader/)
 - chrome : 可以直接sudo apt-get install, 也可以直接从 chrome 网站[下载](https://www.chrome64bit.com/)
@@ -130,3 +131,5 @@ PING 192.168.1.1 (192.168.1.1): 56 data bytes
 - 安装git： sudo apt-get install git
 - 搜狗输入法  http://pinyin.sogou.com/linux/?r=pinyin
 - 蓝牙下载的文件夹在 Download
+=======
+>>>>>>> eea1d026d65b4ff69f639aa003b2c332ca4379b4

@@ -32,3 +32,21 @@ sudo make -j $(nproc)
 然后切换到cpp目录下运行测试程序
 cd cpp/  
 ./cpp-example-facedetect girls.jpg (自己下载一张图片放在该目录)
+
+
+
+
+
+## 插件
+windows VisualStudio下的 image watch
+
+
+## halcon
+机器视觉工程开发流程：　http://www.ihalcon.com/read-1285.html
+主要是光源、工业相机、镜头选择
+一、图像采集，二、图像分割，三、形态学处理，四、特征提取，五、输出结果。
+
+匹配方法
+Component-Based
+Gray-Value-Based
+Shape-Based,
