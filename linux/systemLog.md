@@ -131,5 +131,6 @@ PING 192.168.1.1 (192.168.1.1): 56 data bytes
 - 安装git： sudo apt-get install git
 - 搜狗输入法  http://pinyin.sogou.com/linux/?r=pinyin
 - 蓝牙下载的文件夹在 Download
+- linux opencv显示Mat类，可以查看像素值，需要装video播放mp4的插件
 =======
 >>>>>>> eea1d026d65b4ff69f639aa003b2c332ca4379b4
