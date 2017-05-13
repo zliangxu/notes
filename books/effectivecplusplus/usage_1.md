@@ -2,7 +2,7 @@
 
 
 ## 2. const
-
+enums　可被拿来当一个　ints　使用(不应该这样用)
 
 ## 3. 尽可能使用const
 - bitwise constness     conceptual constness

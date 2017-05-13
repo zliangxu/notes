@@ -2,3 +2,4 @@
 http://www.cnblogs.com/liqizhou/archive/2012/05/12/2497220.html
 [定义](http://blog.csdn.net/carson2005/article/details/7337432)
 概率密度函数的核函数估计也称为parzon窗估计。
+mean shift向量，是个向量，指偏移量

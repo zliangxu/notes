@@ -11,5 +11,6 @@ rcnn中有提取feature map的步骤，而feature map被用来做RPN
 ## 1. region proposal 方法
 - Selective Search
 - Edge Boxes
+- region proposal net
 
 ## 2. 

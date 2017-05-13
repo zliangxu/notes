@@ -26,6 +26,7 @@
     caffe.get_solver()
     
 ```python
+from pylab import *
 #显示数据集里的数字，data[0,0]中的第一个0表示，batch-size里的第0个数字
 imshow(solver.net.blobs['data'].data[0,0],cmap='gray')
 show()
