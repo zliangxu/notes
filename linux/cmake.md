@@ -17,6 +17,9 @@ makefile文件的组成：
 - 注释：已#开头
 
 makefile官网 ： http://www.gnu.org/software/make/manual/make.html
+
+
+# CMakeLists.txt的编写
 Cmake
 set(ENV{variable} <value>) //设置环境变量
 options
@@ -31,16 +34,20 @@ SET(CMAKE_CXX_FLAGS_RELEASE "$ENV{CXXFLAGS} -o3 -Wall")
 然后，在编译的时候，使用如下命令
 cmake -DCMAKE_BUILD_TYPE=Debug（Release） path
 
-一个常见的CMakeLists.txt内容
-#声明要求的cmake最低版本
-cmake_minimum_required(VERSION 2.8)
-#声明一个cmake工程
-project(HelloSLAM)
-#添加一个可执行程序
-add_executable(helloSLAM helloSLAM.cpp)
+## 一个常见的CMakeLists.txt内容
+- 声明要求的cmake最低版本
+    cmake_minimum_required(VERSION 2.8)
+- 声明一个cmake工程
+    project(HelloSLAM)
+- 添加一个可执行程序
+    add_executable(helloSLAM helloSLAM.cpp)
+- 声明包含的头文件
+    include_directories()
+- 链接库文件，所有用到的库文件都可以用路径指明
+    target_link_libraries()
 
 执行cmake . 得到makeFile，接着可以执行 make ，编译得到可执行文件 。更好的方法是mkdir build，在build文件夹下执行cmake .. ,接着make，这样可以把编译文件留到build文件夹下
-
+## 静态库、共享库
 在linux中，库文件分为静态库和共享库两种，静态库以 .a结尾，共享库以 .so结尾， 所有库都是一些函数的打包集合，差别在于静态库每次调用都会生成一个副本，而共享库只有一个副本，更省空间。库文件是一个二进制压缩包，使用时，还需要对应的头文件。
 
 find_package : cmake提供的寻找某个库的头文件与库的指令，如果成功找到，则提供头文件和库文件所在的目录的变量（libraryName_INCLUDE_DIRS, libraryName_LIBRARIES）
@@ -97,26 +104,18 @@ Foreach(f ${VAR})       …Endforeach(f)
 8.       循环语句
 WHILE() … ENDWHILE()
 
-五、      内部变量
-
+## 内部变量
 CMAKE_C_COMPILER：指定C编译器
-
 CMAKE_CXX_COMPILER：
-
 CMAKE_C_FLAGS：编译C文件时的选项，如-g；也可以通过add_definitions添加编译选项
-
+    add_definitions(-std=c++11)  //指定c++11
 EXECUTABLE_OUTPUT_PATH：可执行文件的存放路径
-
 LIBRARY_OUTPUT_PATH：库文件路径
-
 CMAKE_BUILD_TYPE:：build 类型(Debug, Release, ...)，CMAKE_BUILD_TYPE=Debug
-
 BUILD_SHARED_LIBS：Switch between shared and static libraries
-
 内置变量的使用：
-
->> 在CMakeLists.txt中指定，使用set
->> cmake命令中使用，如cmake -DBUILD_SHARED_LIBS=OFF
+    在CMakeLists.txt中指定，使用set
+    cmake命令中使用，如cmake -DBUILD_SHARED_LIBS=OFF
 
 六、      命令
 
