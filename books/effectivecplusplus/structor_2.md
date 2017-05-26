@@ -1,11 +1,11 @@
 
 ## 5. 了解c++默默编写并调用哪些函数
-编译器会为每一个class声明：
-default构造函数
-copy构造函数
-copy assignment操作符
-析构函数
-当这些函数被调用时采用被编译器创造出来
+编译器会为每一个class声明四个部分，当这些函数被调用时采用被编译器创造出来的(public , inline)：
+    default构造函数(如果类的声明中没有构造函数)
+    copy构造函数
+    copy assignment操作符
+    析构函数
+
 
 ## 6. 禁止使用class自动生成的成员函数
 把函数声明为　private，　并且只声明不实现

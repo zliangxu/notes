@@ -1,4 +1,4 @@
-mAP:
+mAP: average precision
 adience benchmark for age and gender estimation
 feret benchmark：数据是在统一的条件下采集的，条件比较理想
 labeled faces in the wild(LFW) benchmark

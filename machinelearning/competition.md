@@ -1,5 +1,7 @@
 https://tianchi.aliyun.com/?spm=5176.100066.1234.1.n9TJUH
 https://www.kaggle.com/
+http://algo.tpai.qq.com/home/introduction/index.html
+http://codecraft.huawei.com/
 
 public leaderboard：是根据公开的50%测试数据集得到的评分
 private leaderboard：是没有公开的50%测试数据集得到的评分
