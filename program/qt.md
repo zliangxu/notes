@@ -1,5 +1,5 @@
 [document](http://doc.qt.io/qt-4.8/qtgui-module.html)
-
+[qt精品教程](http://www.qter.org/portal.php?mod=list&catid=6)
 widget 就是gui的小部件，text edits, scroll bars, labels……
 
 ## 配置opencv

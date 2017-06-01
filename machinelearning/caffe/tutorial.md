@@ -105,8 +105,4 @@
         * caffe.SGDSolver exposes the solving interface.
         * caffe.io handles input / output with preprocessing and protocol buffers.
         * caffe.draw visualizes network architectures.
-        * Caffe blobs are exposed as numpy ndarrays for ease-of-use and efficiency.
-<<<<<<< HEAD
-=======
-7. Data:Ins and Outs
->>>>>>> 7594cedfc360f594dcd849b2160a6eac261ba6f5
+        * Caffe.blobs are exposed as numpy ndarrays for ease-of-use and efficiency.

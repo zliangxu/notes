@@ -12,3 +12,4 @@ plt.show() #才会显示图像
 [caffe cpp documentation](http://caffe.berkeleyvision.org/doxygen/index.html)
 [caffe tutorial](http://caffe.berkeleyvision.org/tutorial/)
 [caffe python接口](http://www.cnblogs.com/denny402/category/759199.html)
+[caffe c++接口](http://blog.csdn.net/jiongnima/article/details/70197866)
