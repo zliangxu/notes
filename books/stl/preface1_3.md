@@ -37,3 +37,12 @@ int x2{5.3};         //error,不被初始化，
 vector<int> x3 = {1,2};  //这种是什么赋值 
 ```
 - range-based for loop
+- nonexcept 使函数不能throw
+- constexpr,使语句在程序编译期时执行
+- lambdas
+    也称为匿名函数，有函数体，没有函数名，首次在lisp语言中使用，最常用的是作为回调函数
+    函数对象能维护状态，但语法开销大，而函数指针语法开销小，却没法保存范围内的状态。
+- decltype, 返回语句的数据类型，是typeof的替代
+- new function declaration syntax
+- scoped enumerations
+
