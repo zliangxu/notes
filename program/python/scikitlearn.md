@@ -1,5 +1,6 @@
 [scikit-learn](http://scikit-learn.org/stable/tutorial/basic/tutorial.html)
 
+<<<<<<< HEAD
 ## model learning
 <!--模型加载-->
 model = METHOD( parameter )
@@ -32,3 +33,7 @@ X_new = transformer.fit_transform( X )???
 KFold cross-validation  
 <!--cross-validation generators-->
 <!--grid search-->
+=======
+## dataset
+## learning and prediction
+>>>>>>> fe135caf6c92b16e90fa21e31a8f22985da3bc9f
