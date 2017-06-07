@@ -33,7 +33,9 @@ sudo make -j $(nproc)
 cd cpp/  
 ./cpp-example-facedetect girls.jpg (自己下载一张图片放在该目录)
 
-
+## 卸载
+进入build目录
+sudo make uninstall
 
 
 
