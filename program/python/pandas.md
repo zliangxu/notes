@@ -36,6 +36,9 @@ df.query()
 df.sort_index(axis=1, ascending=False)  // 对index排序，axis=1，指对columns index排序；index=0，指对rows index排序
 df.sort_values(by='B')                  // 对values排序
 
+<!--数值替换-->
+df.replace()
+
 <!--选择-->
 df.loc[]        // by label
 df.iloc[]       // by position，给定整数坐标, 可以是二维坐标[1,2]

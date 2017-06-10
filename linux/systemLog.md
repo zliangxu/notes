@@ -119,18 +119,3 @@ PING 192.168.1.1 (192.168.1.1): 56 data bytes
 ```
 
 
-<<<<<<< HEAD
-## app
-- foxit-reader linux 64bit [download](https://www.foxitsoftware.com/products/pdf-reader/)
-- chrome : 可以直接sudo apt-get install, 也可以直接从 chrome 网站[下载](https://www.chrome64bit.com/)
-    或者 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-    
-- ubuntu开wifi热点。 http://ubuntuhandbook.org/index.php/2014/06/share-internet-with-android-ubuntu-1404/
-- 默认的显示图片命令  display
-- 安装ubuntu16.04英文版，用到的语言是英语，同样安装搜狗输入法，按照错误提示安装了fcixt后，重启出现了搜狗输入法。
-- 安装git： sudo apt-get install git
-- 搜狗输入法  http://pinyin.sogou.com/linux/?r=pinyin
-- 蓝牙下载的文件夹在 Download
-- linux opencv显示Mat类，可以查看像素值，需要装video播放mp4的插件
-=======
->>>>>>> eea1d026d65b4ff69f639aa003b2c332ca4379b4

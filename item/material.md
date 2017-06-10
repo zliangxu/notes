@@ -6,6 +6,7 @@ https://en.wikipedia.org/wiki/Gesture_recognition#cite_note-26
 
 
 [driver hand database]( http://cvrr.ucsd.edu/vivachallenge/index.php/hands/hand-detection/)
+[hand data](http://www.idiap.ch/resource/gestures/)
 
 I used the following algorithm.
 
