@@ -3,6 +3,7 @@ instant markdown 插件将页面显示在浏览器内，或者访问   http://lo
 [vscode markdown](https://code.visualstudio.com/docs/languages/markdown)
 [github markdown](https://guides.github.com/features/mastering-markdown/)   
 [markdown在线学习网站](https://stackedit.io/editor)
+[公示查询](http://goessner.github.io/mdmath/test/)
 
 #### 0. 理解[markdown](https://kramdown.gettalong.org/syntax.html)
 kramdown 是一个用Ruby实现的Markdown的解析器。github使用的就是这个解释器

@@ -10,3 +10,8 @@ the element of statistical learning
 pattern recognition and machine learning 
 deep learning
 neural networks and deep learning -Michael Nielsen
+mlapp
+Foundations of Machine Learning
+
+
+[我爱机器学习](https://www.52ml.net/)
