@@ -8,3 +8,5 @@
 
 均方根偏差　root mean square deviation(RMSD)
 均方根误差　root mean square error(RMSE)
+AP(average precision)
+MR(miss rate)
