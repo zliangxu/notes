@@ -1,3 +1,4 @@
+[thick face](http://www.thinkface.cn/portal.php)
 [deep learning books](http://www.deeplearningbook.org/)
 [an exposition of neural networks in circuits and code](http://karpathy.github.io/neuralnets/)
 [deep learning](http://deeplearning.net/)
