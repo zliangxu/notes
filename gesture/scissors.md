@@ -1,1 +1,0 @@
-[剪刀石头布](http://blog.csdn.net/u013480370/article/details/38389089)

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 [deep learning books](http://www.deeplearningbook.org/)
 [an exposition of neural networks in circuits and code](http://karpathy.github.io/neuralnets/)
 [deep learning](http://deeplearning.net/)
@@ -11,14 +10,6 @@
 均方根误差　root mean square error(RMSE)
 AP(average precision)
 MR(miss rate)
-=======
-[deep learning books](http://www.deeplearningbook.org/)  
-[an exposition of neural networks in circuits and code](http://karpathy.github.io/neuralnets/)  
-[deep learning](http://deeplearning.net/)  
-[UFLDL Tutorial](http://deeplearning.stanford.edu/wiki/index.php/UFLDL_Tutorial)  
-[UFLDL chinese](http://ufldl.stanford.edu/wiki/index.php/Softmax%E5%9B%9E%E5%BD%92)  
-[别人的链接汇总](http://www.cnblogs.com/findumars/p/5009003.html)  
-[人脸、年龄、手势数据库](http://blog.csdn.net/langb2014/article/details/52098114)  
 
 ### 均方根偏差　root mean square deviation(RMSD)  
 
@@ -30,4 +21,3 @@ $$\sqrt{\frac{1}{n}*\sum_{}di^2}$$
 用来衡量一组数的离散程度
 
 ### 方差，均方差(均是平均的意思，没有根号)(mean square error, MSE)
->>>>>>> 76cee3b3ff34b20dc996ca0b3b9121a49fdc1dd7
