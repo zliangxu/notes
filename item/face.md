@@ -29,4 +29,13 @@
 - 图像质量评估，选出最适合做人脸检测的图像
 - 活体检测
 - 人脸识别
+
+## 基于改进的adaboost算法与局部特征方法的自动人脸识别系统的研究 郝敬松
+- 基于adaboost的人脸检测
+    使用机器学习的方法
+    LAB特征、YUV直方图模型
+    LAB(locally assembled binary、局部集成二值模式)是LBP与
+    级联分类器与adaboost算法不同、real Adaboost
+- 基于子空间的人脸识别
+- 基于局部特征的人脸识别
     
