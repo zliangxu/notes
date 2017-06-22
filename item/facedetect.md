@@ -9,7 +9,8 @@
     25k幅人脸，每个有21处标记
 - labeled faces in the wild
     [LFW](http://vis-www.cs.umass.edu/lfw/)
-- AFLW、Adience有8组年龄、性别、丰富环境下
+- AFLW、Adience
+    [AFLW](http://www.openu.ac.il/home/hassner/Adience/data.html)有8组年龄、性别、丰富环境下
     数据集: AFLW dataset   21K images with 24K face annotation
 - [IMDB-WIKI](https://data.vision.ee.ethz.ch/cvl/rrothe/imdb-wiki/)
     名人性别、年龄

@@ -1,5 +1,6 @@
 [thick face](http://www.thinkface.cn/portal.php)
-
+## 人脸对齐,[face alignment](http://blog.csdn.net/eastlhu/article/details/25063193)
+求取人脸关键点的位置是前提条件，之后的对齐一般是基于平面上的左右倾斜角度，计算仿射变换矩阵，然后获得归一化的人脸；对于有前后倾斜的人脸不能做矫正。
 
 ## seetaface 中科院计算所山世光研究员团队
 [seetaface介绍](https://zhuanlan.zhihu.com/p/22451474)
@@ -32,10 +33,31 @@
 
 ## 基于改进的adaboost算法与局部特征方法的自动人脸识别系统的研究 郝敬松
 - 基于adaboost的人脸检测
-    使用机器学习的方法
-    LAB特征、YUV直方图模型
-    LAB(locally assembled binary、局部集成二值模式)是LBP与
+    使用机器学习的方法，LAB特征、YUV直方图模型
+    LAB(locally assembled binary、局部集成二值模式)是LBP的二值编码模式与Haar的矩形亮度特征的融合。
     级联分类器与adaboost算法不同、real Adaboost
-- 基于子空间的人脸识别
+    adaboost是离散adaboost，它的判定规则是二值的，而连续adaboost的输出是连续的，代表了判定的确信程度。
+    人脸检测中使用特征的方式分为基于特征与基于窗口两种。
+    使用连续adaboost与lab特征，再做yuv的空间直方图模型进行验证
+- 基于外观的子空间的人脸识别
+    主成分分析(PCA, principal component analysis)
+        是一种非监督方法，通过K-L变换寻找一个子空间。
+    线性判别分析(LDA, linear discriminant analysis)
+    独立成分分析(ICA, independent component analysis)
+    局部保持投影(LPP, Locality preserving projection)
+    二维主成分分析(2DPCA, two-dimensional PCA)
+    二维线性判别分析(2DLDA, two-dimensional LDA)
+    fisher线性判别分析(FLDA, fisher linear discriminant analysis)
+        是一种监督方法。
+    核主成分分析(KPCA, kernel PCA)
+    核fisher判别分析(KFDA, kernel fisher discriminant analysis)
 - 基于局部特征的人脸识别
-    
+    sift, surf, brief(binary robust independent element feature,局部图像邻域内随机点对的灰度大小关系建立局部图像特征描述子)
+    haar, lab(), hog
+    gabor变换: gabor变换可以用卷积或fft(快速傅里叶变换)两种形式计算，fft是一种加速的算法，可以减少计算量，gabor变换得到的是包含实部与虚部的复数滤波器，可以转换为幅值和相位特征。比较鲁棒但特征维数较高、计算比较复杂。
+    lbp特征:通过对原图像划分为多个不重叠的小块，单独统计小块内的lbp直方图作为特征，根据相似性度量来分类
+    lgbp直方图序列人脸识别：先做gabor变换，对gabor变换得到的图做lbp直方图统计
+
+
+## Joint Cascade Face Detection and Alignment（MSRA,ECCV14)
+    [文章讲解](http://blog.jobbole.com/85783/)
