@@ -1,12 +1,12 @@
 
 
 linux-turtorial for befinners: http://www.ee.surrey.ac.uk/Teaching/Unix/index.html
-
-linux man-pages:  https://www.kernel.org/doc/man-pages/
 ubuntu wiki:      http://wiki.ubuntu.org.cn/%E9%A6%96%E9%A1%B5
 the linux programing interface :  http://www.man7.org/tlpi/index.html
 linux usb: http://www.linux-usb.org/
-
+[linux man-pages](https://www.kernel.org/doc/man-pages/)
+[linux kernel api](https://www.kernel.org/doc/htmldocs/kernel-api/)
+[gnu c library](http://www.gnu.org/software/libc/manual/html_node/)
 
 ## LINUX程序设计 第三版（neil...）
 ```
