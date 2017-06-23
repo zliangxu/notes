@@ -12,6 +12,7 @@ sudo apt-get install build-essential
 安装关联库：
 sudo apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev  
 sudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev  
+sudo apt-get install gstreamer-base-1.0 gthread-2.0 gtk+-2.0 gtk+-3.0 gstreamer-pbutils-1.0 gstreamer-pbutils-0.10
 （2）下载OpenCV3.0 代码
 下载地址https://github.com/Itseez/opencv/archive/3.0.0.zip
 下载完源代码后，解压至特定文件夹下面。
