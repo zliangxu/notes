@@ -11,6 +11,10 @@
 - 蓝牙下载的文件夹在 Download
 - linux opencv显示Mat类，可以查看像素值，需要装video播放mp4的插件
 - 播放设想头视频windows amcap, linux cheese
+- 浏览器播放视频下载[you-get](https://you-get.org/#you-get)
+    [you-get](https://www.zhihu.com/question/51714507)
+    安装: sudo pip install you-get
+    使用: you-get 'https://www.youtube.com/watch?v=jNQXAC9IVRw'
 
 
 
