@@ -259,7 +259,6 @@ make VERBOSE=1
 [1] CMake_Tutorial.pdf
 [2] CMake使用总结，http://blog.csdn.net/keensword007/archive/2008/07/16/2663235.aspx
 [3] http://www.cmake.org/
-
 [4] 安装包中文档
 [5] Andrej Cedilnik，HOWTO: Cross-Platform Software Development Using CMake，October, 2003
 [6] Cjacker，CMake实践.PDF

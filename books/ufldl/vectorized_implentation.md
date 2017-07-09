@@ -1,0 +1,1 @@
+讲在matlab、octave中使用矩阵运算，来化解for循环的费时。

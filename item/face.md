@@ -1,4 +1,10 @@
-[thick face](http://www.thinkface.cn/portal.php)
+[github开源人脸检测](https://github.com/shanren7/real_time_face_recognition)
+[think face](http://www.thinkface.cn/portal.php)
+[dlib](http://dlib.net/)
+人脸检测还有 npd, pico, 云从
+centerloss人脸识别
+
+
 ## 人脸对齐,[face alignment](http://blog.csdn.net/eastlhu/article/details/25063193)
 求取人脸关键点的位置是前提条件，之后的对齐一般是基于平面上的左右倾斜角度，计算仿射变换矩阵，然后获得归一化的人脸；对于有前后倾斜的人脸不能做矫正。
 
@@ -23,6 +29,7 @@
 - face identification 人脸特征提取与对比模块
     大部分使用卷积神经网络(CNN)，提取人脸特征
     VIPLFaceNet由AlexNet裁剪得到，通过卷积层、全连接层得到2048维的特征向量，特征比对使用Cosine计算相似度，然后进行阈值比较(验证)或排序(识别)
+
 
 ## 人脸识别系统[概述](http://blog.sina.com.cn/s/blog_6ae1839101012fbb.html)
 - 人脸检测跟踪
