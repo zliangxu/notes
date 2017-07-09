@@ -105,6 +105,7 @@ S：正样本文件中即vec文件中没有目标的样本数目，即目标数�
 可以使用 gnome-system-monitor监控系统资源使用情况来监控程序是否在运行
 ```
 ### opencv_haartraining旧版本
+```
 Usage: opencv_haartraining
   -data <dir_name>
   -vec <vec_file_name>
@@ -127,9 +128,9 @@ Usage: opencv_haartraining
   [-err <misclass (default) | gini | entropy>]
   [-maxtreesplits <max_number_of_splits_in_tree_cascade = 0>]
   [-minpos <min_number_of_positive_samples_per_cluster = 500>]
-
+```
 使用记录
-opencv_haartraining -data cascadeface -vec facesvec -bg nonfaces.txt  -w 20 -h 20 
+opencv_haartraining -data cascadeface -vec facesvec -bg nonfaces.txt  -w 20 -h 20   
 训练过程中，如果分类器达到了minhitrate，就会计算falsealarm，如果falsealarm大于maxfalsealarm，系统就会拒绝这个分类器，继续训练下一个
 haartraing训练出的是txt文件，需要使用convert_cascade来转成xml文件
 

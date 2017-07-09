@@ -23,8 +23,8 @@ yolo
 - integral channel features 2009　　　　
     目标检测包括两部分内容: 1,特征提取，2,学习算法　　　　　　
     这篇文章使用boost的方法，集中注意力于特征提取方面．作者把由图像进行线性或非线性变换得到的图像称为通道(channel)，这些通道满足平移不变性，在通道上使用integral images(积分图)获得的特征为integral channel features，这些特征通过积分图获取计算速度很快．
-    包括 LUV(三通道)+Grad(一通道)+Hist(六个方向的梯度通道)　共十个通道
-    adaboost, realboost, logitboost
+    包括 LUV(三通道)+Grad(一通道)+Hist(六个方向的梯度通道)　共十个通道，特征在各通道使用积分图单独获取．
+    adaboost, realboost, logitboost,　决策树adaboost，软级联adaboost
     使用soft cascade做分类器
 - the fastest pedestrian detector in the west 2010
     提出了一种建特征金字塔的近似方法，以提高检测速度
@@ -36,4 +36,4 @@ yolo
 ## reading 
 http://blog.csdn.net/carson2005/article/details/8455837
 http://blog.csdn.net/rainbow0210/article/details/53586385
-http://blog.csdn.net/xiny520/article/details/51460148
+[原理讲解](http://blog.csdn.net/xiny520/article/details/51460148)
