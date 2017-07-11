@@ -19,7 +19,10 @@ $$z=W^{T}X+b$$(1)
 $$f(z) = a$$(2)
 
 ### backpropagation algorithm 反向传播算法
-
+这里使用的是方差代价函数（2范数）
+$$J(W,b,x,y)=\frac{1}{2}||h_{W,b}(x)-y||^2$$
+均方差代价函数
+$$J(W,b)=\frac{1}{m}[\sum_{i=1}^m(\frac{1}{2}||h_{W,b}(x)-y||^2)]+\frac{\lambda}{2}\sum_{l=1}^{n_l-1}\sum_{i=1}^{s_l}\sum_{j=1}^{s_l+1}W_{ji}^2$$
 这里只是公式的推到，没有给出为什么残差要这样定义，可以参见*neural networks and deep learning*
 $$\delta_i^l=\frac{\partial{J(w,b,x,y)}}{\partial{z_i^l}}$$
 
