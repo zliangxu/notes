@@ -16,7 +16,7 @@ $$f(z)=tanh(z)=\frac{exp(z)-exp(-z)}{exp(z)+exp(-z)}=2*\frac{1}{1+exp(-2x)}-1$$
 
 神经元计算模型，f是激活函数
 $$z=W^{T}X+b$$(1)
-$$f(z) = a$$(2)
+$$f(z) = a$$(2) 
 
 ### backpropagation algorithm 反向传播算法
 这里使用的是方差代价函数（2范数）
