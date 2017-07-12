@@ -36,9 +36,9 @@ $$\frac{d}{d\theta}J(\theta)=\lim_{\epsilon \to 0}\frac{J(\theta + \epsilon) - J
 计算令各个隐藏层神经元得到最大激活度的输入，并可视化输入。？？这个是学习到的。
 ### 稀疏自编码器符号
 ### exercise 
-[参考1](http://blog.csdn.net/dinosoft/article/details/50103503)
-[参考2](http://www.cnblogs.com/hrlnw/archive/2013/06/08/3127162.html)
-weight decay term 权重衰减
+[参考1](http://blog.csdn.net/dinosoft/article/details/50103503)  
+[参考2](http://www.cnblogs.com/hrlnw/archive/2013/06/08/3127162.html)  
+weight decay term 权重衰减  
 
 
 

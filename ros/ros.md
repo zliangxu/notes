@@ -1,8 +1,8 @@
 ## 移植到树莓派需要修改的地方
-tfPublish.cpp
-trackPublish.cpp
-gridmap.h内的char getData(unsigned int index)要换成 signed char getData()，因为-1被结算出为255，表现为膨胀地图把未知区域也膨胀掉了
-gridmap.h内的char getData(unsigned int x, unsigned int y)要换成signed char getData(unsigned int x, unsigned int y)，表现为无法找到未知点
+tfPublish.cpp  
+trackPublish.cpp  
+gridmap.h内的char getData(unsigned int index)要换成 signed char getData()，因为-1被结算出为255，表现为膨胀地图把未知区域也膨胀掉了  
+gridmap.h内的char getData(unsigned int x, unsigned int y)要换成signed char getData  (unsigned int x, unsigned int y)，表现为无法找到未知点  
 
 ## cartographer包运行
 ![rosmoudle](rosmoudle.jpg)  
@@ -19,10 +19,9 @@ roslaunch my_robot_name2dnav move_base.launch
 ```shell
 #发布tf
 rosrun beginner_tutorials tfpublish
-#运行nav2d
+#运行nav2d, 这是个例子，是单独运行的，但是现在无法使用了
 roslaunch nav2d_tutorials tutorial5.launch
 rosservice call /StartExploration 
-
 #运行mynav2d
 roslaunch mynav tutorial3.launch
 
@@ -30,12 +29,16 @@ roslaunch mynav tutorial3.launch
 
 ## 自己的雷达在线测试
 ```shell
+#启动ros 
+roscore
 #改变权限
 sudo chmod 777 /dev/ttyUSB0
-#跑雷达串口程序
+#跑雷达串口程序，启动雷达驱动
 roslaunch beginner_tutorials myserial.launch 
-#运行cartographer
+#运行cartographer，构建地图
 roslaunch cartographer_ros demo_revo_ldsmy.launch
+
+#以下程序需要先运行nav2d
 #运行显示轨迹的节点
 rosrun beginner_tutorials nav
 #轨迹规划

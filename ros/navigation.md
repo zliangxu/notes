@@ -37,7 +37,7 @@
 </pre>
 
 - [nav_core](http://wiki.ros.org/nav_core?distro=electric)  
-![navigation](image/navigation.jpg)
+![navigation](../image/navigation.jpg)
 <pre>
     nav_core包含了导航堆栈的数据接口，所有的路径规划程序都是依赖于这样的接口，来呈现在move_base节点中。
     nav_core::BaseGlobalPlanner提供了全局路径规划程序的接口，这里全局路径规划程序是一插件的形式体现在move_node上。类初始化函数需要提供全局路径规划程序节点名，即全局路径规划名称，代价地图；制作路径函数需要提供当前地址，目标地址，返回所规划路径。

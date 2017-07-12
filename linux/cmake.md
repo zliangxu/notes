@@ -2,37 +2,32 @@ https://cmake.org/Wiki/CMake //系统wiki
 https://cmake.org/cmake/help/v3.7/
 https://cmake.org/cmake/help/v3.0/index.html
 
-make是一条命令，其有三个常用的选项：
-     -f <fileName>: 它的作用是告诉make命令将哪个文件作为makefile文件，如果未使用这个选项，将在当前路径下寻找默认的文件名，makefile， 之后是 Makefile。
-     -n：输出将要执行的步骤，而不执行编译
-     -k：让make命令在发现错误时仍然继续执行，而不是在检测到第一个错误时就停下来。
-make myapp、clean、install即指定了编译生成的目标；当不指定特定目标时，默认创建makefile文件里的第一个目标，第一个all：，一个特殊目标。
-
+make是一条命令，其有三个常用的选项：  
+     -f <fileName>: 它的作用是告诉make命令将哪个文件作为makefile文件，如果未使用这个选项，将在当前路径下寻找默认的文件名，makefile， 之后是 Makefile。  
+     -n：输出将要执行的步骤，而不执行编译  
+     -k：让make命令在发现错误时仍然继续执行，而不是在检测到第一个错误时就停下来。  
+make myapp、clean、install即指定了编译生成的目标；当不指定特定目标时，默认创建makefile文件里的第一个目标，第一个all：，一个特殊目标。  
 makefile文件的组成：
-
 - 依赖关系：定义了每个输出文件与源文件的依赖关系。
-
 - 规则：定义了输出文件的创建方式，如编译命令gcc。必须以tab键开头。
-
 - 注释：已#开头
-
 makefile官网 ： http://www.gnu.org/software/make/manual/make.html
 
 
 # CMakeLists.txt的编写
-Cmake
-set(ENV{variable} <value>) //设置环境变量
-options
--Wall //显示提示消息
--o0 //optimization级别
--g //带有调试信息
+Cmake  
+set(ENV{variable} <value>) //设置环境变量  
+options  
+-Wall //显示提示消息  WW
+-o0 //optimization级别  
+-g //带有调试信息  
 
-CMakeLists.txt
-在cmake中要编译debug模式的话，在CMakeLists.txt添加如下两行。
-SET(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS} -o0 -Wall -g -ggdb")
-SET(CMAKE_CXX_FLAGS_RELEASE "$ENV{CXXFLAGS} -o3 -Wall")
-然后，在编译的时候，使用如下命令
-cmake -DCMAKE_BUILD_TYPE=Debug（Release） path
+CMakeLists.txt  
+在cmake中要编译debug模式的话，在CMakeLists.txt添加如下两行。  
+SET(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS} -o0 -Wall -g -ggdb")  
+SET(CMAKE_CXX_FLAGS_RELEASE "$ENV{CXXFLAGS} -o3 -Wall")  
+然后，在编译的时候，使用如下命令  
+cmake -DCMAKE_BUILD_TYPE=Debug（Release） path  
 
 ## 一个常见的CMakeLists.txt内容
 - 声明要求的cmake最低版本
@@ -104,18 +99,18 @@ Foreach(f ${VAR})       …Endforeach(f)
 8.       循环语句
 WHILE() … ENDWHILE()
 
-## 内部变量
-CMAKE_C_COMPILER：指定C编译器
-CMAKE_CXX_COMPILER：
-CMAKE_C_FLAGS：编译C文件时的选项，如-g；也可以通过add_definitions添加编译选项
-    add_definitions(-std=c++11)  //指定c++11
-EXECUTABLE_OUTPUT_PATH：可执行文件的存放路径
-LIBRARY_OUTPUT_PATH：库文件路径
-CMAKE_BUILD_TYPE:：build 类型(Debug, Release, ...)，CMAKE_BUILD_TYPE=Debug
-BUILD_SHARED_LIBS：Switch between shared and static libraries
-内置变量的使用：
-    在CMakeLists.txt中指定，使用set
-    cmake命令中使用，如cmake -DBUILD_SHARED_LIBS=OFF
+五、 内部变量  
+CMAKE_C_COMPILER：指定C编译器   
+CMAKE_CXX_COMPILER：  
+CMAKE_C_FLAGS：编译C文件时的选项，如-g；也可以通过add_definitions添加编译选项  
+    add_definitions(-std=c++11)  //指定c++11  
+EXECUTABLE_OUTPUT_PATH：可执行文件的存放路径  
+LIBRARY_OUTPUT_PATH：库文件路径  
+CMAKE_BUILD_TYPE:：build 类型(Debug, Release, ...)，CMAKE_BUILD_TYPE=Debug  
+BUILD_SHARED_LIBS：Switch between shared and static libraries  
+内置变量的使用：   
+    在CMakeLists.txt中指定，使用set  
+    cmake命令中使用，如cmake -DBUILD_SHARED_LIBS=OFF  
 
 六、      命令
 
@@ -256,9 +251,9 @@ make VERBOSE=1
 
 参考文献：
 
-[1] CMake_Tutorial.pdf
-[2] CMake使用总结，http://blog.csdn.net/keensword007/archive/2008/07/16/2663235.aspx
-[3] http://www.cmake.org/
-[4] 安装包中文档
-[5] Andrej Cedilnik，HOWTO: Cross-Platform Software Development Using CMake，October, 2003
-[6] Cjacker，CMake实践.PDF
+[1] CMake_Tutorial.pdf  
+[2] CMake使用总结，http://blog.csdn.net/keensword007/archive/2008/07/16/2663235.aspx  
+[3] http://www.cmake.org/  
+[4] 安装包中文档  
+[5] Andrej Cedilnik，HOWTO: Cross-Platform Software Development Using CMake，October, 2003  
+[6] Cjacker，CMake实践.PDF  
