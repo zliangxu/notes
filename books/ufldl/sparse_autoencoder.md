@@ -16,7 +16,7 @@ $$f(z)=tanh(z)=\frac{exp(z)-exp(-z)}{exp(z)+exp(-z)}=2*\frac{1}{1+exp(-2x)}-1$$
 
 神经元计算模型，f是激活函数
 $$z=W^{T}X+b$$(1)
-$$f(z) = a$$(2)
+$$f(z) = a$$(2) 
 
 ### backpropagation algorithm 反向传播算法
 这里使用的是方差代价函数（2范数）
@@ -36,9 +36,9 @@ $$\frac{d}{d\theta}J(\theta)=\lim_{\epsilon \to 0}\frac{J(\theta + \epsilon) - J
 计算令各个隐藏层神经元得到最大激活度的输入，并可视化输入。？？这个是学习到的。
 ### 稀疏自编码器符号
 ### exercise 
-[参考1](http://blog.csdn.net/dinosoft/article/details/50103503)
-[参考2](http://www.cnblogs.com/hrlnw/archive/2013/06/08/3127162.html)
-weight decay term 权重衰减
+[参考1](http://blog.csdn.net/dinosoft/article/details/50103503)  
+[参考2](http://www.cnblogs.com/hrlnw/archive/2013/06/08/3127162.html)  
+weight decay term 权重衰减  
 
 
 

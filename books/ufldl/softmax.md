@@ -1,7 +1,11 @@
 softmax回归模型是logistic回归模型在多分类上的推广，具体的  
+<<<<<<< HEAD
 [blog](http://eli.thegreenplace.net/2016/the-softmax-function-and-its-derivative/)  
 [neural networks and deep learning](http://neuralnetworksanddeeplearning.com/chap3.html#the_cross-entropy_cost_function)  
 (回到了起点！！！)  
+=======
+[blog](http://eli.thegreenplace.net/2016/the-softmax-function-and-its-derivative/)
+>>>>>>> b2afeb665d664a9cdf71c94b6c14967c05724fac
 ## tip
 - 上标和下标的区别？？  
     上标是第几个样本，下标是样本数据的第几个特征。？？
@@ -18,12 +22,25 @@ $$h_{\theta}(x^i)=\begin{bmatrix} p(y^i=1|x^i;\theta) \\ p(y^i=2|x^i;\theta) \\.
 其中$p(y^i=j|x^i;\theta)$表示将$x^i$分类为$j$的概率  
 $$p(y^i=j|x^i;\theta)=\frac{exp(\theta_j^Tx^i)}{\sum_{j=1}^{k}exp(\theta_j^Tx^i)}$$(2)
 上式是对概率进行了归一化的，这就造成了参数冗余，可以证明$\theta$与参数($\theta-\psi$)的结果是一致的，可以使用权重衰减使代价函数成为严格的凸函数，解唯一。  
-- 代价函数
-$$J(\theta)=-\frac{1}{m}[\sum_{i=1}^{m}\sum_{j=1}^{k}(sign(y^i=j)*log(p(y^i=j|x^i;\theta)))]$$
+- 代价函数  
+代价函数应该是一个标量，不是矩阵
+$$J(\theta)=-\frac{1}{m}[\sum_{i=1}^{m}\sum_{j=1}^{k}(I(y^i=j)*log(p(y^i=j|x^i;\theta)))]$$
 - softmax求导  
-令
-$$J(\theta,x^i,y^i)=\sum_{j=1}^{k}(sign(y^i=j)*log(p(y^i=j|x^i;\theta)))$$
-$$$$
+可以对每一个样本单独求导，最后做平均
+$$J(\theta,x^i,y^i)=\sum_{j=1}^{k}(I(y^i=j)*log(p(y^i=j|x^i;\theta)))$$
+假设$y^i=m$，令$z_j=\theta_j^Tx^i$，则上式可以化简为
+$$
+J(\theta,x^i,y^i)=log(p(y^i=m|x^i;\theta))=log(\frac{exp(z_m)}{\sum_{l=1}^{k}exp(z_l)})$$
+对上式求导得
+$$\begin{aligned}
+\frac{\partial J(\theta,x^i,y^i)}{\partial z_t}&=\begin{cases}
+1-\frac{exp(z_m)}{\sum_{l=1}^{k}exp(z_l)} &\text{if  } t=m\\
+- \frac{exp(z_m)}{\sum_{l=1}^{k}exp(z_l)}&\text{if  } t{=}\llap{/\,}m \\
+\end{cases} \\
+&=I(t=m)-\frac{exp(z_m)}{\sum_{l=1}^{k}exp(z_l)} \\
+\end{aligned}$$
+
+
 ## 关系
 由于数据冗余，当$\psi=\theta_1$时，两者的代价函数与假设函数一致
 

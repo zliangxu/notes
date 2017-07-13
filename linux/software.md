@@ -18,7 +18,7 @@
 - 流程图绘制 graphviz
     [在线绘制](http://processon.com/diagraming/59589ac2e4b0a77c5ae8d900)
 
-
+- ubuntu录屏 simplescreen...
 
 - bt下载　transmission(linux)
 ```shell

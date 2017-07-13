@@ -5,6 +5,7 @@ instant markdown 插件将页面显示在浏览器内，或者访问   http://lo
 [markdown在线学习网站](https://stackedit.io/editor)
 [公示查询](http://goessner.github.io/mdmath/test/)
 [公式](http://mlworks.cn/posts/introduction-to-mathjax-and-latex-expression/)
+[katex](https://khan.github.io/KaTeX/function-support.html)
 
 
 #### 0. 理解[markdown](https://kramdown.gettalong.org/syntax.html)
