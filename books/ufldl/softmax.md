@@ -1,5 +1,7 @@
-softmax回归模型是logistic回归模型在多分类上的推广，具体的
-[blog](http://eli.thegreenplace.net/2016/the-softmax-function-and-its-derivative/)
+softmax回归模型是logistic回归模型在多分类上的推广，具体的  
+[blog](http://eli.thegreenplace.net/2016/the-softmax-function-and-its-derivative/)  
+[neural networks and deep learning](http://neuralnetworksanddeeplearning.com/chap3.html#the_cross-entropy_cost_function)  
+(回到了起点！！！)  
 ## tip
 - 上标和下标的区别？？  
     上标是第几个样本，下标是样本数据的第几个特征。？？
