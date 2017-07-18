@@ -26,7 +26,7 @@ $$[u,s,v] = svd(\Sigma)$$
 $$x^{rot}=u^{'}x$$
 这里去均值讲得是每幅图像单独减去自己的均值，这与减去整个训练数据集的均值有什么区别？？
 ## whitening
-- pca白化
+- pca白化  
 其中，$\lambda$旋转后数据协方差矩阵的特征值，就是svd分解得到的s矩阵？？在这里起到归一化方差的作用，是每个特征具有单位方差。
 其中i是第几个特征，而不是第几个样本数据。
 $$X_{PCAwhite,i}=\frac{X_{i}^{rot}}{\sqrt{\lambda_{i}}}$$
@@ -34,7 +34,7 @@ $$X_{PCAwhite,i}=\frac{X_{i}^{rot}}{\sqrt{\lambda_{i}}}$$
 eilson是一个很小的数，防止$\lambda$过小，导致数值不稳定。
 $$X_{PCAwhite,i}=\frac{X_{i}^{rot}}{\sqrt{\lambda_{i} + epilson}}$$
 
-- zca白化
+- zca白化(使协方差矩阵为单位矩阵)  
 白化的定义式如下，u即为上面的svd分解得到的
 $$X_{ZCAwhite}=u*X_{PCAwhite}$$
 

@@ -2,6 +2,7 @@ https://cmake.org/Wiki/CMake //系统wiki
 https://cmake.org/cmake/help/v3.7/
 https://cmake.org/cmake/help/v3.0/index.html
 
+
 make是一条命令，其有三个常用的选项：  
      -f <fileName>: 它的作用是告诉make命令将哪个文件作为makefile文件，如果未使用这个选项，将在当前路径下寻找默认的文件名，makefile， 之后是 Makefile。  
      -n：输出将要执行的步骤，而不执行编译  

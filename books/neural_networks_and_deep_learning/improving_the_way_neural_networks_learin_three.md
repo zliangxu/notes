@@ -7,9 +7,9 @@ The philosophy is that the best entree to the plethora of available techniques i
 讲解只有一个神经元时，权重和偏置系数的更新。并抛出当误差非常大时学习速度反而较慢的问题。
 
 ### 2. introducing the cross-entropy cost function
-为了解决学习速度慢的问题，替换二范数代价函数为cross-entropy代价函数。
+为了解决学习速度慢的问题，替换二范数代价函数为交叉熵(cross-entropy)代价函数。
 - 一个神经元的代价函数，x是样本  
-![math57](../image/math57.png)  
+$$C=-\frac{1}{n}\sum _{x}[y*ln(a)+(1-y)*ln(1-a)$$(57)
 - 多个神经元的代价函数  
 ![math67](../image/math63.png)
 - 对于回归问题，采用代价函数形式，binary entropy??  

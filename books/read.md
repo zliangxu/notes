@@ -15,3 +15,5 @@ Foundations of Machine Learning
 
 
 [我爱机器学习](https://www.52ml.net/)
+## 微积分
+微积分之屠龙宝刀
