@@ -2,6 +2,11 @@ https://cmake.org/Wiki/CMake //系统wiki
 https://cmake.org/cmake/help/v3.7/
 https://cmake.org/cmake/help/v3.0/index.html
 
+- [cmake设置指定版本opencv](http://www.cnblogs.com/xzd1575/p/5555523.html)
+```shell
+set(OpenCV_DIR "/home/lxg/app/opencv-2.4.9/build")
+```
+
 make是一条命令，其有三个常用的选项：  
      -f <fileName>: 它的作用是告诉make命令将哪个文件作为makefile文件，如果未使用这个选项，将在当前路径下寻找默认的文件名，makefile， 之后是 Makefile。  
      -n：输出将要执行的步骤，而不执行编译  

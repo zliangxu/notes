@@ -1,3 +1,5 @@
+[opencv package](https://sourceforge.net/p/opencvlibrary/activity/?page=0&limit=100#553a433fe88f3d0ccc1e5008)
+
 linux下查看Opencv的版本
 
 pkg-config --modversion opencv  
@@ -6,27 +8,27 @@ pkg-config --modversion opencv
 前提：系统更新
 sudo apt-get update   
 sudo apt-get upgrade  
-（1）搭建编译环境，并安装相关关联库
-搭建C/C++编译环境：
-sudo apt-get install build-essential  
-安装关联库：
-sudo apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev  
+1. 搭建编译环境，并安装相关关联库  
+搭建C/C++编译环境：  
+sudo apt-get install build-essential    
+安装关联库：  
+sudo apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev   
 sudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev  
 sudo apt-get install gstreamer-base-1.0 gthread-2.0 gtk+-2.0 gtk+-3.0 gstreamer-pbutils-1.0 gstreamer-pbutils-0.10
-（2）下载OpenCV3.0 代码
-下载地址https://github.com/Itseez/opencv/archive/3.0.0.zip
-下载完源代码后，解压至特定文件夹下面。
-（3）进入opencv-3.0.0中，键入如下命令：
+2. 下载OpenCV3.0 代码  
+下载地址https://github.com/Itseez/opencv/archive/3.0.0.zip  
+下载完源代码后，解压至特定文件夹下面。  
+3. 进入opencv-3.0.0中，键入如下命令：  
 cmake .  （注意，cmake命令后面隔着一个空格，然后带了一个.）
-（4）在terminal中键入：
-sudo make  
-（5）然后执行安装
+4. 在terminal中键入：  
+sudo make   
+5. 然后执行安装  
 sudo make install  
-（6）完成安装
-sudo /bin/bash -c 'echo "/usr/local/lib" > /etc/ld.so.conf.d/opencv.conf'  
-sudo ldconfig  
-（7）测试OpenCV3.0
-切换到OpenCV3.0的samples目录下面，并编译samples程序
+6. 完成安装  
+sudo /bin/bash -c 'echo "/usr/local/lib" > /etc/ld.so.conf.d/opencv.conf'    
+sudo ldconfig    
+7. 测试OpenCV3.0
+切换到OpenCV3.0的samples目录下面，并编译samples程序  
 cd opencv/opencv-3.0.0-beta/samples/  
 sudo cmake .  
 sudo make -j $(nproc)  
