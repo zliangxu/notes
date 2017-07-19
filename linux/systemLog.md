@@ -7,13 +7,14 @@ ubuntu16.04LTS，系统相对更流畅，但是ibus框架下中文输入法一�
 http://blog.csdn.net/liekkas_javey/article/details/52821913  
 http://www.expreview.com/21367.html
 
-
+## ubuntu自带工具制作启动盘
+- startup disk creator
 
 ## dell-inspiron-7559 装ubuntu win10双系统
 - 使用UEFI模式安装win10
 以直接将win10解压到u盘，然后开机时，进入uefi模式，这样可以识别出u盘内的win10,并可以安装。安装时，只能选择一个盘，esp分区(保存efi启动信息)，msr分区(微软保留分区)都可以自动生成，如果安装操作系统前提供了efi分区，windows的efi也会放在已有的分区上，只是efi分区必须是FAT或FAT32格式。
 - 安装ubuntu
-将ubuntu.iso直接放到u盘，或者解压缩到u盘，用UEFI模式启动，都卡在了安装界面。在win10下，控制面板内关掉快速启动后仍然卡住了。最后使用rufus工具制作启动盘成功了
+将ubuntu.iso直接放到u盘，或者解压缩到u盘，用UEFI模式启动，都卡在了安装界面。在win10下，控制面板内关掉快速启动后仍然卡住了。最后使用**rufus**工具制作启动盘成功了
 - 使用[refind](http://www.rodsbooks.com/refind/)做引导程序，在sourceForge网站下载
 ## grub
 ```

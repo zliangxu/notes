@@ -1,5 +1,7 @@
 softmax回归模型是logistic回归模型在多分类上的推广，具体的  
-[blog](http://eli.thegreenplace.net/2016/the-softmax-function-and-its-derivative/)
+[blog](http://eli.thegreenplace.net/2016/the-softmax-function-and-its-derivative/)  
+[neural networks and deep learning](http://neuralnetworksanddeeplearning.com/chap3.html#the_cross-entropy_cost_function)  
+(回到了起点！！！)  
 ## tip
 - 上标和下标的区别？？  
     上标是第几个样本，下标是样本数据的第几个特征。？？
@@ -24,15 +26,17 @@ $$J(\theta)=-\frac{1}{m}[\sum_{i=1}^{m}\sum_{j=1}^{k}(I(y^i=j)*log(p(y^i=j|x^i;\
 $$J(\theta,x^i,y^i)=\sum_{j=1}^{k}(I(y^i=j)*log(p(y^i=j|x^i;\theta)))$$
 假设$y^i=m$，令$z_j=\theta_j^Tx^i$，则上式可以化简为
 $$
-J(\theta,x^i,y^i)=log(p(y^i=m|x^i;\theta))=log(\frac{exp(z_m)}{\sum_{l=1}^{k}exp(z_l)})$$
-对上式求导得
+J(\theta,x^i,y^i)=-log(p(y^i=m|x^i;\theta))=log(\frac{exp(z_m)}{\sum_{l=1}^{k}exp(z_l)})$$
+对上式求导得，这部分就是残差$\delta _t$
 $$\begin{aligned}
-\frac{\partial J(\theta,x^i,y^i)}{\partial z_t}&=\begin{cases}
+\frac{\partial J(\theta,x^i,y^i)}{\partial z_t}&=-\begin{cases}
 1-\frac{exp(z_m)}{\sum_{l=1}^{k}exp(z_l)} &\text{if  } t=m\\
 - \frac{exp(z_m)}{\sum_{l=1}^{k}exp(z_l)}&\text{if  } t{=}\llap{/\,}m \\
 \end{cases} \\
-&=I(t=m)-\frac{exp(z_m)}{\sum_{l=1}^{k}exp(z_l)} \\
+&=-[I(t=m)-\frac{exp(z_m)}{\sum_{l=1}^{k}exp(z_l)}] \\
 \end{aligned}$$
+应该注意
+$$\frac{\partial z_j}{\partial \theta_j}=(x^i)^T$$
 
 
 ## 关系

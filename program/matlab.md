@@ -2,7 +2,7 @@
 
 ## 快捷键
 1. ctrl+i 自动缩进
-2. ctrl+r 、ctrl+t 添加注释，取消注释
+2. ctrl+r 、ctrl+t 添加注释，取消注释 
 3. ctrl+tab 窗口切换
 4. f5 运行
 5. f9 单步执行
