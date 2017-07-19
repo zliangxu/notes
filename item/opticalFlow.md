@@ -55,8 +55,11 @@ size: 188*120
 包含了两种方法块匹配和LK。
 ## 5. 快匹配
 可以尝试下对二值化图像做快速匹配
+
 ## camera
 ov7251
+## 摄像头驱动
+http://blog.csdn.net/codectq/article/details/44278465
 
 ## tips
 1. covariation matrix 协方差矩阵

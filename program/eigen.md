@@ -1,5 +1,6 @@
-[eigen](http://eigen.tuxfamily.org/index.php?title=Main_Page)
-是一个矩阵运算库
+[eigen](http://eigen.tuxfamily.org/index.php?title=Main_Page)  
+[quick reference](http://eigen.tuxfamily.org/dox/group__QuickRefPage.html)  
+一个矩阵运算库
 -------
 
 ## basics
@@ -9,12 +10,14 @@ Matrix的声明分为静态内存分配和动态内存分配，动态内存分�
 Eigen::Matrix2f m1; //静态内存分配
 Eigen::MatrixXf m2(rows, columns); //动态内存分配
 ```
+## 初始化
+
 ## table of header
-Geometry
-LU
-Cholesky
-Householder
-SVD
-QR
-Eigenvalues
-Sparse
+Geometry  
+LU  
+Cholesky  
+Householder  
+SVD  
+QR  
+Eigenvalues  
+Sparse  
