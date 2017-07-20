@@ -1,5 +1,12 @@
 光流
 -----
+## KLT实现
+https://en.wikipedia.org/wiki/Kanade%E2%80%93Lucas%E2%80%93Tomasi_feature_tracker  
+http://cecas.clemson.edu/~stb/klt/  
+https://en.wikipedia.org/wiki/Lucas%E2%80%93Kanade_method  
+opencv  
+
+
 ## 光电鼠标使用的技术叫做 digital image correlation.
 - cross-correlation  
 用于表示两幅图像灰度之间的相似度大小
@@ -58,6 +65,7 @@ size: 188*120
 
 ## camera
 ov7251
+
 
 
 ## tips
