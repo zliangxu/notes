@@ -58,8 +58,7 @@ size: 188*120
 
 ## camera
 ov7251
-## 摄像头驱动
-http://blog.csdn.net/codectq/article/details/44278465
+
 
 ## tips
 1. covariation matrix 协方差矩阵
