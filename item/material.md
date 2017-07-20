@@ -39,7 +39,7 @@ I used the following algorithm.
 方法：
     (1). 使用gabor变换，lbp特征做统计直方图， --基于改进的adaboost算法与局部特征方法的自动人脸识别系统的研究
     (2). lab特征-级联分类器，surf特征，多层感知机级联结构  --seetaface(开源的人脸识别框架)
-    (3). 基于神经网络的目标检测框架 YOLO, SSD, R-FCN, SPP-net，R-CNN
+    (3). 基于神经网络的目标检测框架 YOLO, dark-net、SSD, R-FCN, SPP-net，R-CNN
 关键技术：
     传统方法的关键在于特征提取与分类算法
 
