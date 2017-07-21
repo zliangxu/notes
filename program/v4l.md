@@ -18,7 +18,7 @@ http://blog.csdn.net/tsuibeyond/article/details/50654823
 http://blog.csdn.net/codectq/article/details/44278465
 
 
-## notes
+## notes 
 ```c++
 struct v4l2_capability
 {
