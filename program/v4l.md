@@ -10,7 +10,8 @@ video for linux(v4l2)
 
 ## uvc与v4l2的关系
 
-[blog](http://www.cnblogs.com/surpassal/archive/2012/12/19/zed_webcam_lab1.html)
+## code
+[blog](http://www.cnblogs.com/surpassal/archive/2012/12/19/zed_webcam_lab1.html)  
 http://blog.csdn.net/tsuibeyond/article/details/50654823
 
 
@@ -18,6 +19,12 @@ http://blog.csdn.net/tsuibeyond/article/details/50654823
 http://blog.csdn.net/codectq/article/details/44278465
 
 
+- 输入和输出(三种模式，通过v4l2_capability 查询)  
+    Read/Wtite : 可能需要cpu去复制数据，不过也可能支持dma，所以效率不一定不只交换指针的方法差，没有时间戳等信息。  
+    Streaming I/O(memory mapping): 把摄像头的缓存区映射到应用程序的地址上，有时间戳。  
+    Streaming I/O(User Pointers):  
+- 图像格式(摄像机格式查询，v4l2_fmtdesc )  
+    4.3.3. Image Format Negotiation
 ## notes
 ```c++
 struct v4l2_capability
