@@ -1,7 +1,7 @@
 video for linux(v4l2)
 -----
-[v4l2 doc](http://v4l.videotechnology.com/)
-
+[v4l2 doc](http://v4l.videotechnology.com/)  
+[blog for v4l2](http://unicornx.github.io/2016/03/12/20160312-v4l2-app/)
 ## UVC(Usb Video device Class)
 说的是一类支持视频流的USB设备，有对应的驱动支持这样的设备。
 
@@ -19,17 +19,18 @@ http://blog.csdn.net/tsuibeyond/article/details/50654823
 http://blog.csdn.net/codectq/article/details/44278465
 
 
-<<<<<<< HEAD
 - 输入和输出(三种模式，通过v4l2_capability 查询)  
     Read/Wtite : 可能需要cpu去复制数据，不过也可能支持dma，所以效率不一定不只交换指针的方法差，没有时间戳等信息。  
     Streaming I/O(memory mapping): 把摄像头的缓存区映射到应用程序的地址上，有时间戳。  
     Streaming I/O(User Pointers):  
 - 图像格式(摄像机格式查询，v4l2_fmtdesc )  
-    4.3.3. Image Format Negotiation
+    4.3.3. Image Format Negotiation  
+    YUYV(YUV 4:2:2)，这个比例并不是一个字节中的各分量比特数的比例，而只是一个约分后的比例，YUYV四个字节表示两个像素。它有打包、平面两种形式。
+- 扫描方式  
+    progressive： 逐行扫描  
+    interlace : 隔行扫描
 ## notes
-=======
-## notes 
->>>>>>> b79c25b43661028961dac416724b5b8f1c516ac8
+写代码可以参考doc附录里的例子
 ```c++
 struct v4l2_capability
 {
