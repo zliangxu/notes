@@ -25,11 +25,11 @@ alt + ~切换同应用的多窗口
 alt+tab切换不同应用的窗口
 
 长按super键(windows下的win键)，显示快捷键
-
+```
 ctrl+c和ctrl+z都是中断命令,但是他们的作用却不一样.ctrl+c是强制中断程序的执行,而ctrl+z的是将任务中断,但是此任务并没有结束,他仍然在进程中他只是维持挂起的状态,用户可以使用fg/bg操作继续前台或后台的任务,fg命令重新启动前台被中断的任务,bg命令把被中断的任务放在后台执行.例如:当你vi一个文件是,如果需要用shell执行别的操作,但是你又不打算关闭vi,因为你得存盘推出,你可以简单的按下ctrl+z,shell会将vi进程挂起~,当你结束了那个shell操作之后,你可以用fg命令继续vi你的文件
 
 删除内核命令 ubuntu tweak，或者sudo apt-get remove linux-image
-```
+
 linux下c与cplusplus混合编程头文件需要以如下方式把
 extern "C"
 {
@@ -86,59 +86,48 @@ realloc()//用来改变已经分配内存块的长度
 void *free(void *ptr_to_memory);
 文件所定//为多用户多任务操作系统设计
 数据库//linux系统自带的数据库dbm
-第八章 MySQL
-第九章 开发工具
+## 第八章 MySQL
+## 第九章 开发工具
 make makefile、版本控制工具、rpm
-第十章 常用调试技巧
-gcc -Wall -pedantic -ansi输出警告信息
+## 第十章 常用调试技巧
+gcc -Wall -pedantic -ansi输出警告信息ll
 编译器定义的调试宏，在编译时，宏被对应的字符串替换，运行时可以输出这些字符串
-__DATE__
-__LINE__
-__FILE__
-__TIME__
-gdb + programName 进入gdb调试模式，q退出。
-l : 输出代码
-break + 行数 ： 在第几行设置断点
-r ： run 运行程序
-c  : continue 命令
-n ：单步运行
-p ： print 达因变量
-bt ：查找函数堆栈
-q ： 退出gdb
-静态程序检测工具
-动态程序检测工具
-程序调试方法：gdb, printf, core dump, log
+__DATE__  
+__LINE__  
+__FILE__  
+__TIME__  
 
-perrr() 系统函数，输出系统调用失败时的错误信息。
-第十一章 进程和信号
-ps： 显示当前运行的进程
-system("");//调用
-execlp();//替换进程
-//复制进程
-信号
-kill -s 9（发送杀死进程命令）//发送信号给进程
-signal() //接受到指定信号后调用函数
 
-进程间通信：管道
-进程管道(由一个运行程序创建的多个进程(相关的进程))
-FILE *popen()；
-int pclose();
-int pipe(int file_descriptor[2]);//descriptor[0]读文件描述符，descriptor[1]写文件描述符
-对文件描述符操作用read(),write;
-对文件流操作用fread(),fwrite();
-命名管道：FIFO（用于不相关进程数据传输）
-mkfifo filename//命令创建filename fifo
+perrr() 系统函数，输出系统调用失败时的错误信息。  
+### 第十一章 进程和信号  
+ps： 显示当前运行的进程  
+system("");//调用  
+execlp();//替换进程  
+//复制进程  
+信号  
+kill -s 9（发送杀死进程命令）//发送信号给进程  
+signal() //接受到指定信号后调用函数  
+
+进程间通信：管道  
+进程管道(由一个运行程序创建的多个进程(相关的进程))  
+FILE *popen()；  
+int pclose();  
+int pipe(int file_descriptor[2]);//descriptor[0]读文件描述符，descriptor[1]写文件描述符  
+对文件描述符操作用read(),write;  
+对文件流操作用fread(),fwrite();   
+命名管道：FIFO（用于不相关进程数据传输）  
+mkfifo filename//命令创建filename fifo   
 ### 第十二章 POSIX线程
 &emsp 线程与其创建者共享全局变量、文件描述符、信号句柄、当前目录状态。
 同步的方法（用于控制线程的切换）
-     信号量：如同看守一段代码的看门人，计数信号量，常用来保护一段代码，使其每次只能被一个执行线程运行；
-         有两组接口函数用于信号量，一组用于POSIX的实时扩展，用于线程；另一组为系统PV信号量，用于进程的同步。
-         int sem_init()//初始化信号量对象
-         int sem_wait()//以原子操作的方式给信号量加一；（原子操作，大致是操作过程中不会被中断，结果会保证正确）
-         int sem_post()//以原子操作的方式给信号量减一；
-         int sem_trywait()//sem_wait()的非阻塞版本;
-         int sem_destroy()//对信号量进行清理；
-     互斥量：同一时间只有一个线程可以对某对象进行操作。
+     信号量：如同看守一段代码的看门人，计数信号量，常用来保护一段代码，使其每次只能被一个执行线程运行；  
+         有两组接口函数用于信号量，一组用于POSIX的实时扩展，用于线程；另一组为系统PV信号量，用于进程的同步。  
+         int sem_init()//初始化信号量对象  
+         int sem_wait()//以原子操作的方式给信号量加一；（原子操作，大致是操作过程中不会被中断，结果会保证正确）  
+         int sem_post()//以原子操作的方式给信号量减一；  
+         int sem_trywait()//sem_wait()的非阻塞版本;    
+         int sem_destroy()//对信号量进行清理；  
+     互斥量：同一时间只有一个线程可以对某对象进行操作。  
 
 三大IPC机制（inter-process communication）（可以是多个运行程序创建的进程（不相关的进程））
 信号量
@@ -213,9 +202,9 @@ struct sockaddr_in{
 int listen(int socket, int backlog);
 backlog指定监听套接字队列的最大长度，即服务器套接字可以容纳的未处理连接的最大数目。
 当监听到连接请求时，就可以接受连接了。
-int accept(int socket, struct sockaddr *address, size_t *address_len);
-参数sockaddr指定了客户的地址，如果不关心客户的地址，可以设置为NULL，系统调用返回的是一个新的套接字描述符，可以直接对这个描述符进行read()、write()操作。
-客户端套接字。
-客户端同样需要创建套接字，创建方法与服务器端相同，然后直接请求连接就可以了，请求连接的系统调用
-int connect(int socket, const struct sockaddr *address, size_t address_len);
+int accept(int socket, struct sockaddr *address, size_t *address_len);  
+参数sockaddr指定了客户的地址，如果不关心客户的地址，可以设置为NULL，系统调用返回的是一个新的套接字描述符，可以直接对这个描述符进行read()、write()操作。  
+客户端套接字。  
+客户端同样需要创建套接字，创建方法与服务器端相同，然后直接请求连接就可以了，请求连接的系统调用  
+int connect(int socket, const struct sockaddr *address, size_t address_len);  
 该套接字没有绑定地址，即通过一个未命名套接字与服务器端监听套接字之间建立连接的方法来连接到服务器。

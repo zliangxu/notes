@@ -30,10 +30,26 @@ http://blog.csdn.net/codectq/article/details/44278465
     progressive： 逐行扫描  
     interlace : 隔行扫描
 ## notes
-写代码可以参考doc附录里的例子
+写代码可以参考doc附录里的例子  
+结构体
 ```c++
 struct v4l2_capability
 {
     _u32 capabilities; //摄像头有多种模式，拍照，视频输出，覆盖模式，视频流
 };
+// 应用程序与驱动之间交换的buf，
+struct v4l2_buffer
+{
+    __u32 index; //buf的序号，申请的buf是多个的
+    enum v4l2_buf_type; //buf类型
+    __32 bytesused; //使用的字节数
+    __32 flags; //buf flafs,表示内存已经被映射到用户空间、在输入队列、在输出的队列
+};
+```
+
+控制参数
+```c++
+VIDIOC_QUERYBUF; //查询buf的状态，参数v4l2_buffer
+VIDIOC_QBUF; // enqueue 参数v4l2_bufferr
+VIDIOC_DQBUF; // dequeue, exchange a buffer
 ```

@@ -1,14 +1,36 @@
-https://cmake.org/Wiki/CMake //系统wiki
-https://cmake.org/cmake/help/v3.7/
-https://cmake.org/cmake/help/v3.0/index.html
+https://cmake.org/Wiki/CMake //系统wiki  
+https://cmake.org/cmake/help/v3.7/  
+https://cmake.org/cmake/help/v3.0/index.html  
 
-<<<<<<< HEAD
+# CMakeLists.txt
+## tips
+- 指令是大小写无关的，参数、变量名是大小写相关的
+- if语句是直接使用变量名，if语句内涵取变量值的工作(${VAR})
+- 参数之间使用空格或分号分开
+- 
+## 指令
+1. project(PROJECTNAME [CXX] [C] [Java])  
+    指定工程名、工程支持的语言，默认支持所有语言。  
+    会自动定义两个变量project_binary_dir、project_source_dir
+2. set(VAR [VALUE] [CACHE TYPE DOCSTRING [FORCE]])  
+    取变量值${VAR}
+3. add_executable(EXECUTABLE_NAME [SRC_FILE])  
+    工程名和可执行文件名没有关系
+4. message([SEND_ERROR | STATUS | FATAL_ERROR] "display" ...)  
+    send_error:产生错误
+    status:输出后缀为-的信息？？
+    fatal_error:终止编译
+# make
+## 指令
+- make clean  
+    清除编译出的可执行文件
+- make distclean  
+    不支持，编译过程的临时文件是无法清除的
+
 - [cmake设置指定版本opencv](http://www.cnblogs.com/xzd1575/p/5555523.html)
 ```shell
 set(OpenCV_DIR "/home/lxg/app/opencv-2.4.9/build")
 ```
-=======
->>>>>>> b631c847d5105583cf51466c1f5d8726b7883975
 
 make是一条命令，其有三个常用的选项：  
      -f <fileName>: 它的作用是告诉make命令将哪个文件作为makefile文件，如果未使用这个选项，将在当前路径下寻找默认的文件名，makefile， 之后是 Makefile。  
@@ -65,6 +87,7 @@ target_link_libraries(useHello hello_shared) //usehello是要生成的可执行�
 error :
 
 - 无法找到**Config.cmake，这个文件由安装包的配置决定，不是cmake自动提供的。
+# blog
 
 一、      基本使用
 
