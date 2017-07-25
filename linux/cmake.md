@@ -7,7 +7,8 @@ https://cmake.org/cmake/help/v3.0/index.html
 - 指令是大小写无关的，参数、变量名是大小写相关的
 - if语句是直接使用变量名，if语句内涵取变量值的工作(${VAR})
 - 参数之间使用空格或分号分开
-- 
+- 注释使用"#"
+
 ## 指令
 1. project(PROJECTNAME [CXX] [C] [Java])  
     指定工程名、工程支持的语言，默认支持所有语言。  
@@ -20,20 +21,43 @@ https://cmake.org/cmake/help/v3.0/index.html
     send_error:产生错误
     status:输出后缀为-的信息？？
     fatal_error:终止编译
-5. add_subdirectory(SOURCE_DIR [BINARY_DIR] [EXCLUDE_FROM_ALL])
-    向当前工程添加存有源代码的子目录(SOURCE_DIR)；BINARY_DIR为编译结果存放的文件夹，是在当前运行make命令的目录里创建的新文件夹；EXCLUDE_FROM_ALL表示将这个目录从编译过程中排除，因为它可以是个例子，独立于整个工程的编译。
-## 环境便令
+5. add_subdirectory(SOURCE_DIR [BINARY_DIR] [EXCLUDE_FROM_ALL])  
+    向当前工程添加存有源代码的子目录(SOURCE_DIR)；BINARY_DIR为对应的编译输出文件夹；EXCLUDE_FROM_ALL表示将这个目录从编译过程中排除，因为它可以是个例子，独立于整个工程的编译。
+6. install(TARGETS myrun mylib mystaticlib  
+            RUNTIME DESTINATION bin  
+            LIBRARY DESTINATION lib  
+            ARCHIVE DESTINATION libstatic)  
+    把可执行文件、动态库、共享库安装到${CMAKE_INSTALL_PREFIX}<DESTINATION定义的命令> 
+7. add_library(LIBRARY_NAME [SHARED|STATIC|MODULE] [EXCLUDE_FROM_ALL] [SRC_FILE]) 
+    exclude_from_all:表示不会被默认构建，除非有其它模块依赖或手动创建
+    前缀名lib和后缀名.a或.so是自动添加的，不在name的定义范围内
+8. set_target_properties()
+9. include_directories([after|before] [system] dir1 dir2 ...)
+    向工程添加多个特定的头文件搜索路径，如果路径存在空格，需使用双引号括起来;
+    默认是将搜索路径追加到已有的搜索路径的后面，即默认参数after
+10. link_directories(dir1 dir2 ...)
+    添加非标准的共享库搜索路径
+11. target_link_libaries(target lib1<debug|optimized> lib2 ...)
+    为target添加需要的共享库、静态库
+## cmake变量
 - project_binary_dir: 执行make的目录
 - project_source_dir: 整个工程目录
 - executable_output_path: 可执行文件的生成目录，在哪里add_executable在哪里设置这个变量
-- library_output_path: 共享库的生成目录，在哪里add_library在哪里设置这个变量
+- library_output_path: 共享库、静态库的生成目录，在哪里add_library在哪里设置这个变量
+- cmake_install_prefix: 文件安装目录的前缀，默认是/usr/local
+## 环境变量(不是cmake变量，而是操作系统的环境变量)
+- CMAKE_INCLUDE_PATH
+    cmake中的find_path命令会搜索这个路径下的目录，查找头文件
+- CMAKE_LIBARAY_PATH
+    cmake中的find_library命令会搜索这个路径下的库文件
 # make
 ## 指令
 - make clean  
     清除编译出的可执行文件
 - make distclean  
     不支持，编译过程的临时文件是无法清除的
-
+- make VERBOSE=1
+    输出编译错误信息
 - [cmake设置指定版本opencv](http://www.cnblogs.com/xzd1575/p/5555523.html)
 ```shell
 set(OpenCV_DIR "/home/lxg/app/opencv-2.4.9/build")
