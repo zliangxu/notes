@@ -1,3 +1,6 @@
+# telnet
+
+# ssh
 ssh是一个用于远程登录的连接工具。
 ssh有公钥、秘钥之分，公钥放在远程端，相当于一把锁，秘钥就是钥匙，保持在本地电脑。可以将一对公钥、秘钥用在多个地方。
 远程操作：
@@ -22,3 +25,6 @@ sudo raspi-config #在打开的界面内选择interface的选项，enter后又�
 #可以直接登陆
 ssh UserName@Ip_Address
 ```
+
+# 用户管理
+使用adduser，useradd比较弱

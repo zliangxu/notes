@@ -8,4 +8,8 @@
     parallel linear stay parallel;  
     evenly spaced;   
     origin remains fixed;
+6. inverse matrix  
+    column space   
+    rank  
+    null space
 

@@ -1,3 +1,5 @@
+http://blog.csdn.net/K346K346/article/details/48750417
+
 ## 文档对象模型(document object model, DOM)
 DOM是W3C(万维网联盟)的推荐标准，分为三部分
 核心DOM 

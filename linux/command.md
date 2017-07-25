@@ -19,14 +19,51 @@ find 默认搜索当前目录及其子目录，并不过滤任何结果。
 ### 5. type
 
 ### 6. 软件卸载及安装
-- dpkg
+- apt(advanced packaging tool，应该是基于dpkg的，即获取到包后使用dpkg安装包)
+```shell
+apt-cache search
+apt-get install 
+apt-get reinstall
+apt-get remover [--purge(删除包及配置文件)]
+#更新源
+apt-get update 
+#更新已安装的包
+apt-get upgrade
+#升级系统
+apt-get dist-upgrade
+```
+- dpkg(debian package,ubuntu是源自debian的linux发行版本)
+    是一个比较底层的工具
 ```shell
 #卸载 purge，不保留配置文件
 dpkg -P <package>
 #卸载，保留配置文件
 dpkg -r <package> 
+#显示所有已安装的deb包，同时显示版本号及剪短说明
+dpkg -l
+#显示特定包的信息
+dpkg -s PACKAGENAME
 ```
+- yum(yellow dog updater, modified)
+    是一个前端软件包管理器，基于rpm包管理
+```shell
+# 安装包
+yum install package
+# 卸载包
+yum remove package
+```    
 
+- rpm(redhat package management)
+```shell
+# 卸载包
+rpm -e
+# 查询已安装的包
+rpm -q 
+# 安装包
+rpm -i
+# 升级包
+rpm -u 
+```
 - 内核操作
 ```shell
 #内核操作

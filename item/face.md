@@ -1,8 +1,9 @@
-[github开源人脸检测](https://github.com/shanren7/real_time_face_recognition)
-[think face](http://www.thinkface.cn/portal.php)
-[dlib](http://dlib.net/)
-人脸检测还有 npd, pico, 云从
-centerloss人脸识别
+[github开源人脸检测](https://github.com/shanren7/real_time_face_recognition)  
+[think face](http://www.thinkface.cn/portal.php)  
+[dlib](http://dlib.net/)  
+[人脸识别系统](http://www.cnblogs.com/hrlnw/p/6226287.html)  
+人脸检测还有 npd, pico, 云从    
+centerloss人脸识别  
 
 
 ## 人脸对齐,[face alignment](http://blog.csdn.net/eastlhu/article/details/25063193)
@@ -10,7 +11,6 @@ centerloss人脸识别
 
 ## seetaface 中科院计算所山世光研究员团队
 [seetaface介绍](https://zhuanlan.zhihu.com/p/22451474)
-[人脸识别系统](http://blog.sina.com.cn/s/blog_6ae1839101012fbb.html)
 
 - face detection 人脸检测模块
     结合传统人造特征与多层感知机(MLP)的级联结构，由粗到精的设计理念，兼顾了速度和精度的平衡
@@ -29,7 +29,14 @@ centerloss人脸识别
 - face identification 人脸特征提取与对比模块
     大部分使用卷积神经网络(CNN)，提取人脸特征
     VIPLFaceNet由AlexNet裁剪得到，通过卷积层、全连接层得到2048维的特征向量，特征比对使用Cosine计算相似度，然后进行阈值比较(验证)或排序(识别)
+- [ubuntu 安装seetaface](http://www.nljb.net/default/%E5%9C%A8Ubuntu%E4%B8%ADBuild%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E5%BC%95%E6%93%8ESeetaFace/)
+(http://www.cnblogs.com/makefile/p/seetaface-install.html)
 
+- 问题
+    1. illegal instruction(core stump)
+        是因为amd 不支持sse，在cmakeLists.txt内set为off就可以了
+    2. 编译faceIdentification时
+    需要添加这一行，才会找到lib库文件 link_directories(${PROJECT_BINARY_DIR})
 
 ## 人脸识别系统[概述](http://blog.sina.com.cn/s/blog_6ae1839101012fbb.html)
 - 人脸检测跟踪
@@ -67,4 +74,12 @@ centerloss人脸识别
 
 
 ## Joint Cascade Face Detection and Alignment（MSRA,ECCV14)
-    [文章讲解](http://blog.jobbole.com/85783/)
+[文章讲解](http://blog.jobbole.com/85783/)
+
+## 数据库
+google的leveldb数据库，不适合做查询工作，不支持网络服务
+sqlite是一个轻型的数据库
+mysql跨平台，可以使用c++操作数据库
+MariaDB，类似mysql
+xml   
+protobuf：一般用于网络通信，把复杂数据转为序列化数据  

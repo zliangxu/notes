@@ -5,13 +5,16 @@ softmax回归模型是logistic回归模型在多分类上的推广，具体的
 ## tip
 - 上标和下标的区别？？  
     上标是第几个样本，下标是样本数据的第几个特征。？？
-- logistic回归是针对二分类问题的。
-## logistic回归
+- logistic回归是一种分类方法，包括二项logistic回归、多项logistic回归。
+## 二项logistic回归
 - 假设函数($\theta$是模型参数，是矩阵，$x^i$是列向量，表示数据集中第i个样本)
 $$h_{\theta}(x^i)=\frac{1}{1+exp(\theta^{T}x^i)}$$
 - 代价函数，可以再加权重衰减项
 $$J(\theta)=-\frac{1}{m}[\sum_{i=1}^{m}(y^i*log(h_{\theta}(x^i)+(1-y^i)*log(1-h_{\theta}(x^i))))]$$
 
+## 多项logistic回归
+$$h_{\theta}(y^i=k|x^i) = \begin{cases}\frac{exp(\theta_k^Tx^i)}{1+\sum_{j=1}^{K-1}exp(\theta_j^Tx^i)} &\text{ if } k=1,2,3...,K-1  \\
+ \frac{1}{1+\sum_{j=1}^{K-1}exp(\theta_j^Tx^i)} &\text{ if }k=K\end{cases}$$
 ## softmax回归
 - 假设函数($\theta$是一个k*(n+1)的矩阵，k指类别数，n+1指每个样本的特征数n维并加上偏置项)
 $$h_{\theta}(x^i)=\begin{bmatrix} p(y^i=1|x^i;\theta) \\ p(y^i=2|x^i;\theta) \\...\\ p(y^i=k|x^i;\theta)\end{bmatrix}=\frac{1}{\sum_{j=1}^{k}exp(\theta_j^Tx^i)} \begin{bmatrix} exp(\theta_1^Tx^i) \\ exp(\theta_2^Tx^i) \\ ... \\ exp(\theta_k^Tx^i) \end{bmatrix}$$(1)
@@ -40,5 +43,5 @@ $$\frac{\partial z_j}{\partial \theta_j}=(x^i)^T$$
 
 
 ## 关系
-由于数据冗余，当$\psi=\theta_1$时，两者的代价函数与假设函数一致
+由于数据冗余，当$\psi=\theta_K$时，多项logistic回归与softmat的代价函数与假设函数一致
 
