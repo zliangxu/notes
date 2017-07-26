@@ -15,3 +15,7 @@ q ： 退出gdb
 静态程序检测工具  
 动态程序检测工具  
 程序调试方法：gdb, printf, core dump, log  
+
+## cgdb
+- u + line_num: until, 运行到函数
+- up :运行

@@ -62,3 +62,4 @@ I used the following algorithm.
 视频图像中车辆的检测与跟踪
 5. 图书一维条形码的识别
 
+[自动感应门](https://wenku.baidu.com/view/1c05d5580b1c59eef8c7b466.html)

@@ -1,5 +1,12 @@
-https://gcc.gnu.org/
-https://gcc.gnu.org/onlinedocs/gcc-6.2.0/gcc/index.html#toc_Invoking-GCC
+https://gcc.gnu.org/  
+https://gcc.gnu.org/onlinedocs/gcc-6.2.0/gcc/index.html#toc_Invoking-GCC  
+
+
+## command options
+c语言  
+-std=   
+c++语言  
+-std=  
 
 ## 段错误
 
@@ -20,5 +27,5 @@ a.out(assembler output)
      gcc -E -dM -</dev/null
 
 ## STL
-vector definition
+vector definition  
 template < class T, class Alloc = allocator<T> > class vector; // generic template

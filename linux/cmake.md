@@ -31,7 +31,7 @@ https://cmake.org/cmake/help/v3.0/index.html
 7. add_library(LIBRARY_NAME [SHARED|STATIC|MODULE] [EXCLUDE_FROM_ALL] [SRC_FILE]) 
     exclude_from_all:表示不会被默认构建，除非有其它模块依赖或手动创建
     前缀名lib和后缀名.a或.so是自动添加的，不在name的定义范围内
-8. set_target_properties()
+8. set_target_properties() 
 9. include_directories([after|before] [system] dir1 dir2 ...)
     向工程添加多个特定的头文件搜索路径，如果路径存在空格，需使用双引号括起来;
     默认是将搜索路径追加到已有的搜索路径的后面，即默认参数after
@@ -39,13 +39,24 @@ https://cmake.org/cmake/help/v3.0/index.html
     添加非标准的共享库搜索路径
 11. target_link_libaries(target lib1<debug|optimized> lib2 ...)
     为target添加需要的共享库、静态库
-## cmake变量
-- project_binary_dir: 执行make的目录
-- project_source_dir: 整个工程目录
+12. subdirs:一次添加多个子目录，不推荐使用
+13. cmake_minimum_required(VERSION 2.8)
+    需要的最低版本号
+
+## cmake变 量
+变量引用方式: ${VAR_NAME};在if语句中，直接使用变量名if var_name  
+自定义变量方式: 1.显式定义，使用set命令;2.隐式定义，像project(name)命令会定义name_binary_dir和name_source_dir两个变量  
+常用变量：
+- project_binary_dir: 执行make的目录，即工程编译发生的目录
+- project_source_dir: 整个工程顶层目录
 - executable_output_path: 可执行文件的生成目录，在哪里add_executable在哪里设置这个变量
 - library_output_path: 共享库、静态库的生成目录，在哪里add_library在哪里设置这个变量
 - cmake_install_prefix: 文件安装目录的前缀，默认是/usr/local
+- cmake_c_flags: 设置c编译选项(即gcc的参数)，也可以通过add_definitions()添加
+- cmake_cxx_flags:设置c++编译选项，同上。
 ## 环境变量(不是cmake变量，而是操作系统的环境变量)
+cmake调用环境变量的方式:$ENV{var_name}
+设置环境变量的方式:set(ENV{var_name} value)
 - CMAKE_INCLUDE_PATH
     cmake中的find_path命令会搜索这个路径下的目录，查找头文件
 - CMAKE_LIBARAY_PATH
@@ -90,19 +101,8 @@ SET(CMAKE_CXX_FLAGS_RELEASE "$ENV{CXXFLAGS} -o3 -Wall")
 然后，在编译的时候，使用如下命令  
 cmake -DCMAKE_BUILD_TYPE=Debug（Release） path  
 
-## 一个常见的CMakeLists.txt内容
-- 声明要求的cmake最低版本
-    cmake_minimum_required(VERSION 2.8)
-- 声明一个cmake工程
-    project(HelloSLAM)
-- 添加一个可执行程序
-    add_executable(helloSLAM helloSLAM.cpp)
-- 声明包含的头文件
-    include_directories()
-- 链接库文件，所有用到的库文件都可以用路径指明
-    target_link_libraries()
+执行cmake . 得到makeFile，接着可以执行 make ，编译得到可执行文件，这是内部编译 。更好的方法是mkdir build，在build文件夹下执行cmake .. ,接着make，这样可以把编译文件留到build文件夹下，这叫外部编译。
 
-执行cmake . 得到makeFile，接着可以执行 make ，编译得到可执行文件 。更好的方法是mkdir build，在build文件夹下执行cmake .. ,接着make，这样可以把编译文件留到build文件夹下
 ## 静态库、共享库
 在linux中，库文件分为静态库和共享库两种，静态库以 .a结尾，共享库以 .so结尾， 所有库都是一些函数的打包集合，差别在于静态库每次调用都会生成一个副本，而共享库只有一个副本，更省空间。库文件是一个二进制压缩包，使用时，还需要对应的头文件。
 
@@ -119,47 +119,6 @@ error :
 
 - 无法找到**Config.cmake，这个文件由安装包的配置决定，不是cmake自动提供的。
 # blog
-
-一、      基本使用
-
-安装：下载二进制包后可直接解压使用
-
-从源码安装则执行命令：./bootstrap; make; make install——尝试执行bootstrap失败
-
-使用：cmake dir_path，生成工程文件或makefile文件
-
-二、      概念
-
-out-of-source build，与in-source build相对，即将编译输出文件与源文件放到不同目录中；
-
-三、      基本结构
-
-1，依赖CMakeLists.txt文件，项目主目标一个，主目录中可指定包含的子目录；
-
-2，在项目CMakeLists.txt中使用project指定项目名称，add_subdirectory添加子目录
-
-3，子目录CMakeLists.txt将从父目录CMakeLists.txt继承设置（TBD，待检验）
-
-四、      语法
-
-1.       #注释
-
-2.       变量：使用set命令显式定义及赋值，在非if语句中，使用${}引用，if中直接使用变量名引用；后续的set命令会清理变量原来的值；
-3.       command (args ...)  #命令不分大小写，参数使用空格分隔，使用双引号引起参数中空格
-4.       set(var a;b;c) <=> set(var a b c)  #定义变量var并赋值为a;b;c这样一个string list
-5.       Add_executable(${var}) <=> Add_executable(a b c)   #变量使用${xxx}引用
-
-6.       条件语句：
-if(var) #var 非empty 0 N No OFF FALSE... #非运算使用NOT
-       …
-else()/elseif() … endif(var)
-
-7.       循环语句
-Set(VAR a b c)
-Foreach(f ${VAR})       …Endforeach(f)
-
-8.       循环语句
-WHILE() … ENDWHILE()
 
 五、 内部变量  
 CMAKE_C_COMPILER：指定C编译器   
