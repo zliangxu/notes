@@ -55,28 +55,29 @@ overfitting or overtraining
 规则化项并没有包括偏置系数b，因为一个比较大的偏置，可以让我们更容易改变网络的行为。  
 **other techniques for regualrization**  
 - L1 regularization  
-![math95](../image/math95.png)  
-- dropout  ?
+$$C=C_0+\frac{\lambda}{n}\sum_w |w|$$ (95)
+- dropout 
+  思想是更改网络结构。在每轮训练开始前，随机地临时删除一半的隐藏层神经元，再进行前向传播、反向梯度传递，训练结束后，把所有隐藏层神经元的权重都降低一半，然后使用所有隐藏层神经元预测。
 - artificiallly expanding the training data，如对数字进行旋转，就得到了新的数据  
-### 6. weight initialization  
+### 7. weight initialization  
 前面用到的权重、偏置初始化是用的均值为0，标准差为1的独立高斯分布随机数。  
 改变权重、偏置的初始化，可以让神经网络的最初结果较好，也就加速了训练过程。当前，对最后的正确率影响不打，但在第四章会讲到，对最后结果的改善。  
 权重初始化的目的也就是为了避免saturation，选择标准偏差为1/根号下n in  
-### 7. handwriting recognition revisited: the code
+### 8. handwriting recognition revisited: the code
 代码中新添了L2正则化项
 神经网络的保存方法，save，加载方法，load，使用了json，而不是pickle
-### 8. how to choose a neural network's hyper-parameters  
+### 9. how to choose a neural network's hyper-parameters  
 **broad strategy**
 -----
-### 9. other techniques
+### 10. other techniques
 -----
-### 10. variations on stochastic gradient descent
+### 11. variations on stochastic gradient descent
 - hessian technique
 - momentum-based gradient descent
-### 11. other models of artificial neuron
+### 12. other models of artificial neuron
 - tanh neuron  
 ![math109](../image/math109.png)
 - rectified linear neuron  
 ![math112](../image/math112.png)
-### 12. on stories in neural networks
+### 13. on stories in neural networks
 

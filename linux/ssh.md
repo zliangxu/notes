@@ -1,3 +1,4 @@
+## ip:115.156.233.38
 # telnet
 
 # ssh
@@ -37,5 +38,12 @@ sudo raspi-config #在打开的界面内选择interface的选项，enter后又�
 ssh UserName@Ip_Address
 ```
 
-# 用户管理
+## 用户管理
 使用adduser，useradd比较弱
+## 权限管理
+1. 命令行修改
+```shell
+# -a表示追加
+sudo usermod -aG sudo username
+```
+2. 直接修改'/etc/sudoers'
