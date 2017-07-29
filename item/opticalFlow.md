@@ -1,14 +1,14 @@
 光流
 -----
 ## KLT实现
-https://en.wikipedia.org/wiki/Kanade%E2%80%93Lucas%E2%80%93Tomasi_feature_tracker  
-http://cecas.clemson.edu/~stb/klt/  
-https://en.wikipedia.org/wiki/Lucas%E2%80%93Kanade_method  
-opencv  
+- https://en.wikipedia.org/wiki/Kanade%E2%80%93Lucas%E2%80%93Tomasi_feature_tracker  
+- http://cecas.clemson.edu/~stb/klt/    
+    纯c版本，不依赖于opencv，wiki上有链接，比opencv的精度差，计算量大，内存消耗高，并存在内存泄露  
+    https://en.wikipedia.org/wiki/Lucas%E2%80%93Kanade_method  
+- opencv自带版本  
 
-## log
-第一：在都使用预定义跟踪点的情况下，比较lkt和opencvlkt的速度、精度
-第二：在树莓派上比较两种算法的速度，看多线程是否有很大提速作用。
+## log  
+自己写个统计直方图的东西，万成类似ransac的功能  
 ## 光电鼠标使用的技术叫做 digital image correlation.
 - cross-correlation  
 用于表示两幅图像灰度之间的相似度大小
