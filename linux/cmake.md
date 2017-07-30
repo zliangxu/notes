@@ -8,7 +8,11 @@ https://cmake.org/cmake/help/v3.0/index.html
 - if语句是直接使用变量名，if语句内涵取变量值的工作(${VAR})
 - 参数之间使用空格或分号分开
 - 注释使用"#"
-
+- debug
+```shell
+    set(CMAKE_BUILD_TYPE "Debug")
+    set(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS} -O0 -Wall -g -ggdb")
+```
 ## 指令
 1. project(PROJECTNAME [CXX] [C] [Java])  
     指定工程名、工程支持的语言，默认支持所有语言。  

@@ -1,6 +1,8 @@
 跨平台的轻型数据库
 ----
-[usage](http://www.runoob.com/sqlite/sqlite-c-cpp.html)
+[官方文档usage](http://www.runoob.com/sqlite/sqlite-c-cpp.html)
+搜索 使用示例
+[博客usage](http://www.cnblogs.com/5211314jackrose/p/5815935.html)
 ## 特点
 基于c语言写的，支持c++、python、java等多种语言
 ## 安装
