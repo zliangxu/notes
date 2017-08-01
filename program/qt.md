@@ -35,6 +35,7 @@ LIBS += /usr/local/lib/libopencv_highgui.so \
 项目文件就是.pro文件，是用于qmake来生成MakeFile的，可以在项目目录下由qmake -project生成
 qt添加动态链接库文件，在.pro文件添加
 ```c
+// libseeta_facedet_lib.so
 LIBS += -L/home/lxg/codetest/qtface/model/ -lseeta_facedet_lib
 而下面这种会提示找不到库文件
 LIBS += /usr/local/lib/libopencv_highgui.so 
