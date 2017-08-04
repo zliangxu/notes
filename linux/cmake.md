@@ -49,15 +49,19 @@ https://cmake.org/cmake/help/v3.0/index.html
 
 ## cmake变量
 变量引用方式: ${VAR_NAME};在if语句中，直接使用变量名if var_name  
-自定义变量方式: 1.显式定义，使用set命令;2.隐式定义，像project(name)命令会定义name_binary_dir和name_source_dir两个变量  
-常用变量：
+自定义变量方式: 
+1. 显式定义，使用set命令;
+    set(CMAKE_CXX_FLAGS -std=c++11)
+2. 隐式定义，像project(name)命令会定义name_binary_dir和name_source_dir两个变量  
+
+常用变量：  
 - project_binary_dir: 执行make的目录，即工程编译发生的目录
 - project_source_dir: 整个工程顶层目录
 - executable_output_path: 可执行文件的生成目录，在哪里add_executable在哪里设置这个变量
 - library_output_path: 共享库、静态库的生成目录，在哪里add_library在哪里设置这个变量
 - cmake_install_prefix: 文件安装目录的前缀，默认是/usr/local
-- cmake_c_flags: 设置c编译选项(即gcc的参数)，也可以通过add_definitions()添加
-- cmake_< lang >_flags:设置c++编译选项，同上。
+- CMAKE_C_FLAGS: 设置c编译选项(即gcc的参数)，也可以通过add_definitions()添加，必须是大写才会有用
+- CMAKE_< CLANG >_FLAGS:设置c++编译选项，同上。
     <LANG> flags used regardless of the value of CMAKE_BUILD_TYPE.
 
 ## 环境变量(不是cmake变量，而是操作系统的环境变量)

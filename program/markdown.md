@@ -74,7 +74,7 @@ _斜体_ *斜体*
 ![test](../image/aa.png)
 ```
 效果  
-![test](../image/aa.png)
+![test](../image/aa.png) 
 #### 14. 列表：第一行用 '-' 分开，列用 '|' 分开
 ```
 first header | second header
