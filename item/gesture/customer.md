@@ -1,0 +1,1 @@
+[background substraction](https://en.wikipedia.org/wiki/Background_subtraction)

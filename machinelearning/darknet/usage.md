@@ -14,7 +14,8 @@ Tiny YOLO is based off of the Darknet reference network and is much faster but l
 ./darknet classifier
 ./darknet classifier train .data .cfg
 ./darknet detector
-./darknet detector train .data .cfg  .conv(pretrained model)
+./darknet detector train .data .cfg .conv(pretrained model)
+./darknet detector recal .data .cfg .weights  #评估性能
 ```
 
 - .data内容
