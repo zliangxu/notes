@@ -19,7 +19,9 @@ sudo apt-get install gstreamer-base-1.0 gthread-2.0 gtk+-2.0 gtk+-3.0 gstreamer-
 下载地址https://github.com/Itseez/opencv/archive/3.0.0.zip  
 下载完源代码后，解压至特定文件夹下面。  
 3. 进入opencv-3.0.0中，键入如下命令：  
-cmake .  （注意，cmake命令后面隔着一个空格，然后带了一个.）
+cmake .  （注意，cmake命令后面隔着一个空格，然后带了一个.）  
+cmake -D CMAKE_BUILD_TYPE=Debug -D BUILD_TIFF=ON -D BUILD_EXAMPLES=ON -D CUDA_GENERATION=Auto .. (debug版本opencv，也可以设置把gpu关掉)
+
 4. 在terminal中键入：  
 sudo make   
 5. 然后执行安装  

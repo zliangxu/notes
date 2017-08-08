@@ -36,7 +36,7 @@ https://cmake.org/cmake/help/v3.0/index.html
     exclude_from_all:表示不会被默认构建，除非有其它模块依赖或手动创建
     前缀名lib和后缀名.a或.so是自动添加的，不在name的定义范围内
 8. set_target_properties() 
-9. include_directories([after|before] [system] dir1 dir2 ...)
+9. include_directories([after|before] [system] dir2 dir2 ...)
     向工程添加多个特定的头文件搜索路径，如果路径存在空格，需使用双引号括起来;
     默认是将搜索路径追加到已有的搜索路径的后面，即默认参数after
 10. link_directories(dir1 dir2 ...)
@@ -46,6 +46,7 @@ https://cmake.org/cmake/help/v3.0/index.html
 12. subdirs:一次添加多个子目录，不推荐使用
 13. cmake_minimum_required(VERSION 2.8)
     需要的最低版本号
+14. find命令查找的是CMAKE_MODULE_PATH下的目录Find< name >.cmake模块
 
 ## cmake变量
 变量引用方式: ${VAR_NAME};在if语句中，直接使用变量名if var_name  
@@ -63,7 +64,7 @@ https://cmake.org/cmake/help/v3.0/index.html
 - CMAKE_C_FLAGS: 设置c编译选项(即gcc的参数)，也可以通过add_definitions()添加，必须是大写才会有用
 - CMAKE_< CLANG >_FLAGS:设置c++编译选项，同上。
     <LANG> flags used regardless of the value of CMAKE_BUILD_TYPE.
-
+- CMAKE_MOUDLE_PATH
 ## 环境变量(不是cmake变量，而是操作系统的环境变量)
 cmake调用环境变量的方式:$ENV{var_name}
 设置环境变量的方式:set(ENV{var_name} value)
