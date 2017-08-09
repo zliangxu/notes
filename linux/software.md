@@ -1,5 +1,6 @@
 ## app
 - foxit-reader linux 64bit [download](https://www.foxitsoftware.com/products/pdf-reader/)
+    XchangePDFviwer可以试下
 - chrome : 可以直接sudo apt-get install, 也可以直接从 chrome 网站[下载](https://www.chrome64bit.com/)  
     或者 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 - ubuntu开wifi热点。 http://ubuntuhandbook.org/index.php/2014/06/share-internet-with-android-ubuntu-1404/
@@ -38,8 +39,11 @@ gstreamer1.0-libav
 - 幻灯片  
 幻灯都是用 ConTeXt 做的
 
+- 文献管理  
+    zotero
 ## programs app
-- 源代码分析工具 source insight  
+- 源代码分析工具 source insight 
+    是不是只有windows版
     可以显示reference trees, class inheritance diagrams和 call trees.
 
 ## tips
