@@ -98,3 +98,13 @@ git rm -r --cached .
 git add .
 git commit -m 'update .gitignore'
 ```
+
+_site
+.sass-cache
+.jekyll-metadata
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.pdf
+*.gz
