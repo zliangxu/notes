@@ -57,6 +57,7 @@ cost function： mean squared error(MSE) is a smooth function of weights and bia
 当所有的训练数据都被用来过计算梯度时，称为完成了一次 **a epoch of training**，之后就是开始了一次新的**training epoch**
 
 ### implementing our network to classify digits
+
 ```python
 class Network(object):
 

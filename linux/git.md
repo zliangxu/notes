@@ -1,11 +1,9 @@
-找什么教程，不如读懂一个readme.txt   https://guides.github.com/
-Learning github  https://help.github.com/
-[Git 命令解释](https://git-scm.com/docs)   
-[廖雪峰git教程](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
-
+[找什么教程，不如读懂一个readme.txt](https://guides.github.com/)  
+[Learning github](https://help.github.com/) 
 [github pages一个不错的版本](http://csrgxtu.github.io/categories/Linux/)
-
-
+ 
+[Git 命令解释](https://git-scm.com/docs)     
+[廖雪峰git教程](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
 
 - HEAD: git用HEAD表示当前版本，实际上HEAD指向master,master指向当前版本
     HEAD^表示上一个版本。
@@ -22,6 +20,7 @@ git初始[配置过程](https://help.github.com/articles/set-up-git/)
 
 
 Man git-order Or git help + order得到order相关的帮助文档
+
 ## Git 命令
 - Git init: 初始化生成一个.init，命令行提示符处提示当前git版本名称
 - Git clone + ADDRESS：将远程仓库克隆到本地，会自动创建一个和远程仓库同名的文件夹
@@ -83,3 +82,9 @@ git clone 是下载新的文件
 ## "to push an existing reposity from the command line"
 git remote add origin git@github.com:lxg2015/books.git
 git push -u origin master
+
+## gitignore
+- 所有空行或者以注释符号 ＃ 开头的行都会被 Git 忽略。 
+- 可以使用标准的 glob 模式匹配。(glob，shell所使用的简化版正则表达式) 
+- 匹配模式最后跟反斜杠（/）说明要忽略的是目录。 
+- 要忽略指定模式以外的文件或目录，可以在模式前加上惊叹号（!）取反。 

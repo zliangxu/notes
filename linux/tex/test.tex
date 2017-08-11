@@ -1,0 +1,111 @@
+% \documentclass{article}
+% % 到盲区
+% \begin{document}
+% hello,world!
+% \end{document}
+
+% \documentclass[tikz,convert=pdf2svg]{standalone}
+% \usepackage{tikz}
+% \begin{document}
+%     \begin{tikzpicture}
+%         \draw [color=blue!50,->](0,0) node[left]{$A$}-- node [color=red!70,pos=0.25,above,sloped]{Hello}(3,3) node[right]{$B$};
+%     \end{tikzpicture}
+% \end{document}
+
+
+ %!TEX program = xelatex
+ % 使用 ctexart 文类，UTF-8 编码
+ % 作者：王泽宇
+ \documentclass[UTF8]{ctexart}
+    \usepackage{tikz,mathpazo}
+    \usetikzlibrary{shapes.geometric, arrows}
+    \begin{document}
+    \thispagestyle{empty}
+     % 流程图定义基本形状
+    \tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=red!30]
+    \tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
+    \tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!30]
+    \tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!30]
+    \tikzstyle{arrow} = [thick,->,>=stealth]
+    
+    \begin{tikzpicture}[node distance=2cm]
+     %定义流程图具体形状
+    \node (start) [startstop] {Start};
+    \node (in1) [io, below of=start] {Input};
+    \node (pro1) [process, below of=in1] {Process 1};
+    \node (dec1) [decision, below of=pro1, yshift=-0.5cm] {Decision 1};
+    \node (pro2a) [process, below of=dec1, yshift=-0.5cm] {Process 2a};
+    \node (pro2b) [process, right of=dec1, xshift=2cm] {Process 2b};
+    \node (out1) [io, below of=pro2a] {Output};
+    \node (stop) [startstop, below of=out1] {Stop};
+    
+     %连接具体形状
+    \draw [arrow](start) -- (in1);
+    \draw [arrow](in1) -- (pro1);
+    \draw [arrow](pro1) -- (dec1);
+    \draw [arrow](dec1) -- (pro2a);
+    \draw [arrow](dec1) -- (pro2b);
+    \draw [arrow](dec1) -- node[anchor=east] {yes} (pro2a);
+    \draw [arrow](dec1) -- node[anchor=south] {no} (pro2b);
+    \draw [arrow](pro2b) |- (pro1);
+    \draw [arrow](pro2a) -- (out1);
+    \draw [arrow](out1) -- (stop);
+    \end{tikzpicture}
+    \end{document}
+
+
+% \documentclass[tikz]{standalone}
+%     \usepackage{xcolor}
+%     \usetikzlibrary{mindmap} %for mindmap
+%     \definecolor{DeepSkyBlue4}{RGB}{0,104,139}
+%     \begin{document}
+%     \tikzstyle{level 2 concept}+=[sibling angle=40]
+%     \begin{tikzpicture}[scale=0.49, transform shape]
+%     \path[mindmap,concept color=black,text=white]
+%     node[concept] {Pure Mathematics} [clockwise from=45]
+%     child[concept color=DeepSkyBlue4]{
+%     node[concept] {Analysis} [clockwise from=180]
+%     child { 
+%     node[concept] {Multivariate \&amp; Vector Calculus}
+%     [clockwise from=120]
+%     child {node[concept] {ODEs}}}
+%     child { node[concept] {Functional Analysis}}
+%     child { node[concept] {Measure Theory}}
+%     child { node[concept] {Calculus of Variations}}
+%     child { node[concept] {Harmonic Analysis}}
+%     child { node[concept] {Complex Analysis}}
+%     child { node[concept] {Stochastic Analysis}}
+%     child { node[concept] {Geometric Analysis}
+%     [clockwise from=-40]
+%     child {node[concept] {PDEs}}}}
+%     child[concept color=black!50!green, grow=-40]{ 
+%     node[concept] {Combinatorics} [clockwise from=10]
+%     child {node[concept] {Enumerative}}
+%     child {node[concept] {Extremal}}
+%     child {node[concept] {Graph Theory}}}
+%     child[concept color=black!25!red, grow=-90]{ 
+%     node[concept] {Geometry} [clockwise from=-30]
+%     child {node[concept] {Convex Geometry}}
+%     child {node[concept] {Differential Geometry}}
+%     child {node[concept] {Manifolds}}
+%     child {node[concept,color=black!50!green!50!red,text=white] {Discrete Geometry}}
+%     child {
+%     node[concept] {Topology} [clockwise from=-150]
+%     child {node [concept,color=black!25!red!50!brown,text=white]
+%     {Algebraic Topology}}}}
+%     child[concept color=brown,grow=140]{ 
+%     node[concept] {Algebra} [counterclockwise from=70]
+%     child {node[concept] {Elementary}}
+%     child {node[concept] {Number Theory}}
+%     child {node[concept] {Abstract} [clockwise from=180]
+%     child {node[concept,color=red!25!brown,text=white] {Algebraic Geometry}}}
+%     child {node[concept] {Linear}}}
+%     node[extra concept,concept color=black] at (200:5) {Applied Mathematics} 
+%     child[grow=145,concept color=black!50!yellow] {
+%     node[concept] {Probability} [clockwise from=180]
+%     child {node[concept] {Stochastic Processes}}}
+%     child[grow=175,concept color=black!50!yellow] {node[concept] {Statistics}}
+%     child[grow=205,concept color=black!50!yellow] {node[concept] {Numerical Analysis}}
+%     child[grow=235,concept color=black!50!yellow] {node[concept] {Symbolic Computation}};
+%     \end{tikzpicture}
+%     \end{document}
