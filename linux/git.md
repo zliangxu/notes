@@ -84,8 +84,17 @@ git remote add origin git@github.com:lxg2015/books.git
 git push -u origin master
 
 ## gitignore
-- 所有空行或者以注释符号 ＃ 开头的行都会被 Git 忽略。 
-- 可以使用标准的 glob 模式匹配。(glob，shell所使用的简化版正则表达式) 
-- 匹配模式最后跟反斜杠（/）说明要忽略的是目录。 
-- 要忽略指定模式以外的文件或目录，可以在模式前加上惊叹号（!）取反。 
+文件的书写规则
+```shell
+*.a       # 忽略所有 .a 结尾的文件
+!lib.a    # 但 lib.a 除外
+/TODO     # 仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODO
+build/    # 忽略 build/ 目录下的所有文件
+doc/*.txt # 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt
+```
 对于已经提交过的文档，需要设置忽略时，要在git库中删除该文件
+```shell
+git rm -r --cached .
+git add .
+git commit -m 'update .gitignore'
+```
