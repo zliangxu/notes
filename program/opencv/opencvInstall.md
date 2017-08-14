@@ -4,7 +4,12 @@ linux下查看Opencv的版本
 
 pkg-config --modversion opencv  
 
-## 安装
+## 直接安装库
+```shell
+sudo apt-get install libcv-dev
+```
+## 源代码编译安装
+
 前提：系统更新
 sudo apt-get update   
 sudo apt-get upgrade  

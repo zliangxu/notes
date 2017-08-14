@@ -47,7 +47,12 @@ m_BTReal // int 类型
 - blob deleter
 
 3. blob detection
-
+CvBlobDetector在前景掩模的基础上检测新进入场景的Blob（块），子类有两个，分别是CvBlobDetectorSimple和CvBlobDetectorCC，参考文献为《Appearance Models for Occlusion Handling 》2001，检测新目标的基本原则是：当连续多帧图像中包含该连通区域，且具有一致的合理的速度。CvBlobDetectorCC CvBlobDetectorSimple一个最显著的不同在于引入了 CvObjectDetector，用于检测分离的目标块
+算法
+删除宽高很小的目标矩形
+删除与前一帧中目标举行相交的目标矩形
+将目标矩形排序，只取最大的10个
+如果该目标矩形连续10帧出现，且与图像边缘距离足够大，且保持较为一致的运动，则认为新目标生成
 ```cpp
 {cvCreateBlobDetectorCC,"BD_CC","Detect new blob by tracking CC of FG mask"},
 {cvCreateBlobDetectorSimple,"BD_Simple","Detect new blob by uniform moving of connected components of FG mask"},

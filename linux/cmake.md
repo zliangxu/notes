@@ -36,17 +36,19 @@ https://cmake.org/cmake/help/v3.0/index.html
     exclude_from_all:表示不会被默认构建，除非有其它模块依赖或手动创建
     前缀名lib和后缀名.a或.so是自动添加的，不在name的定义范围内
 8. set_target_properties() 
-9. include_directories([after|before] [system] dir2 dir2 ...)
+9. include_directories([after|before] [system] dir2 dir2 ...)  
     向工程添加多个特定的头文件搜索路径，如果路径存在空格，需使用双引号括起来;
     默认是将搜索路径追加到已有的搜索路径的后面，即默认参数after
-10. link_directories(dir1 dir2 ...)
+10. link_directories(dir1 dir2 ...)  
     添加非标准的共享库搜索路径
-11. target_link_libaries(target lib1<debug|optimized> lib2 ...)
+11. target_link_libaries(target lib1<debug|optimized> lib2 ...)  
     为target添加需要的共享库、静态库
 12. subdirs:一次添加多个子目录，不推荐使用
-13. cmake_minimum_required(VERSION 2.8)
+13. cmake_minimum_required(VERSION 2.8)  
     需要的最低版本号
 14. find命令查找的是CMAKE_MODULE_PATH下的目录Find< name >.cmake模块
+15. aux_source_directory(dir VARIABLE)   
+    把一个目录里的源代码文件列表存储在一个VARIABLE变量中
 
 ## cmake变量
 变量引用方式: ${VAR_NAME};在if语句中，直接使用变量名if var_name  
