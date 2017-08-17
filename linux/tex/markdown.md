@@ -5,9 +5,12 @@ instant markdown 插件将页面显示在浏览器内，或者访问   http://lo
 [github markdown](https://guides.github.com/features/mastering-markdown/)   
 [markdown在线学习网站](https://stackedit.io/editor)
 [公示查询](http://goessner.github.io/mdmath/test/)
-[公式](http://mlworks.cn/posts/introduction-to-mathjax-and-latex-expression/)
 [katex](https://khan.github.io/KaTeX/function-support.html)
 
+## 常用数学符号
+$$\leqslant$$
+$$\mathbb{E}$$
+$$\sim$$
 
 #### 0. 理解[markdown](https://kramdown.gettalong.org/syntax.html)
 kramdown 是一个用Ruby实现的Markdown的解析器。github使用的就是这个解释器
@@ -119,6 +122,7 @@ $$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$
 \begin{equation}
 F(x)=\int_0^t\sin(t)\mathrm{d}\,t+\left[\lim_{x\rightarrow0}g(x)\times\sum_{m=0}^\infty\frac{(-1)^m}{\Gamma(m+{\color{red}α}+1)}\right]
 \end{equation}
+
 ## Markdown 扩展
 ``` 
 Markdown 扩展支持:
@@ -134,12 +138,13 @@ Markdown 扩展支持:
 ```
 
 #### 1.  扩展HTML 字体、颜色、字号设置
+只有当有设置脚本时，颜色设置才有效（即上面的javascript）
 markdown本身不支持更改颜色、字体、字号，但是它的扩展HTML支持
 ```
  - <font face="黑体">黑体字</font>
  - <font face="微软雅黑" size=3 color=#0099ff> face="微软雅黑" size= 3 color=#0099ff </font>
 ```
 效果
- - <font face="黑体">黑体字</font>
+ - <font face="黑体" color=#ff00ff>黑体字</font>
  - <font face="微软雅黑" size=3 color=#0099ff> face="微软雅黑" size= 3 color=#0099ff </font>
 

@@ -8,13 +8,16 @@ mackay(2003)
 
 # probability theory
 ## tips
-variance 方差  
-standard deviation 标准差
-
+- expectation 期望  
+    函数 $f(x)$ 关于某分布 $P(x)$ 的期望或期望值是指， 当 $x$ 由分布 $P(x)$ 产生， $f$ 作用于 $x$ 时， $f(x)$ 的平均值。
+    $$\mathbb{E}_{x\sim P}[f(x)]=\sum_x P(x)f(x)$$
+- variance 方差  
+    $$Var(f(x))=\mathbb{E}[(f(x)-\mathbb{E}[f(x)])^2]$$
+- standard deviation 标准差
 - frequentist probability:频率概率  
-直接与事件发生的频率相联系
+    直接与事件发生的频率相联系
 - bayesian probability:贝叶斯概率  
-涉及到确定性的量化
+    涉及到确定性的量化
 
 概率质量函数(PMF、Probability Mass Function)的值是小于等于1的。  
 概率密度函数(PDF、Probability Density Function)的值是可以大于1的。
