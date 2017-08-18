@@ -78,3 +78,21 @@ $$\begin{aligned} \mathbb{E}(\hat\mu_m-\mu)^2
 &=\frac{1}{m^2}\sum_{i=1}^{m}Var(x^{(i)}) \\
 &=\frac{1}{m}\sigma^2
 \end{aligned}$$
+
+## 估计值的方差、标准差？？？？
+中心极限定理：均值的分布是正态分布  
+68-95-99.7分别对应1、2、3个标准差的置信区间  
+95%概率的含义是当总体分布是正态分布时，估计值落在总体均值两个标准差范围内的概率均值。
+
+## 偏差、方差的权衡
+均方误差(为什么)  
+$$\begin{aligned} MSE
+&=\mathbb{E}[(\hat\theta_m-\theta)^2] \\
+&=Bias(\hat\theta_m)^2+Var(\hat\theta_m) \\
+&=[Bias(\hat\theta_m)]^2 + Var(\hat\theta_m) \\
+\end{aligned}$$
+[证明](https://en.wikipedia.org/wiki/Mean_squared_error)
+
+## MLE
+max likelihood estimation(极大似然估计)[wiki](https://zh.wikipedia.org/wiki/%E4%BC%BC%E7%84%B6%E5%87%BD%E6%95%B0)  
+似然和概率是同义词，但在统计学中，两者有明确的区分。概率用于在已知一些参数的情况下，预测接下来的观测所得到的结果；而似然性，则是用于在已知某些观测所得到的结果时，对有关事务的性质的参数进行估计。
