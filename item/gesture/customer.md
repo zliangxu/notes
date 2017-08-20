@@ -5,7 +5,7 @@
 [vs](http://docs.opencv.org/ref/2.4/dd/dc5/classCvBlobTrackerAuto.html)
 
 [vs blog](http://blog.csdn.net/fengbingchun/article/details/7872325)
-
+[vs ](http://blog.csdn.net/lixiaokai8990/article/details/8058240)
 ## opencv自带的video surveilance模块
 
 opencv vs框架示例代码 blobtrack_sample.cpp
@@ -37,7 +37,7 @@ m_BTReal // int 类型
 
 ```cpp
 {cvCreateBlobTrackerCCMSPF,"CCMSPF","connected component tracking and MSPF resolver for collision"},
-{cvCreateBlobTrackerCC,"CC","Simple connected component tracking"},
+{cvCreateBlobTrackerCC,"CC","Simple connected component tracking"},//连通域跟踪
 {cvCreateBlobTrackerMS,"MS","Mean shift algorithm "},
 {cvCreateBlobTrackerMSFG,"MSFG","Mean shift algorithm with FG mask using"},
 {cvCreateBlobTrackerMSPF,"MSPF","Particle filtering based on MS weight"},
@@ -59,5 +59,8 @@ CvBlobDetector在前景掩模的基础上检测新进入场景的Blob（块）�
 ```
 
 4. blob track generator
-
+```cpp
+{cvCreateModuleBlobTrackGenYML,"YML","Generate track record in YML format as synthetic video data"},
+{cvCreateModuleBlobTrackGen1,"RawTracks","Generate raw track record (x,y,sx,sy),()... in each line"},
+```
 5. blob trajectory analysis
