@@ -10,9 +10,11 @@ mackay(2003)
 ## tips
 - expectation 期望  
     函数 $f(x)$ 关于某分布 $P(x)$ 的期望或期望值是指， 当 $x$ 由分布 $P(x)$ 产生， $f$ 作用于 $x$ 时， $f(x)$ 的平均值。
-    $$\mathbb{E}_{x\sim P}[f(x)]=\sum_x P(x)f(x)$$
+
+$$\mathbb{E}_{x\sim P}[f(x)]=\sum_x P(x)f(x)$$
 - variance 方差  
-    $$Var(f(x))=\mathbb{E}[(f(x)-\mathbb{E}[f(x)])^2]$$
+
+$$Var(f(x))=\mathbb{E}[(f(x)-\mathbb{E}[f(x)])^2]$$
 - standard deviation 标准差
 - frequentist probability:频率概率  
     直接与事件发生的频率相联系

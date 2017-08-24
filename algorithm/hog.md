@@ -32,6 +32,7 @@ size_t HOGDescriptor::getDescriptorSize() const
 - gamma/colour normalization  
     gamma变换是用于矫正计算机系统上显卡或显示器出现的亮度偏差，gamma矫正源自显示器的矫正，一般取0.4或0.45，其最接近人类视觉系统．在hog特征上，它的作用不是很明显．  
     计算公式  
+
     $$I^{'}(x,y)=I(x,y)^{gamma}$$
 - spatial/orientation binning  
     每一个像素对梯度直方图通道做加权投影，论文中写的是方向与位置的双线性插值。  
