@@ -50,29 +50,24 @@ normal equations(正规方程)：优化方程的确切解
 - point estimator(点估计)  
 点估计是对感兴趣的量做单个结果的最优预测。感兴趣的量可以是一个参数、参数向量或者函数(函数在函数空间内同样是一个点)  
 点估计或称为统计量的定义式如下，其中 $x^{(i)}$ 为独立同分布的数据点，那么$x^{(i)}$是从一个随机抽取的，所以它是一个变量，任何以它为变量的函数也是变量。   
-
-    $$\hat{\theta}_m=g(x^{(1)}, x^{(2)}, ......, x^{(m)})$$
+> $$\hat{\theta}_m=g(x^{(1)}, x^{(2)}, ......, x^{(m)})$$
 - bias(偏差：点估计最常研究的性质)  
-
-    $$bias(\hat{\theta}_m)=\mathbb{E}(\hat{\theta}_m)-\theta$$
+> $$bias(\hat{\theta}_m)=\mathbb{E}(\hat{\theta}_m)-\theta$$
 其中，$\theta$ 表示真实值  
 无偏估计、渐进无偏估计
 
 - 对于高斯分布，期望、方差的点估计  
 使用样本均值估计期望是无偏估计  
-
-$$\hat{\mu}_m = \frac{1}{m}\sum_{i=1}^{m}x^{(i)}$$
+> $$\hat{\mu}_m = \frac{1}{m}\sum_{i=1}^{m}x^{(i)}$$
 证明：  
-
-$$\begin{aligned} \mathbb{E}[\hat{\mu}_m] 
+> $$\begin{aligned} \mathbb{E}[\hat{\mu}_m] 
 &=\mathbb{E}[\frac{1}{m}\sum_{i=1}^{m}x^{(i)}] \\ 
 &=\frac{1}{m}\sum_{i=1}^m \mathbb{E}[x^{(i)}] \\
 &=\frac{1}{m} \sum_{i=1}^m \mu \\
 &= \mu \end{aligned}$$
 
 如果用样本方差估计方差，是有偏估计
-
-$$\hat{\sigma}_m ^2 = \frac{1}{m} \sum_{i=1}^{m}(x^{(i)}-\hat{\mu}_m)^2$$
+> $$\hat{\sigma}_m ^2 = \frac{1}{m} \sum_{i=1}^{m}(x^{(i)}-\hat{\mu}_m)^2$$
 
 其中，$\hat{\mu}_m$ 为样本均值  
 证明：  
