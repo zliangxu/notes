@@ -78,8 +78,9 @@ sudo apt-get remove linux-image
 #删除后要使用命令下条命令更新grub
 sudo update-grub
 ```
-### 7.已安装软件查询
-
+### 7. 已安装软件查询
+### 8. which
+查询可执行文件的位置
 
 ## cut
 剪切字符串

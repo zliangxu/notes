@@ -1,0 +1,4 @@
+使用pip安装的pytorch
+import pytorch
+使用anaconda安装的pytorch
+import torch

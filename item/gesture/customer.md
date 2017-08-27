@@ -66,3 +66,5 @@ CvBlobDetector在前景掩模的基础上检测新进入场景的Blob（块）�
 5. blob trajectory analysis
 
 ## 视频传输
+[mjpg-streamer](http://blog.csdn.net/secho1997/article/details/53495336)
+[mjpg-streamer github](https://github.com/jacksonliam/mjpg-streamer)
