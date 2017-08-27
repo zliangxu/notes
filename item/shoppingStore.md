@@ -1,0 +1,2 @@
+使用fireprime开发板
+处理器：四核cortex-A7架构处理器 rk3128

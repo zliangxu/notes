@@ -1,11 +1,11 @@
-[qt gui-class](http://doc.qt.io/qt-4.8/qtgui-module.html)
-[qt class table](http://doc.qt.io/qt-5/classes.html)
-[qt精品教程](http://www.qter.org/portal.php?mod=list&catid=6)
-[qt下载列表](http://download.qt.io/archive/)
-[qt官方例子](http://doc.qt.io/qt-5/qtexamplesandtutorials.html)
-[sqlite qt驱动](http://qsqlite.sourceforge.net/#description)
-[qt自带数据库 例子](http://www.qter.org/portal.php?mod=view&aid=51)
-[在线电子书](https://qtguide.ustclug.org/)
+[qt gui-class](http://doc.qt.io/qt-4.8/qtgui-module.html)  
+[qt class table](http://doc.qt.io/qt-5/classes.html)  
+[qt精品教程](http://www.qter.org/portal.php?mod=list&catid=6)  
+[qt下载列表](http://download.qt.io/archive/)    
+[qt官方例子](http://doc.qt.io/qt-5/qtexamplesandtutorials.html)  
+[sqlite qt驱动](http://qsqlite.sourceforge.net/#description)  
+[qt自带数据库 例子](http://www.qter.org/portal.php?mod=view&aid=51)  
+[在线电子书](https://qtguide.ustclug.org/)  
 
 ## widget
 就是gui的小部件
@@ -27,13 +27,7 @@ labels：显示图像，静态文字
 在.pro文件中添加
 ```c++
 INCLUDEPATH += /usr/local/include \
-                /usr/local/include/opencv \
-                /usr/local/include/opencv2
-#                /usr/include/x86_64-linux-gnu/qt5/QtCore \
-
 LIBS += /usr/local/lib/libopencv_highgui.so \
-        /usr/local/lib/libopencv_core.so    \
-        /usr/local/lib/libopencv_imgproc.so
 ```
 
 
@@ -43,9 +37,10 @@ LIBS += /usr/local/lib/libopencv_highgui.so \
 qt添加动态链接库文件，在.pro文件添加
 ```c
 // libseeta_facedet_lib.so
-LIBS += -L/home/lxg/codetest/qtface/model/ -lseeta_facedet_lib
+LIBS += your_lib_path/your_lib     //
+LIBS += -L/home/lxg/codetest/qtface/model/ -lseeta_facedet_lib // linux下配置 共享库(动态库)
 而下面这种会提示找不到库文件
-LIBS += /usr/local/lib/libopencv_highgui.so 
+LIBS += /usr/local/lib/libopencv_highgui.so  // win下配置
 ```
 
 

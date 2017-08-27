@@ -4,3 +4,4 @@ bios下有个function key可以把media key关掉
 [翻墙](http://www.freefq.com/ext/)  
 [linux tools](http://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/gdb.html)  
 [ipv6 google](http://ipv6.google.com.hk/?gws_rd=cr  )
+

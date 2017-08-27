@@ -64,3 +64,5 @@ CvBlobDetector在前景掩模的基础上检测新进入场景的Blob（块）�
 {cvCreateModuleBlobTrackGen1,"RawTracks","Generate raw track record (x,y,sx,sy),()... in each line"},
 ```
 5. blob trajectory analysis
+
+## 视频传输
