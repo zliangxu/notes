@@ -9,8 +9,8 @@
     运行时错误：除数为0类似的错误  
 - sqlite  
     轻量型数据库
-- mjpg-streamer  
-    视频传输
+
+- [A*](http://grinninglizard.com/MicroPather/index.htm)
 
 ### 捕获异常
 ```cpp

@@ -23,4 +23,4 @@ XML中的每个部分都是节点，包括文档节点、元素节点、文本�
 using namespace tinyxml2;
 ```
 
-## [tinyxml2的类结构](http://grinninglizard.com/tinyxml2docs/annotated.html)
+## [tinyxml2的类结构](http://grinninglizard.com/)
