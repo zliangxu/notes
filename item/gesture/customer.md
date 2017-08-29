@@ -6,6 +6,7 @@
 
 [vs blog](http://blog.csdn.net/fengbingchun/article/details/7872325)
 [vs ](http://blog.csdn.net/lixiaokai8990/article/details/8058240)
+
 ## opencv自带的video surveilance模块
 
 opencv vs框架示例代码 blobtrack_sample.cpp
