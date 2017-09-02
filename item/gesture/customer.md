@@ -1,6 +1,8 @@
 # background substraction
 
 [background substraction](https://en.wikipedia.org/wiki/Background_subtraction)
+1. BackgroundSubtractorCNT
+2. vibe
 
 [vs](http://docs.opencv.org/ref/2.4/dd/dc5/classCvBlobTrackerAuto.html)
 

@@ -27,6 +27,8 @@ catch(exceptionType variable){
 ### boost::bind
 
 ### class的静态成员
+
+[静态成员 常量类型](http://www.cnblogs.com/wanyuanchun/p/4041080.html)
 > class静态成员函数
 - static void classmember()  
 静态成员函数不能访问非静态成员、非静态成员函数，因为静态成员函数没有省略的形参this  
