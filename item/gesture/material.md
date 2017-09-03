@@ -6,7 +6,6 @@ dataset|class|feature|number
 [MPII](http://human-pose.mpi-inf.mpg.de/#results) |全身，日常|14|28000
 
 ## 客流量统计
-[客流计数](https://github.com/github188/BlueChip)
 运动轨迹
 前景、背景分割？？宽度限制
 目标检测

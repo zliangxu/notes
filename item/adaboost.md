@@ -1,7 +1,8 @@
 http://docs.opencv.org/master/dc/d88/tutorial_traincascade.html
 
 ### 1. opencv_createsamples  
-负样本需要手工准备，正样本可以用如下程序操作
+负样本需要手工准备，正样本可以用如下程序操作，
+负样本只提供照片就行了，不需要截取出和正样本大小一直的图片。训练时(opencv_traincascade命令)，程序会自动从提供的负样本照片内滑窗提取指定数目的负样本，注意，这里的负样本数目与提供的负样本照片个数并不是同一个数。
 参数：
 ```
 Usage: opencv_createsamples
@@ -21,6 +22,7 @@ Usage: opencv_createsamples
   [-h <sample_height = 24>]
   [-maxscale <max sample scale = -1.000000>]
 ```
+
 负样本：  
 An example of such a negative description file:
 ```
@@ -33,6 +35,7 @@ File bg.txt:
 img/img1.jpg
 img/img2.jpg
 ```
+
 正样本：  
 An example of description file:
 ```
@@ -45,6 +48,7 @@ File info.dat:
 img/img1.jpg  1  140 100 45 45
 img/img2.jpg  2  100 200 50 50   50 30 25 25
 ```
+
 使用记录：
 ```
 opencv_createsamples -info info.dat -vec facesvec -num 2704 -w 20 -h 20  
@@ -55,6 +59,7 @@ opencv_createsamples -info info.dat -vec facesvec -num 2704 -w 20 -h 20
 -w 生成图像的宽度  
 -h 生成图像的高度  
 ```
+
 ### 2. opencv_traincascade
 ```
 Usage: opencv_traincascade
@@ -85,8 +90,8 @@ Usage: opencv_traincascade
   [-mode <BASIC(default) | CORE | ALL
 --lbpFeatureParams--
 --HOGFeatureParams--
-
 ```
+
 使用记录：
 ```
 opencv_traincascade  -data cascadeface -vec facesvec -bg nonfaces.txt -numPos 2000 -numNeg 1000 -w 20 -h 20 -numStages 13
@@ -104,6 +109,7 @@ numPose + (numStages - 1) * (1 - minHitRate) * numPose + S
 S：正样本文件中即vec文件中没有目标的样本数目，即目标数为0
 可以使用 gnome-system-monitor监控系统资源使用情况来监控程序是否在运行
 ```
+
 ### opencv_haartraining旧版本
 ```
 Usage: opencv_haartraining
