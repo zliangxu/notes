@@ -9,37 +9,40 @@ u：撤销最后执行的命令undo，U撤销对本行的修改
 ctrl+r：redo
 
 ## 复制粘贴
-p：粘贴删除的内容
-r：修改一个字符
-定位及文件状态
+v：进入可视模式进行选择
+y：复制选择部分 ?
+p：粘贴
+
+## 定位及文件状态
 ctrl+g：显示当前行数目、状态
 gg：跳到文件第一行
 G：跳到文件最后一行
 num+G：跳到num行
+冒号加数字，可以跳到该行。
 
 ## 插入命令
 o：在当前行下面另起一行插入
 O：在当前行上面另起一行插入
 i：在光标出插入字符
 a：在光标后插入字符
+r：修改一个字符
 
 ## 搜索类命令
 /+string：正向（从文件开始到文件末尾）搜索string   //使用n向下继续查找，N继续向上查找
 ?+string：逆向（从文件光标向文件开始）搜索string
 ctrl+o：跳转到之前的位置
 ctrl+i：跳转到新位置
-复制粘贴文本
-v：进入可视模式进行选择
-y：复制选择部分 ?
-p：粘贴
-vim 冒号加数字，可以跳到该行。
 
-创建启动脚本
-~/.vimrc
-家目录下没有.vimrc , 则从/usr/share/vim/**下复制一个vimrc到家目录作为.vimrc
-获取相关帮助（在vimtutor下）
+
+## 创建启动脚本
+如果家目录下没有.vimrc , 则从/usr/share/vim/**下复制一个vimrc到家目录作为.vimrc
+在vim环境下获取相关帮助（在vimtutor下）
 :help vimrc-intro
-set
+
+## 常见vim设置
+语法
+"  ：为注释语句
+```cpp
 set showmatch        " Show matching brackets.
 set ignorecase        " Do case insensitive matching
 set smartcase        " Do smart case matching
@@ -54,8 +57,10 @@ set hlsearch   "high light search
 set bg=dark    "background color
 set number  "display number int head
 
-imap () ()<left>//光标自动移至括号内
+"光标自动移至括号内
+imap () ()<left>
 imap {} {}<left>
 imap "" ""<left>
 imap [] []<left>
 imap '' ''<left>
+```

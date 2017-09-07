@@ -25,26 +25,27 @@ Usage: opencv_createsamples
 
 负样本：  
 An example of such a negative description file:
-```
-Directory structure:
+```sh
+# 文件目录结构Directory structure:
 /img
   img1.jpg
   img2.jpg
 bg.txt
-File bg.txt:
+
+# File bg.txt:
 img/img1.jpg
 img/img2.jpg
 ```
 
 正样本：  
 An example of description file:
-```
-Directory structure:(目录结构，不是配置文件)
+```sh
+# Directory structure:(目录结构，不是配置文件)
 /img
   img1.jpg
   img2.jpg
 info.dat
-File info.dat:
+# File info.dat:
 img/img1.jpg  1  140 100 45 45
 img/img2.jpg  2  100 200 50 50   50 30 25 25
 ```
@@ -94,21 +95,28 @@ Usage: opencv_traincascade
 
 使用记录：
 ```
-opencv_traincascade  -data cascadeface -vec facesvec -bg nonfaces.txt -numPos 2000 -numNeg 1000 -w 20 -h 20 -numStages 13
+<!-- opencv_traincascade  -data cascadeface/ -vec facesvec -bg nonfaces.txt -numPos 4100 -numNeg 1000 -w 20 -h 20 -numStages 13 -->
+opencv_traincascade  -data cascadeface/ -vec posData.vec -bg neg.txt -numPos 3800 -numNeg 20000 -w 20 -h 20 -numStages 13 -minHitRate 0.95
 
 -data 生成的cascade文件放置的文件夹名，要提前mkdir
 -vec 正样本文件名，即opencv_createsample生成的文件
 -bg 负样本文件名，是上面的bg.txt文件
--numPos 用于训练每一个stage的样本数目，而不是正样本总数
+-numPos 用于训练每一个stage的样本数目，"而不是正样本总数"
 -numNeg 用于训练每一个stage的样本数目
 -numStages 训练的stage数目
 -w 宽度，与opencv_createsample用到的参数-w，-h保持一致
 -h 高度
-正样本总数要满足这个公示：
-numPose + (numStages - 1) * (1 - minHitRate) * numPose + S
-S：正样本文件中即vec文件中没有目标的样本数目，即目标数为0
-可以使用 gnome-system-monitor监控系统资源使用情况来监控程序是否在运行
 ```
+正样本总数要满足这个公示：
+> $$numPose + (numStages - 1) * (1 - minHitRate) * numPose + S$$
+上式中S表示正样本文件中即vec文件中没有目标的样本数目，即目标数为0   
+可以使用 gnome-system-monitor监控系统资源使用情况来监控程序是否在运行
+
+训练过程中的输出
+N|HR|FA
+----|---|---
+number|HitRate|FalseAlarm
+弱分类器的个数|分类器在正样本中正确识别的比例|分类器在负样本中识别为正样本的比例
 
 ### opencv_haartraining旧版本
 ```
@@ -135,7 +143,9 @@ Usage: opencv_haartraining
   [-maxtreesplits <max_number_of_splits_in_tree_cascade = 0>]
   [-minpos <min_number_of_positive_samples_per_cluster = 500>]
 ```
+
 使用记录
+```sh
 opencv_haartraining -data cascadeface -vec facesvec -bg nonfaces.txt  -w 20 -h 20   
 训练过程中，如果分类器达到了minhitrate，就会计算falsealarm，如果falsealarm大于maxfalsealarm，系统就会拒绝这个分类器，继续训练下一个
 haartraing训练出的是txt文件，需要使用convert_cascade来转成xml文件
@@ -146,11 +156,11 @@ haartraing训练出的是txt文件，需要使用convert_cascade来转成xml文�
 -sys: 如果正样本是x轴或者y轴对称的，则设置，否则-nonsym
 -eqw： 如果有不同数目的正样本、负样本数目，最好不要设置，put no eqw
 -weighttrimming: 是对计算效率与性能的权衡，设置了计算时间更少
--bt: Gental AB, Real AB
+-bt: Gental AB, Real AB，代表一个stage弱分类器的boost形式
 -nsplits: 树的最少节点数
 -maxtreesplits: 树的最大节点数，要大于nsplits
 -minpos: 一个节点的训练过程中，需要的正样本数目，通常minpos不应该小于npos/nsplits
-
-Required leaf false alarm rate achieved. Branch training terminated – it’s impossible to build classifier with good false alarm on this negative images. Check your negative images are really negative =),  maxfalsealarm should be in [0.4-0.5] 
+```
+Required leaf false alarm rate achieved. Branch training terminated – it’s impossible to build classifier with good false alarm on this negative images. Check your negative images are really negative =),  maxfalsealarm should be in [0.4-0.5]   
 这个是在训练时，FA=0后得到的错误提示，是说验证stage时，false alarm太小，也就是负样本都没有被识别为正样本，那么负样本的质量就太差了
 ### 3. opencv_visualisation

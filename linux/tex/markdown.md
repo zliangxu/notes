@@ -1,10 +1,10 @@
 # markdown 
-instant markdown 插件将页面显示在浏览器内，或者访问   http://localhost:8090/      
-[理想的学习环境]( http://www.yangzhiping.com/tech/writing-space.html)  
-[vscode markdown](https://code.visualstudio.com/docs/languages/markdown)
-[github markdown](https://guides.github.com/features/mastering-markdown/)   
-[markdown在线学习网站](https://stackedit.io/editor)
-[公示查询](http://goessner.github.io/mdmath/test/)
+instant markdown 插件将页面显示在浏览器内，或者访问   http://localhost:8090/        
+[理想的学习环境]( http://www.yangzhiping.com/tech/writing-space.html)    
+[vscode markdown](https://code.visualstudio.com/docs/languages/markdown)  
+[github markdown](https://guides.github.com/features/mastering-markdown/)     
+[markdown在线学习网站](https://stackedit.io/editor)  
+[公示查询](http://goessner.github.io/mdmath/test/)  
 [katex](https://khan.github.io/KaTeX/function-support.html)
 
 markdown 是一种标记型语言，并没有一个完全规范化的版本，其最初的设计者做一个测试文件，凡通过这个测试的文件都可以称为markdown，所以有很多中版本，vscode支持的是common markdown, github支持的是github flavoured markdown，可以在vscode markdown语言支持里查看
@@ -13,6 +13,7 @@ markdown 是一种标记型语言，并没有一个完全规范化的版本，�
 $$\leqslant$$
 $$\mathbb{E}$$
 $$\sim$$
+$$\rlap{\,/}{=}$$$
 
 #### 0. 理解[markdown](https://kramdown.gettalong.org/syntax.html)
 kramdown 是一个用Ruby实现的Markdown的解析器。github使用的就是这个解释器

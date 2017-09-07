@@ -134,11 +134,12 @@ normal equations(正规方程)：优化方程的确切解
 &=arg\max\limits_{\theta}p_{model}(\mathbb{X};\theta) \\
 &=arg\max\limits_{\theta}\prod_{i=1}^{m}p_{model}(x^{(i)};\theta) \\
 &=arg\max\limits_{\theta}\sum_{i=1}^{m}\log p_{model}(x^{(i)};\theta) \qquad\text{取对数易于计算,不改变}\theta_{ML} \\
+&=arg\max\limits_{\theta}\frac{1}{m}\sum_{i=1}^{m}\log p_{model}(x^{(i)};\theta) \qquad\text{分数相当于概率}\\
 &=arg\max\limits_{\theta}\mathbb{E}_{x \sim \hat p_{data}} \log p_{model}(x^{(i)};\theta) \qquad \hat p_{data} \text{是经验分布}
 \end{aligned}$$  (1)
 
 其中，$p_{model}(x;\theta)$是以$\theta$为参数的概率分布空间(假设空间)  
-最大似然估计的一个解释是最小化训练集的经验分布与所估计的模型分布的不相似度，不相似度使用$KL$散度度量
+最大似然估计的一个解释是最小化训练集的经验分布与所估计的模型分布的不相似度，不相似度使用$KL$散度(相对熵)度量
 > $$D_{KL}(\hat p_{data}||p_{model})=\mathbb{E}_{x\sim \hat p_{data}}[log\hat p_{data}-\log p_{model}]$$ (2)
 1和2式是等价的。
 
@@ -148,7 +149,7 @@ normal equations(正规方程)：优化方程的确切解
 1. 极大似然估计中预测只使用了一个参数值$\theta$，贝叶斯估计是依据概率分布做期望预测的
 2. 贝叶斯估计中有先验分布$p(\theta)$  
 ## 最大后验概率估计(MAP贝叶斯推断)
-是一个点估计
+是一个点估计(它不等同于贝叶斯估计)
 > $$\theta_{MAP}=arg \max \limits _{\theta}p(\theta | x)=arg \max \limits _{\theta}\log p(x|\theta)+\log p(\theta)$$
 其中，$\log p(x|\theta)$是似然，它的和不一定为1，该式等价于极大似然估计加上先验概率
 

@@ -78,6 +78,7 @@ dirac delta funtion(狄拉克函数)
 > $$\sigma(x)=\frac{1}{1+exp(-x)}$$
 - softplus function
 > $$\varsigma=log(1+exp(x))$$
+
 它是 $x^+=max(0,x)$ 的平滑版
 
 
