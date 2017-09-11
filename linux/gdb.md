@@ -20,6 +20,7 @@ gdb
 
 # cgdb
 cgdb启动后有两种模式，gdb模式和源码模式。默认打开时是gdb模式，源码模式其实就暗含着cdgb模式
+
 ## gdb
 - u + line_num: until, 运行到函数
 - up :运行

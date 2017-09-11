@@ -8,7 +8,7 @@ https://cmake.org/cmake/help/v3.0/index.html
 - if语句是直接使用变量名，if语句内涵取变量值的工作(${VAR})
 - 参数之间使用空格或分号分开
 - 注释使用"#"
-- debug
+- 设置debug版本编译
 ```shell
     set(CMAKE_BUILD_TYPE "Debug")
     set(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS} -O0 -Wall -g -ggdb")
@@ -47,6 +47,7 @@ https://cmake.org/cmake/help/v3.0/index.html
 13. cmake_minimum_required(VERSION 2.8)  
     需要的最低版本号
 14. find命令查找的是CMAKE_MODULE_PATH下的目录Find< name >.cmake模块
+    find_package(OpenCV 2.4.9 REQUIRED) 版本号要放在OpenCV的后面，REQUIRED的前面
 15. aux_source_directory(dir VARIABLE)   
     把一个目录里的源代码文件列表存储在一个VARIABLE变量中
 
@@ -67,6 +68,7 @@ https://cmake.org/cmake/help/v3.0/index.html
 - CMAKE_< CLANG >_FLAGS:设置c++编译选项，同上。
     <LANG> flags used regardless of the value of CMAKE_BUILD_TYPE.
 - CMAKE_MOUDLE_PATH
+
 ## 环境变量(不是cmake变量，而是操作系统的环境变量)
 cmake调用环境变量的方式:$ENV{var_name}
 设置环境变量的方式:set(ENV{var_name} value)

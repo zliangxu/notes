@@ -8,3 +8,6 @@ input is input, argument is called **kernel**, output is sometimes referred as t
 指卷积模板小于输入图像的尺寸，即局部连接的性质。
 2. 权重共享(parameter sharing)
 3. 等变表示(equivariant representation)
+
+## insights
+卷积和池化也可以看做是有强先验知识的全连接网络。

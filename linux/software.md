@@ -40,7 +40,9 @@ gstreamer1.0-libav
 幻灯都是用 ConTeXt 做的
 
 - 文献管理  
-    zotero
+    zotero, 支持的自动导入文献的网站有
+    [ieeexplore](http://ieeexplore.ieee.org/Xplore/home.jsp)
+    [arvix](https://arxiv.org/find/grp_cs,grp_math,grp_physics,grp_q-bio,grp_q-fin,grp_stat)
 ## programs app
 - 源代码分析工具 source insight 
     是不是只有windows版
