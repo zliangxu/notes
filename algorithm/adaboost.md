@@ -53,6 +53,8 @@ img/img2.jpg  2  100 200 50 50   50 30 25 25
 使用记录：
 ```
 opencv_createsamples -info info.dat -vec facesvec -num 2704 -w 20 -h 20  
+opencv_createsamples -info info.dat -vec posl.vec -bg bg.txt -num 4000 -w 24 -h 24  -maxzangle 1.8
+opencv_createsamples -info info.dat -vec pos.vec -num 4101 -w 24 -h 24  
 
 -info 即上面的info.dat(有了这个-img参数就不需要了) 
 -vec 生成的vec文件名  
@@ -97,6 +99,10 @@ Usage: opencv_traincascade
 ```
 opencv_traincascade  -data cascadeface/ -vec facesvec -bg nonfaces.txt -numPos 4100 -numNeg 1000 -w 20 -h 20 -numStages 13
 opencv_traincascade  -data cascadeface/ -vec posData.vec -bg neg.txt -numPos 3800 -numNeg 20000 -w 20 -h 20 -numStages 13 -minHitRate 0.95
+=======
+<!-- opencv_traincascade  -data cascadeface/ -vec facesvec -bg nonfaces.txt -numPos 4100 -numNeg 1000 -w 20 -h 20 -numStages 13 -->
+opencv_traincascade  -data cascadeface/ -vec posData.vec -bg neg.txt -numPos 3800 -numNeg 20000 -w 20 -h 20 -numStages 13 -minHitRate 0.95  -numThreads 5
+opencv_traincascade -data cascade/ -vec pos.vec -bg neg.txt -numPos 3000 -numNeg 20000 -w 24 -h 24 -numStages 10
 
 -data 生成的cascade文件放置的文件夹名，要提前mkdir
 -vec 正样本文件名，即opencv_createsample生成的文件
