@@ -36,13 +36,15 @@ gstreamer1.0-libav
 我的大部分文本是用 VIM 编辑的，包括程序，信件，网页，LaTeX 论文，MetaPost 绘图语言。  
 至于绘图，你可以用很多可视化的工具，比如 xfig，dia。
 
-- 幻灯片  
-幻灯都是用 ConTeXt 做的
+- 幻灯片    
+幻灯都是用 ConTeXt 做的  
 
 - 文献管理  
-    zotero, 支持的自动导入文献的网站有
-    [ieeexplore](http://ieeexplore.ieee.org/Xplore/home.jsp)
+    zotero, 支持的自动导入文献的网站有  
+    [ieeexplore](http://ieeexplore.ieee.org/Xplore/home.jsp)  
     [arvix](https://arxiv.org/find/grp_cs,grp_math,grp_physics,grp_q-bio,grp_q-fin,grp_stat)
+- 文件rm后的恢复  
+    [blog](http://blog.csdn.net/q1302182594/article/details/47315177)
 ## programs app
 - 源代码分析工具 source insight 
     是不是只有windows版
