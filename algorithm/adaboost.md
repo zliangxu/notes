@@ -1,5 +1,11 @@
 http://docs.opencv.org/master/dc/d88/tutorial_traincascade.html
 
+```shell
+cat pos.txt | while read line 
+do 
+  echo $line 
+```
+
 ### 1. opencv_createsamples  
 负样本需要手工准备，正样本可以用如下程序操作，
 负样本只提供照片就行了，不需要截取出和正样本大小一直的图片。训练时(opencv_traincascade命令)，程序会自动从提供的负样本照片内滑窗提取指定数目的负样本，注意，这里的负样本数目与提供的负样本照片个数并不是同一个数。
@@ -99,10 +105,11 @@ Usage: opencv_traincascade
 ```
 opencv_traincascade  -data cascadeface/ -vec facesvec -bg nonfaces.txt -numPos 4100 -numNeg 1000 -w 20 -h 20 -numStages 13
 opencv_traincascade  -data cascadeface/ -vec posData.vec -bg neg.txt -numPos 3800 -numNeg 20000 -w 20 -h 20 -numStages 13 -minHitRate 0.95
-=======
+
 <!-- opencv_traincascade  -data cascadeface/ -vec facesvec -bg nonfaces.txt -numPos 4100 -numNeg 1000 -w 20 -h 20 -numStages 13 -->
-opencv_traincascade  -data cascadeface/ -vec posData.vec -bg neg.txt -numPos 3800 -numNeg 20000 -w 20 -h 20 -numStages 13 -minHitRate 0.95  -numThreads 5
+opencv_traincascade  -data cascadeface/ -vec posData.vec -bg neg.txt -numPos 3800 -numNeg 20000 -w 20 -h 20 -numStages 13 
 opencv_traincascade -data cascade/ -vec pos.vec -bg neg.txt -numPos 3000 -numNeg 20000 -w 24 -h 24 -numStages 10
+opencv_traincascade -data cascadehead/ -vec pos.vec -bg neg.txt -numPos 1500 -numNeg 10000 -w 24 -h 24 
 
 -data 生成的cascade文件放置的文件夹名，要提前mkdir
 -vec 正样本文件名，即opencv_createsample生成的文件

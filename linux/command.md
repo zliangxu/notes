@@ -81,7 +81,6 @@ sudo update-grub
 ### 7. 已安装软件查询
 ### 8. which
 查询可执行文件的位置
-
 ## cut
 剪切字符串
 ## sed 

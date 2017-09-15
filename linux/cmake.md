@@ -48,6 +48,7 @@ https://cmake.org/cmake/help/v3.0/index.html
     需要的最低版本号
 14. find命令查找的是CMAKE_MODULE_PATH下的目录Find< name >.cmake模块
     find_package(OpenCV 2.4.9 REQUIRED) 版本号要放在OpenCV的后面，REQUIRED的前面
+    include_directories( ${OpenCV_INCLUDE_DIRS} )  [头文件包含](http://docs.opencv.org/master/db/df5/tutorial_linux_gcc_cmake.html)
 15. aux_source_directory(dir VARIABLE)   
     把一个目录里的源代码文件列表存储在一个VARIABLE变量中
 
