@@ -113,10 +113,10 @@ opencv_traincascade  -data cascadeface/ -vec posData.vec -bg neg.txt -numPos 380
 opencv_traincascade -data cascade/ -vec pos.vec -bg neg.txt -numPos 3000 -numNeg 20000 -w 24 -h 24 -numStages 10
 opencv_traincascade -data cascadehead/ -vec posl.vec -bg neg.txt -numPos 2800 -numNeg 6000 -w 24 -h 24 
 opencv_traincascade_tbb -data cascadehead_tbb/ -vec posl.vec -bg neg.txt -numPos 2800 -numNeg 6000 -w 24 -h 24 
-./opencv_traincascade_tbb -data cascadehead_tbb/ -vec posl.vec -bg neg.txt -numPos 2000 -numNeg 10000 -w 24 -h 24 -mode ALL -maxFalseAlarmRate 0.4 # 0917训练
+./opencv_traincascade_tbb -data cascadehead_tbb/ -vec posl.vec -bg neg.txt -numPos 2000 -numNeg 10000 -w 24 -h 24 -mode ALL -maxFalseAlarmRate 0.4 # 0917训练  扣出的背景图
 ./opencv_traincascade_tbb -data cascadehead_tbb/ -vec posl.vec -bg neg.txt -numPos 3200 -numNeg 12000 -w 24 -h 24 -numStages 15
-nohup opencv_traincascade -data cascade/ -vec posl.vec -bg bg.txt -numPos 3200 -numNeg 16000 -w 24 -h 24  & # 服务器 delltest
-nohup opencv_traincascade -data cascade/ -vec posl.vec -bg bg.txt -numPos 2200 -numNeg 10000 -w 24 -h 24 -mode ALL & # 服务器 haarall
+nohup opencv_traincascade -data cascade/ -vec posl.vec -bg bg.txt -numPos 3200 -numNeg 16000 -w 24 -h 24  & # 服务器 delltest 扣出的背景图
+nohup opencv_traincascade -data cascade/ -vec posl.vec -bg bg.txt -numPos 2200 -numNeg 10000 -w 24 -h 24 -mode ALL & # 服务器 haarall  扣出的背景图
 
 -maxFalseAlarmRate <max_false_alarm_rate = 0.5>] 0.4 每一个stage分类器的误检率
 -model haar特征，对于人头可以使用ALL
