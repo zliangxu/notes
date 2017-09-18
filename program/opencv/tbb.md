@@ -1,0 +1,3 @@
+tbb用在了opencv_traincascade的多线程上
+官网可以直接下载安装linux版编译好的库文件
+然后在opencv内的CMakeLists.txt内修改tbb项为ON，默认为OFF， 在cmake ..时，可以看到tbb已打开

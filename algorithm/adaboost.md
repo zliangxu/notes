@@ -1,9 +1,11 @@
 http://docs.opencv.org/master/dc/d88/tutorial_traincascade.html
 
+## 制作info.dat
 ```shell
-cat pos.txt | while read line 
+cat tmp.txt | while read line 
 do 
-  echo $line 
+  echo $line 1 0 0 23 23 >> info.dat
+done
 ```
 
 ### 1. opencv_createsamples  
@@ -60,7 +62,7 @@ img/img2.jpg  2  100 200 50 50   50 30 25 25
 ```
 opencv_createsamples -info info.dat -vec facesvec -num 2704 -w 20 -h 20  
 opencv_createsamples -info info.dat -vec posl.vec -bg bg.txt -num 4000 -w 24 -h 24  -maxzangle 1.8
-opencv_createsamples -info info.dat -vec pos.vec -num 4101 -w 24 -h 24  
+opencv_createsamples -info infol.dat -vec posl.vec -num 3734 -w 24 -h 24  
 
 -info 即上面的info.dat(有了这个-img参数就不需要了) 
 -vec 生成的vec文件名  
@@ -102,15 +104,22 @@ Usage: opencv_traincascade
 ```
 
 使用记录：
-```
+```sh
 opencv_traincascade  -data cascadeface/ -vec facesvec -bg nonfaces.txt -numPos 4100 -numNeg 1000 -w 20 -h 20 -numStages 13
 opencv_traincascade  -data cascadeface/ -vec posData.vec -bg neg.txt -numPos 3800 -numNeg 20000 -w 20 -h 20 -numStages 13 -minHitRate 0.95
 
 <!-- opencv_traincascade  -data cascadeface/ -vec facesvec -bg nonfaces.txt -numPos 4100 -numNeg 1000 -w 20 -h 20 -numStages 13 -->
 opencv_traincascade  -data cascadeface/ -vec posData.vec -bg neg.txt -numPos 3800 -numNeg 20000 -w 20 -h 20 -numStages 13 
 opencv_traincascade -data cascade/ -vec pos.vec -bg neg.txt -numPos 3000 -numNeg 20000 -w 24 -h 24 -numStages 10
-opencv_traincascade -data cascadehead/ -vec pos.vec -bg neg.txt -numPos 1500 -numNeg 10000 -w 24 -h 24 
+opencv_traincascade -data cascadehead/ -vec posl.vec -bg neg.txt -numPos 2800 -numNeg 6000 -w 24 -h 24 
+opencv_traincascade_tbb -data cascadehead_tbb/ -vec posl.vec -bg neg.txt -numPos 2800 -numNeg 6000 -w 24 -h 24 
+./opencv_traincascade_tbb -data cascadehead_tbb/ -vec posl.vec -bg neg.txt -numPos 2000 -numNeg 10000 -w 24 -h 24 -mode ALL -maxFalseAlarmRate 0.4 # 0917训练
+./opencv_traincascade_tbb -data cascadehead_tbb/ -vec posl.vec -bg neg.txt -numPos 3200 -numNeg 12000 -w 24 -h 24 -numStages 15
+nohup opencv_traincascade -data cascade/ -vec posl.vec -bg bg.txt -numPos 3200 -numNeg 16000 -w 24 -h 24  & # 服务器 delltest
+nohup opencv_traincascade -data cascade/ -vec posl.vec -bg bg.txt -numPos 2200 -numNeg 10000 -w 24 -h 24 -mode ALL & # 服务器 haarall
 
+-maxFalseAlarmRate <max_false_alarm_rate = 0.5>] 0.4 每一个stage分类器的误检率
+-model haar特征，对于人头可以使用ALL
 -data 生成的cascade文件放置的文件夹名，要提前mkdir
 -vec 正样本文件名，即opencv_createsample生成的文件
 -bg 负样本文件名，是上面的bg.txt文件
@@ -120,6 +129,7 @@ opencv_traincascade -data cascadehead/ -vec pos.vec -bg neg.txt -numPos 1500 -nu
 -w 宽度，与opencv_createsample用到的参数-w，-h保持一致
 -h 高度
 ```
+听说，正负样本比例满足1：5最好  
 正样本总数要满足这个公示：
 > $$numPose + (numStages - 1) * (1 - minHitRate) * numPose + S$$
 上式中S表示正样本文件中即vec文件中没有目标的样本数目，即目标数为0   
@@ -130,6 +140,25 @@ N|HR|FA
 ----|---|---
 number|HitRate|FalseAlarm
 弱分类器的个数|分类器在正样本中正确识别的比例|分类器在负样本中识别为正样本的比例
+## 输出解释
+```shell
+===== TRAINING 0-stage =====
+<BEGIN
+POS count : consumed   2800 : 2800  # 训练时用的正样本，若前一个stage没有检测出的positive sample，在下一个stage从正样本中除去，并吸入新的正样本
+NEG count : acceptanceRatio    6000 : 1 # 从neg.txt中的负样本中选出6000个被当前分类器分类为正样本的负样本，1代表得到的6000个框都被误判为正样本
+Precalculation time: 34 # 从neg.txt中的负样本中选出6000个被已有分类起误判为正样本的负样本
++----+---------+---------+
+|  N |    HR   |    FA   |
++----+---------+---------+
+|   1|        1|        1|
++----+---------+---------+
+|   2|        1|        1|
++----+---------+---------+
+|   3| 0.995714| 0.406333|
++----+---------+---------+
+END>
+Training until now has taken 0 days 0 hours 3 minutes 50 seconds.
+```
 
 ### opencv_haartraining旧版本
 ```

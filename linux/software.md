@@ -45,6 +45,9 @@ gstreamer1.0-libav
     [arvix](https://arxiv.org/find/grp_cs,grp_math,grp_physics,grp_q-bio,grp_q-fin,grp_stat)
 - 文件rm后的恢复  
     [blog](http://blog.csdn.net/q1302182594/article/details/47315177)
+
+- 百度云加速下载 uGet
+
 ## programs app
 - 源代码分析工具 source insight 
     是不是只有windows版

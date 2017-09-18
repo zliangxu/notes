@@ -69,6 +69,9 @@ cmake -DBUILD_TIFF=ON  -DOPENCV_EXTRA_MODULES_PATH=/home/lxg/app/opencv-3.3.0/op
 
 ## question
 1. 一堆"undefined reference to `TIFFReadDirectory@LIBTIFF_4.0'"
+问题解释
 According to this, OpenCV needs libtiff4, which Ubuntu has dropped, i.e. the package that replaced it is libtiff5-dev.
 As a temporary workaround you can specify -DBUILD_TIFF=ON on cmake when configuring, in order to build the libtiff4 version that is distributed with OpenCV.
 This worked for me in Ubuntu 16.04, with OpenCV 3.2.1.
+解决方法
+cmake -DBUILD_TIFF=ON  ..
