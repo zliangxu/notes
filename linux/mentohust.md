@@ -8,7 +8,6 @@ $ sudo dpkg -i mentohust_0.3.4-1_amd64.deb
 ```
 - 直接双击安装包进行安装
 
-
 2. mentohust登录
 
 ```shell

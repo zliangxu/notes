@@ -3,9 +3,9 @@
 
 ## 新特征下的数据表示方式
 替代表示(replacement representation)
-$$x^i \Rightarrow a^i$$
+> $$x^i \Rightarrow a^i$$
 级联表示(concatenation representation)
-$$x^i \Rightarrow (x^i,a^i)$$
+> $$x^i \Rightarrow (x^i,a^i)$$
 一般级联表示包含更多的数据，所以效果会更好一些。
 
 ## excercise

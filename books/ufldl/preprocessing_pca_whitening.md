@@ -2,39 +2,41 @@
 - 范数(norm)
     满足1.非负性，2.齐次性，3.三角不等式  
     p-范数是常用空间范数，定义如下  
-    $$||X||_p=(\sum_{i=1}^{N}|x_i|^p)^{\frac{1}{p}}$$
+    > $$||X||_p=(\sum_{i=1}^{N}|x_i|^p)^{\frac{1}{p}}$$
 - 方差  
-    $$s^2=\frac{1}{n}\sum_{i=1}^{n}(x_i-E(x))^2$$
+    > $$s^2=\frac{1}{n}\sum_{i=1}^{n}(x_i-E(x))^2$$
 - 样本方差  
     样本方差是对总体方差的无偏估计,[无偏估计](https://www.zhihu.com/question/20099757)  
     里面比较本质的一个解释是，计算方差的公式中E(x)已经是从n个样本中得到的估计，所以数据的自由度已经减了一。
-    $$s^2=\frac{1}{n-1}\sum_{i=1}^{n}(x_i-E(x))^2$$
+    > $$s^2=\frac{1}{n-1}\sum_{i=1}^{n}(x_i-E(x))^2$$
     
 - 协方差  
     是用于衡量两个变量的总体误差，是一个衡量线性独立的无量纲的数。  
     方差是协方差的一种特殊情况，即两个相同变量的协方差。  
-    $$cov(x,y)=E[(x-E(x))*(y-E(y))] \Rightarrow cov(x,y)=E(xy)-E(x)E(y)$$
+    > $$cov(x,y)=E[(x-E(x))*(y-E(y))] \Rightarrow cov(x,y)=E(xy)-E(x)E(y)$$
 - 协方差矩阵  
     协方差矩阵的每一个元素都是协方差，是协方差的矩阵形式。  
     X中每一列是一个已经去均值的样本(这里的$\Sigma$不同于求和中的$\sum$，其中m是样本数)。
-    $$\Sigma=\frac{1}{m}XX^T$$
+    > $$\Sigma=\frac{1}{m}XX^T$$
+
 ## pca(prominantly component analysis)
 统计学中称为主成分分析，图像处理中称为KL-变换    
 通过计算协方差矩阵，确认使数据方差最大化的另一种基下的数据表达。  
 先去均值，再计算协方差矩阵，对协方差矩阵做svd分解，u矩阵包含sigma的特征向量，u矩阵也就是pca的变换矩阵。
-$$[u,s,v] = svd(\Sigma)$$
-$$x^{rot}=u^{'}x$$
+> $$[u,s,v] = svd(\Sigma)$$
+> $$x^{rot}=u^{'}x$$
 这里去均值讲得是每幅图像单独减去自己的均值，这与减去整个训练数据集的均值有什么区别？？
+
 ## whitening
 - pca白化  
 其中，$\lambda$是旋转后数据协方差矩阵的特征值，就是svd分解得到的s矩阵的对角线元素，这是因为$\Sigma$是对称半正定矩阵。在这里起到归一化方差的作用，是每个特征具有单位方差。
 其中i是第几个特征，而不是第几个样本数据。
-$$X_{PCAwhite,i}=\frac{X_{i}^{rot}}{\sqrt{\lambda_{i}}}$$
+> $$X_{PCAwhite,i}=\frac{X_{i}^{rot}}{\sqrt{\lambda_{i}}}$$
 正则化的pca白化
 eilson是一个很小的数，防止$\lambda$过小，导致数值不稳定。
-$$X_{PCAwhite,i}=\frac{X_{i}^{rot}}{\sqrt{\lambda_{i} + epilson}}$$
+> $$X_{PCAwhite,i}=\frac{X_{i}^{rot}}{\sqrt{\lambda_{i} + epilson}}$$
 
 - zca白化(使协方差矩阵为单位矩阵)  
 白化的定义式如下，u即为上面的svd分解得到的
-$$X_{ZCAwhite}=u*X_{PCAwhite}$$
+> $$X_{ZCAwhite}=u*X_{PCAwhite}$$
 
