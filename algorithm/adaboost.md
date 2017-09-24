@@ -1,4 +1,4 @@
-http://docs.opencv.org/master/dc/d88/tutorial_traincascade.html
+[tutorial](http://docs.opencv.org/master/dc/d88/tutorial_traincascade.html)
 
 ## 制作info.dat
 ```shell
@@ -63,6 +63,7 @@ img/img2.jpg  2  100 200 50 50   50 30 25 25
 opencv_createsamples -info info.dat -vec facesvec -num 2704 -w 20 -h 20  
 opencv_createsamples -info info.dat -vec posl.vec -bg bg.txt -num 4000 -w 24 -h 24  -maxzangle 1.8
 opencv_createsamples -info infol.dat -vec posl.vec -num 3734 -w 24 -h 24  
+opencv_createsamples -info infol.dat -vec posl.vec -num 1305 -w 24 -h 24  
 
 -info 即上面的info.dat(有了这个-img参数就不需要了) 
 -vec 生成的vec文件名  
@@ -117,6 +118,10 @@ opencv_traincascade_tbb -data cascadehead_tbb/ -vec posl.vec -bg neg.txt -numPos
 ./opencv_traincascade_tbb -data cascadehead_tbb/ -vec posl.vec -bg neg.txt -numPos 3200 -numNeg 12000 -w 24 -h 24 -numStages 15
 nohup opencv_traincascade -data cascade/ -vec posl.vec -bg bg.txt -numPos 3200 -numNeg 16000 -w 24 -h 24  & # 服务器 delltest 扣出的背景图
 nohup opencv_traincascade -data cascade/ -vec posl.vec -bg bg.txt -numPos 2200 -numNeg 10000 -w 24 -h 24 -mode ALL & # 服务器 haarall  扣出的背景图
+nohup opencv_traincascade -data cascade/ -vec posl.vec -bg bg.txt -numPos 2200 -numNeg 10000 -w 24 -h 24 -mode ALL & # 服务器 haarall  扣出的背景图
+nohup ./opencv_traincascade_tbb -data cascadeWide/ -vec posl.vec -bg bg.txt -numPos 900 -numNeg 4500 -w 24 -h 24 & # 笔记本 使用包含头比较大的图片做正样本
+./opencv_traincascade_tbb -data cascadeWide/ -vec posl.vec -bg bg.txt -numPos 1000 -numNeg 6000 -w 24 -h 24 -mode ALL # 笔记本 使用包含头比较大的图片做正样本
+./opencv_traincascade_tbb -data cascadeWide/ -vec posl.vec -bg bg.txt -numPos 1200 -numNeg 6000 -w 24 -h 24 # 笔记本 添加了walmat正样本
 
 -maxFalseAlarmRate <max_false_alarm_rate = 0.5>] 0.4 每一个stage分类器的误检率
 -model haar特征，对于人头可以使用ALL
@@ -205,4 +210,21 @@ haartraing训练出的是txt文件，需要使用convert_cascade来转成xml文�
 ```
 Required leaf false alarm rate achieved. Branch training terminated – it’s impossible to build classifier with good false alarm on this negative images. Check your negative images are really negative =),  maxfalsealarm should be in [0.4-0.5]   
 这个是在训练时，FA=0后得到的错误提示，是说验证stage时，false alarm太小，也就是负样本都没有被识别为正样本，那么负样本的质量就太差了
+
 ### 3. opencv_visualisation
+```shell
+opencv_visuallisation 
+Usage: opencv_visualisation [params] 
+	-?, -h, --help, --usage
+		show this message
+	-d, --data
+		(optional) path to video output folder
+	-i, --image
+		(required) path to reference image
+	-m, --model
+		(required) path to cascade xml file
+Limits of the current interface:
+ - Only handles cascade classifier models, trained with the opencv_traincascade tool, containing stumps as decision trees [default settings].
+ - The image provided needs to be a sample window with the original model dimensions, passed to the --image parameter.
+```
+opencv_visualisation -d=visual/ -i=select24/wide_1_1.jpg -m=cascadeWide_all.xml

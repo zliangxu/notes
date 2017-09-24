@@ -13,7 +13,9 @@
 - 浏览器播放视频下载[you-get](https://you-get.org/#you-get)2
     [you-get](https://www.zhihu.com/question/51714507)
     安装: sudo pip install you-get
-    使用: you-get 'https://www.youtube.com/watch?v=jNQXAC9IVRw'
+    使用: you-get 'https://www.youtube.com/watch?v=jNQXAC9IVRw' 需要翻墙
+    [下载youtube](http://www.ytube.win/)  不需要翻墙
+    
 - 流程图绘制 graphviz  
     [在线绘制processon](http://processon.com/diagraming/59589ac2e4b0a77c5ae8d900)
 
