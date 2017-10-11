@@ -41,7 +41,9 @@ https://cmake.org/cmake/help/v3.0/index.html
     默认是将搜索路径追加到已有的搜索路径的后面，即默认参数after
 10. link_directories(dir1 dir2 ...)  
     添加非标准的共享库搜索路径
-11. target_link_libaries(target lib1<debug|optimized> lib2 ...)  
+    link_libraries(lib1 lib2)
+
+11. target_link_libraries(target lib1<debug|optimized> lib2 ...)  
     为target添加需要的共享库、静态库
 12. subdirs:一次添加多个子目录，不推荐使用
 13. cmake_minimum_required(VERSION 2.8)  
