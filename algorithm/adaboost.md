@@ -8,7 +8,7 @@ do
 done
 ```
 
-### 1. opencv_createsamples  
+# 1. opencv_createsamples  
 负样本需要手工准备，正样本可以用如下程序操作，
 负样本只提供照片就行了，不需要截取出和正样本大小一直的图片。训练时(opencv_traincascade命令)，程序会自动从提供的负样本照片内滑窗提取指定数目的负样本，注意，这里的负样本数目与提供的负样本照片个数并不是同一个数。
 参数：
@@ -72,8 +72,8 @@ opencv_createsamples -info infol.dat -vec posl.vec -num 1305 -w 24 -h 24
 -h 生成图像的高度  
 ```
 
-### 2. opencv_traincascade
-```
+# 2. opencv_traincascade
+```shell
 Usage: opencv_traincascade
   -data <cascade_dir_name>
   -vec <vec_file_name>
@@ -99,11 +99,10 @@ Usage: opencv_traincascade
   [-maxDepth <max_depth_of_weak_tree = 1>]
   [-maxWeakCount <max_weak_tree_count = 100>]
 --haarFeatureParams--
-  [-mode <BASIC(default) | CORE | ALL
+  [-mode <BASIC(default) | CORE | ALL   # Core指，带有中心黑，四周白的正方形特征；all指带有45°倾斜的特征
 --lbpFeatureParams--
 --HOGFeatureParams--
 ```
-
 使用记录：
 ```sh
 opencv_traincascade  -data cascadeface/ -vec facesvec -bg nonfaces.txt -numPos 4100 -numNeg 1000 -w 20 -h 20 -numStages 13
@@ -164,8 +163,11 @@ Precalculation time: 34 # 从neg.txt中的负样本中选出6000个被已有分�
 END>
 Training until now has taken 0 days 0 hours 3 minutes 50 seconds.
 ```
+## 原理
+[GAB](http://blog.csdn.net/dataningwei/article/details/54836386)
 
-### opencv_haartraining旧版本
+
+# 3. opencv_haartraining旧版本
 ```
 Usage: opencv_haartraining
   -data <dir_name>
@@ -211,7 +213,7 @@ haartraing训练出的是txt文件，需要使用convert_cascade来转成xml文�
 Required leaf false alarm rate achieved. Branch training terminated – it’s impossible to build classifier with good false alarm on this negative images. Check your negative images are really negative =),  maxfalsealarm should be in [0.4-0.5]   
 这个是在训练时，FA=0后得到的错误提示，是说验证stage时，false alarm太小，也就是负样本都没有被识别为正样本，那么负样本的质量就太差了
 
-### 3. opencv_visualisation
+# 4. opencv_visualisation
 ```shell
 opencv_visuallisation 
 Usage: opencv_visualisation [params] 
@@ -227,4 +229,7 @@ Limits of the current interface:
  - Only handles cascade classifier models, trained with the opencv_traincascade tool, containing stumps as decision trees [default settings].
  - The image provided needs to be a sample window with the original model dimensions, passed to the --image parameter.
 ```
+## usage
+```sh
 opencv_visualisation -d=visual/ -i=select24/wide_1_1.jpg -m=cascadeWide_all.xml
+```
