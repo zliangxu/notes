@@ -1,4 +1,13 @@
 [tutorial](http://docs.opencv.org/master/dc/d88/tutorial_traincascade.html)
+[csdn introduction adaboost](http://blog.csdn.net/zy1034092330/article/category/5857165)
+
+## tips
+1. 不同stage的训练有什么不同？？
+不同stage使用的正负样本不同，因为正样本是前面stage判断为true positive的正样本，而负样本是前面stage判断为false positive的负样本。而一个stage的第一个弱分类器训练时，权重初始化为相同值。
+对于正样本已经被前面的stage判断为negative的样本，没有必要继续存在于下一stage的正样本数据中，因为已经被串联stage排除在外了。
+
+2. 同一stage的不同弱分类器训练数据有什么关系？？
+权重有更新，数据没有变化。
 
 ## 制作info.dat
 ```shell
@@ -165,6 +174,15 @@ END>
 Training until now has taken 0 days 0 hours 3 minutes 50 seconds.
 ```
 
+```html
+<!-- 一个stage中的一个弱分类器的结构 -->
+<_>
+  <internalNodes>
+    0 -1 16 -2.7647718787193298e-01</internalNodes>
+  <leafValues>
+    3.5338345170021057e-01 -9.5717346668243408e-01</leafValues></_>
+<_>
+```
 ### opencv_haartraining旧版本
 ```
 Usage: opencv_haartraining
