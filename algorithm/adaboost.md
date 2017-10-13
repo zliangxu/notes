@@ -174,11 +174,8 @@ Training until now has taken 0 days 0 hours 3 minutes 50 seconds.
 ```
 ## 原理
 [GAB](http://blog.csdn.net/dataningwei/article/details/54836386)
+一个完整的GAB(gentle adaboost)训练过程算是对一个stage的训练，一个stage就是一个强分类器。
 
-<<<<<<< HEAD
-
-# 3. opencv_haartraining旧版本
-=======
 ```html
 <!-- 一个stage中的一个弱分类器的结构 -->
 <_>
@@ -188,8 +185,7 @@ Training until now has taken 0 days 0 hours 3 minutes 50 seconds.
     3.5338345170021057e-01 -9.5717346668243408e-01</leafValues></_>
 <_>
 ```
-### opencv_haartraining旧版本
->>>>>>> c18050ce9aef07a833aa9ab1d63060943b556bd0
+# 3. opencv_haartraining旧版本
 ```
 Usage: opencv_haartraining
   -data <dir_name>
