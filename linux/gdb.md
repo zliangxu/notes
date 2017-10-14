@@ -10,7 +10,7 @@ gdb
 - r ： run 运行程序  
 - c  : continue 命令  
 - n ：单步运行  
-- : 进入程序
+- s : 进入程序
 - p ： print 达因变量  
 - bt ：查找函数堆栈  
 - q ： 退出gdb  
