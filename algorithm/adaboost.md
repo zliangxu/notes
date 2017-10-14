@@ -73,6 +73,7 @@ opencv_createsamples -info info.dat -vec facesvec -num 2704 -w 20 -h 20
 opencv_createsamples -info info.dat -vec posl.vec -bg bg.txt -num 4000 -w 24 -h 24  -maxzangle 1.8
 opencv_createsamples -info infol.dat -vec posl.vec -num 3734 -w 24 -h 24  
 opencv_createsamples -info infol.dat -vec posl.vec -num 1305 -w 24 -h 24  
+opencv_createsamples -info infol.dat -vec posl.vec -num 21564 -w 24 -h 24  
 
 -info 即上面的info.dat(有了这个-img参数就不需要了) 
 -vec 生成的vec文件名  
@@ -131,6 +132,7 @@ nohup opencv_traincascade -data cascade/ -vec posl.vec -bg bg.txt -numPos 2200 -
 nohup ./opencv_traincascade_tbb -data cascadeWide/ -vec posl.vec -bg bg.txt -numPos 900 -numNeg 4500 -w 24 -h 24 & # 笔记本 使用包含头比较大的图片做正样本
 ./opencv_traincascade_tbb -data cascadeWide/ -vec posl.vec -bg bg.txt -numPos 1000 -numNeg 6000 -w 24 -h 24 -mode ALL # 笔记本 使用包含头比较大的图片做正样本
 ./opencv_traincascade_tbb -data cascadeWide/ -vec posl.vec -bg bg.txt -numPos 1200 -numNeg 6000 -w 24 -h 24 # 笔记本 添加了walmat正样本
+./opencv_traincascade_tbb -data cascadeWide/ -vec posl.vec -bg bg.txt -numPos 21300 -numNeg 50000 -w 24 -h 24 -mode CORE # 十一过后
 
 -maxFalseAlarmRate <max_false_alarm_rate = 0.5>] 0.4 每一个stage分类器的误检率
 -model haar特征，对于人头可以使用ALL

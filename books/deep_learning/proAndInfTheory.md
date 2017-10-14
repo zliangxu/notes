@@ -1,5 +1,6 @@
 probability and information theory
 ----
+放空 练功 痴迷 不好
 ## books recormendation
 jaynes(2003)   
 cover and thomas(2006)  
@@ -105,7 +106,8 @@ dirac delta funtion(狄拉克函数)
 ## 微分熵(differential entropy)
 当变量x是连续值时，香农熵被称为微分熵。
 ## KL散度(Kullback-Leibler divergence、relative entropy、相对熵、information divergence、信息散度、information gain、信息增益)
-如果对于同一个随机变量x有两个单独的概率分布P(x)和Q(x)，可以使用散度来衡量这两个分布的差异。
+如果对于同一个随机变量x有两个单独的概率分布P(x)和Q(x)(为什么对于同一个随机变量，有两个单独的概率分布)，可以使用散度来衡量这两个分布的差异，相似度越大散度越小，完全相同时散度为0。  
+相对熵是用来度量使用基于Q的编码来编码来自P的样本平均所需的额外的比特个数。 典型情况下，P表示数据的真实分布， Q表示数据的理论分布，模型分布，或P的近似分布。
 > $$\begin{aligned} D_{KL}(P||Q)  &= E_{x\sim P}[log\frac{P(x)}{Q(x)}] \\ &=E_{x\sim P}[logP(x)-logQ(x)] \\ 
 &=\sum_{i}P_i(x)[logP_i(x)-logQ_i(x)] 
 &\end{aligned}$$
