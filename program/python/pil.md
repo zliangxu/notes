@@ -11,4 +11,6 @@ w, h = im.size
 im.thumbnail((w//2, h//2))
 # 把缩放后的图像用jpeg格式保存:
 im.save('/Users/michael/thumbnail.jpg', 'jpeg')
+# 显示图片
+ 
 ```

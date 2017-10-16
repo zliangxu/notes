@@ -15,3 +15,18 @@ model = torch.load('model.pkl')
 torch.save(model_object.state_dict(), 'params.pkl')  
 model_object.load_state_dict(torch.load('params.pkl'))
 
+
+## 使用源码安装，Import有错
+- 问题描述： 
+```python
+>>> import torch
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/lxg/anaconda2/lib/python2.7/site-packages/torch/__init__.py", line 53, in <module>
+    from torch._C import *
+ImportError: /home/lxg/anaconda2/lib/libstdc++.so.6: version `GLIBCXX_3.4.21' not found (required by /home/lxg/anaconda2/lib/python2.7/site-packages/torch/lib/libshm.so)
+```
+- 解决方法：
+conda install gcc
+
+
