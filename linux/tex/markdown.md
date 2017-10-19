@@ -2,11 +2,13 @@
 instant markdown 插件将页面显示在浏览器内，或者访问   http://localhost:8090/        
 [理想的学习环境]( http://www.yangzhiping.com/tech/writing-space.html)    
 [vscode markdown](https://code.visualstudio.com/docs/languages/markdown)  
-[github markdown](https://guides.github.com/features/mastering-markdown/)     
+[github markdown 官方文档](https://guides.github.com/features/mastering-markdown/)   
+[github markdown 详细语法解释](https://github.com/guodongxiaren/README)  
 [markdown在线学习网站](https://stackedit.io/editor)  
 [公示查询](http://goessner.github.io/mdmath/test/)  
 [katex](https://khan.github.io/KaTeX/function-support.html)
-
+[common markdown](http://spec.commonmark.org/0.28/)
+vscode使用 markdown-it 编译器
 markdown 是一种标记型语言，并没有一个完全规范化的版本，其最初的设计者做一个测试文件，凡通过这个测试的文件都可以称为markdown，所以有很多中版本，vscode支持的是common markdown, github支持的是github flavoured markdown，可以在vscode markdown语言支持里查看
 
 ## 常用数学符号

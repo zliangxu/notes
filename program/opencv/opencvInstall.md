@@ -47,7 +47,14 @@ cd cpp/
 进入build目录
 sudo make uninstall
 
+## ubuntu 安装opencv 至 conda
+```sh
+# 源代码编译安装，这种方法可以使用VideoCapture，PATHON_PACKAGES_PATH的指定有用吗？？？ ，不过这次是可行的
+cmake -D PYTHON_PACKAGES_PATH=/home/lxg/anaconda2/lib/python2.7/site-packages/ -D BUILD——TIFF=ON ..
 
+# 这种方式安装无法打开视频，也就是不能使用VideoCapture 
+conda install -c https://conda.binstar.org/menpo opencv
+```
 
 ## 插件
 windows VisualStudio下的 image watch
@@ -65,13 +72,14 @@ Shape-Based,
 
 
 ## opencv3.3.0安装 带contrib模块
+```shell
 cmake -DBUILD_TIFF=ON  -DOPENCV_EXTRA_MODULES_PATH=/home/lxg/app/opencv-3.3.0/opencv_contrib/modules ..
-
+```
 ## question
-1. 一堆"undefined reference to `TIFFReadDirectory@LIBTIFF_4.0'"
-问题解释
-According to this, OpenCV needs libtiff4, which Ubuntu has dropped, i.e. the package that replaced it is libtiff5-dev.
-As a temporary workaround you can specify -DBUILD_TIFF=ON on cmake when configuring, in order to build the libtiff4 version that is distributed with OpenCV.
-This worked for me in Ubuntu 16.04, with OpenCV 3.2.1.
-解决方法
+1. 一堆"undefined reference to `TIFFReadDirectory@LIBTIFF_4.0'"  
+问题解释  
+According to this, OpenCV needs libtiff4, which Ubuntu has dropped, i.e. the package that replaced it is libtiff5-dev.  
+As a temporary workaround you can specify -DBUILD_TIFF=ON on cmake when configuring, in order to build the libtiff4 version that is distributed with OpenCV.  
+This worked for me in Ubuntu 16.04, with OpenCV 3.2.1.  
+解决方法  
 cmake -DBUILD_TIFF=ON  ..

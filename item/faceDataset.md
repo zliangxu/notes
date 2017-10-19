@@ -28,3 +28,31 @@
 [all of kinds dataset](http://personal.ie.cuhk.edu.hk/~ccloy/download.html)
 [pascal voc](http://host.robots.ox.ac.uk/pascal/VOC/)
 [coco](http://cocodataset.org/#home)
+
+## evaluation
+[文件结构说明](http://vis-www.cs.umass.edu/fddb/README.txt)
+1. 生成 roc 数据文件
+```shell
+# 源代码中默认给每张图像名追加后缀.jpg或.ppm，如果系统为windows，则为.jpg 
+./evaluate [OPTIONS]
+   -h              : print usage
+   -a fileName     : file with face annotations (default: ellipseList.txt)  # 注释文件必须是椭圆
+   -d fileName     : file with detections (default: faceList.txt)
+   -f format       : representation of faces in the detection file (default: 0)
+                   : [ 0 (rectangle), 1 (ellipse) or  2 (pixels) ]
+   -i dirName      : directory where the original images are stored (default: ~/scratch/Data/facesInTheWild/)
+   -l fileName     : file with list of images to be evaluated (default: temp.txt)  
+   -r fileName     : prefix for files to store the ROC curves (default: temp)
+   -s showMatchedImage 
+
+# 注释文件结构，在源代码的EllipseR中有说明
+# 长轴半径 短轴半径 长轴方向 x轴中心坐标 y轴中心坐标 1
+<major_axis_radius minor_axis_radius angle center_x center_y 1>.
+```
+2. 根据 roc 数据文件绘制roc曲线
+```shell
+# 安装gnuplot
+sudo apt-get install gnuplot
+# 绘制曲线
+gnuplot  contROC.p
+```

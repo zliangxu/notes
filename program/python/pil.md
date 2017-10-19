@@ -1,5 +1,5 @@
 [python image library](http://effbot.org/imagingbook/)
-
+[pillow](http://pillow.readthedocs.io/en/latest/index.html)
 ```python
 import Image
 
