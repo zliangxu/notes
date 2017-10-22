@@ -85,3 +85,6 @@ sudo update-grub
 剪切字符串
 ## sed 
 在字符串后面添加字符
+
+## 查看图片文件编码信息
+identify 

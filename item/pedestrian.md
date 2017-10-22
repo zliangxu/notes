@@ -16,8 +16,8 @@
     通道可以通过原图像线性变换或非线性变换得到，通道应该具有平移变换不变性，其中，I为输入图像，C为通道，使用Omega表示通道的生成函数
     $$C=\Omega(I) \longrightarrow C'=\Omega(I')$$
 
-hog　　
-yolo
+## code
+[openFrameWork 行人检测开源代码](https://bitbucket.org/fdesmedt/)
 
 ## essay
 - integral channel features 2009　　　　

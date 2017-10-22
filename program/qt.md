@@ -6,6 +6,7 @@
 [sqlite qt驱动](http://qsqlite.sourceforge.net/#description)  
 [qt自带数据库 例子](http://www.qter.org/portal.php?mod=view&aid=51)  
 [在线电子书](https://qtguide.ustclug.org/)  
+https://github.com/lxg2015/code
 
 ## widget
 就是gui的小部件

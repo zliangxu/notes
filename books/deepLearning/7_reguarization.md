@@ -81,5 +81,29 @@ orthognonal mathing pursuit , OMP-k
 &= \frac{1}{k}v + \frac{k-1}{k}c 
 \end{aligned}$$
 如果各模型之间完全相关，则误差方差不变  
-**boosting**
-<font face="黑体" color=#ff0000>黑体字</font>
+**boosting**  
+<font face="黑体" color=#ff0000>测试</font>
+
+## 12. Dropout
+can be thought of as a method making bagging practical for ensembles of very many large neural networks.  
+输入层神经元被选中的概率设为0.8，隐藏层神经元被选中的概率设为0.5  
+dropout与bagging的不同之处：
+- bagging中所有模型是相互独立的，而dropout中各模型是参数共享的
+- bagging各模型是独立训练并且在某一数据集上收敛的模型，而dropout并没有为每一模型进行显而易见地     单独训练
+
+geometric mean 、arithmetic mean  
+weight scaling inference rule，训练好dropout模型后，使用一次网络前向传播来得到output，这个网络包括所有神经元，它的每一个神经元输出要和它的dropout概率相乘来作为该神经元的输出。经验效果比较好，但没有理论说明。它需要模型中不存在非线性特性。
+
+dropout的advatange:
+- computational cheap , 训练时仅仅需要增加哪些神经元被屏蔽掉的记录，推断时仅仅需要将权重减半
+- 适用面广，不会对训练过程产生约束， 各种网络都适用, feedforward neural network, probabilistic models such as restricted Boltzmann machiens, recurrent neural networks.
+
+dropout的disadvantage:
+- 作为一项规则化技术，会降低模型的有效容量，然后对于数据集很充分的任务，dropout并不能有效减少泛化误差
+
+dropout 也可以看做是一个共性隐藏层神经元的模型的集合
+
+## 13. adversarial(排斥的) training (难例学习) (adversarial nets 对抗神经网络)
+
+
+

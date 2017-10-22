@@ -2,9 +2,11 @@
 [think face](http://www.thinkface.cn/portal.php)  
 [dlib](http://dlib.net/)  
 [人脸识别系统](http://www.cnblogs.com/hrlnw/p/6226287.html)  
-人脸检测还有 npd, pico, 云从    
-centerloss人脸识别  
+[openface](http://imgtec.eetrend.com/blog/9910)
 
+人脸检测还有 npd, pico, 云从      
+centerloss人脸识别       
+虹软 有人脸识别SDK
 
 ## 人脸对齐,[face alignment](http://blog.csdn.net/eastlhu/article/details/25063193)
 求取人脸关键点的位置是前提条件，之后的对齐一般是基于平面上的左右倾斜角度，计算仿射变换矩阵，然后获得归一化的人脸；对于有前后倾斜的人脸不能做矫正。

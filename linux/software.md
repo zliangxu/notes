@@ -1,12 +1,15 @@
 ## app
 - foxit-reader linux 64bit [download](https://www.foxitsoftware.com/products/pdf-reader/)
-    XchangePDFviwer可以试下
+    XchangePDFviwer 可以试下
+    卸载是直接在安装路径下，双击运行Uninstall
+    
 - chrome : 可以直接sudo apt-get install, 也可以直接从 chrome 网站[下载](https://www.chrome64bit.com/)  
     或者 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 - ubuntu开wifi热点。 http://ubuntuhandbook.org/index.php/2014/06/share-internet-with-android-ubuntu-1404/
 - 默认的显示图片命令  display
 - 搜狗输入法  http://pinyin.sogou.com/linux/?r=pinyin  
     安装ubuntu16.04英文版，用到的语言是英语，同样安装搜狗输入法，按照错误提示安装了fcixt后，重启出现了搜狗输入法。
+    
 - 安装git： sudo apt-get install git
 - linux opencv显示Mat类，可以查看像素值，需要装video播放mp4的插件
 - 播放设想头视频windows amcap, linux cheese
@@ -49,6 +52,13 @@ gstreamer1.0-libav
     [blog](http://blog.csdn.net/q1302182594/article/details/47315177)
 
 - 百度云加速下载 uGet
+
+## vpn
+[得自由](https://devpn.info/)
+[tunnello插件]
+[搬瓦工]
+[配置教程](https://www.diycode.cc/topics/738)
+
 
 ## programs app
 - 源代码分析工具 source insight 

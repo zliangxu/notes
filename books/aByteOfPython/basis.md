@@ -23,6 +23,12 @@ print(r"Newlines are indicated by \n")
 # 会得到
 'Newlines are indicated by \n'  # 去掉引号
 ```
+
+- 字符串内建函数
+```python
+string.split(str=' ', num=string.count(str))   # 以 str 为分隔符，切片string，如果 num 有特定值，则只分隔出 num 个字符串
+```
+
 ## 变量
 变量、函数的名称称为 标识符  
 针对面向对象编程语言用户的提示：

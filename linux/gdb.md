@@ -9,7 +9,7 @@ gdb
 - break + 行数 ： 在第几行设置断点  
 - r ： run 运行程序  
 - c  : continue 命令  
-- n ：单步运行  
+- n ：单步运行  `
 - s : 进入程序
 - p ： print 达因变量  
 - bt ：查找函数堆栈  
@@ -37,9 +37,11 @@ cgdb启动后有两种模式，gdb模式和源码模式。默认打开时是gdb�
 - F7: Send a finish command to GDB.
 - F8: Send a next command to GDB.
 - F10: Send a step command to GDB.步入函数
+- print():输出显示
 
-
-# key
+## key
 - esc按键 : 从gdb框进入vim框即源码模式
 - Ctrl-l :Clear and redraw the screen.
+
+
 

@@ -1,9 +1,11 @@
 跨平台的轻型数据库
 ----
-[官方文档usage](http://www.runoob.com/sqlite/sqlite-c-cpp.html)
-搜索 使用示例
-[博客usage](http://www.cnblogs.com/5211314jackrose/p/5815935.html)
-[数组](http://blog.csdn.net/xiaoaid01/article/details/17998013)
+[官方文档usage](http://www.runoob.com/sqlite/sqlite-c-cpp.html)  
+[官方文档](https://www.sqlite.org/docs.html)
+
+搜索 使用示例  
+[博客usage](http://www.cnblogs.com/5211314jackrose/p/5815935.html)  
+[数组](http://blog.csdn.net/xiaoaid01/article/details/17998013)  
 
 ## tips
 需要把sqlite的语句写入字符串，再把字符串传入sqlite3_exec()函数来执行。字符串的格式要求包括：
@@ -22,13 +24,13 @@ sudo apt-get install sqlitebrowser
 ```
 ## 特点
 基于c语言写的，支持c++、python、java等多种语言
+
 ## 安装
-可以直接下载源码编译安装
+可以直接下载源码编译安装，选择 makefile 的版本
 ```shell
 ./configure
-make #把源代码编译成库文件
-#把库文件安装到系统目录'/usr/local/lib/'，把头文件安装到'/usr/local/include/'
-sudo make install 
+make # 把源代码编译成库文件
+sudo make install  # 把库文件安装到系统目录'/usr/local/lib/'，把头文件安装到'/usr/local/include/'
 ```
 ## 数据结构
 sqlite3：数据库文件打开对象  

@@ -50,7 +50,7 @@ sudo make uninstall
 ## ubuntu 安装opencv 至 conda
 ```sh
 # 源代码编译安装，这种方法可以使用VideoCapture，PATHON_PACKAGES_PATH的指定有用吗？？？ ，不过这次是可行的
-cmake -D PYTHON_PACKAGES_PATH=/home/lxg/anaconda2/lib/python2.7/site-packages/ -D BUILD——TIFF=ON ..
+cmake -D PYTHON_PACKAGES_PATH=/home/lxg/anaconda2/lib/python2.7/site-packages/ -D BUILD_TIFF=ON ..
 
 # 这种方式安装无法打开视频，也就是不能使用VideoCapture 
 conda install -c https://conda.binstar.org/menpo opencv
