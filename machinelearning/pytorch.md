@@ -10,7 +10,6 @@ Variable是torch.Tensor的打包，大部分Tensor的操作，Variable都是支�
 torch.save(model_object, 'model.pkl')  
 model = torch.load('model.pkl')
 
-
 ## 仅保存和加载模型参数(推荐使用)
 torch.save(model_object.state_dict(), 'params.pkl')  
 model_object.load_state_dict(torch.load('params.pkl'))
@@ -29,4 +28,26 @@ ImportError: /home/lxg/anaconda2/lib/libstdc++.so.6: version `GLIBCXX_3.4.21' no
 - 解决方法：
 conda install gcc
 
+## pytorch
+```python
+# Sets the module in evaluation mode. This has any effect only on modules such as Dropout or BatchNorm.
+model.eval()
+# dropout 层直接在网络定义里添加
+# 规则项在optim里又，不过默认系数为0
+```
+
+## Tensor
+```python
+# 增加维度、减维度
+squeeze()
+unsqueeze()
+# 直接用None，也可以添加维度，例如
+image[None,:,:,:]
+
+# 类型转换
+type_as()
+# tensor转矩阵
+numpy()
+from_numpy()
+```
 

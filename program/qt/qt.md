@@ -1,17 +1,11 @@
 [qt gui-class](http://doc.qt.io/qt-4.8/qtgui-module.html)  
-[qt class table](http://doc.qt.io/qt-5/classes.html)  
 [qt精品教程](http://www.qter.org/portal.php?mod=list&catid=6)  
 [qt下载列表](http://download.qt.io/archive/)    
 [qt官方例子](http://doc.qt.io/qt-5/qtexamplesandtutorials.html)  
 [sqlite qt驱动](http://qsqlite.sourceforge.net/#description)  
 [qt自带数据库 例子](http://www.qter.org/portal.php?mod=view&aid=51)  
 [在线电子书](https://qtguide.ustclug.org/)  
-https://github.com/lxg2015/code
-
-## widget
-就是gui的小部件
-text edits, scroll bars, 
-labels：显示图像，静态文字
+[豆子 qt学习之路](https://www.devbean.net/2012/08/qt-study-road-2-catelog/)
 
 ## 快捷键
 1. ctrl + tab 切换打开的文件
@@ -26,11 +20,10 @@ labels：显示图像，静态文字
 # ubuntu下配置
 ## 配置opencv
 在.pro文件中添加
-```c++
+```cmake
 INCLUDEPATH += /usr/local/include \
 LIBS += /usr/local/lib/libopencv_highgui.so \
 ```
-
 
 
 ## qt creator 快速入门
@@ -43,7 +36,6 @@ LIBS += -L/home/lxg/codetest/qtface/model/ -lseeta_facedet_lib // linux下配置
 而下面这种会提示找不到库文件
 LIBS += /usr/local/lib/libopencv_highgui.so  // win下配置
 ```
-
 
 - 命令行编译qt程序
 ```shell
@@ -63,3 +55,6 @@ uic -o ui_hellodialog.h hellodialog.ui
 - 卸载，运行安装目录下的
 ./MaintenanceTool.dat
 - 安装，运行.run安装包
+
+## tips
+1. 找不到库的问题可能是头文件与库文件不匹配 

@@ -1,5 +1,5 @@
 ## [查找命令](http://www.ruanyifeng.com/blog/2009/10/5_ways_to_search_for_files_using_the_terminal.html)
-### 1. find
+### find
 **$ find <指定目录> <指定条件> <指定动作>**  
 
 find 默认搜索当前目录及其子目录，并不过滤任何结果。  
@@ -12,13 +12,30 @@ find 默认搜索当前目录及其子目录，并不过滤任何结果。
 
 - $ find . -type f -mmin -10  
 搜索当前目录中，所有过去10分钟中更新过的普通文件。 如果不加 '-type f'则搜索普通文件+特殊文件?+目录
+### info [command]、man -k [command]，查看帮助信息
+### locate
+### whereis
+### which
+### type
+### watch 监控设备 
+```shell
+# 比如监控GPU
+watch -n 1 -d nvidia-smi
+```
+### top :display linux processes
+### 已安装软件查询
+### which 
+查询可执行文件的位置
+## cut
+剪切字符串
+## sed 
+在字符串后面添加字符
 
-### 2. locate
-### 3. whereis
-### 4. which
-### 5. type
+## 查看图片文件编码信息
+identify 
 
-### 6. 软件卸载及安装
+
+### 6. 软件包管理
 - apt(advanced packaging tool，应该是基于dpkg的，即获取到包后使用dpkg安装包)
 ```shell
 apt-cache search
@@ -78,13 +95,3 @@ sudo apt-get remove linux-image
 #删除后要使用命令下条命令更新grub
 sudo update-grub
 ```
-### 7. 已安装软件查询
-### 8. which
-查询可执行文件的位置
-## cut
-剪切字符串
-## sed 
-在字符串后面添加字符
-
-## 查看图片文件编码信息
-identify 

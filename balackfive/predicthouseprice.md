@@ -17,8 +17,8 @@ $$\sqrt{\frac{1}{N}\sum_{i=1}^{n}{(price1 - price2)}^2}$$
 4. 方法或算法
 - 线性回归-ridge regression(岭回归)，使用L2 penalty，也就是L2范数
 可以让系数变得
-线性回归-lasso regression()，使用L1范数，也就是L1 penalty
-LMS(least mean square)最小均方算法，优化目标函数，它包括梯度下降法解算最优值
+- 线性回归-lasso regression()，使用L1范数，也就是L1 penalty  
+- LMS(least mean square)最小均方算法，优化目标函数，它包括梯度下降法解算最优值
 交叉验证
 
 ```

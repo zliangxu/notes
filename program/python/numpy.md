@@ -1,7 +1,6 @@
 [referrence](https://docs.scipy.org/doc/numpy/reference/)
-
-
-## [quickstart](https://docs.scipy.org/doc/numpy-dev/user/quickstart.html)
+[referrence](https://docs.scipy.org/doc/numpy/reference/arrays.html)
+[quickstart](https://docs.scipy.org/doc/numpy-dev/user/quickstart.html)
 
 在numpy，axis就是dimensions， axes的数目被称为rank，也就是维数。
 ndarray是numpy里面定义的array，也可以叫array，但是它不同于python标准库里的array
@@ -13,7 +12,7 @@ ndarray是numpy里面定义的array，也可以叫array，但是它不同于pyth
 
 
 
-## NumPy   [referrence](https://docs.scipy.org/doc/numpy/reference/arrays.html)
+## NumPy   
 
 ![numpy](../image/python/ndarray.png)
 
@@ -27,11 +26,13 @@ ndarray是numpy里面定义的array，也可以叫array，但是它不同于pyth
         advanced indexing  
     - 省略号(ellipsis, "...")  
 ```python
-  >>> a = arange(16).reshape(2,2,2,2)  
-  # 现在，有了一个4维矩阵2x2x2x2，如果选择4维矩阵中所有的首元素，你可以使用ellipsis符号。  
-  >>> a[..., 0].flatten()  
-  array([ 0,  2,  4,  6,  8, 10, 12, 14])  
-  # 这相当于  
-  >>> a[:,:,:,0].flatten()  
-  array([ 0,  2,  4,  6,  8, 10, 12, 14])  
+维度变化
+squeeze()
+a = arange(16).reshape(2,2,2,2)  
+# 现在，有了一个4维矩阵2x2x2x2，如果选择4维矩阵中所有的首元素，你可以使用ellipsis符号。  
+ a[..., 0].flatten()  
+array([ 0,  2,  4,  6,  8, 10, 12, 14])  
+# 这相当于  
+a[:,:,:,0].flatten()  
+array([ 0,  2,  4,  6,  8, 10, 12, 14])  
 ```

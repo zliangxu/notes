@@ -30,4 +30,20 @@ American National Standards Institute (ANSI)   、ANSI C 、C89
 C++ (pronounced see plus plus) was developed by Bjarne Stroustrup at Bell Labs as an extension to C, starting in 1979.
 
 # Introduction to development
+1. 定义问题
+2. 找到多种解决方法，选出最鲁邦的一种
+3. coding
+4. compile 把源代码编译成 object file named .o or .obj
+5. linking 把 object file 连接成一个可执行文件
+6. testing and debugging
 
+# IDE
+Visaul C++
+[Code::Blocks for linux](http://www.codeblocks.org/downloads/26)
+
+# a few common c++ problems
+```cpp
+std::cin.clear(); // reset any error flags
+std::cin.ignore(32767, '\n'); // ignore any characters in the input buffer until we find an enter character
+std::cin.get(); // get one more char from the user
+```

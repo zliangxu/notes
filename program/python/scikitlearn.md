@@ -34,3 +34,8 @@ KFold cross-validation
 <!--grid search-->
 ## dataset
 ## learning and prediction
+
+## model_selection
+```python
+train_test_split()   #Allowed inputs are lists, numpy arrays, scipy-sparse matrices or pandas dataframes.
+```

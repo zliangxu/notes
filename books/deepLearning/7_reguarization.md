@@ -1,6 +1,6 @@
 规则化是以降低泛化误差而不是训练误差为目的时，对模型做的修改方式的总称。
 
-## 1.parameter norm penalties
+## 1. parameter norm penalties
 通过使用规则项降低模型容量来提升泛化性能。对于神经网络，只对权重系数做规则化，而不约束偏置系数。因为偏置系数相对于权重需要更少的数据，而且偏置系数只关系到一个变量，而权重系数是连接两个系数的桥梁。最好是每层网络都有一个规则化系数？？？  
 - L2规则项，ridge regression, Tikhonov regularization
 >  $$\Omega(\theta)=\frac{1}{2}\|w\|_2^2$$
@@ -11,7 +11,7 @@
 从总的L2规则项对最有化点的影响，假设代价函数$J(w)$的最优解为$w^*$，加入L2规则项后，变为  
 > $$\tilde{w}=Q(\Lambda+\alpha I)^{-1}Q^Tw^*$$
 它说明，L2规则项对w中对代价函数有较大影响的参数没有太大影响，而对代价函数中影响较小的w会影响很大，将它托向0的位置。
-- L1规则项  
+- L1规则项  lasso regression
 L1规则项有稀疏特性，可以用于特征选择
 > $$\Omega(\theta)=\|w\|_1=\sum_i |w_i|$$
 加入L1规则化项的代价函数变为
@@ -104,6 +104,10 @@ dropout的disadvantage:
 dropout 也可以看做是一个共性隐藏层神经元的模型的集合
 
 ## 13. adversarial(排斥的) training (难例学习) (adversarial nets 对抗神经网络)
+excessive linearity  
+neural networks are build out of primarily linear building blocks.
+
+## 14. tangent(切线) Distance, Tangent Prop, Manifold Tangent Classifier
 
 
 
