@@ -8,3 +8,10 @@
 
 ## challenges in neural network optimization
 
+## Basic Algorithms
+- Stochastic Gradient Descent
+batch gradient descent可以使用固定学习率，因为损失函数在接近最小值时，梯度几乎为0；而minibatch gradient descent要使用递减的学习率，因为minibatch是随机抽取的样本，会引入噪声，常见衰减公式如下：
+> $$\epsilon_k=(1-\alpha)\epsilon_{0} + \alpha \epsilon_{\tau}, \qquad \alpha=\frac{k}{\tau}$$
+- momentum  
+![momentum](../../image/deeplearning/sgdmomentum.jpg)
+
