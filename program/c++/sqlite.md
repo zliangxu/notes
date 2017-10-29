@@ -15,6 +15,7 @@
 ```c++
 #include <sqlite3.h>
 ```
+
 ## 图形化管理界面
 ```shelll
 # 需要sql命令
@@ -22,6 +23,7 @@ sudo apt-get install sqliteman
 # 完全图形界面比较好用
 sudo apt-get install sqlitebrowser
 ```
+
 ## 特点
 基于c语言写的，支持c++、python、java等多种语言
 
