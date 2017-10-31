@@ -8,3 +8,32 @@
 
 ## challenges in neural network optimization
 
+## Basic Algorithms
+- Stochastic Gradient Descent   
+batch gradient descent可以使用固定学习率，因为损失函数在接近最小值时，梯度几乎为0；而minibatch gradient descent要使用递减的学习率，因为minibatch是随机抽取的样本，会引入噪声，常见衰减公式如下：
+> $$\epsilon_k=(1-\alpha)\epsilon_{0} + \alpha \epsilon_{\tau}, \qquad \alpha=\frac{k}{\tau}$$
+- momentum  
+![momentum](../../image/deeplearning/sgdmomentum.jpg)  
+如图中所示，动量会增加梯度保持一个方向的运动，而减少有震荡方向的运动，原理就是把以前的速度都加在了一起
+> $$v=\alpha v - \epsilon \nabla_\theta(\frac{1}{m} \sum_{i=1}^{m}L(f(x^{(i)}; \theta), y^{(i)})$$
+> $$\theta \leftarrow \theta+v$$
+- nerterov momentum  
+是对标准momentum的改进，但是改进效果并不一定好
+
+## parameter initialization strategies
+
+## algorithms with adaptive learning rate
+使用动量能够加速训练，但是它同时又引入了另一个参数。  
+delta-bar-delta调整学习率的准则是，梯度符号保持不变时，增加这个方向的学习率，梯度符号变化时，减小这个方向的学习率，但是它只适合full batch optimization
+- AdaGrad  
+在凸优化中的表现较好，在部分网络模型中的效果好
+- RMSProp  
+- Adam
+- Choosing the right optimization algorithm
+
+## Approximate second-order methods
+
+## Optimization strategies and meta-algorithm
+
+
+

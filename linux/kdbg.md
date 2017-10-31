@@ -1,7 +1,9 @@
 # kdbg
 [官网](http://www.kdbg.org/)
 界面友善
-
+## 快捷键
+- f10: step over 
+- f8: step into
 
 
 # ddd

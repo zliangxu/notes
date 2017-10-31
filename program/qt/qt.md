@@ -6,6 +6,7 @@
 [qt自带数据库 例子](http://www.qter.org/portal.php?mod=view&aid=51)  
 [在线电子书](https://qtguide.ustclug.org/)  
 [豆子 qt学习之路](https://www.devbean.net/2012/08/qt-study-road-2-catelog/)
+[qt数据库 例子](http://blog.csdn.net/reborntercel/article/details/6991147)
 
 ## 快捷键
 1. ctrl + tab 切换打开的文件
