@@ -19,7 +19,7 @@ R-CNN有如下缺点：
 3. 检测很慢
 
 SPPnet使用了空间金字塔最大值池化，为每一个 proposal 在一个尺度上特征图提取固定大小特征(6x6)，然后将多个尺度的特征 concatentate 到一起
- 
+SPPnet的缺点：和R-CNN相同，训练是多阶段的(包括提取特征，使用log loss微调网络，训练svm，训练bounding box regressor)
 
  ## Fast R-CNN architecture and training
  ![fastrcnnflow](../image/essay/fastrcnnflow.jpg)  
@@ -33,6 +33,18 @@ SPPnet使用了空间金字塔最大值池化，为每一个 proposal 在一个�
 ### Multi-task loss:  
 对于分类任务，什么是 log loss  ？ 数学意义是什么？  
 对于坐标回归任务， smoothL1 又意味着什么?  less sensitive to outliers than the L2 loss ?? 什么是 outliers??
+有两个输出，第一，输出每一个ROI的分类概率，是一个离散概率，第二，为每一类ROI输出bounding box的回归偏差
+> $$L(p,u,t^u,v)=L_{cls}(p,u) + \lambda [u]L_{loc}(t^u,v)$$
+其中，p为预测的分类概率，u真实分类的label，$t^u$为预测的坐标回归，v为真实的坐标误差label。训练样本为ROI，每一个ROI的ground-truth类为u，ground-truth bounding box regression target为v。  
+对于分类输出label为true的误差为$L_{cls}(p,u)=-log{p_u}$，label为false的误差为0  
+$[u\geqslant 1]$艾佛森括号，表示$u\geqslant 1$时，输出为1，否则为0
+bounding box regression 损失为:
+> $$L_{loc}(t^u,v)=\sum_{i\in \{x,y,w,h\}}smooth_{L1}(t^u_i-v_i)$$
+这里与R-CNN、SPPnet不同，不再使用$L_2$损失，而是$smooth_L1$损失，因为其对外点(outliers)不敏感。(这里原文解释，When the regression targets are unbounded, training with L2 loss can require careful tuning of learning rates in order to prevent exploding gradients. Eq. 3 eliminates this sensitivity.)
+>   $$smooth_{L1}(x) = \begin{cases} 
+0.5\times x^2 &\text{if }|x| < 1 \\
+|x| - 0.5 &\text{otherwise}\end{cases}$$ (3)
+$\lambda$是一个平衡分类误差与坐标回归误差的超参数，论文中使用$\lambda =1$，这里将ground truth regression targets归一化为均值为0，方差为1的分布。
 
 ### Mini-batch sampling  
 as in rcnn，使用 25% 的与 ground truth bounding box 的 IOU 大于 0.5 的 proposal 

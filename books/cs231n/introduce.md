@@ -1,0 +1,1 @@
+[main page](http://vision.stanford.edu/teaching/cs231n/syllabus.html)

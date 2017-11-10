@@ -1,6 +1,6 @@
 https://cmake.org/Wiki/CMake //系统wiki  
-https://cmake.org/cmake/help/v3.7/  
 https://cmake.org/cmake/help/v3.0/index.html  
+[指令查找](https://cmake.org/cmake/help/v3.10/)
 
 # CMakeLists.txt
 ## tips
@@ -48,9 +48,16 @@ https://cmake.org/cmake/help/v3.0/index.html
 12. subdirs:一次添加多个子目录，不推荐使用
 13. cmake_minimum_required(VERSION 2.8)  
     需要的最低版本号
+
 14. find命令查找的是CMAKE_MODULE_PATH下的目录Find< name >.cmake模块
-    find_package(OpenCV 2.4.9 REQUIRED) 版本号要放在OpenCV的后面，REQUIRED的前面
+    find_package(OpenCV 2.4.9 REQUIRED) 版本号要放在OpenCV的后面，REQUIRED的前面，表示找不到就停止编译并报错
     include_directories( ${OpenCV_INCLUDE_DIRS} )  [头文件包含](http://docs.opencv.org/master/db/df5/tutorial_linux_gcc_cmake.html)
+    找到包后，会定义如下变量
+    <NAME>_FOUND
+    <NAME>_INCLUDE_DIRS or <NAME>_INCLUDES
+    <NAME>_LIBRARIES or <NAME>_LIBRARIES or <NAME>_LIBS
+    <NAME>_DEFINITIONS
+
 15. aux_source_directory(dir VARIABLE)   
     把一个目录里的源代码文件列表存储在一个VARIABLE变量中
 

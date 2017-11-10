@@ -59,5 +59,6 @@ $ sudo mentohust -k
 其中.deb文件是ubuntu版本，另一个是windows版本
 
 ## ubuntu开机自启动mentohsut
-选择菜单“系统->首选项->启动应用程序”，点击“添加”，输入名称MentoHUST，命令sudo mentohust，点击“添加”即可。
+选择菜单“系统->首选项->启动应用程序”，点击“添加”，输入名称MentoHUST，命令sudo mentohust，点击“添加”即可。 
+启动应用程序可以win键然后搜索 startup applications preference，或者命令行运行gnome-session-properties启动设置界面
 对于没有修改/etc/sudoers文件使得sudo无需密码的用户，此方法可能无效，这时可通过sudo chmod u+s /usr/bin/mentohust授予权限然后按此方法添加命令为mentohust的启动项。

@@ -39,5 +39,5 @@ string.split(str=' ', num=string.count(str))   # 以 str 为分隔符，切片st
 
 逻辑行与物理行
 > 所谓物理行（Physical Line）是你在编写程序时 你所看到 的内容。所谓逻辑行（Logical Line）是 Python 所看到 的单个语句。  
-> 显示行连接 \\  
+> 显示行连接 \\  应该是 \
 > 在某些情况下，会存在一个隐含的假设，允许你不使用反斜杠。这一情况即逻辑行以括号开始，它可以是方括号或花括号，但不能是结束括号。这被称作 隐式行连接（Implicit Line Joining）

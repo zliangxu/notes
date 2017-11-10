@@ -1,5 +1,6 @@
 [python image library](http://effbot.org/imagingbook/)
 [pillow](http://pillow.readthedocs.io/en/latest/index.html)
+
 ```python
 import Image
 
@@ -16,7 +17,7 @@ im.show()
  
 # image 转 numpy.array
 numpy.array(image)
-# numpy.array 转 image
-Image.fromarray(array)
+# numpy.array 转 image，数据类型要与mode契合
+Image.fromarray(array, mode='I')
 
 ```

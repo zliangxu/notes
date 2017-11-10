@@ -3,10 +3,12 @@ https://gcc.gnu.org/onlinedocs/gcc-6.2.0/gcc/index.html#toc_Invoking-GCC
 
 
 ## command options
-c语言  
+<!-- c语言   -->
 -std=   
-c++语言  
+
+<!-- c++语言   -->
 -std=  
+-fPIC: PIC 是 position-independent code的意思, 此选项去除独立位置代码, 适合与动态链接  
 
 ## 段错误
 

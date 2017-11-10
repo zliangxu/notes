@@ -31,7 +31,7 @@ conda install gcc
 ## pytorch
 ```python
 # Sets the module in evaluation mode. This has any effect only on modules such as Dropout or BatchNorm.
-# 具体的是设置　module.training变量为False，及子module的training变量为False
+# 具体的是设置　module.training变量为False，及子module的training变量为False，在模型内使用是self.training
 model.eval()
 # dropout 层直接在网络定义里添加
 # 规则项在optim里又，不过默认系数为0
@@ -51,6 +51,7 @@ image[None,:,:,:]
 
 # 类型转换
 type_as()
+
 # tensor转矩阵
 numpy()
 from_numpy()

@@ -26,6 +26,10 @@ io： csv, hdf5/PyTables
 
 ### intro to data structures  (data alignment is intrinsic)
 ```python
+# 属性
+df.size() # 包括nan元素的数目
+df.count() # 不包括nan元素的数目
+
 # assign always returns a copy of the data, leaving the original DataFrame untouched.
 df.assign() 赋值
 df.assign(sepal_ratio = lambda x: (x['SepalWidth'] / x['SepalLength'])).head() # 赋值
@@ -68,13 +72,27 @@ df = pd.concat()
 df = pd.merge(left, right, on='key', how='left') # 以left为基准进行，以key为标志向左融合，需要返回值，原df不变
 df = left.join(right,how='innner')               # 
 
+# 分组
+df.split()
+
 # append
-增加行
+# 增加行
 df.append()
 
 # group
 df.groupby().mean()
+gb = df.gropyby()
+gb.get_group() # 可以提取其中的一组
+gb.size()  # 每个分组的元素数目
 
 # Categoricals
 df["grade"] = df["raw_grade"].astype("category")    # 把raw_grade数据复制并转为category类型数据
+
+# 按某一列值排序
+df.sort_values(by=[''])
+
+# 去重
+df.duplicated() # 返回一个布尔型Series，表示本行是否重复
+df.drop_duplicates(['k1'])  # 按k1列的名字去重，返回一个去重后的DataFrame
+df.unique
 ```

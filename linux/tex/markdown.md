@@ -13,10 +13,12 @@ markdown 是一种标记型语言，并没有一个完全规范化的版本，�
 
 ## 常用数学符号
 $$\leqslant$$
+$$\geqslant$$
 $$\mathbb{E}$$
 $$\sim$$
 $$\rlap{\,/}{=}$$$
-
+$$\min_\Theta$$
+$$\bar{a}$$
 #### 0. 理解[markdown](https://kramdown.gettalong.org/syntax.html)
 kramdown 是一个用Ruby实现的Markdown的解析器。github使用的就是这个解释器
 

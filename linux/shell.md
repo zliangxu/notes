@@ -1,4 +1,16 @@
 #!/bin/bash
+[doc](https://www.gnu.org/software/bash/manual/bashref.html)
+
+## 变量
+- positional parameters  
+$0 $1 $2：可以使用set和shift命令来赋值和删除赋值
+$?： 上一条命令的执行状态
+
+## 环境变量
+$PATH：可执行程序的查找路径
+$LD_LIBRARY_PATH：动态库的查找路径
+export 导出环境变量，一个打开的shell的变量有导出变量列表与局部变量列表之分
+
 
 ## 随机数
 linux自带了一个5位的随机数变量
@@ -31,6 +43,11 @@ a=`wc -l < a.txt`
 ```shell
 # 在shell中具有最基本的数学计算能力，如可以使用expr 、let 。但这些都只能处理整形数据。为了要计算小数,就需要通过bc命令扩展。 
 ```
+## 正则表达式
+basic regular expression 
+extended regular expression
+表达式中的控制字符
+$：匹配行尾
 
 ## 关闭终端后仍然执行后台程序
 ```shell

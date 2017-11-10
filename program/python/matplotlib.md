@@ -11,6 +11,11 @@ matploylib.rcParams['figure.figize'] = (12.0, 6.0)
 # 创建窗口对象的时候设置大小 
 import matplotlib.pyplot as plt
 plt.figure('head', figsize=(8,8))
+f, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2,2)
 plt.imshow()
+plt.hist()
 plt.show()
+plt.set_figwidth(10)
+plt.set_figheight(10)
+plt.suptitle('sd')
 ```
