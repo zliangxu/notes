@@ -1,8 +1,8 @@
 # Fdb version 3
-["pdflatex"] 1508852792 "/home/lxg/notes/linux/tex/test.tex" "test.pdf" "test" 1508852792
-  "/dev/null" 1508806088 0 d41d8cd98f00b204e9800998ecf8427e ""
+["pdflatex"] 1510581766 "/home/lxg/notes/linux/tex/test.tex" "test.pdf" "test" 1510581860
+  "/dev/null" 1510536216 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/etc/texmf/web2c/texmf.cnf" 1502178974 1101 af7716885e081ab43982cab7b4672c1a ""
-  "/home/lxg/notes/linux/tex/test.tex" 1508852792 4927 0aba1856ea1b04d061bbee2c0b153c59 ""
+  "/home/lxg/notes/linux/tex/test.tex" 1510579647 4927 0aba1856ea1b04d061bbee2c0b153c59 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplr7t.tfm" 1136768653 1804 7b5f73028f6509167f47ace9d69509ed ""
@@ -149,9 +149,9 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1503343927 31343 93828589fb0cea665e553ee5a17ad2d4 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1503646722 1863403 f3ff9a4253bcb5fb9a9baaf0c572cb01 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1503646733 3855670 69eb65b58cecbae8eda19724d0666078 ""
-  "test.aux" 1508849308 8 a94a2480d3289e625eea47cd1b285758 ""
-  "test.tex" 1508852792 4927 0aba1856ea1b04d061bbee2c0b153c59 ""
+  "test.aux" 1510581766 8 a94a2480d3289e625eea47cd1b285758 ""
+  "test.tex" 1510579647 4927 0aba1856ea1b04d061bbee2c0b153c59 ""
   (generated)
-  "test.aux"
-  "test.pdf"
   "test.log"
+  "test.pdf"
+  "test.aux"

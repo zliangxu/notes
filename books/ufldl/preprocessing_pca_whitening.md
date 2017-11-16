@@ -16,7 +16,7 @@
     > $$cov(x,y)=E[(x-E(x))*(y-E(y))] \Rightarrow cov(x,y)=E(xy)-E(x)E(y)$$
 - 协方差矩阵  
     协方差矩阵的每一个元素都是协方差，是协方差的矩阵形式。  
-    X中每一列是一个已经去均值的样本(这里的$\Sigma$不同于求和中的$\sum$，其中m是样本数)。
+    X中每一列是一个已经去均值的样本(这里的$\Sigma$表示协方差，不同于求和中的$\sum$，其中m是样本数)。
     > $$\Sigma=\frac{1}{m}XX^T$$
 
 ## pca(prominantly component analysis)

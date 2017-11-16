@@ -16,6 +16,25 @@ sudo apt-get install texmaker
 1. 看完：一份其实很短的 LaTeX 入门文档，你迷惑的「CTeX 和 LaTeX 都是啥」在倒数第二节有答案.
 1. 看完：zip.liam0205.me 或者 刘海洋的《LaTeX 入门》。
 
+## beamer
+是latex的一个文档类，用于制作ppt  
+中文支持，需要使用xelatex编译，即$ xelatex main.tex。main.tex内容：
+```tex
+%!TEX program = xelatex
+\documentclass{beamer}
+    \usepackage{xeCJK}
+    % \setCJKmainfont{Adobe Song Std}
+    % \setCJKmainfont{楷体}
+    \usetheme{Warsaw}
+    \usecolortheme{rose}
+    \title{你好！beamer}
+    \date{2017}
+\begin{document}
+\begin{frame}
+    \titlepage
+\end{frame}
+\end{document}
+```
 ## markdown画流程图
 
 ```flow

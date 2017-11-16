@@ -4,7 +4,7 @@
 ## abstract
 1. multiscale and sliding window implented within ConvNet
 2. deep learning approach to localization object boundaries
-3. different tasks can be learned simultaneoulsy using a shared network
+3. different tasks can be learned simultaneoulsy using a shared network  
 这个用作特征提取器的模型叫做OverFeat
 
 ## introduction
@@ -25,7 +25,7 @@ ImageNet数据集的介绍
 ## classification  
 - model design and training  
 ImageNet 2012训练集，1.2million图像，1000类  
-把图像的最短边缩小到256像素，然后5random crops of $221\times 221$ pixels，之后mini-batch=128  
+把图像的最短边缩小到256像素，然后5 random crops of $221\times 221$ pixels，之后mini-batch=128  
 
 - feature extractor  
 fast and accurate version

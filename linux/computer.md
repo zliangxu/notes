@@ -7,5 +7,6 @@ bios下有个function key可以把media key关掉
 
 服务器配置
 cpu Intel(R) Core(TM) i7-6800K CPU @ 3.40GHz
+gpu 1080ti
 
 

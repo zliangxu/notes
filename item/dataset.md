@@ -30,3 +30,9 @@
 <!-- 目标检测 、分类、分割、动作识别、分类、人-->
 [pascal voc](http://host.robots.ox.ac.uk/pascal/VOC/) [essay: the pascal visual object classes (voc)challenge]
 [imageNet](http://www.image-net.org/)
+
+# visual object tracking
+[vot](http://www.votchallenge.net/)
+
+## psacal voc
+pascal voc: [pattern analysis,statistical modeling and computational learning](http://host.robots.ox.ac.uk:8080/leaderboard/main_bootstrap.php)

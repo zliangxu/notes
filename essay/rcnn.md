@@ -1,4 +1,4 @@
-[blog](http://www.cnblogs.com/dudumiaomiao/p/6560841.html)
+[blog](http://www.cnblogs.com/dudumiaomiao/p/6560841.html)  
 [detail](http://blog.csdn.net/shenxiaolu1984/article/details/51152614)
 # Rich feature hierarchies for accurate object detection and semantic segmentation
 
@@ -21,7 +21,7 @@
 1. 把CNN用在了基于bottom-up region proposals的框上面，来定位目标
 2. 当训练集较少时，使用监督式的预训练，然后在此基础上进行微调，能够很好的改善算法的性能。(但应该也只是相关方面的数据集上的训练)  
 
-这篇论文的核心思想就是把CNN结合到了region proposal上，所以称为RCNN。
+这篇论文的核心思想就是把CNN结合到了region proposal上，所以称为RCNN，因为以往的CNN都是直接作用在全图的。
 
 2012 目标分类在ImageNet上取得了很好的成绩，是因为有 1.2 million labeled images， ReLU， dropout regularization
 
@@ -68,17 +68,15 @@ detection error analysis [23]
 通过error分析，得到误差的主要部分在定位上面(poor localization)，然后设计了bounding-box regression来减小误差
 
 ## the ILSVRC2013 detection dataset
-- dataset overview
+- dataset overview  
 ILSVRC2013 detect dataset被分成了3部分，train(395918)，val(20121)，test(40152)
-解决类别不平衡问题
-
-- region proposals
+解决类别不平衡问题  
+- region proposals  
 selective search提出框的数目与图像的大小有关，所以在进行selective search 之前进行了把图像resize到 fixed width(500 pixels)  
 然后selective search 在val与PASCAL数据集上提出的框在IOU阈值为0.5时的recall 为91.6%和98%
-
-- training data
-- validataion and evaluation
-- relationship to overFeat  
+- training data  
+- validataion and evaluation  
+- relationship to overFeat    
 overfeat中使用multi-scale pyramid of regular square regions，R-CNN是selective search，提出框  
 在bounding-box regressor阶段，overfeat使用per-class bounding box regressors，而R-CNN使用single-box regressor  
 overfeat使用了全局卷积来提取特征，而R-CNN为每一个框warp，然后提取特征  
@@ -88,7 +86,7 @@ overFeat要比RCNN快9倍，overFeat没有针对每一个box进行CNN提特征�
 
 ## Appendix A 目标框的变换
 ![warp](../image/essay/rcnnwarp.jpg)  
-主要包括两种方法使proposal box成为227x227大小，一是使用 tightest square(最小外接正方形)，然后再将其长、宽等比例地 (isotropically) 放大到227x227，图中，B和C都是这个方法，两者的区别在于B使用context填充空缺，如果没有context，则用均值，C直接使用图像均值填充空缺，而A是proposal box，D是直接 warp，即直接进行放大。在每个例子中，上一行是直接对proposal box处理，即 context padding = 0，下一行的 context padding = 16。实验表明使用 warp with context padding = 16时，效果最好，提高3-5 mAP%
+主要包括两种方法使proposal box成为227x227大小，一是使用 tightest square(最小外接正方形)，然后再将其长、宽等比例地 (isotropically) 放大到227x227，图中，B和C都是这个方法，两者的区别在于B使用context填充空缺，如果没有context，则用均值，C直接使用图像均值填充空缺，而A是proposal box，D是直接 warp，即直接进行放大。在每个例子中，上一行是直接对proposal box处理，即 context padding = 0，下一行的 context padding = 16。实验表明使用D方法中的warp with context padding = 16时，效果最好，提高3-5 mAP%
 
 ## Appendix B Positive vs negative examples and softmax
 为CNN微调制作的正、负样本的标准与进行 object detection 的 SVM 的标准不同:  
@@ -96,7 +94,8 @@ overFeat要比RCNN快9倍，overFeat没有针对每一个box进行CNN提特征�
 2. 为训练SVM制作的正样本只有 ground-truth box，负样本是 proposal box 中与 ground-truth box IOU 小于0.3的 proposal box，其它 proposal boxes are ignored，这里使用了难例学习  
 作者开始做的实验是没有考虑CNN微调的，加上CNN微调时，使用的数据是和训练SVM时用的一样的，但是结果相对现在的设置来说很烂，作者分析原因是因为按照SVM的做法会导致正样本过少，无法对high-capacity CNN进行有效的训练，而导致了过拟合。
 
-## bounding-box regression
+## Appendix C bounding-box regression
+这个东西不是RCNN里的首创，而是DPM中用到的，然后这里应用场景相似，所以拿过来了。  
 在使用svm对每一个 proposal box 预测类别后，使用class-specific bounding-box regressor 来预测一个更加精准的框  
 模型预测的参数包括两部分：
 1. 是 proposal box 与 bounding box 中心点坐标的差值与proposal box的比值，即与尺度无关的中心坐标偏移量。
