@@ -14,7 +14,7 @@ fast-rcnn 是 single stage training that jointly learns to classify object propo
 改善后的结果就是速度上9倍于R-CNN, 3倍于SPPnet， mAP达到66%
 
 R-CNN有如下缺点：
-1. training is multi-stage pipeline， 包括三个stage， 首先是微调一个分类网络，然后使用卷积层特征把ConvNet 的softmax分类器换成svm训练object detector， 最后训练bounding-box regressors
+1. training is multi-stage pipeline， 包括三个stage， 首先是微调一个分类网络，然后使用卷积层特征把ConvNet 的 softmax 分类器换成svm训练object detector， 最后训练bounding-box regressors
 2. 为训练 SVM 和 bounding box regressor 很花费空间、时间，因为要先使用VGG16为每一张图像的 proposal box 提取特征
 3. 检测很慢
 
