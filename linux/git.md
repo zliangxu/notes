@@ -67,18 +67,22 @@ Man git-order Or git help + order得到order相关的帮助文档
     - git branch --graph:显示分支合并图
 - Git merge clean_up: 合并分支，当前在master分支，执行命令把在clean_up分支下的改变应用到master分支。
 
+## 帮助信息获取
+```shell
 man git
 git --help
+```
 
 ## "to create a new reposity"
+```shell
 echo "# books" >> README.md
 git init
 git add README.md
 git commit -m "first commit"
 git remote add origin git@github.com:lxg2015/books.git
-git push -u origin master 是合并到当前文件
-git clone 是下载新的文件
-
+git push -u origin master # 是合并到当前文件
+git clone # 是下载新的文件
+```
 ## "to push an existing reposity from the command line"
 git remote add origin git@github.com:lxg2015/books.git
 git push -u origin master

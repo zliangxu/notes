@@ -1,9 +1,7 @@
-
-
-linux-turtorial for befinners: http://www.ee.surrey.ac.uk/Teaching/Unix/index.html
-ubuntu wiki:      http://wiki.ubuntu.org.cn/%E9%A6%96%E9%A1%B5
-the linux programing interface :  http://www.man7.org/tlpi/index.html
-linux usb: http://www.linux-usb.org/
+[linux-turtorial for befinners](http://www.ee.surrey.ac.uk/Teaching/Unix/index.html)
+[ubuntu wiki](http://wiki.ubuntu.org.cn/%E9%A6%96%E9%A1%B5)
+[the linux programing interface](http://www.man7.org/tlpi/index.html)
+[linux usb](http://www.linux-usb.org/)
 [linux man-pages](https://www.kernel.org/doc/man-pages/)
 [linux kernel api](https://www.kernel.org/doc/htmldocs/kernel-api/)
 [gnu c library](http://www.gnu.org/software/libc/manual/html_node/)
@@ -170,41 +168,57 @@ SOCK_DGRAM：数据报（datagram）
 netstat命令     输出网络连接状况。
 
 ### LINUX套接字的概念
-首先，套接字的主要作用就是连接网络中进程间的通信，可以是一个主机上的两个进程，也可以是局域网中的两台主机上的进程，当然也可以是网络上连接因特网的设备；它们的连接方式有流、数据包等形式，这些都可以通过设置套接字的属性来区别不同的使用场合。
+首先，套接字的主要作用就是连接网络中进程间的通信，可以是一个主机上的两个进程，也可以是局域网中的两台主机上的进程，当然也可以是网络上连接因特网的设备；它们的连接方式有流、数据包等形式，这些都可以通过设置套接字的属性来区别不同的使用场合。  
 套接字包含三个属性：
+```
      域（domain）：指定了套接字通信中使用的网络介质。常见的包括：
           AF_UNIX：UNIX域协议（文件系统套接字，即通信时是通过创建文件，然后以文件为媒介传递信息）
           AF_INET：ARPA因特网协议（UNIX网络套接字，可以用于包括互联网在内的TCP/IP网络进行通信）
      类型（type）：一个域包含多种不同的通信方式，像AF_INET域包括流和数据报两种通信方式。
-SOCK_STREAM：流（stream）
-SOCK_DGRAM：数据报（datagram）
-     协议（prototype）：网络套接字和文件系统套接字可以用默认的协议。
-套接字是一个具体的东西，在数据通信的两端客户端、服务器端都存在，通过一个具体的例子来理解套接字整个传输的过程。
-服务器端的套接字
+```
+SOCK_STREAM：流（stream）  
+SOCK_DGRAM：数据报（datagram）  
+     协议（prototype）：网络套接字和文件系统套接字可以用默认的协议。  
+套接字是一个具体的东西，在数据通信的两端客户端、服务器端都存在，通过一个具体的例子来理解套接字整个传输的过程。  
+服务器端的套接字  
 可以通过一个系统调用创建套接字，系统调用函数的参数分别决定了套接字的三个属性，返回值就是所创建的套接字描述符，类似于UNIX系统中的文件描述符，后续的操作都是对这个描述符进行处理。
+```cpp
 int socket(int domain, int type, int protocol);
+```
 现在还需要把这个套接字绑定到一个地址上，这个起连接作用的地址也可以被其它进程访问，这样才能实现通信，这个绑定地址的过程叫套接字命名，进行绑定的系统调用函数是：
+```cpp
 int bind(int socket, const struct sockaddr *address, size_t address_len);
+```
 不同的套接字域的套接字地址结构定义形式不同，AF_UNIX域的套接字地址
+```cpp
 struct sockaddr_un{
      sa_family_t sun_family;   //指定域AF_UNIX
      char sun_path[];     //指定地址路径名
 };
+```
 AF_UNIX域套接字地址就是一个临时文件，软件运行过程中是可以看到的。
+```cpp
 AF_INET域的套接字地址
 struct sockaddr_in{
      short int sin_family;     //指定域AF_INET
      unsigned short int sin_port; //指定网络端口，因为IP地址仅仅确定了通信双方的主机地址，还需要确定端口号进一步指定通信的进程。
      struct in_addr sin_addr; //指定网络地址，即IP地址
 };
+```
 端口号是一个通信双方约定好的数字，比如QQ通信过程中的端口号就是默认的4000，这个是在编写软件时就设定好的。
 现在有了地址，就需要监听客户程序什么时候发出了连接请求，监听是通过一个系统调用程序设置进行的
+```cpp
 int listen(int socket, int backlog);
+```
 backlog指定监听套接字队列的最大长度，即服务器套接字可以容纳的未处理连接的最大数目。
 当监听到连接请求时，就可以接受连接了。
+```cpp
 int accept(int socket, struct sockaddr *address, size_t *address_len);  
+```
 参数sockaddr指定了客户的地址，如果不关心客户的地址，可以设置为NULL，系统调用返回的是一个新的套接字描述符，可以直接对这个描述符进行read()、write()操作。  
 客户端套接字。  
 客户端同样需要创建套接字，创建方法与服务器端相同，然后直接请求连接就可以了，请求连接的系统调用  
+```cpp
 int connect(int socket, const struct sockaddr *address, size_t address_len);  
+```
 该套接字没有绑定地址，即通过一个未命名套接字与服务器端监听套接字之间建立连接的方法来连接到服务器。
