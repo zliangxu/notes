@@ -43,9 +43,13 @@ sudo raspi-config #在打开的界面内选择interface的选项，enter后又�
 #可以直接登陆
 ssh UserName@Ip_Address
 ```
-
-## ssh重启服务
-service ssh restart
+## ssh服务管理
+ubuntu 自带openssh-client软件，但不自带openssh-server，也就是只有客户端，服务端的开启是需要安装openssh-server的。
+```shell
+service ssh start  # 开启服务
+service ssh stop  # 关闭服务
+service ssh restart # 重启服务
+```
 
 ## 用户管理
 使用adduser，useradd比较弱

@@ -76,7 +76,7 @@ git init
 git add README.md
 git commit -m "first commit"
 git remote add origin git@github.com:lxg2015/books.git
-git push -u origin master 是合并到当前文件
+git push -u origin master 是合并到当前文件  
 git clone 是下载新的文件
 
 ## "to push an existing reposity from the command line"

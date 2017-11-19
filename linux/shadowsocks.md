@@ -5,6 +5,7 @@
 ## shadowsocks
 shadowsocks本地就是对一个地址的访问映射到服务器ip上的访问
 ```shell
+# 1080指本地端口号，即浏览器代理要设置的端口号，而sslocl将vpn映射到127.0.0.1
 # 启动 -p 25942 -k hust2012
 sslocal -s 服务器IP -p 服务器端口号 -k Shadowsocks密码 -l 1080 -t 600 -m aes-256-cfb
 sslocal -s 45.76.152.139 -p 25942 -k hust2012 -l 1080 -t 600 -m aes-256-cfb
