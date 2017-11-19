@@ -58,6 +58,7 @@ gstreamer1.0-libav
 [tunnello插件]
 [搬瓦工]
 [配置教程](https://www.diycode.cc/topics/738)
+[VPS服务器](http://www.idcbuster.com/specials.html)
 
 
 ## programs app
