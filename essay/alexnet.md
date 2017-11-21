@@ -1,4 +1,6 @@
 # imageNet classification with deep convolutional neural networks
+## tips
+输入是227还是256？
 
 ## abstract
 在ILSVRC-2010的1.2million图像上取得了top-1和top-5的错误率分别为37.5%和17.0% 。(top-1错误率指在模型的预测结果中，confidence最大的类别与label不同的数目占所有测试集图像的比例；top-5错误率指在模型的预测结果中，confidence最大的5个类别不包含label的数目占所有测试集图像的比例）  

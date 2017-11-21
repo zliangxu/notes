@@ -2,7 +2,7 @@
 
 dpm 
 12年过后 CNN 物体表征
-deconvolution 可视化
+deconvolution(反卷积) 可视化
 strong activation image
 back-propagation
 

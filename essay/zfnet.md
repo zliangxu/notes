@@ -4,7 +4,7 @@
 Alexnet在Imagenet上表现良好，但是，1.当前能解释它为什么会好的理论，2.如何改进它，有这样两个问题。
 
 ## introduction
-multi-layered 解卷积。  
+multi-layered 反卷积。  
 通过部分遮挡原图，分析分类器的结果受输入图像的哪部分影响。
 related work
 
