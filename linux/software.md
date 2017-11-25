@@ -51,8 +51,8 @@ gstreamer1.0-libav
 - 文件rm后的恢复  
     [blog](http://blog.csdn.net/q1302182594/article/details/47315177)
 
-- 百度云加速下载 uGet
-
+- 百度云加速下载 uGet 
+- goldendict 词典，复制pdf单词到浏览器还是太麻烦了，浪费时间。
 ## vpn
 [得自由](https://devpn.info/)
 [tunnello插件]
