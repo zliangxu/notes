@@ -1,8 +1,9 @@
-# background substraction
-
+## background substraction
+[专业书籍](Background Modeling and Foreground Detection for Video Surveillance)
 [background substraction](https://en.wikipedia.org/wiki/Background_subtraction)
 1. BackgroundSubtractorCNT
 2. vibe
+3. 混合高斯模型 MOG(mixture of gauss)
 
 [vs](http://docs.opencv.org/ref/2.4/dd/dc5/classCvBlobTrackerAuto.html)
 
@@ -10,7 +11,6 @@
 [vs ](http://blog.csdn.net/lixiaokai8990/article/details/8058240)
 
 ## opencv自带的video surveilance模块
-
 opencv vs框架示例代码 blobtrack_sample.cpp
 
 ## steps

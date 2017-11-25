@@ -36,3 +36,7 @@
 
 ## psacal voc
 pascal voc: [pattern analysis,statistical modeling and computational learning](http://host.robots.ox.ac.uk:8080/leaderboard/main_bootstrap.php)
+[pascal voc 2007](http://host.robots.ox.ac.uk/pascal/VOC/voc2007/)
+
+## background substraction数据集
+[cd](http://www.changedetection.net/)

@@ -41,6 +41,18 @@ watch -n 1 -d nvidia-smi
 - sed [option] 
 流编辑工具，一次只处理一行数据
 
+## 磁盘管理
+- fdisk
+-l 列出硬盘分区表、容量大小、及分区类型，看不到文件系统类型
+- df
+-h 查看已挂载磁盘的空间使用情况
+- parted 功能强大
+```shell
+sudo parted /dev/sda  # 进入parted环境
+(parted) print list   # (parted) 环境提示符，输出硬盘分区及文件系统
+```
+
+
 ## 软件包管理
 - apt(advanced packaging tool，应该是基于dpkg的，即获取到包后使用dpkg安装包)
 ```shell

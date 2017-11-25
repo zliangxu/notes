@@ -1,5 +1,6 @@
 [论文推荐](Speed/accuracy trade-offs for modern convolutional object detectors.)
 [implenting mask rcnn](http://forums.fast.ai/t/implementing-mask-r-cnn/2234)
+[he ppt](http://kaiminghe.com/iccv17tutorial/maskrcnn_iccv2017_tutorial_kaiminghe.pdf)
 
 # Mask R-CNN 2017
 ## abstract

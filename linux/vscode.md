@@ -13,6 +13,8 @@ ctrl+shift+p 后搜索edit configuration编辑c_cpp_properties.json//属性
 - ctrl+鼠标点击， 找到选中变量名的定义
 - ctrl+shift+. markdown预显示
 - f12 定位鼠标光标所在变量的定义
+- ctrl+z:撤销
+- ctrl+y:重复
 
 MakeFile要配置成debug模式，才可在vscode下单步调试，详见cmake
 

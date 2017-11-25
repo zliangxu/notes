@@ -59,8 +59,8 @@ mackay(2003)
 - dirac distribution(狄拉克分布)  
 > $$p(x)=\delta(x-\mu)$$
 dirac delta funtion(狄拉克函数) 
-> $$\delta(x)=\begin{cases} &+\infty, \text{  if  } x=0 \\
-& 0, \text{  if  } x\rlap{\,/}{=}0
+> $$\delta(x)=\begin{cases} +\infty, &\text{  if  } x=0 \\
+ 0, &\text{  if  } x\rlap{\,/}{=}0
 \end{cases}$$
 狄拉克函数是广义函数，而generalized funtion(广义函数)是根据积分性质定义的对象
 
