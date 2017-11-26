@@ -21,3 +21,6 @@ Foundations of Machine Learning
 ## reading log
 - statistical learning method
 - 2017-7-27 deep learning
+
+## 凸优化[阅读建议](https://www.zhihu.com/question/68418633)
+convex optimization (boyd)

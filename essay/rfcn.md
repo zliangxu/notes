@@ -36,7 +36,7 @@ inference:
 RPN提出proposal box，R-FCN计算每个proposal box的类别概率及坐标回归，最后使用nms(non-maximum suppression)  
 
 atrous and stride:  
-算法atrous??
+算法atrous??，来源于wavelet，FCN
 
 visuallization:  
 $k^2$ position-sensitive score maps
