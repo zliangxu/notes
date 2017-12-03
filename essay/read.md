@@ -4,3 +4,5 @@
 
 [essay list](https://github.com/thunlp/NRLPapers)
 mask rcnn 中推荐 Speed/accuracy trade-offs for modern convolutional object detectors. 
+
+[写论文、做研究](http://www.msra.cn/zh-cn/news/features/do-research-in-computer-vision-20161205)
