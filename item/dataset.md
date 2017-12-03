@@ -23,10 +23,12 @@
     数据集: Adience dataset   21K images with 24K face annotation
 - [IMDB-WIKI](https://data.vision.ee.ethz.ch/cvl/rrothe/imdb-wiki/)
     名人性别、年龄
+- [wider face](http://mmlab.ie.cuhk.edu.hk/projects/WIDERFace/)
 
 # dataset link
 [all of kinds dataset](http://personal.ie.cuhk.edu.hk/~ccloy/download.html)
 [coco](http://cocodataset.org/#home)
+[coco排名](https://competitions.codalab.org/competitions/3221#results)
 <!-- 目标检测 、分类、分割、动作识别、分类、人-->
 [pascal voc](http://host.robots.ox.ac.uk/pascal/VOC/) [essay: the pascal visual object classes (voc)challenge]
 [imageNet](http://www.image-net.org/)
@@ -40,3 +42,9 @@ pascal voc: [pattern analysis,statistical modeling and computational learning](h
 
 ## background substraction数据集
 [cd](http://www.changedetection.net/)
+
+## data augmentation
+resize, random crop  
+padding zero, random crop 
+hsv change 
+horizontal flip

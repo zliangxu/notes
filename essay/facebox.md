@@ -1,3 +1,18 @@
+# faceBoxes: a cpu real-time face detector with hight accuracy
+## abstract
+## introduction
+## related work
+## FaceBoxes
+- anchor 密度定义式
+> $$A_{density} = A_{scale} / A_{interval}$$
+其中，$A_{interval}$就是步长。
+- 损失函数  
+与Faster R-CNN中的RPN损失相同，是2-class softmax与smooth L1损失
+- 训练参数  
+SGD,0.0005 权重衰减，batch-size 32，学习率0.001迭代80k次，0.0001迭代20k，0.00001迭代20k次
+## experiment
+## conclusion
+
 num | layer name        | kernel size   | padding | receptive field | image size | 
 ----|-------------------|---------------|---------|-----------------|------------|---
 -   | input             |               |         |    1            | 3x1024x1024 | 

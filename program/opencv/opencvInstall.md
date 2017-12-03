@@ -51,6 +51,7 @@ sudo make uninstall
 ```sh
 # 源代码编译安装，这种方法可以使用VideoCapture，PATHON_PACKAGES_PATH的指定有用吗？？？ ，不过这次是可行的
 cmake -D PYTHON_PACKAGES_PATH=/home/lxg/anaconda2/lib/python2.7/site-packages/ -D BUILD_TIFF=ON ..
+cmake -D PYTHON_PACKAGES_PATH=/home/lxg/anaconda3/lib/python3.6/site-packages/ -D BUILD_TIFF=ON ..
 
 # 这种方式安装无法打开视频，也就是不能使用VideoCapture 
 conda install -c https://conda.binstar.org/menpo opencv
@@ -58,7 +59,6 @@ conda install -c https://conda.binstar.org/menpo opencv
 
 ## 插件
 windows VisualStudio下的 image watch
-
 
 ## halcon
 机器视觉工程开发流程：　http://www.ihalcon.com/read-1285.html

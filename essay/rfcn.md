@@ -13,7 +13,7 @@ PASCAL VOC 2012 82.0%
 overview:  
 采用了一个two-stage的目标检测策略，1.region proposal 2.region classification，即便SSD,YOLO是one-stage并且效果不错，但是分数依旧在two-stage的后面。数据流程图如下：  
 ![rfcn](../image/essay/rfcnflow.jpg)  
-上图中，每一种颜色表示一个position-sensitive score map，共有$k\times k= 3\times 3=9$个map，每一个score map包含$C+1$维。  
+上图中，每一种颜色表示一个position-sensitive score maps，共有$k\times k= 3\times 3=9$个maps，每一个score maps包含$C+1$维。  
 同Faster R-CNN，RPN与detector共享特征，RPN自身就是全卷积网络。提供一张图像的Roi后，RFCN的任务就是区分Roi的类别(目标类别或背景)，从上图中可以看到RFCN最后一层卷积的输出是$k^2(C+1)$维的特征图，也就是$k^2$个position-sensitive score maps，$k^2$表示一个Roi被均分成$k\times k$个小格子，$k^2$个map分别表示Roi的{top-left, top-center,……,bottom-right}。每一个map包含$C+1$维，$C+1$表示目标类别或背景的特征图。   
 最后一层网络是position-sensitive Roi池化层，它的功能是整合卷积层的输出，为每一个Roi输出类别分数。它的操作方式不同于普通的pooling层，执行的是selective pooling，具体的解释就是，每一个position-sensitive score map内执行pooling得到$C+1$维向量，这样每一个Roi就得到$k^2$个$(C+1)$维的向量。通过端到端的学习，可以让map具有位置信息？？如何端到端？？通过池化，然后就可以直接联系到损失函数
 

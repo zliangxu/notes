@@ -26,3 +26,7 @@ print(sess.run([node1, node2]))
 [3.0, 4.0]
 ```
 这里面不包含 3.0或者4.0，因为上面只是定义了计算图，并没有运行
+
+## 使用cpu(http://blog.csdn.net/silent56_th/article/details/72628606) 
+1. 运行的时候加上前缀
+CUDA_VISIBLE_DEVICES="" python3 train.py

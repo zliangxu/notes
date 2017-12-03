@@ -33,9 +33,8 @@ softmax回归模型是logistic回归模型在多分类上的推广，具体的
 > $$\begin{aligned}
 \frac{\partial J(\theta,x^i,y^i)}{\partial z_t}&=-\begin{cases}
 1-\frac{exp(z_m)}{\sum_{l=1}^{k}exp(z_l)} &\text{if  } t=m\\
-\frac{exp(z_m)}{\sum_{l=1}^{k}exp(z_l)}&\text{if  } t{=}\llap{/\,}m \\
-\end{cases} \\
-&=-[I(t=m)-\frac{exp(z_m)}{\sum_{l=1}^{k}exp(z_l)}] \\
+\frac{exp(z_m)}{\sum_{l=1}^{k}exp(z_l)}&\text{if  } t{=}\llap{/\,}m \end{cases} \\
+&=-[I(t=m)-\frac{exp(z_m)}{\sum_{l=1}^{k}exp(z_l)}] 
 \end{aligned}$$
 应该注意
 > $$\frac{\partial z_j}{\partial \theta_j}=(x^i)^T$$

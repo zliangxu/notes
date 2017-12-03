@@ -1,3 +1,5 @@
+[例子](https://zhuanlan.zhihu.com/p/29024978)
+
 使用pip安装的pytorch
 import pytorch
 使用anaconda安装的pytorch
@@ -27,7 +29,11 @@ ImportError: /home/lxg/anaconda2/lib/libstdc++.so.6: version `GLIBCXX_3.4.21' no
 ```
 - 解决方法：
 conda install gcc
-
+## 选择GPU
+```python
+import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "1" # gpu
+```
 ## pytorch
 ```python
 # Sets the module in evaluation mode. This has any effect only on modules such as Dropout or BatchNorm.

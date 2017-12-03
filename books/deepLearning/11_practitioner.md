@@ -1,0 +1,1 @@
+[Ng praction advice](https://see.stanford.edu/materials/aimlcs229/ML-advice.pdf)

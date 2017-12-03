@@ -24,3 +24,6 @@ Foundations of Machine Learning
 
 ## 凸优化[阅读建议](https://www.zhihu.com/question/68418633)
 convex optimization (boyd)
+
+## 信息论
+information theory，inference and learning algorithms

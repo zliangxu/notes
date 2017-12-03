@@ -10,8 +10,6 @@ ndarray是numpy里面定义的array，也可以叫array，但是它不同于pyth
     - basic operations
     - Indexing, Slicing and Iterating
 
-
-
 ## NumPy   
 
 ![numpy](../image/python/ndarray.png)
