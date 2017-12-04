@@ -31,7 +31,7 @@ roi pooling layer可以看做是SPPnet中的spatial pyramid pooling layer的一�
 - initalizing from pre-trained networks  
 使用了3中在ImageNet预训练的模型，在迁移学习中，有三个地方需要改变，1.pooling layer，2.输出网络，3.输入
 - fine-tuning for detection  
-**这里解释SPPnet不能进行训练的原因是每一个 minibatch 训练 ROI 都没有规定为来自同一张图像，更进一步解释是每一个 ROI 的 receptive field 都是全图，也就是说网络的前向传播使用了全图，而反向传播只针对于图像的ROI部分计算出的 loss**。在 Fast R-CNN 中训练集准备的策略是先选出 N 张图像，然后从每张图像中选出 R/N 个ROI，即一个 mini-batch 共 R 个 ROI。这样 ROI 在前向传播和反向传播时都共用了 computation and memory(反向传播是如何共享的？)。这样操作会产生一个这样的顾虑，就是来自同一张图像的 ROI 是 correlated 的，但是在实验过程中，没有发现有什么影响。
+**这里解释SPPnet不能进行训练的原因是每一个 minibatch 训练 ROI 都没有规定为来自同一张图像，更进一步解释是每一个 ROI 的 receptive field 都是全图，也就是说网络的前向传播使用了全图，而反向传播只针对于图像的ROI部分计算出的 loss，两个过程不匹配，而image-centric策略，通过正、负样本的选择，基本可以覆盖全图，两个过程也就更匹配**。在 Fast R-CNN 中训练集准备的策略是先选出 N 张图像，然后从每张图像中选出 R/N 个ROI，即一个 mini-batch 共 R 个 ROI。这样 ROI 在前向传播和反向传播时都共用了 computation and memory(反向传播是如何共享的？这里共享应该仅仅指backbone网络)。不过这样操作会产生一个这样的顾虑，就是来自同一张图像的 ROI 是 correlated 的，但是在实验过程中，没有发现有什么影响。
 
 ### Multi-task loss:  
 对于分类任务，什么是 log loss  ？ 数学意义是什么？  

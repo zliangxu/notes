@@ -19,6 +19,8 @@ Mask R-CNN通过将每一个关键点看做one-hot binary mask，可以识别ins
 R-CNN，Instance Segmentation(FCIS)
 
 ## Mask R-CNN
+![maskrcnn](../image/essay/maskrcnn.jpg)    
+为什么是直接对proposal box直接做mask预测，而不是对修正后的box做预测？这样如果根据proposal box生成的Mask与修正后的box位置、大小不匹配如何做显示？？？根据inference章节得知，训练时是基于proposal box生成mask，而预测时，是基于修正后的box预测mask。  
 Mask R-CNN为每一个Roi生成k个binary mask，k表示类别数目，而以往的instance segmentation方法是根据每一个像素的分类结果再判断这个目标是什么。  
 - Multi-task loss:  
 > $$L=L_{cls}+L_{box}+L_{mask}$$
@@ -38,7 +40,7 @@ backbone有ResNet和FPN, heads的结构是【19,27】
 训练时正样本的选取规则与Fast R-CNN中的相同，都是与ground-truth box的IOU大于0.5时才看做正样本，而$L_{mask}$只在正样本中有意义，**mask target就是Roi与ground-truth 相交的地方**，那些不在相交地方的Roi像素被舍弃吗？看做无标签不做loss贡献？。图像短边被缩放到800像素，
 正负样本比例1:3，mini-batch size为2张图像 per gpu，8个gpu也就是16张图像，每张图像选出64(for ResNet)或512(for FPN)个Roi。RPN anchors使用5种尺度，3种长宽比。为了convenient ablation实验，RPN是单独训练的。
 - inference  
-ResNet生成300 proposal，FPN生成1000 proposal。接着box prediction，使用非极大值抑制，最后为分数最高的100个box生成mask。mask分支为每一个Roi输出K个mask，但我们只选用一个mask，也就是预测的类别的mask。 the $m\times m$ mask被缩放到原Roi的大小，然后使用阈值0.5做二值化。
+ResNet生成300 proposal，FPN生成1000 proposal。接着box prediction，使用非极大值抑制，最后为分数最高的100个box生成mask，这里与训练阶段的”mask的生成与box prediction是并行运算的“不同。mask分支为每一个Roi输出K个mask，但我们只选用一个mask，也就是预测的类别的mask。 the $m\times m$ mask被缩放到原Roi的大小，然后使用阈值0.5做二值化。
 
 ## experiments:instance segmentation
 main results: 与以往模型的比较
