@@ -1,4 +1,4 @@
-# focal loss for dense detector 2017 FAIR
+# focal loss for dense detector, FAIR, best student paper iccv 2017
 ## abstract
 two-stage的目标检测方法对稀疏的proposal box进行分类，one-stage的目标检测方法是对密集采集的possible box做分类，然而虽快但准确率没有two-stage的高。作者认为是one-stage训练时的正、负样本不均衡造成的，所以修改了 cross entropy 的形式，并称作focal loss来结局类别不平衡问题，对应的网络称为retinanet。
 

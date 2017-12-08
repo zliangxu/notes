@@ -16,7 +16,8 @@
 迁移学习就是把解决一个问题过程中获取的知识用于解决另一个问题。
 - weakly supervised semantic segmentation  
 - visual embeddings    
-class embedding vectors
+class embedding vectors   
+embedding数学上的含义，是一个映射，$f:X\rightarrow Y$，也就是一个函数，它是injective(单射函数，每一个Y只有唯一的X与之对应，同时每一个X也只有一个Y与之对应)和structure-preserving(结构保存，例如映射前后不改变大小关系)的。更常见的是word embedding。
 
 ## learning to segment every thing
 通过迁移学习得到的模型叫做$\text{Mask}^{X} R\text{-}CNN$

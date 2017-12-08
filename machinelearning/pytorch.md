@@ -44,7 +44,7 @@ model.eval()
 ```
 
 ## 可视化
-wisdom  
+visdom  
 tensorboard
 
 ## Tensor

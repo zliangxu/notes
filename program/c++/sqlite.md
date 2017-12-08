@@ -30,10 +30,13 @@ sudo apt-get install sqlitebrowser
 ## 安装
 可以直接下载源码编译安装，选择 makefile 的版本
 ```shell
-./configure
+./configure  # 生成makefile 
 make # 把源代码编译成库文件
 sudo make install  # 把库文件安装到系统目录'/usr/local/lib/'，把头文件安装到'/usr/local/include/'
+# 也可以直接安装包
+sudo apt-get install sqlite # 不能正常使用
 ```
+
 ## 数据结构
 sqlite3：数据库文件打开对象  
 sqlite3_stmt：数据库文件操作对象

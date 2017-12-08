@@ -24,11 +24,10 @@ sudo apt-get install gstreamer-base-1.0 gthread-2.0 gtk+-2.0 gtk+-3.0 gstreamer-
 下载地址https://github.com/Itseez/opencv/archive/3.0.0.zip  
 下载完源代码后，解压至特定文件夹下面。  
 3. 进入opencv-3.0.0中，键入如下命令：  
-cmake .  （注意，cmake命令后面隔着一个空格，然后带了一个.）  
 cmake -D CMAKE_BUILD_TYPE=Debug -D BUILD_TIFF=ON -D BUILD_EXAMPLES=ON -D CUDA_GENERATION=Auto .. (debug版本opencv，也可以设置把gpu关掉)
 
 4. 在terminal中键入：  
-sudo make   
+make -j5  
 5. 然后执行安装  
 sudo make install  
 6. 完成安装  
@@ -83,3 +82,28 @@ As a temporary workaround you can specify -DBUILD_TIFF=ON on cmake when configur
 This worked for me in Ubuntu 16.04, with OpenCV 3.2.1.  
 解决方法  
 cmake -DBUILD_TIFF=ON  ..
+
+2. 安装opencv后，不能使用imshow
+OpenCV Error: Unspecified error (The function is not implemented. Rebuild the library with Windows, GTK+ 2.x or Carbon support. If you are on Ubuntu or Debian, install libgtk2.0-dev and pkg-config, then re-run cmake or configure script) in cvShowImage, file /tmp/build/80754af9/opencv_1512687413662/work/modules/highgui/src/window.cpp, line 611
+解决方法：
+```shell
+# 对于c++版本
+sudo apt-get install libgtk # 可以按tab键自动补全的形式查找可安装版本，然后重新编译、安装
+# 对于python版本
+cmake -D CMAKE_BUILD_TYPE=Release -D INSTALL_PYTHON_EXAMPLES=ON -D INSTALL_C_EXAMPLES=OFF \
+-D BUILD_EXAMPLES=ON \
+-D OPENCV_EXTRA_MODULES_PATH=/home/ubuntu/cb/pkg/opencv/opencv_contrib/modules \
+-D CMAKE_LIBRARY_PATH=/usr/local/cuda-8.0/targets/x86_64-linux/lib/stubs -D WITH_CUDA=ON -DBUILD_TIFF=ON \
+-DBUILD_opencv_java=OFF -DWITH_OPENGL=ON -DWITH_OPENCL=ON -DWITH_IPP=ON -DWITH_TBB=ON -DWITH_EIGEN=ON -DWITH_V4L=ON -DWITH_VTK=OFF \
+-DBUILD_TESTS=OFF -DBUILD_opencv_dnn=ON -D CUDA_NVCC_FLAGS="-D_FORCE_INLINES --expt-relaxed-constexpr"  \
+-DBUILD_LIBPROTOBUF_FROM_SOURCES=ON \
+-DBUILD_PERF_TESTS=OFF \
+-DCMAKE_INSTALL_PREFIX=$(python -c "import sys; print(sys.prefix)") \
+-DPYTHON3_EXECUTABLE=$(which python) \
+-DPYTHON_INCLUDE_DIR=$(python -c "from distutils.sysconfig import get_python_inc; print(get_python_inc())") \
+-DPYTHON_PACKAGES_PATH=$(python -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())") \
+-DPYTHON2_NUMPY_INCLUDE_DIRS=/home/ubuntu/anaconda2/envs/virenv_name/lib/python2.7/site-packages/numpy/core/include/ ..
+
+ cmake -D CMAKE_INSTALL_PREFIX=/usr/local \
+    -D PYTHON_EXECUTABLE=/home/lxg/anaconda3/bin/python ..
+```
