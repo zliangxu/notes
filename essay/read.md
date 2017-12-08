@@ -4,5 +4,6 @@
 
 [essay list](https://github.com/thunlp/NRLPapers)
 mask rcnn 中推荐 Speed/accuracy trade-offs for modern convolutional object detectors. 
+何凯明：Surpassing Human-Level Performance on ImageNet Classification" is the most cited paper published in ICCV 2015.
 
 [写论文、做研究](http://www.msra.cn/zh-cn/news/features/do-research-in-computer-vision-20161205)
