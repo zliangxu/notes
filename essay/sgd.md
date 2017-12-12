@@ -1,6 +1,7 @@
 # an overview of gradient descent optimization algorithms
 [from blog](http://ruder.io/#open)  
-[中文翻译](http://blog.csdn.net/google19890102/article/details/69942970)
+[中文翻译](http://blog.csdn.net/google19890102/article/details/69942970)  
+[原文有动图](http://ruder.io/optimizing-gradient-descent/index.html#adam)  
 
 ## abstract
 本文重在培养对算法不同之处的直觉

@@ -64,7 +64,7 @@
         ReLU1/Rectified-Linear and Leaky-ReLU Layer 
         是rectified linear units的缩写
     - loss layers
-        multinomial logistic loss：多项式逻辑损失函数
+        multinomial logistic loss：范畴损失函数
         softmax with loss：等价于一个softmax层 + multinomial logistic loss层，把两个层合在一起，可以减少计算量，让梯度更稳定
 
 6. interfaces

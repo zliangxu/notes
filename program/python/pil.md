@@ -5,7 +5,7 @@
 import Image
 
 # 打开一个jpg图像文件，注意路径要改成你自己的:
-im = Image.open('/Users/michael/test.jpg')
+im = Image.open('/Users/michael/test.jpg') #rgb顺序
 # 获得图像尺寸:
 w, h = im.size
 # 缩放到50%:

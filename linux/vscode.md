@@ -55,6 +55,8 @@ CMake
 
 ## 插件
 - markdown+math： 编辑公式
-- clang：语法分析
+- C/C++ clang：语法分析
 - c/c++ intelisense
 - cmake language support:自动补全
+- python 
+- latex workshop

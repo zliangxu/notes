@@ -1,8 +1,8 @@
 ## evaluation
 这是FDDB数据集自带的绘ROC曲线程序，但是也可以用在其它目标检测数据集上面。
-1. evaluate程序的编译
-下载evaluation code， 链接： http://vis-www.cs.umass.edu/fddb/results.html
-源代码依赖opencv，直接 make 可能因为版本原因找不到opencv，所以参照 http://vis-www.cs.umass.edu/fddb/faq.html 中的最后一条，对Makefile文件进行修改
+1. evaluate程序的编译  
+下载evaluation code， 链接： http://vis-www.cs.umass.edu/fddb/results.html  
+源代码依赖opencv，直接 make 可能因为版本原因找不到opencv，所以参照 http://vis-www.cs.umass.edu/fddb/faq.html 中的最后一条，对Makefile文件进行修改  
 ```makefile
 # Manually provide the inputs to include files and libraries.
 
@@ -18,7 +18,7 @@ evaluate: $(OBJS)
     	$(CC) $(OBJS) -o $@ $(LIBS)
 ```
 
-2. 生成 roc 数据文件
+2. 生成 roc 数据文件  
 [评估程序的帮助文档及文件结构说明](http://vis-www.cs.umass.edu/fddb/README.txt)
 ```shell
 ./evaluate [OPTIONS]
@@ -32,7 +32,7 @@ evaluate: $(OBJS)
    -r fileName     : prefix for files to store the ROC curves (default: temp)
    -s showMatchedImage # evaluate程序帮助中没有说明的参数，可以显示注释椭圆与预测框
 ```
-- a 参数
+- a 参数  
 注释文件结构，其中图像的注释信息(label),在源代码的EllipseR中有说明
 其中  <major_axis_radius minor_axis_radius angle center_x center_y 1>.  分别对应 长轴半径 短轴半径 长轴方向 x轴中心坐标 y轴中心坐标 1 
 示例：
@@ -45,7 +45,8 @@ livet1/videoImage/livet_1_354.jpg
 52.8	67.8	0	26.4	96.9	1
 47.4	50.4	0	23.7	327.2	1
 ```
-- d 参数 为预测输出的文件结构， 示例
+- d 参数   
+为预测输出的文件结构， 示例
 ```
 livet1/videoImage/livet_1_179.jpg
 1
@@ -55,9 +56,13 @@ livet1/videoImage/livet_1_354.jpg
 4.12399768829	74.584564209	95.432261467	103.784500122	0.99744617939	1
 2.01198101044	292.987335205	85.8906831741	99.1528930664	0.893540740013	1
 ```
-- f 是预测输出文件的格式，与-a参数无关
-- i 图像的父路径
-- l 图像路径及文件名，最终读图像时使用的路径是 dirName+fileName
+- f 是预测输出文件的格式，与-a参数无关  
+0 (rectangle), 1 (ellipse) or  2 (pixels)  
+数据集的标注信息仍是椭圆，此处只是标明预测输出文件的格式。 
+- i 图像的父路径  
+dirName, default: ~/scratch/Data/facesInTheWild/
+- l 图像路径及文件名，evaluate程序读图像时使用的路径是 dirName+fileName
+其中fileName由此处定义，示例
 ```
 livet1/videoImage/livet_1_179.jpg
 livet1/videoImage/livet_1_354.jpg
@@ -72,7 +77,7 @@ string imFullName = imDir + imName + annotImageFormat;
 ```
 
 
-3. 根据 roc 数据文件绘制roc曲线
+3. 根据 roc 数据文件绘制roc曲线  
 下载Comparison Code，解压后把第二步生成的roc文件放入rocCurves/
 ```shell
 # 安装gnuplot，它是一个命令行的交互式绘图工具

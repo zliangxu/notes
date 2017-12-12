@@ -1,3 +1,6 @@
+[gan集合](https://deephunt.in/the-gan-zoo-79597dc8c347)
+[gan超分辨率](https://yq.aliyun.com/articles/277845)
+
 # generative adversarial nets
 ## abstract
 为估计generative model提出了一个新的框架，它包括两个模型，一个捕获数据分布的生成模型G，一个判别样本是来自于训练数据还是模型G的判别式模型D。模型G训练的目标是让D识别不出样本的来源。当G和D是多层感知机时，可以通过SGD来训练。

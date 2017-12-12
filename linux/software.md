@@ -53,6 +53,11 @@ gstreamer1.0-libav
 
 - 百度云加速下载 uGet 
 - goldendict 词典，复制pdf单词到浏览器还是太麻烦了，浪费时间。
+- nvidia驱动安装
+    [blacklist可能还是要添加，有时会出问题](http://blog.csdn.net/10km/article/details/61191230)
+    [驱动安装blog](http://blog.csdn.net/ssmixi/article/details/73483795)
+    [cuda安装blog](http://blog.csdn.net/qq_28413479/article/details/76377184)
+
 ## vpn
 [得自由](https://devpn.info/)
 [tunnello插件]

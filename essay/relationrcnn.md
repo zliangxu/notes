@@ -30,3 +30,5 @@ object relation attention，一个目标包含几何特征$f_G$和表达特征$f
 将relation network应用到R-CNN系列的目标检测框架里，而类似SSD的检测框架，由于候选anchor过多，加入relation会大大增加计算量。
 尝试了Faster R-CNN，FPN，DCN
 ### relation for instance recognition
+Faster R-CNN中的识别头网络是两个全连接网络，这里在全连接网络之后都接relation module，处理之后，特征维度不受影响。
+### relation for duplicate removal

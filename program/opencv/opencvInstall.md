@@ -7,8 +7,15 @@ pkg-config --modversion opencv
 ## 直接安装库
 ```shell
 sudo apt-get install libcv-dev
+# python2 安装到系统默认python里，使用pip安装
+pip install opencv-python
 ```
+
 ## 源代码编译安装
+生成Makefile文件后，查看选项配置
+```shell
+cmake -L | awk '{if(f)print} /-- Cache values/{f=1}'
+```
 
 前提：系统更新
 sudo apt-get update   
@@ -87,9 +94,9 @@ cmake -DBUILD_TIFF=ON  ..
 OpenCV Error: Unspecified error (The function is not implemented. Rebuild the library with Windows, GTK+ 2.x or Carbon support. If you are on Ubuntu or Debian, install libgtk2.0-dev and pkg-config, then re-run cmake or configure script) in cvShowImage, file /tmp/build/80754af9/opencv_1512687413662/work/modules/highgui/src/window.cpp, line 611
 解决方法：
 ```shell
-# 对于c++版本
+# 是因为缺少gtk库，安装
 sudo apt-get install libgtk # 可以按tab键自动补全的形式查找可安装版本，然后重新编译、安装
-# 对于python版本
+# 使用源码编译的opencv，安装到库目录
 cmake -D CMAKE_BUILD_TYPE=Release -D INSTALL_PYTHON_EXAMPLES=ON -D INSTALL_C_EXAMPLES=OFF \
 -D BUILD_EXAMPLES=ON \
 -D OPENCV_EXTRA_MODULES_PATH=/home/ubuntu/cb/pkg/opencv/opencv_contrib/modules \
@@ -99,10 +106,12 @@ cmake -D CMAKE_BUILD_TYPE=Release -D INSTALL_PYTHON_EXAMPLES=ON -D INSTALL_C_EXA
 -DBUILD_LIBPROTOBUF_FROM_SOURCES=ON \
 -DBUILD_PERF_TESTS=OFF \
 -DCMAKE_INSTALL_PREFIX=$(python -c "import sys; print(sys.prefix)") \
--DPYTHON3_EXECUTABLE=$(which python) \
--DPYTHON_INCLUDE_DIR=$(python -c "from distutils.sysconfig import get_python_inc; print(get_python_inc())") \
--DPYTHON_PACKAGES_PATH=$(python -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())") \
--DPYTHON2_NUMPY_INCLUDE_DIRS=/home/ubuntu/anaconda2/envs/virenv_name/lib/python2.7/site-packages/numpy/core/include/ ..
+-DPYTHON_DEFAULT_EXECUTABLE=$(which python3)
+-DPYTHON3_EXECUTABLE=$(which python3) \  # 这里可以设置为PYTHON_EXECUTABLE not PYTHON3_EXECUTABLE
+-DPYTHON3_INCLUDE_DIR=$(python -c "from distutils.sysconfig import get_python_inc; print(get_python_inc())") \
+-DPYTHON3_PACKAGES_PATH=$(python -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())") \
+-DPYTHON3_LIBRARY=/home/lxg/anaconda3/lib/libpython3.6m.so  ..
+# -DPYTHON_NUMPY_INCLUDE_DIRS=/home/ubuntu/anaconda2/envs/virenv_name/lib/python2.7/site-packages/numpy/core/include/ # 能自动匹配到版本 
 
  cmake -D CMAKE_INSTALL_PREFIX=/usr/local \
     -D PYTHON_EXECUTABLE=/home/lxg/anaconda3/bin/python ..

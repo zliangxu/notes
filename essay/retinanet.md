@@ -40,8 +40,11 @@ focal loss主要用于解决one-stage目标检测中极度的样本不均衡问�
 
 ## retinanet detector
 网络由一个backbone和两个subnetwork构成。  
-- feature pyramid network backbone：
-- anchors:
+- feature pyramid network backbone  
+特征图为$P3-P7$，每个输出特征图的通道数为$256$
+- anchors  
+$P3-P7$的特征图上的anchor大小为$32^2-512^2$，每个anchor有三种比例$\{1:2,1:1,2:1\}$，使用了三种相对尺寸$\{2^0,2^{1/3},2^{2/3}\}$，所以一个位置共对应$9$个anchor，每个anchor对应的label有分类标签$K$元素向量的独热编码，$4$元素向量的坐标回归标签。  
+正样本为IOU$>0.5$的，负样本为IOU$\in [0,0.4)$，对于IOU$\in [0.4,0.5)$的被舍弃。
 - classification subnet: 这里好像与SSD不同，分类网络的参数在不同层的特征图上也是共享的，因此用于输出的特征图的通道数都是相同的。  
 - box regression subnet: 
 

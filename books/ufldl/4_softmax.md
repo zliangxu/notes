@@ -21,7 +21,7 @@ softmax回归模型是logistic回归模型在多分类上的推广，具体的
 其中$p(y^i=j|x^i;\theta)$表示将$x^i$分类为$j$的概率  
 > $$p(y^i=j|x^i;\theta)=\frac{exp(\theta_j^Tx^i)}{\sum_{j=1}^{k}exp(\theta_j^Tx^i)}$$(2)
 上式是对概率进行了归一化的，这就造成了参数冗余，可以证明$\theta$与参数($\theta-\psi$)的结果是一致的，可以使用权重衰减使代价函数成为严格的凸函数，解唯一。  
-- 代价函数  
+- 代价函数(softmax cross entropy)   
 代价函数应该是一个标量，不是矩阵
 > $$J(\theta)=-\frac{1}{m}[\sum_{i=1}^{m}\sum_{j=1}^{k}(I(y^i=j)*log(p(y^i=j|x^i;\theta)))]$$
 - softmax求导  

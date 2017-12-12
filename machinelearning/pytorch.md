@@ -50,16 +50,25 @@ tensorboard
 ## Tensor
 ```python
 # 增加维度、减维度
-squeeze()
-unsqueeze()
+a.squeeze() #默认移除所有size为1的维度，也可以指定维度。
+a.unsqueeze()
 # 直接用None，也可以添加维度，例如
 image[None,:,:,:]
 
 # 类型转换
-type_as()
+# type_as() 不起作用？
+a.type()
+a.float()
 
 # tensor转矩阵
 numpy()
 from_numpy()
 ```
-
+## attention
+验证的时候模型的输入应该是
+```python
+# 保证没有梯度求解，以防止浪费计算量，以volatile为输入的网络，都不会计算梯度，should be used in inference time
+Variable(in, volatile=True) 
+optimizer 返回的是Variable，Variable.data是FloatTensor， Variable.data[0]是float类型
+(<class 'torch.autograd.variable.Variable'>, <class 'torch.cuda.FloatTensor'>)
+```

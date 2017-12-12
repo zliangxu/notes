@@ -3,7 +3,7 @@
 
 - face detection data set and benchmark ，椭圆标记
     [fddb](http://vis-www.cs.umass.edu/fddb/results.html)
-    在2845图像中取了5171张人脸图像
+    在2845图像中取了5171张人脸图像，已经读取验证了，图像数目是正确的
 
 - annotated facial landmarks in the wild(下载需申请，链接中有其他数据库，百度网盘)
     [aflw](https://www.tugraz.at/institute/icg/research/team-bischof/lrs/downloads/aflw/)
@@ -24,7 +24,8 @@
 - [IMDB-WIKI](https://data.vision.ee.ethz.ch/cvl/rrothe/imdb-wiki/)
     名人性别、年龄
 - [wider face](http://mmlab.ie.cuhk.edu.hk/projects/WIDERFace/)
-
+ 12880 images
+ 
 # dataset link
 [all of kinds dataset](http://personal.ie.cuhk.edu.hk/~ccloy/download.html)
 [coco](http://cocodataset.org/#home)
@@ -39,6 +40,7 @@
 ## psacal voc
 pascal voc: [pattern analysis,statistical modeling and computational learning](http://host.robots.ox.ac.uk:8080/leaderboard/main_bootstrap.php)
 [pascal voc 2007](http://host.robots.ox.ac.uk/pascal/VOC/voc2007/)
+pascal VOC 2012分割 训练集1464张，验证集1449张图片，共2913张
 
 ## background substraction数据集
 [cd](http://www.changedetection.net/)

@@ -54,3 +54,11 @@ $：匹配行尾
 nohup PROGRAM &  #nohup会把程序输出到nohup.out
 exit  #据说要用exit，而不是直接点x号时会起作用
 ```
+
+## 查看文件大小
+```shell
+du
+df -h # 查看磁盘分区使用情况
+```
+
+@

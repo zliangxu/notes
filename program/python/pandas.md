@@ -3,7 +3,7 @@
 ## terms
 tabular 表格
 tenet 宗旨
-NaN: not an number
+NaN: not a number
 
 ### Package overiew
 所有的数据结构都是value-mutable
@@ -61,7 +61,7 @@ df.fillna(values=5)         # 对NaN填充5
 df.isnull()                 # 返回boolean值，判断是否NaN
 
 # Operations
-操作通常不考虑缺失值
+# 操作通常不考虑缺失值
 df.mean(0)                              # 0对所有行求平均值，1或缺省对所有列求平均值
 df.apply(np.cumsum)                     # 逐行对df求值并赋值
 df.apply(lambda x: x.max() - x.min())   # 代入的x是对列的遍历，返回结果

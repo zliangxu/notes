@@ -5,7 +5,7 @@
 [Git 命令解释](https://git-scm.com/docs)     
 [廖雪峰git教程](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
 
-- HEAD: git用HEAD表示当前版本，实际上HEAD指向master,master指向当前版本
+- HEAD: git用HEAD表示当前版本，实际上HEAD指向master，master指向当前版本
     HEAD^表示上一个版本。
 - master: 主分支，本地仓库的分支名
 - origin: 我们的文件在github服务器上的默认名为origin，在本地分支的默认名为master。
@@ -74,29 +74,10 @@ man git
 git --help
 ```
 
-## "to create a new reposity"
-```shell
-echo "# books" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git remote add origin git@github.com:lxg2015/books.git
-<<<<<<< HEAD
-git push -u origin master 是合并到当前文件  
-git clone 是下载新的文件
-
-=======
-git push -u origin master # 是合并到当前文件
-git clone # 是下载新的文件
-```
->>>>>>> e8de293fe8af072ec7915e4c4e78c2373b2f89b8
-## "to push an existing reposity from the command line"
-git remote add origin git@github.com:lxg2015/books.git
-git push -u origin master
-
 ## gitignore
 文件的书写规则
 ```shell
+/         # 表示根目录
 *.a       # 忽略所有 .a 结尾的文件
 !lib.a    # 但 lib.a 除外
 /TODO     # 仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODO
@@ -109,13 +90,3 @@ git rm -r --cached .
 git add .
 git commit -m 'update .gitignore'
 ```
-
-_site
-.sass-cache
-.jekyll-metadata
-*.aux
-*.fdb_latexmk
-*.fls
-*.log
-*.pdf
-*.gz

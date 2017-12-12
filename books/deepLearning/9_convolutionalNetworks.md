@@ -27,7 +27,7 @@ input is input, argument is called **kernel**, output is sometimes referred as t
 根据零填充设定的情况划分
 1. 有效卷积(valid convolution)：无0填充
 2. 相同卷积(same convolution)：进行零填充，保证卷积运算不改变下一层的结构
-3. 全卷机(full convolution)：有0填充，使每个像素在恰好访问k(卷积核大小)次
+3. 全卷积(full convolution)：有0填充，使每个像素在恰好访问k(卷积核大小)次
 
 局部连接层、平铺卷积、标准卷积  
 局部连接层没有共享参数  
