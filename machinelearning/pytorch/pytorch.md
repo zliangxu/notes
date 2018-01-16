@@ -28,7 +28,8 @@ Traceback (most recent call last):
 ImportError: /home/lxg/anaconda2/lib/libstdc++.so.6: version `GLIBCXX_3.4.21' not found (required by /home/lxg/anaconda2/lib/python2.7/site-packages/torch/lib/libshm.so)
 ```
 - 解决方法：
-conda install gcc
+conda install gcc，不要在pytorch的源代码目录下使用pytorch
+
 ## 选择GPU
 ```python
 import os
@@ -52,19 +53,19 @@ tensorboard
 # 增加维度、减维度
 a.squeeze() #默认移除所有size为1的维度，也可以指定维度。
 a.unsqueeze()
-# 直接用None，也可以添加维度，例如
-image[None,:,:,:]
+a[None,:,:,:]
 
 # 类型转换
 # type_as() 不起作用？
 a.type()
 a.float()
+torch.FloatTensor() # 内部是float类型，而不是floatTensor()?
 
 # tensor转矩阵
 numpy()
 from_numpy()
 ```
-## attention
+## tips
 验证的时候模型的输入应该是
 ```python
 # 保证没有梯度求解，以防止浪费计算量，以volatile为输入的网络，都不会计算梯度，should be used in inference time

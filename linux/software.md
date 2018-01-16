@@ -36,7 +36,8 @@ gstreamer1.0-libav
 - 文档编辑  
 原来 UNIX 用户早就有非常方便的 troff, LaTeX, SGML等东西可以处理文档，而且它们比起 Word 都要高明的多。
 - 编程  
-为什么 UNIX 程序员不用 IDE？明白了这个道理你就能体会到 UNIX 的设计思想了。首先，一个 IDE 集成了编辑器，编译器，汇编器，调试器，跟踪器…… 这个编辑器功能肯定比不上 VIM 或 Emacs，编译器比不上 GCC，汇编器比不上 as，调试器比不上 gdb，ddd, 跟踪器比不上 strace, ltrace, truss。你得到的是一套整合的低能的程序。
+为什么 UNIX 程序员不用 IDE？明白了这个道理你就能体会到 UNIX 的设计思想了。首先，一个 IDE 集成了编辑器，编译器，汇编器，调试器，跟踪器…… 这个编辑器功能肯定比不上 VIM 或 Emacs，编译器比不上 GCC，汇编器比不上 as，调试器比不上 gdb，ddd, 跟踪器比不上 strace, ltrace, truss。你得到的是一套整合的低能的程序。  
+调试代码界面友好软件kdbg。
 - 绘图  
 我的大部分文本是用 VIM 编辑的，包括程序，信件，网页，LaTeX 论文，MetaPost 绘图语言。  
 至于绘图，你可以用很多可视化的工具，比如 xfig，dia。

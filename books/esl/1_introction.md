@@ -1,4 +1,4 @@
-[cn version](https://esl.hohoweiya.xyz/index.html)
+[chinese version](https://esl.hohoweiya.xyz/index.html)
 
 # 讲了四个例子
 1. email spam 垃圾邮件的鉴定  
@@ -9,3 +9,11 @@
 数据时$16\times 16$的$8$位灰度图，预测$0,1,2,3,……,9$，是一个监督、多分类问题
 4. 基因表达微阵列  
 是一个无监督、聚类问题
+
+
+```
+We recommend that Chapters 1–4 be first read in sequence. Chapter 7
+should also be considered mandatory, as it covers central concepts that
+pertain to all learning methods. With this in mind, the rest of the book
+can be read sequentially, or sampled, depending on the reader’s interest
+```

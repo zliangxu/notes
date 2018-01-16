@@ -57,8 +57,7 @@ exit  #据说要用exit，而不是直接点x号时会起作用
 
 ## 查看文件大小
 ```shell
-du
+du -d2 -h # -h hunman read, -d2 max deepth 2
 df -h # 查看磁盘分区使用情况
 ```
 
-@
