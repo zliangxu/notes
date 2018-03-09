@@ -48,7 +48,7 @@ object detection system consists of 3 modules
 
 3. class-specific linear SVMs  
 训练SVM是，正样本只有ground-truth bounding box，负样本是proposal box 与ground-truth box的IOU小于0.3的，这个值是通过grid search得到的。而设置0或0.5都会使mAP降低。  
-得到了特征与标签后，为每一类都设计了一个SVM，使用了hard negative mining method 方法 [17,37]
+得到了特征与标签后，为每一类都设计了一个SVM，使用了hard negative mining method 方法 [17,37]，(还不是online hard expamle mining)
 
 现在有了一张图里所有区域的 score 后，使用一个 class independently non-maximum suppression方法。
 在实验结果的对比中CNN提取的特征明显优于传统的特征SIFT、HOG，不仅维度更低，并且使用SVM的准确度更高。这大概是因为CNN训练出的特征是有类别区分度的，所以使用SVM能够很容易达到较好的效果。

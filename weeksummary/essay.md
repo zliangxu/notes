@@ -1,3 +1,5 @@
+VID: object detection in video，基于视频的目标检测
+
 # 计算机视觉会议
 ## A类
 - CVPR, 一年一次，IEEE, international conference on computer vision and pattern recognition

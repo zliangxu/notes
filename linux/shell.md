@@ -1,16 +1,22 @@
 #!/bin/bash
 [doc](https://www.gnu.org/software/bash/manual/bashref.html)
+[shell编程 教程例子](http://tldp.org/LDP/abs/html/)
 
 ## 变量
 - positional parameters  
 $0 $1 $2：可以使用set和shift命令来赋值和删除赋值
 $?： 上一条命令的执行状态
+$# : 代表命令所携带参数的个数
+
 
 ## 环境变量
 $PATH：可执行程序的查找路径
 $LD_LIBRARY_PATH：动态库的查找路径
 export 导出环境变量，一个打开的shell的变量有导出变量列表与局部变量列表之分
 
+## 输入输出命令
+- read 
+- echo
 
 ## 随机数
 linux自带了一个5位的随机数变量

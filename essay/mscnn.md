@@ -1,4 +1,5 @@
 # a unified multi-scale deep convolutional neural network for fast object detection ECCV 2016
+[blog](https://xzhewei.github.io/2017/10/21/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0%E3%80%8AA-unified-multi-scale-deep-convolutional-neural-network-for-fast-object-detection%E3%80%8B/)
 ## abstract
 MS-CNN是一个two-stage目标检测网络，由两部分组成，a proposal subnetwork, a detection subnetwork。    
 proposal network是在多个特征图上操作的(与FPN,SSD类似)，使用特征上采样反卷积(deconvolution)来替代输入上采样，网络整体是端到端训练，使用multi-task损失。  

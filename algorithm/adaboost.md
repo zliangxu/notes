@@ -1,12 +1,12 @@
-[tutorial](http://docs.opencv.org/master/dc/d88/tutorial_traincascade.html)
-[csdn introduction adaboost](http://blog.csdn.net/zy1034092330/article/category/5857165)
+[tutorial](http://docs.opencv.org/master/dc/d88/tutorial_traincascade.html)   
+[csdn introduction adaboost](https://zhuanlan.zhihu.com/p/31427728)
 
 ## tips
-1. 不同stage的训练有什么不同？？
-不同stage使用的正负样本不同，因为正样本是前面stage判断为true positive的正样本，而负样本是前面stage判断为false positive的负样本。而一个stage的第一个弱分类器训练时，权重初始化为相同值。
+1. 不同stage的训练有什么不同？？    
+不同stage使用的正负样本不同，因为正样本是前面stage判断为true positive的正样本，而负样本是前面stage判断为false positive的负样本，即每一个stage的训练有一个收集样本加分类的过程。而一个stage的第一个弱分类器训练时，权重初始化为相同值。   
 对于正样本已经被前面的stage判断为negative的样本，没有必要继续存在于下一stage的正样本数据中，因为已经被串联stage排除在外了。
 
-2. 同一stage的不同弱分类器训练数据有什么关系？？
+2. 同一stage的不同弱分类器训练数据有什么关系？？   
 权重有更新，数据没有变化。
 
 ## 制作info.dat
@@ -18,8 +18,7 @@ done
 ```
 
 # 1. opencv_createsamples  
-负样本需要手工准备，正样本可以用如下程序操作，
-负样本只提供照片就行了，不需要截取出和正样本大小一直的图片。训练时(opencv_traincascade命令)，程序会自动从提供的负样本照片内滑窗提取指定数目的负样本，注意，这里的负样本数目与提供的负样本照片个数并不是同一个数。
+负样本只提供照片就行了，不需要截取出和正样本大小一致的图片。训练时(opencv_traincascade命令)，程序会自动从提供的负样本照片内滑窗提取指定数目的负样本，注意，这里的负样本数目与提供的负样本照片个数并不是同一个数。
 参数：
 ```
 Usage: opencv_createsamples
@@ -175,9 +174,12 @@ END>
 Training until now has taken 0 days 0 hours 3 minutes 50 seconds.
 ```
 ## 原理
-[GAB](http://blog.csdn.net/dataningwei/article/details/54836386)
-一个完整的GAB(gentle adaboost)训练过程算是对一个stage的训练，一个stage就是一个强分类器。
-
+OpenCV中实现了
+- DAB: discrete adaboost
+- RAB: real adaboost
+- LB: logitboost
+- [GAB](http://blog.csdn.net/dataningwei/article/details/54836386)
+一个完整的GAB(gentle adaboost)训练过程算是对一个stage的训练，一个stage就是一个强分类器。通过将强分类器级联就得到了OpenCV中的级联Adaboost分类器。而强分类器是由多个弱分类器'并联'组成的，'并联'的意思是多个弱分类器的输出值加起来与该级强分类器阈值比较。  
 ```html
 <!-- 一个stage中的一个弱分类器的结构 -->
 <_>
@@ -187,6 +189,18 @@ Training until now has taken 0 days 0 hours 3 minutes 50 seconds.
     3.5338345170021057e-01 -9.5717346668243408e-01</leafValues></_>
 <_>
 ```
+多尺度目标的检测有两种方法，1.逐步缩小图像，2.逐步放大检测窗口，位于检测窗口的haar特征也同样比例放大。一般来说，用硬件实现缩小图像的方法更快，用软件实现放大检测窗口的方法更快？？  
+NMS对检测窗口进行非极大值抑制。
+
+## 训练一个stage(强分类器)的算法步骤
+1. 利用已经训练好的分类器，收集numPos个TP正样本和numNeg个FP负样本
+2. 计算所有haar特征对收集到的正、负样本的特征值并排序，计算当前权重下的Best Split threhold + leftValue + rightValue，组成了一个个弱分类器
+3. 选择2步骤中GAB WSE(weighted square error)最小的弱分类器为最优弱分类器，将其添加进当前stage分类器。
+4. 更新当前stage中每个样本的权重。
+5. 依据minHitRate计算当前stage强分类器的阈值
+6. 重复上述1-5步骤，直到falseAlarmRate达到要求，或弱分类器数量足够。停止循环，输出stage。
+7. 进入下一个stage训练
+
 # 3. opencv_haartraining旧版本
 ```
 Usage: opencv_haartraining

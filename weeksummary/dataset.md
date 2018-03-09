@@ -32,16 +32,22 @@
 [pascal voc](http://host.robots.ox.ac.uk/pascal/VOC/) [essay: the pascal visual object classes (voc)challenge]
 [imageNet](http://www.image-net.org/)
 
-# visual object tracking
+# visual object tracking, wiki上有更多数据集
 [vot](http://www.votchallenge.net/)
+[wiki dataset](https://en.wikipedia.org/wiki/Background_subtraction)
 
 ## psacal voc
 pascal voc: [pattern analysis,statistical modeling and computational learning](http://host.robots.ox.ac.uk:8080/leaderboard/main_bootstrap.php)
 [pascal voc 2007](http://host.robots.ox.ac.uk/pascal/VOC/voc2007/)
 pascal VOC 2012分割 训练集1464张，验证集1449张图片，共2913张
 
+## 自动驾驶
+[kitti](http://www.cvlibs.net/datasets/kitti/)
+
+## 图像分割
+cityscapes 是可以注册下载的
 ## background substraction数据集
-[cd](http://www.changedetection.net/)
+[change detection](http://www.changedetection.net/)
 
 ## data augmentation
 resize, random crop  

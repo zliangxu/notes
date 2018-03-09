@@ -1,3 +1,6 @@
+## 内部命令&&外部命令
+linux的命令有内部命令与外部命令之分，可以使用“type COMMAND”来区分。
+
 ## 终端多条指令执行
 - 使用分号(;)隔开，指令顺序执行，执行结果互不影响
 - 使用与 (&&)，前一条命令执行成功，才会进行下一条指令
@@ -27,7 +30,7 @@ $ find . -type f -mmin -10
 # 比如监控GPU
 watch -n 1 -d nvidia-smi
 ```
-- type
+- type: 用于区分某个命令是否来自shell
 - top :display linux processes
 - whereis 已安装软件位置查询，以及配置文件
 - which 查询可执行文件的位置
@@ -38,20 +41,32 @@ watch -n 1 -d nvidia-smi
 - ldd [EXECUTABLE] 显示可执行文件的链接库
 - basename [NAME] 截取NAME中的文件名
 - dirname [NAME] 截取NAME中的路径
-- sed [option] 
-流编辑工具，一次只处理一行数据
+- sed [option] 流编辑工具，一次只处理一行数据
+- alias 给命令提供别名，写在.bashrc内
+- grep [OPTION] PATERN FILE，在文件或输入上进行查找匹配
+- notify-send 以弹窗的形式显示消息
+- wc 行计数
+- kill -9 $(ps -ef | grep xelatex | awk '{print $2}') : 查杀xelatex进程
+- chmod 修改权限
+- free -h 显示内存消耗
+- 
+
+## 例行性任务调度
+crontab 
+    -e 编辑任务
+    -l 显示任务
+service cron status 显示cron服务的状态
+在crontab内使用命令时，要注意把环境变量引入，例如使用notify-send命令时，要特别注意"DISPLAY=:0"变量的引入，否则通知不会正常显示。
 
 ## 磁盘管理
-- fdisk
--l 列出硬盘分区表、容量大小、及分区类型，看不到文件系统类型
-- df
--h 查看已挂载磁盘的空间使用情况
+- fdisk -l 列出硬盘分区表、容量大小、及分区类型，看不到文件系统类型
+- df -h 查看已挂载磁盘的空间使用情况
+- du 文件大小列表
 - parted 功能强大
 ```shell
 sudo parted /dev/sda  # 进入parted环境
 (parted) print list   # (parted) 环境提示符，输出硬盘分区及文件系统
 ```
-
 
 ## 软件包管理
 - apt(advanced packaging tool，应该是基于dpkg的，即获取到包后使用dpkg安装包)
@@ -99,7 +114,7 @@ rpm -i
 # 升级包
 rpm -u 
 ```
-- 内核操作
+## 内核操作
 ```shell
 #内核操作
 #ubuntu更新内核，切换内核启动 http://www.bkjia.com/xtzh/952429.html
@@ -108,8 +123,8 @@ grep menuentry /boot/grub/grub.cfg
 #或者
 dpkg --list | grep linux-image
 
-#删除内核命令 ubuntu tweak(忘记是什么了)
-sudo apt-get remove linux-image
-#删除后要使用命令下条命令更新grub
+# 删除内核命令 ubuntu tweak(忘记是什么了)，要使用purge而不是remove
+sudo apt-get purge linux-image
+# 删除后要使用命令下条命令更新grub
 sudo update-grub
 ```

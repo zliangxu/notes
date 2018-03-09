@@ -1,4 +1,6 @@
 # S3FD: single shot scale-invariant face detector 2017 iccv
+[论文实验部分写得细致，测试部分有公开代码，很值得学习](https://github.com/lxg2015/SFD)
+
 ## abstract
 为解决基于anchor机制的目标检测，对于小目标检测的缺陷
 - 基于感受野大小设计anchor的大小，还有equal proportion interval principle

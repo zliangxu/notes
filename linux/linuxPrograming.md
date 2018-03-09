@@ -64,14 +64,14 @@ LINUX程序运行时，自动在PATH搜索路径下搜索（目录名以冒号�
 文件和目录的维护
 chmod//改变文件和目录的访问权限
 chown//改变文件属主
-第四章 Linux环境
-cd -  //返回上一个进入的目录
-getopt(); putopt();//程序参数解析
-set：命令，列出所有的环境变量
-getenv(); putenv();//读取设置环境变量
-/var/log/；//文件下各种日志信息
-安装库的默认路径 ： /usr/local/include
-搜索文件命令： sudo update
+### 第四章 Linux环境
+- cd -  <!-- 返回上一个进入的目录 -->
+- getopt(); putopt();<!-- 程序参数解析 -->
+- set：命令，列出所有的环境变量
+- getenv(); putenv();//读取设置环境变量
+- /var/log/；//文件下各种日志信息
+- 安装库的默认路径 ： /usr/local/include
+- 搜索文件命令： sudo update
                          locate FILENAME
 
 ### 第五章 终端termios
@@ -98,12 +98,12 @@ __TIME__
 
 perrr() 系统函数，输出系统调用失败时的错误信息。  
 ### 第十一章 进程和信号  
-ps： 显示当前运行的进程  
+- ps： 显示当前运行的进程  
 system("");//调用  
 execlp();//替换进程  
 //复制进程  
 信号  
-kill -s 9（发送杀死进程命令）//发送信号给进程  
+- kill -s 9（发送杀死进程命令）//发送信号给进程  
 signal() //接受到指定信号后调用函数  
 
 进程间通信：管道  

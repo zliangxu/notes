@@ -11,8 +11,8 @@ object detection、segmentation、human pos-estimation、video classification、
 ResNet中提到residual connection在训练深度网络时是必须的，本篇作者发现并不是这样。
 - InceptionV1, GoogLeNet
 - InceptionV2, 使用BN
-- InceptionV3, 使用additional factorization
-- InceptionV4
+- InceptionV3, 使用additional factorization，没有使用Residual连接
+- InceptionV4, 没有使用Residual连接
 
 ## architectural choices
 ### pure inception blocks
@@ -33,3 +33,4 @@ ResNet中提到residual connection在训练深度网络时是必须的，本篇�
 - inception-resnet-v1
 - inception-resnet-v2
 - inception-v4(没有使用resnet，性能与inception-resnet-v2相似)
+作者后来又补充了aligned-inception-resnet结构，没有发表文章。inception-resnet没有对齐的原因是多层卷积、池化导致的？深层特征与图像位置不对应。通过合适的pad解决问题。

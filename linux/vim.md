@@ -1,4 +1,4 @@
-vim
+# vim
 vim学习  vimtutor
 dd：删除本行 d+num+d删除num行
 dw：移至单词词首可以删除该单词

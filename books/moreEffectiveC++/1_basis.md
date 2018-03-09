@@ -6,9 +6,9 @@
 - pointers 可以被重新赋值，指向另一个对象，而reference不能。
 
 2. 最好使用C++转型操作符
-- static_cast< type >(expression) 与c型旧式转型符相同(type)(expression)
+- static_cast< type >(expression) 与c型旧式强制转型符相同(type)(expression)，编译时期转换。
 - const_cast< type >(expression) 去除express的常量性
-- dynamic_cast< type >(expression) 只对涉及继承机制的类型执行转型动作，向下转型或跨系转型
+- dynamic_cast< type >(expression) 对指针、引用进行类型转换。运行时期转换。只对涉及继承机制的类型执行转型动作，向下转型或跨系转型
 - reinterpret_cast< type >(expression) 不具有可移植性，转移函数指针的类型
 
 3. 绝对不要以多态的(polymorphically)方式处理数组  

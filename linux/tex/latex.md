@@ -13,10 +13,13 @@ sudo apt-get install texmaker
 1. 看完：一份其实很短的 LaTeX 入门文档，你迷惑的「CTeX 和 LaTeX 都是啥」在倒数第二节有答案.
 1. 看完：zip.liam0205.me 或者 刘海洋的《LaTeX 入门》。
 
+## latex命令
+cvline 新行
+hfill 分栏
+
 ## 编译
 ```shell
 xelatex main.tex # beamer
-
 ```
 ## beamer
 是latex的一个文档类，用于制作ppt  

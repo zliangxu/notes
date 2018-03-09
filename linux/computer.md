@@ -10,3 +10,4 @@ cpu Intel(R) Core(TM) i7-6800K CPU @ 3.40GHz
 gpu 1080ti
 
 
+

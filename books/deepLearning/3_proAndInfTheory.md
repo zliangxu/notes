@@ -32,10 +32,10 @@ mackay(2003)
 ## 离散概率分布
 设掷一个k面的骰子n次。
 - bernoulli distribution(伯努利分布、两点分布、0-1分布)  
-伯努利试验是只有两种可能结果的单次随机试验(即n=1,k=2)。
+伯努利试验是只有两种可能结果的单次随机试验(即n=1,k=2)，也可以重复n次，但是单独考虑每一次的实验。
 
 - binomial distribution(二项分布)    
-二项分布是n重伯努利试验成功次数的离散概率分布(即n>=2, k=2)。
+二项分布是n重伯努利试验成功次数的离散概率分布(即n>=2, k=2)，是把n次实验看做一个整体看待。
 
 - multinoulli distribution(又称为 categorical distribution、范畴分布)  
 范畴分布(n=1, k>=2)

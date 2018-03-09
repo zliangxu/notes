@@ -40,6 +40,7 @@ Man git-order Or git help + order得到order相关的帮助文档
 ```
 - Git rm:从版本库中删除,
     - -r:  与linux相近，删除目录及子文件。本地仓库，远程仓库都可以删除
+- git clean: 清除本地修改(未push的更改)
 - Git commit: 保存staged文件到reposity,进行融合
     - -m "notica:
 - Git log: reposity提交日志文件

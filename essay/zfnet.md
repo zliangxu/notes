@@ -1,4 +1,5 @@
 # visualizing and understanding convolutinal networks(ZF-net)
+[blog](https://xmfbit.github.io/2018/02/08/paper-visualize-convnet/#more)
 
 ## abstract
 Alexnet在Imagenet上表现良好，但是，1.当前能解释它为什么会好的理论，2.如何改进它，有这样两个问题。

@@ -7,8 +7,12 @@ one-shot detection pipeline called face attention network.
 使用了RetinaNet中的feature pyramid network提取不同层的特征，来解决尺度问题。对于anchor-level attention，不同特征层使用不同的attention region。  
 包括三贡献：
 1. 提出anchor-level attention机制来解决遮挡问题
-2. 基于RetinaNet提出实际可用的baseling
+2. 基于RetinaNet提出实际可用的baseline
 3. 结合anchor-level attention与RetinaNet的FAN
+
+论文工作可以总结为两个方面：  
+1. anchor asign strategy
+2. attention
 
 ## related work
 
@@ -27,12 +31,15 @@ S3FD改变anchor匹配策略，来增加召回率
 - 正样本$iou>0.5$
 - 负样本$iou<0.4$  
 
-attention：使用supervised heatmaps训练一个segmentation分支，然后使用eponential操作将其与特征图相乘作为目标检测head-network的输入。**有新意**
+attention：使用supervised heatmaps训练一个segmentation分支，预测时使用eponential操作将其与特征图相乘作为目标检测head-network的输入。**有新意**。    
+在斗鱼上的讲解视频里，作者提到这种segmentation attention并不是他们首创，而是从行人检测领域借鉴过来的，但是在原文中并没有发现相关文献的引用。从视频中获知，作者制作的branch layer wise分割标签是在该层anchor匹配到的groud truth bounding box内填充为$1$，或使用高斯填充，作者发现这两种填充方式对结果影响不大。
 
 数据增强
-- random crop: crop square patch，边长范围在原图短边的$0.3,1$之间
+- random crop: crop square patch，边长范围在原图短边的$0.3\sim1$之间，保留ground truth box中心在图内的label。
 - random flip
-- color jitter
+- color jitter，仿照S3FD
+对于小于$8$像素的人脸，由于在第一层输出上$8$被降采样下只有一个像素，所以训练时略去了这些标签。
+
 ### loss function
 > $$\begin{aligned} L= &\sum_k\frac{1}{N_k^c}\sum_{i\in A_k}L_c(p_i,p_i^*)+ \\
 &\lambda_1\sum_k\frac{1}{N_k^r}\sum_{i\in A_k}I(p_i^*=1)L_r(t_i,t_i^*)+\\

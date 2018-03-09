@@ -36,4 +36,14 @@ array([ 0,  2,  4,  6,  8, 10, 12, 14])
 
 # 数据类型
 np.uint8 
+
+# 向下取整
+np.ceil()
+np.trunc()
+np.floor()
+
+# 四舍五入
+np.rint()
+data.round()
+
 ```

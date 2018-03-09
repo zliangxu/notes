@@ -82,6 +82,7 @@ df.append()
 # group
 df.groupby().mean()
 gb = df.gropyby()
+gb.groups # 展示所有分组
 gb.get_group() # 可以提取其中的一组
 gb.size()  # 每个分组的元素数目
 

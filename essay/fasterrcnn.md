@@ -38,7 +38,7 @@ achors是一种新的解决多尺度问题的方法，因为anchors是multi-scal
 $p_i$表示预测的一个anchor为目标的概率，$p_i^*$表示表示一个anchor的label为1或0，$t_i$表示预测的4个参数化的bounding box，$t_i^*$表示一个关于正样本anchor的ground truth box，这里regression loss选用了smooth L1损失，分类层与回归层的输出分别为$\{p_i\}$和$\{t_i\}$。  
 $N_{cls}$表示mini-batch的大小，$N_{reg}$表示一张图像里anchor location的数量，与anchor的数量不同，(对于$1000\times 600$的输入图像，输出的特征图是$60\times 40=2400$，也就是有$2400$个anchor location)。这里不同于以往的bounding box regression，因为以往的用的特征是从不同大小的roi pool到的，并且参数要适用与所有不同大小的roi size，而这里regression是针对固定大小窗口($3\times 3$)的特征的，针对k个不同大小的anchor，学习了k个专用的regressor，用于针对不同的scale与aspect ratio。
 - training rpns    
-采用了image-centric来训练rpn，image-centric指fast-rcnn中训练样本是从一张图像中抽取的，针对SPPnet无法训练的问题提出的。每一个mini-batch是由一张图像抽取出的256个正样本、负样本achor组成的。从一张图像中按正、负样本1:1比例抽取256个anchors，如果正样本不够，拿负样本填充。
+采用了image-centric来训练rpn，image-centric指fast-rcnn中训练样本是从一张图像中**随机**抽取的，针对SPPnet无法训练的问题提出的。每一个mini-batch是由一张图像抽取出的256个正样本、负样本achor组成的。从一张图像中按正、负样本1:1比例抽取256个anchors，如果正样本不够，拿负样本填充。
 
 ### sharing features for rpn and fast r-cnn
 尝试了3种方法来训练feature shared的rpn与fast r-cnn

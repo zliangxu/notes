@@ -5,7 +5,7 @@
 为解决这个问题，提出BN结构，并使其称为网络模型中的一部分，对每一个输入batch做标准化。
 - 使用BN层，可以提高学习率
 - 参数初始化不再那么重要
-- 有规则化作用，从而可以省去dropout层
+- 有规则化作用，从而可以省去dropout层   
 使用bach-normalized networks的集成，在ImageNet上得到了超过人的分类准确率。
 
 ## introduction
@@ -48,4 +48,5 @@ BN层前面的偏置参数的作用，被BN层归一化时抵消掉了
 ### batch-normalization enables higher leraning rate
 
 # tips
-没有找到$\gamma,\beta$是如何初始化的
+没有找到$\gamma,\beta$是如何初始化的    
+有论文专门探讨dropout与bn层结合使用效果差的原因，并提出解决方法。

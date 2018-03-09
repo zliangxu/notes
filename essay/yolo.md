@@ -4,12 +4,12 @@
 
 ## abstract 
 以往的目标检测都是把检测当做分类器做的，这篇文章是看做回归做的，直接回归bounding boxes和class probabilities。  
-base yolo model 45fps  PASCAL VOC 2007 mAP 63.4%
-Fast yolo model 155fps， PASCAL VOC 2007 mAP 52.7%
-yolo的错误更多的是在定位上，很少出现把背景误认为目标的错误。
+base yolo model 45fps  PASCAL VOC 2007 mAP 63.4%   
+Fast yolo model 155fps， PASCAL VOC 2007 mAP 52.7%   
+yolo的错误更多的是在定位上，很少出现把背景误认为目标的错误。   
 
 ## introduction
-yolo 输入$448\times 448$
+yolo 输入$448\times 448$  
 yolo的优点：
 1. 快速，因为是把检测看做回归，输入一幅图像，直接对输出做阈值处理就得到结果，而不需要像RCNN一样复杂的流水线
 2. 输出的时候，利用了全图的信息。不像slinding window和区域CNN的方法，yolo结合了全图的信息，也包含目标的周围图像，由此yolo相对于Fast RCNN产生更少的将背景看做目标的错误。

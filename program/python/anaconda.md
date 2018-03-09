@@ -13,3 +13,13 @@ conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/m
 conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
 conda config --set show_channel_urls yes # 显示下载源的地址
 ```
+
+## 操作
+```python
+# 只更新torchvision，其它包不更新
+conda update torchvision --no-deps
+# 给包指定版本，update好像不能指定版本
+conda install torchvision=0.2.0
+# 查看包各版本的依赖信息
+conda info torchvision
+```
